@@ -92,9 +92,9 @@ final class MultilingualSitemapEngine {
 
         // Query only published, publicly queryable posts
         $args = array(
-            'post_type'      => array( 'post', 'tutorials', 'code', 'hs_course', 'cyber' ),
+            'post_type'      => array( 'post', 'tutorials', 'code', 'tools', 'hs_course', 'cyber', 'projects' ),
             'post_status'    => 'publish',
-            'posts_per_page' => 100,
+            'posts_per_page' => 500,
             'orderby'        => 'modified',
             'order'          => 'DESC',
             'no_found_rows'  => true,

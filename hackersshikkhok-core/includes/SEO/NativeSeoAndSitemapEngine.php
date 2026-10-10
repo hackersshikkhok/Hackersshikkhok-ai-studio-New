@@ -19,9 +19,6 @@ final class NativeSeoAndSitemapEngine {
         add_action( 'wp_head', array( self::class, 'render_native_meta_and_verification' ), 1 );
         add_filter( 'robots_txt', array( self::class, 'filter_native_robots_txt' ), 20, 2 );
         add_filter( 'wp_get_attachment_image_attributes', array( self::class, 'enforce_image_seo_and_cls_dimensions' ), 10, 2 );
-        add_action( 'init', array( self::class, 'register_sitemap_rewrite' ) );
-        add_filter( 'query_vars', array( self::class, 'register_query_vars' ) );
-        add_action( 'template_redirect', array( self::class, 'render_native_sitemap_xml' ) );
     }
 
     public static function render_native_meta_and_verification(): void {

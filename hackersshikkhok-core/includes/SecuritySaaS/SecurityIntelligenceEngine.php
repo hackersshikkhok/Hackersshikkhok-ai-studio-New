@@ -42,23 +42,38 @@ final class SecurityIntelligenceEngine {
             return false;
         }
 
-        // Quality Gate: Require minimum verifiable technical analysis
+        // Quality Gate: Require minimum verifiable technical analysis & authoritative source
         $analysis = sanitize_textarea_field( $data['technical_analysis'] ?? '' );
         $remediation = sanitize_textarea_field( $data['remediation_guide'] ?? '' );
+        $source_url = esc_url_raw( $data['source_url'] ?? '' );
         
-        $quality_score = 0;
-        if ( strlen( $analysis ) > 150 ) {
-            $quality_score += 40;
+        $trusted_authorities = array( 'nvd.nist.gov', 'cve.mitre.org', 'cve.org', 'wpscan.com', 'wordfence.com', 'github.com', 'patchstack.com' );
+        $source_host = wp_parse_url( $source_url, PHP_URL_HOST );
+
+        $is_authoritative = false;
+        foreach ( $trusted_authorities as $trusted ) {
+            if ( $source_host && ( $source_host === $trusted || str_ends_with( $source_host, '.' . $trusted ) ) ) {
+                $is_authoritative = true;
+                break;
+            }
         }
-        if ( strlen( $remediation ) > 100 ) {
+
+        $quality_score = 0;
+        if ( strlen( $analysis ) >= 150 ) {
             $quality_score += 30;
         }
-        if ( ! empty( $data['source_url'] ) && filter_var( $data['source_url'], FILTER_VALIDATE_URL ) ) {
+        if ( strlen( $remediation ) >= 100 ) {
+            $quality_score += 25;
+        }
+        if ( ! empty( $data['affected_systems'] ) ) {
+            $quality_score += 15;
+        }
+        if ( $is_authoritative ) {
             $quality_score += 30;
         }
 
-        // Reject thin CVE data to protect SEO authority
-        $publish_status = ( $quality_score >= 70 ) ? 'published' : 'draft';
+        // Must score at least 80 AND originate from a verified CVE authority to be auto-published
+        $publish_status = ( $quality_score >= 80 && $is_authoritative ) ? 'published' : 'draft';
 
         return (bool) $wpdb->replace(
             $table,

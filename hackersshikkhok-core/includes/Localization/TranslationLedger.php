@@ -66,6 +66,43 @@ final class TranslationLedger {
         add_filter( 'query_vars', array( self::class, 'register_query_vars' ) );
         add_action( 'template_redirect', array( self::class, 'handle_locale_context' ), 1 );
         add_filter( 'locale', array( self::class, 'filter_runtime_locale' ) );
+        add_filter( 'the_title', array( self::class, 'filter_localized_title' ), 10, 2 );
+        add_filter( 'the_content', array( self::class, 'filter_localized_content' ), 10, 1 );
+    }
+
+    public static function filter_localized_title( string $title, int $post_id = 0 ): string {
+        $curr_lang = self::get_current_lang();
+        if ( 'bn' === $curr_lang || ! $post_id ) {
+            return $title;
+        }
+
+        $meta_key = '_hs_title_' . $curr_lang;
+        $localized = get_post_meta( $post_id, $meta_key, true );
+        if ( ! empty( $localized ) && is_string( $localized ) ) {
+            return $localized;
+        }
+
+        return $title;
+    }
+
+    public static function filter_localized_content( string $content ): string {
+        $curr_lang = self::get_current_lang();
+        if ( 'bn' === $curr_lang ) {
+            return $content;
+        }
+
+        $post_id = get_the_ID();
+        if ( ! $post_id ) {
+            return $content;
+        }
+
+        $meta_key = '_hs_content_' . $curr_lang;
+        $localized = get_post_meta( $post_id, $meta_key, true );
+        if ( ! empty( $localized ) && is_string( $localized ) ) {
+            return $localized;
+        }
+
+        return $content;
     }
 
     public static function register_rewrite_rules(): void {

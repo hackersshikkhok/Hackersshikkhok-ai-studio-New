@@ -125,13 +125,6 @@ final class GlobalTechnicalSeoEngine {
                     'availability'  => 'https://schema.org/InStock',
                     'description'   => '100% Free Forever without registration or hidden fees.',
                 ),
-                'aggregateRating'     => array(
-                    '@type'       => 'AggregateRating',
-                    'ratingValue' => '4.9',
-                    'reviewCount' => '1240',
-                    'bestRating'  => '5',
-                    'worstRating' => '1',
-                ),
                 'author'              => array(
                     '@type' => 'Organization',
                     'name'  => 'Hackers শিক্ষক',

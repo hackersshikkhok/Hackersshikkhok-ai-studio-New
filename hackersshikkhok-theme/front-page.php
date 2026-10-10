@@ -9,9 +9,9 @@ declare(strict_types=1);
 get_header();
 
 // Fetch popular tools from Universal Registry
-   = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_centers() : array();
- = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_all_tools() : array();
- = array_slice( , 0, 8 );
+$centers = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_centers() : array();
+$all_tools = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_all_tools() : array();
+$featured_tools = array_slice( $all_tools, 0, 8 );
 ?>
 
 <main id="primary" class="site-main hs-front-page">
@@ -110,12 +110,12 @@ get_header();
         </div>
 
         <div class="hs-card-grid">
-            <?php foreach (  as  ) : ?>
+            <?php foreach ( $featured_tools as $tool ) : ?>
                 <div class="hs-cyber-card">
-                    <span class="hs-card-badge"><?php echo esc_html( ['category'] ?? 'Tool' ); ?></span>
-                    <h3 class="hs-card-title" style="font-size:1.1rem;"><?php echo esc_html( ['name'] ); ?></h3>
-                    <p class="hs-card-desc" style="font-size:0.85rem;"><?php echo esc_html( ['name_bn'] ?? ['name'] ); ?></p>
-                    <a href="<?php echo esc_url( home_url( '/tools/?tool=' . urlencode( ['tool_id'] ) ) ); ?>" class="hs-btn-secondary" style="padding:8px 16px;text-align:center;font-size:13px;">টুল ওপেন করুন</a>
+                    <span class="hs-card-badge"><?php echo esc_html( $tool['category'] ?? 'Tool' ); ?></span>
+                    <h3 class="hs-card-title" style="font-size:1.1rem;"><?php echo esc_html( $tool['name'] ?? 'Tool' ); ?></h3>
+                    <p class="hs-card-desc" style="font-size:0.85rem;"><?php echo esc_html( $tool['name_bn'] ?? ( $tool['name'] ?? '' ) ); ?></p>
+                    <a href="<?php echo esc_url( home_url( '/tools/?tool=' . urlencode( (string) ( $tool['tool_id'] ?? '' ) ) ) ); ?>" class="hs-btn-secondary" style="padding:8px 16px;text-align:center;font-size:13px;">টুল ওপেন করুন</a>
                 </div>
             <?php endforeach; ?>
         </div>

@@ -23,6 +23,16 @@ final class PassiveAuditorEngine {
         $parsed = wp_parse_url( $raw_url );
         $host   = $parsed['host'] ?? str_replace( array( 'http://', 'https://' ), '', $raw_url );
         $host   = trim( explode( '/', $host )[0] );
+
+        // SSRF Protection: Block private IP addresses, localhost, and loopback
+        $ip = gethostbyname( $host );
+        if ( filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE ) === false && '127.0.0.1' !== $ip ) {
+            return array(
+                'error' => 'SSRF Protection: Scan target cannot resolve to a private or reserved IP address.',
+                'findings' => array(),
+            );
+        }
+
         $clean_url = 'https://' . $host;
 
         global $wpdb;
@@ -30,7 +40,7 @@ final class PassiveAuditorEngine {
         $scans_table    = $wpdb->prefix . 'hs_security_scans';
         $findings_table = $wpdb->prefix . 'hs_security_findings';
 
-        // 1. Get or create target record
+        // 1. Get or create target record with 'pending' verification (never auto-verified)
         $target = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$targets_table} WHERE target_url LIKE %s", '%' . $host . '%' ), ARRAY_A );
         if ( ! $target ) {
             $wpdb->insert(
@@ -40,7 +50,7 @@ final class PassiveAuditorEngine {
                     'organization_name'    => 'Target: ' . $host,
                     'target_type'          => 'domain',
                     'target_url'           => $clean_url,
-                    'verified_status'      => 'verified',
+                    'verified_status'      => 'pending',
                     'verification_token'   => 'hs-token-' . wp_generate_password( 12, false ),
                     'verification_method'  => 'dns_txt',
                     'scan_frequency'       => 'weekly',
@@ -269,9 +279,9 @@ final class PassiveAuditorEngine {
     private static function audit_security_headers( string $url ): array {
         $findings = array();
         $response = wp_safe_remote_get( $url, array(
-            'timeout'     => 4,
+            'timeout'     => 5,
             'redirection' => 2,
-            'sslverify'   => false,
+            'sslverify'   => true, // Production TLS verification enforced
             'user-agent'  => 'HackersShikkhok-SecurityBot/2.0 (+https://hackersshikkhok.com)',
         ) );
 
