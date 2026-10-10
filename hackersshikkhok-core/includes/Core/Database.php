@@ -450,6 +450,41 @@ final class Database {
                 PRIMARY KEY  (id),
                 UNIQUE KEY uq_sub_user (user_id),
                 KEY idx_sub_status (status)
+            ) $charset_collate;",
+            "CREATE TABLE {$p}translation_ledger (
+                id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+                translation_group VARCHAR(64) NOT NULL,
+                entity_type VARCHAR(32) NOT NULL DEFAULT 'post',
+                entity_id BIGINT UNSIGNED NOT NULL,
+                language_code VARCHAR(10) NOT NULL,
+                source_hash VARCHAR(64) NOT NULL DEFAULT '',
+                sync_status VARCHAR(24) NOT NULL DEFAULT 'synced',
+                created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY  (id),
+                UNIQUE KEY uq_trans_entity (entity_type, entity_id),
+                KEY idx_trans_group (translation_group),
+                KEY idx_trans_lang (language_code)
+            ) $charset_collate;",
+            "CREATE TABLE {$p}security_intelligence (
+                id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+                cve_id VARCHAR(32) NOT NULL,
+                title_en VARCHAR(255) NOT NULL,
+                title_bn VARCHAR(255) NOT NULL,
+                severity VARCHAR(20) NOT NULL DEFAULT 'medium',
+                cvss_score DECIMAL(3,1) NOT NULL DEFAULT 5.0,
+                affected_systems VARCHAR(255) NOT NULL DEFAULT '',
+                technical_analysis LONGTEXT NOT NULL,
+                remediation_guide LONGTEXT NOT NULL,
+                source_url VARCHAR(255) NOT NULL DEFAULT '',
+                quality_score TINYINT UNSIGNED NOT NULL DEFAULT 80,
+                publish_status VARCHAR(20) NOT NULL DEFAULT 'published',
+                created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY  (id),
+                UNIQUE KEY uq_cve_id (cve_id),
+                KEY idx_cve_severity (severity),
+                KEY idx_cve_status (publish_status)
             ) $charset_collate;"
         );
 

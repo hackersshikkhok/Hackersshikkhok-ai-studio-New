@@ -1,0 +1,213 @@
+<?php
+/**
+ * Hackers শিক্ষক — Multilingual Translation Ledger & Global Routing Registry
+ *
+ * Provides a robust, zero-third-party dependency translation relational ledger
+ * connecting English, Bengali, Arabic, and Spanish posts, terms, and custom entities.
+ *
+ * @package HackersShikkhok\Core\Localization
+ */
+
+declare(strict_types=1);
+
+namespace HackersShikkhok\Core\Localization;
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+final class TranslationLedger {
+
+    public const SUPPORTED_LANGUAGES = array(
+        'bn' => array(
+            'code'      => 'bn',
+            'locale'    => 'bn_BD',
+            'name'      => 'বাংলা',
+            'name_en'   => 'Bengali',
+            'direction' => 'ltr',
+            'flag'      => '🇧🇩',
+            'is_default'=> true,
+            'slug_prefix'=> '',
+        ),
+        'en' => array(
+            'code'      => 'en',
+            'locale'    => 'en_US',
+            'name'      => 'English',
+            'name_en'   => 'English',
+            'direction' => 'ltr',
+            'flag'      => '🌐',
+            'is_default'=> false,
+            'slug_prefix'=> 'en',
+        ),
+        'ar' => array(
+            'code'      => 'ar',
+            'locale'    => 'ar_SA',
+            'name'      => 'العربية',
+            'name_en'   => 'Arabic',
+            'direction' => 'rtl',
+            'flag'      => '🇸🇦',
+            'is_default'=> false,
+            'slug_prefix'=> 'ar',
+        ),
+        'es' => array(
+            'code'      => 'es',
+            'locale'    => 'es_ES',
+            'name'      => 'Español',
+            'name_en'   => 'Spanish',
+            'direction' => 'ltr',
+            'flag'      => '🇪🇸',
+            'is_default'=> false,
+            'slug_prefix'=> 'es',
+        ),
+    );
+
+    public static function register(): void {
+        add_action( 'init', array( self::class, 'register_rewrite_rules' ), 1 );
+        add_filter( 'query_vars', array( self::class, 'register_query_vars' ) );
+        add_action( 'template_redirect', array( self::class, 'handle_locale_context' ), 1 );
+        add_filter( 'locale', array( self::class, 'filter_runtime_locale' ) );
+    }
+
+    public static function register_rewrite_rules(): void {
+        // Safe, non-destructive prefix rewrite rules for /en/, /ar/, /es/
+        $languages = array( 'en', 'ar', 'es' );
+        foreach ( $languages as $lang ) {
+            add_rewrite_rule(
+                "^{$lang}/?$",
+                'index.php?hs_lang=' . $lang,
+                'top'
+            );
+            add_rewrite_rule(
+                "^{$lang}/([^/]+)/?$",
+                'index.php?hs_lang=' . $lang . '&pagename=$matches[1]',
+                'top'
+            );
+            add_rewrite_rule(
+                "^{$lang}/tools/([^/]+)/?$",
+                'index.php?hs_lang=' . $lang . '&tools=$matches[1]',
+                'top'
+            );
+            add_rewrite_rule(
+                "^{$lang}/tutorials/([^/]+)/?$",
+                'index.php?hs_lang=' . $lang . '&tutorials=$matches[1]',
+                'top'
+            );
+            add_rewrite_rule(
+                "^{$lang}/cve/([^/]+)/?$",
+                'index.php?hs_lang=' . $lang . '&hs_cve_id=$matches[1]',
+                'top'
+            );
+        }
+    }
+
+    public static function register_query_vars( array $vars ): array {
+        $vars[] = 'hs_lang';
+        $vars[] = 'hs_cve_id';
+        return $vars;
+    }
+
+    public static function get_current_lang(): string {
+        $lang = get_query_var( 'hs_lang' );
+        if ( ! empty( $lang ) && isset( self::SUPPORTED_LANGUAGES[ $lang ] ) ) {
+            return sanitize_key( $lang );
+        }
+        return 'bn'; // Native default
+    }
+
+    public static function handle_locale_context(): void {
+        // Enforce safe cookie setting if user explicitly chose language
+        if ( isset( $_GET['hs_lang_choice'] ) ) {
+            $chosen = sanitize_key( $_GET['hs_lang_choice'] );
+            if ( isset( self::SUPPORTED_LANGUAGES[ $chosen ] ) ) {
+                setcookie( 'hs_preferred_lang', $chosen, time() + ( 86400 * 365 ), '/' );
+            }
+        }
+    }
+
+    public static function filter_runtime_locale( string $locale ): string {
+        $curr = self::get_current_lang();
+        if ( isset( self::SUPPORTED_LANGUAGES[ $curr ]['locale'] ) ) {
+            return self::SUPPORTED_LANGUAGES[ $curr ]['locale'];
+        }
+        return $locale;
+    }
+
+    /**
+     * Link two posts as translation pairs in hs_translation_ledger
+     */
+    public static function link_translations( int $source_id, int $target_id, string $source_lang, string $target_lang ): bool {
+        global $wpdb;
+        $table = $wpdb->prefix . 'hs_translation_ledger';
+        
+        $group_hash = md5( 'group_' . min( $source_id, $target_id ) . '_' . time() );
+
+        // Check if source already has a cluster
+        $existing_hash = $wpdb->get_var( $wpdb->prepare(
+            "SELECT translation_group FROM {$table} WHERE entity_id = %d AND entity_type = 'post'",
+            $source_id
+        ) );
+
+        if ( $existing_hash ) {
+            $group_hash = $existing_hash;
+        }
+
+        // Insert or update source record
+        $wpdb->replace( $table, array(
+            'translation_group' => $group_hash,
+            'entity_type'       => 'post',
+            'entity_id'         => $source_id,
+            'language_code'     => $source_lang,
+            'source_hash'       => md5( (string) get_post_field( 'post_content', $source_id ) ),
+            'sync_status'       => 'synced',
+            'updated_at'        => current_time( 'mysql' ),
+        ), array( '%s', '%s', '%d', '%s', '%s', '%s', '%s' ) );
+
+        // Insert or update target record
+        $wpdb->replace( $table, array(
+            'translation_group' => $group_hash,
+            'entity_type'       => 'post',
+            'entity_id'         => $target_id,
+            'language_code'     => $target_lang,
+            'source_hash'       => md5( (string) get_post_field( 'post_content', $target_id ) ),
+            'sync_status'       => 'synced',
+            'updated_at'        => current_time( 'mysql' ),
+        ), array( '%s', '%s', '%d', '%s', '%s', '%s', '%s' ) );
+
+        return true;
+    }
+
+    /**
+     * Retrieve all verified translation alternates for a given post
+     *
+     * @param int $post_id
+     * @return array<string, string> Array mapping language_code => permalink
+     */
+    public static function get_translation_alternates( int $post_id ): array {
+        global $wpdb;
+        $table = $wpdb->prefix . 'hs_translation_ledger';
+
+        $group = $wpdb->get_var( $wpdb->prepare(
+            "SELECT translation_group FROM {$table} WHERE entity_id = %d AND entity_type = 'post' LIMIT 1",
+            $post_id
+        ) );
+
+        if ( ! $group ) {
+            return array();
+        }
+
+        $rows = $wpdb->get_results( $wpdb->prepare(
+            "SELECT language_code, entity_id FROM {$table} WHERE translation_group = %s AND sync_status != 'archived'",
+            $group
+        ), ARRAY_A );
+
+        $alternates = array();
+        foreach ( $rows as $row ) {
+            $permalink = get_permalink( (int) $row['entity_id'] );
+            if ( $permalink && 'publish' === get_post_status( (int) $row['entity_id'] ) ) {
+                $alternates[ $row['language_code'] ] = $permalink;
+            }
+        }
+
+        return $alternates;
+    }
+}
