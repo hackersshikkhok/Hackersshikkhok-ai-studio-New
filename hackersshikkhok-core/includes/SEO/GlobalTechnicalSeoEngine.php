@@ -26,6 +26,7 @@ final class GlobalTechnicalSeoEngine {
 
     public static function register(): void {
         add_action( 'wp_head', array( self::class, 'render_canonical_and_hreflang' ), 2 );
+        add_action( 'wp_head', array( self::class, 'render_meta_and_opengraph' ), 3 );
         add_action( 'wp_head', array( self::class, 'render_google_compliant_schema' ), 4 );
         add_filter( 'document_title_parts', array( self::class, 'optimize_high_intent_search_title' ) );
     }
@@ -168,15 +169,87 @@ final class GlobalTechnicalSeoEngine {
     }
 
     /**
+     * Render Meta Description, Open Graph & Twitter Cards for High Search Intent
+     */
+    public static function render_meta_and_opengraph(): void {
+        if ( is_admin() || is_feed() || is_trackback() ) {
+            return;
+        }
+
+        $current_lang = TranslationLedger::get_current_lang();
+        $site_name    = 'Hackers শিক্ষক — Cybersecurity Academy & Free Dev Tools';
+        $site_icon    = home_url( '/wp-content/plugins/hackersshikkhok-core/assets/images/icon-256x256.png' );
+        $current_url  = home_url( add_query_arg( array(), $GLOBALS['wp']->request ?? '' ) );
+
+        $meta_desc = 'Hackers শিক্ষক (HackersShikkhok.com) — Free Interactive Cybersecurity Academy, Ethical Hacking CTF Labs, and 520+ Online Client-Side Developer Tools.';
+        $og_title  = wp_get_document_title();
+        $og_type   = 'website';
+
+        if ( is_singular( 'tools' ) ) {
+            $tool_name = get_the_title();
+            $og_type   = 'article';
+            if ( 'bn' === $current_lang ) {
+                $meta_desc = esc_attr( $tool_name ) . ' — সম্পূর্ণ বিনামূল্যে অনলাইন টুল। ১০০% ক্লায়েন্ট-সাইড ব্রাউজার এক্সিকিউশন ও জিরো সার্ভার লগ প্রাইভেসি। Hackers শিক্ষক ফ্রি টুলস ল্যাব।';
+            } else {
+                $meta_desc = esc_attr( $tool_name ) . ' — 100% Free Online Developer Tool. Client-side browser execution with zero server logs, high performance & privacy protection.';
+            }
+        } elseif ( is_singular( 'code' ) ) {
+            $code_name = get_the_title();
+            $og_type   = 'article';
+            $meta_desc = esc_attr( $code_name ) . ' — Free Open Source Code Snippet, Script & Security Module by Hackers শিক্ষক.';
+        } elseif ( is_singular( 'hs_course' ) ) {
+            $course_name = get_the_title();
+            $og_type     = 'article';
+            $meta_desc   = esc_attr( $course_name ) . ' — Free Practical Cyber Security Course with Hands-on Labs & CTF Challenges. Join Hackers শিক্ষক Academy.';
+        } elseif ( is_front_page() || is_home() ) {
+            if ( 'bn' === $current_lang ) {
+                $meta_desc = 'Hackers শিক্ষক (HackersShikkhok.com) — বাংলাদেশের শীর্ষস্থানীয় সাইবার সিকিউরিটি একাডেমি, ফ্রি কোড লাইব্রেরি এবং ৫২০+ ক্লায়েন্ট-সাইড ডেভেলপার ও নেটওয়ার্ক টুলসের সমন্বিত হাব।';
+            } else {
+                $meta_desc = 'Hackers Shikkhok (HackersShikkhok.com) — Premier Cybersecurity Academy, CTF Challenges, Free Open Source Code, and 520+ Online Developer Utility Tools.';
+            }
+        }
+
+        $locales = array(
+            'bn' => 'bn_BD',
+            'en' => 'en_US',
+            'ar' => 'ar_SA',
+            'es' => 'es_ES',
+        );
+        $og_locale = $locales[ $current_lang ] ?? 'bn_BD';
+
+        echo '<meta name="description" content="' . esc_attr( $meta_desc ) . '" />' . "\n";
+        echo '<meta property="og:type" content="' . esc_attr( $og_type ) . '" />' . "\n";
+        echo '<meta property="og:title" content="' . esc_attr( $og_title ) . '" />' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr( $meta_desc ) . '" />' . "\n";
+        echo '<meta property="og:url" content="' . esc_url( $current_url ) . '" />' . "\n";
+        echo '<meta property="og:site_name" content="' . esc_attr( $site_name ) . '" />' . "\n";
+        echo '<meta property="og:image" content="' . esc_url( $site_icon ) . '" />' . "\n";
+        echo '<meta property="og:locale" content="' . esc_attr( $og_locale ) . '" />' . "\n";
+        echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+        echo '<meta name="twitter:site" content="@HackersShikkhok" />' . "\n";
+        echo '<meta name="twitter:title" content="' . esc_attr( $og_title ) . '" />' . "\n";
+        echo '<meta name="twitter:description" content="' . esc_attr( $meta_desc ) . '" />' . "\n";
+        echo '<meta name="twitter:image" content="' . esc_url( $site_icon ) . '" />' . "\n";
+    }
+
+    /**
      * High-Intent SEO Title Optimizer: incorporates "Free", "Online", and dual-language keywords
      */
     public static function optimize_high_intent_search_title( array $title_parts ): array {
+        $lang = TranslationLedger::get_current_lang();
+
         if ( is_singular( 'tools' ) ) {
             $base = $title_parts['title'] ?? '';
-            $title_parts['title'] = $base . ' — Free Online Tool (100% Client-Side Privacy)';
+            $suffix = ( 'bn' === $lang ) ? ' — ফ্রি অনলাইন টুল (Free Online Tool)' : ' — Free Online Tool (100% Client-Side Privacy)';
+            $title_parts['title'] = $base . $suffix;
         } elseif ( is_singular( 'code' ) ) {
             $base = $title_parts['title'] ?? '';
-            $title_parts['title'] = $base . ' — Free Open Source Code & Snippet';
+            $suffix = ( 'bn' === $lang ) ? ' — ফ্রি কোড স্নিপেট ও স্ক্রিপ্ট' : ' — Free Open Source Code & Snippet';
+            $title_parts['title'] = $base . $suffix;
+        } elseif ( is_singular( 'hs_course' ) ) {
+            $base = $title_parts['title'] ?? '';
+            $suffix = ( 'bn' === $lang ) ? ' — ফ্রি সাইবার একাডেমি কোর্স' : ' — Free Cybersecurity Academy Course';
+            $title_parts['title'] = $base . $suffix;
         } elseif ( is_page( 'cyber-command' ) ) {
             $title_parts['title'] = 'Enterprise Cyber Command & Security Audit SaaS Portal — Hackers শিক্ষক';
         }
