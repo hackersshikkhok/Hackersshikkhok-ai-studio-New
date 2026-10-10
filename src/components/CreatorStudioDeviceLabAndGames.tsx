@@ -359,10 +359,10 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
   // =========================================================================
   const cyberScenarios = [
     {
-      q: '১. একটি ইমেইলে লিংক এসেছে: https://example-untrusted-site.internal/verify — এটি কি নিরাপদ নাকি সন্দেহজনক আনট্রাস্টেড লিঙ্ক?',
-      options: ['Unsafe / Suspicious Deceptive Link (Typosquatting/আনট্রাস্টেড)', 'Safe Official Verified URL'],
+      q: '১. একটি ইমেইলে লিংক এসেছে: https://paypa1-security-verify.com/login — এটি কি নিরাপদ নাকি ফিশিং?',
+      options: ['Phishing / Unsafe URL (সন্দেহজনক ডোমেইন)', 'Safe Official URL'],
       correct: 0,
-      explanation: 'সঠিক! অচেনা বা আনভেরিফায়েড ইন্টারনাল লিঙ্ক ক্লিক করার আগে ডোমেইন ভ্যালিডেশন জরুরি।'
+      explanation: 'সঠিক! "paypa1" এ ল-এর বদলে ১ ব্যবহার করা হয়েছে (Typosquatting Phishing)।'
     },
     {
       q: '২. ওয়ার্ডপ্রেসে SQL Injection প্রতিরোধের জন্য নিচের কোন মেথডটি বাধ্যতামূলক?',
@@ -885,7 +885,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
             <div>
               <span className="text-xs font-mono text-[#00f5d4]">
-                CYBER DEFENSE SPOTTER &amp; SECURE CODING CHALLENGE
+                CYBER PHISHING SPOTTER &amp; SECURE CODING CHALLENGE
               </span>
               <h3 className="text-lg font-bold text-white mt-0.5">
                 ইথিক্যাল হ্যাকিং ও সিকিউর কোডিং গেম (Points + XP Rewards)

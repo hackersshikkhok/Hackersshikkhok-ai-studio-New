@@ -41,6 +41,7 @@ use HackersShikkhok\Core\Community\GamificationAndChallenges;
 use HackersShikkhok\Core\Community\BookmarksAndNotifications;
 use HackersShikkhok\Core\Security\SecurityManager;
 use HackersShikkhok\Core\Security\SecurityAwarenessDefenseLab;
+use HackersShikkhok\Core\SecuritySaaS\SecuritySaaSEngine;
 use HackersShikkhok\Core\API\RestController;
 use HackersShikkhok\Core\Community\UniversalInteractionEngine;
 use HackersShikkhok\Core\Earnings\PostPayCounterEngine;
@@ -62,6 +63,7 @@ final class Plugin {
     public function boot(): void {
         SecurityManager::register();
         SecurityAwarenessDefenseLab::register();
+        SecuritySaaSEngine::register();
         PostTypeRegistrar::register();
         TaxonomyRegistrar::register();
         CenterManager::register();
