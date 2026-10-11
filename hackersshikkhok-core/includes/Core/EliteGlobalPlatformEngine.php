@@ -98,7 +98,7 @@ final class EliteGlobalPlatformEngine {
             ]
         ];
 
-        foreach ( $slug => $data ) {
+        foreach ( $default_pages as $slug => $data ) {
             $page = get_page_by_path( $slug );
             if ( ! $page ) {
                 wp_insert_post( [

@@ -77,7 +77,7 @@ add_filter( 'plugin_row_meta', static function ( array $meta, string $plugin_fil
     $icon_url = esc_url( HS_CORE_URL . 'assets/images/icon-256x256.png' );
 
     $preview_card = '<div style="margin-top:10px;padding:12px;background:#0b1120;color:#e2e8f0;border:1px solid rgba(0,245,212,0.35);border-radius:10px;display:flex;align-items:center;gap:14px;max-width:760px;">'
-        . '<img src="' . $icon_url . '" alt="Hackers শিক্ষক Core Engine" style="width:64px;height:64px;border-radius:10px;border:1px solid #00f5d4;object-fit:cover;flex-shrink:0;" onerror="this.style.display='none'" />'
+        . '<img src="' . $icon_url . '" alt="Hackers শিক্ষক Core Engine" style="width:64px;height:64px;border-radius:10px;border:1px solid #00f5d4;object-fit:cover;flex-shrink:0;" onerror="this.style.display=\'none\'" />'
         . '<div style="font-size:12px;line-height:1.5;">'
         . '<div style="color:#00f5d4;font-weight:700;font-size:13px;">🛡️ Hackers শিক্ষক Core Engine v' . esc_html( HS_CORE_VERSION ) . ' — Developed by Hackers শিক্ষক</div>'
         . '<div style="color:#94a3b8;margin-top:2px;">28 Platform Centers · Universal Social/Notification/Messaging Engine · 18 AI Autopilots · 11 Universal Factories · 60+ Tools · Creator Studio · Device Lab · Games Center</div>'
