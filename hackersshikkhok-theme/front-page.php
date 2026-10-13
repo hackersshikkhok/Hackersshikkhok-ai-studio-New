@@ -25,6 +25,7 @@ $featured_tools = array_slice( $all_tools, 0, 8 );
         </p>
         <div class="hs-hero-cta">
             <a href="<?php echo esc_url( home_url( '/academy/' ) ); ?>" class="hs-btn-primary">🎓 একাডেমি কোর্স ব্রাউজ করুন</a>
+            <a href="<?php echo esc_url( home_url( '/platform-center/' ) ); ?>" class="hs-btn-primary" style="background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); border-color: #10b981; color: #fff;">🚀 প্ল্যাটফর্ম সেন্টার ও অ্যাপ মেকার</a>
             <a href="<?php echo esc_url( home_url( '/tools/' ) ); ?>" class="hs-btn-secondary">⚡ ৫২০+ টুলস এক্সপ্লোর করুন</a>
         </div>
     </section>

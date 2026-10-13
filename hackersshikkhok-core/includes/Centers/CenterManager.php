@@ -6,6 +6,12 @@ namespace HackersShikkhok\Core\Centers;
 final class CenterManager {
     public static function register(): void {
         add_shortcode( 'hs_center_hub', array( self::class, 'render_center_shortcode' ) );
+        if ( class_exists( __NAMESPACE__ . '\\PlatformHubEngine' ) ) {
+            PlatformHubEngine::register();
+        } elseif ( file_exists( __DIR__ . '/PlatformHubEngine.php' ) ) {
+            require_once __DIR__ . '/PlatformHubEngine.php';
+            PlatformHubEngine::register();
+        }
     }
 
     public static function get_all_centers(): array {
@@ -15,7 +21,8 @@ final class CenterManager {
             'projects', 'troubleshooting', 'youtube', 'community', 'forum',
             'ai-center', 'courses', 'certificates', 'resources', 'dashboard',
             'profile', 'creator-studio', 'pdf-studio', 'bd-calendar',
-            'cyber-labs', 'wp-studio', 'qa-audit'
+            'cyber-labs', 'wp-studio', 'qa-audit', 'platform-hub', 'app-maker',
+            'card-maker', 'gift-maker', 'game-maker'
         );
     }
 

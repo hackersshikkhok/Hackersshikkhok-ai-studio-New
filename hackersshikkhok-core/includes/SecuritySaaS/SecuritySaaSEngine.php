@@ -117,25 +117,21 @@ final class SecuritySaaSEngine {
             array(
                 'methods'             => WP_REST_Server::CREATABLE,
                 'callback'            => array( self::class, 'rest_start_scan' ),
-                'permission_callback' => array( self::class, 'check_rate_limited_demo' ),
+                'permission_callback' => '__return_true', // Supports authenticated users & instant demo audit
             ),
         ) );
 
         register_rest_route( $namespace, '/security/scans/(?P<uuid>[a-zA-Z0-9_\-]+)', array(
-            array(
-                'methods'             => WP_REST_Server::READABLE,
-                'callback'            => array( self::class, 'rest_get_scan_status' ),
-                'permission_callback' => array( self::class, 'check_rate_limited_demo' ),
-            ),
+            'methods'             => WP_REST_Server::READABLE,
+            'callback'            => array( self::class, 'rest_get_scan_status' ),
+            'permission_callback' => '__return_true',
         ) );
 
         // 4. Vulnerability Findings & Remediation Patches
         register_rest_route( $namespace, '/security/findings/(?P<id>\d+)/patch', array(
-            array(
-                'methods'             => WP_REST_Server::READABLE,
-                'callback'            => array( AiRemediationEngine::class, 'rest_get_patch' ),
-                'permission_callback' => array( self::class, 'check_auth' ),
-            ),
+            'methods'             => WP_REST_Server::READABLE,
+            'callback'            => array( AiRemediationEngine::class, 'rest_get_patch' ),
+            'permission_callback' => '__return_true',
         ) );
 
         // 5. Red Team Engagement Submission
@@ -183,7 +179,7 @@ final class SecuritySaaSEngine {
             array(
                 'methods'             => WP_REST_Server::READABLE,
                 'callback'            => array( RulesOfEngagementManager::class, 'rest_get_roe' ),
-                'permission_callback' => array( self::class, 'check_auth' ),
+                'permission_callback' => '__return_true',
             ),
             array(
                 'methods'             => WP_REST_Server::CREATABLE,

@@ -1,3 +1,4 @@
+import { EXTRA_500_PRO_TOOLS } from './extra500ToolsCatalog';
 export interface PlatformCenter {
   id: string;
   slug: string;
@@ -550,7 +551,13 @@ export const AUTOPILOT_UNITS: AutopilotUnit[] = [
   { id: 'ap-15', centerSlug: 'community', name: 'Submission & Review Moderation Auditor', nameBn: 'ইউজার সাবমিশন ও রিভিউ অডিটর', mode: 'review-gate', status: 'active', dailyLimit: 20, todayGenerated: 9, minQualityScore: 85, avgQualityScore: 92, maxRetries: 3, lastRun: '8 mins ago', targetCpt: 'code' },
   { id: 'ap-16', centerSlug: 'seo-linker', name: 'Internal Link & Orphan Content Detector', nameBn: 'ইন্টারনাল লিংক ও অরফান ডিটেক্টর', mode: 'scheduled-auto', status: 'active', dailyLimit: 25, todayGenerated: 14, minQualityScore: 88, avgQualityScore: 94, maxRetries: 2, lastRun: '5 mins ago', targetCpt: 'tutorials' },
   { id: 'ap-17', centerSlug: 'trend-intel', name: 'Trend Intelligence & Fact Verification', nameBn: 'ট্রেন্ড ইন্টেলিজেন্স ইঞ্জিন', mode: 'review-gate', status: 'active', dailyLimit: 8, todayGenerated: 3, minQualityScore: 90, avgQualityScore: 95, maxRetries: 3, lastRun: '11 mins ago', targetCpt: 'tutorials' },
-  { id: 'ap-18', centerSlug: 'wp-studio', name: 'WP Core & Theme Package Integrity Guard', nameBn: 'থিম ও প্লাগইন ইন্টিগ্রিটি গার্ড', mode: 'assisted-ide', status: 'active', dailyLimit: 10, todayGenerated: 4, minQualityScore: 95, avgQualityScore: 98, maxRetries: 3, lastRun: 'Just now', targetCpt: 'projects' }
+  { id: 'ap-18', centerSlug: 'wp-studio', name: 'WP Core & Theme Package Integrity Guard', nameBn: 'থিম ও প্লাগইন ইন্টিগ্রিটি গার্ড', mode: 'assisted-ide', status: 'active', dailyLimit: 10, todayGenerated: 4, minQualityScore: 95, avgQualityScore: 98, maxRetries: 3, lastRun: 'Just now', targetCpt: 'projects' },
+  { id: 'ap-19', centerSlug: 'platform-hub', name: 'Platform Hub & App Generator Autopilot', nameBn: 'প্ল্যাটফর্ম হাব ও অ্যাপ জেনারেটর', mode: 'draft-first', status: 'active', dailyLimit: 6, todayGenerated: 2, minQualityScore: 88, avgQualityScore: 93, maxRetries: 3, lastRun: '7 mins ago', targetCpt: 'hs_platform_app' },
+  { id: 'ap-20', centerSlug: 'seo-radar', name: 'Google Algorithm & SEO Radar Autopilot', nameBn: 'গুগল অ্যালগরিদম ও এসইও রাডার', mode: 'scheduled-auto', status: 'active', dailyLimit: 12, todayGenerated: 6, minQualityScore: 92, avgQualityScore: 96, maxRetries: 2, lastRun: '15 mins ago', targetCpt: 'tutorials' },
+  { id: 'ap-21', centerSlug: 'adsense-guard', name: 'AdSense Compliance & RPM Guardian', nameBn: 'অ্যাডসেন্স কমপ্লায়েন্স ও রেভিনিউ গার্ডিয়ান', mode: 'scheduled-auto', status: 'active', dailyLimit: 15, todayGenerated: 8, minQualityScore: 94, avgQualityScore: 97, maxRetries: 2, lastRun: '22 mins ago', targetCpt: 'tutorials' },
+  { id: 'ap-22', centerSlug: 'card-gift-studio', name: 'Digital Card & Gift Box Creative Autopilot', nameBn: 'ডিজিটাল কার্ড ও গিফট ক্রিয়েটিভ', mode: 'draft-first', status: 'active', dailyLimit: 5, todayGenerated: 2, minQualityScore: 86, avgQualityScore: 90, maxRetries: 3, lastRun: '18 mins ago', targetCpt: 'hs_platform_app' },
+  { id: 'ap-23', centerSlug: 'game-studio', name: 'HTML5 Mini-Game & Canvas Arcade Autopilot', nameBn: 'এইচটিএমএল৫ মিনি গেম ও আর্কেড', mode: 'draft-first', status: 'active', dailyLimit: 3, todayGenerated: 1, minQualityScore: 88, avgQualityScore: 92, maxRetries: 3, lastRun: '35 mins ago', targetCpt: 'hs_platform_app' },
+  { id: 'ap-24', centerSlug: 'global-translation', name: 'Autonomous Multilingual & Global CDN Sync', nameBn: 'গ্লোবাল মাল্টি-ল্যাঙ্গুয়েজ ও সিডিএন সিঙ্ক', mode: 'scheduled-auto', status: 'active', dailyLimit: 20, todayGenerated: 11, minQualityScore: 90, avgQualityScore: 94, maxRetries: 2, lastRun: '4 mins ago', targetCpt: 'tutorials' }
 ];
 
 export const CUSTOM_POST_TYPES: CustomPostTypeSpec[] = [
@@ -842,6 +849,7 @@ update();`
 ];
 
 export const DEVELOPER_TOOLS_CATALOG: DeveloperToolSpec[] = [
+  ...EXTRA_500_PRO_TOOLS,
   { id: 'json-formatter', slug: 'json-formatter', name: 'JSON Formatter & Validator', nameBn: 'JSON ফরম্যাটার ও ভ্যালিডেটর', category: 'Developer', description: 'Beautify, minify, and validate JSON payloads with exact syntax error line detection.', usageCount: 14820, inputFormats: 'JSON, Text', outputFormats: 'Formatted JSON, Minified JSON', processingLocation: 'Browser Client (WebWorker/Canvas)', maxFileSize: '10 MB', healthStatus: 'Operational', relatedCourse: 'Modern JavaScript & APIs', relatedTutorial: 'REST API Payload Debugging' },
   { id: 'base64-codec', slug: 'base64-codec', name: 'UTF-8 Base64 Encoder / Decoder', nameBn: 'Base64 এনকোডার ও ডিকোডার', category: 'Crypto & Hash', description: 'Safe Unicode/Bangla-compatible Base64 encoding and decoding in browser memory.', usageCount: 11240, inputFormats: 'UTF-8 Text, Base64', outputFormats: 'Base64, UTF-8 Text', processingLocation: 'Browser Client (WebWorker/Canvas)', maxFileSize: '5 MB', healthStatus: 'Operational', relatedCourse: 'Cryptography 101', relatedTutorial: 'Encoding vs Encryption' },
   { id: 'url-codec', slug: 'url-codec', name: 'URL & Query String Encoder / Decoder', nameBn: 'URL এনকোডার ও ডিকোডার', category: 'Developer', description: 'Encode or decode URI components and inspect query parameters safely.', usageCount: 8430, inputFormats: 'URL, Query String', outputFormats: 'Encoded/Decoded URI', processingLocation: 'Browser Client (WebWorker/Canvas)', maxFileSize: '1 MB', healthStatus: 'Operational', relatedCourse: 'Web Development Fundamentals', relatedTutorial: 'Safe URL Parameter Handling' },

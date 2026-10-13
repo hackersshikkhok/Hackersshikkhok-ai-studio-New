@@ -23,6 +23,11 @@ import { CyberAcademyAndLmsHub } from './components/CyberAcademyAndLmsHub';
 import { MasterCyberAcademyEngineHub } from './components/MasterCyberAcademyEngineHub';
 import { EngineeringCompletionAndHardeningHub } from './components/EngineeringCompletionAndHardeningHub';
 import { CyberCommandCenterPortal } from './components/CyberCommandCenterPortal';
+import { WpAppGeneratorStudioHub } from './components/WpAppGeneratorStudioHub';
+import {
+  AuthorityPagesAndLegalHubModal,
+  AuthorityPageKey
+} from './components/AuthorityPagesAndLegalHubModal';
 import {
   Search,
   CheckCircle2,
@@ -44,6 +49,7 @@ export default function App() {
   const [zipToast, setZipToast] = useState<string | null>(null);
   const [isStudioModalOpen, setIsStudioModalOpen] = useState(false);
   const [authModalMode, setAuthModalMode] = useState<'login' | 'register' | null>(null);
+  const [authorityModalPage, setAuthorityModalPage] = useState<AuthorityPageKey | null>(null);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isNotifOpen, setIsNotifOpen] = useState(false);
   const [chatInput, setChatInput] = useState('');
@@ -153,7 +159,7 @@ export default function App() {
               🔴 লাইভ নোটিশ
             </span>
             <p className="text-slate-200 truncate">
-              <strong>Hackers শিক্ষক</strong> (HackersShikkhok.com) v4.0 Complete Ecosystem — ২৮টি সেন্টার, ১৮টি AI অটো-পাইলট, ৬০+ টুলস, ক্রিয়েটর স্টুডিও এবং প্রিমিয়াম ইমেজসহ Auto-Rezip ডাউনলোড এখন লাইভ!
+              <strong>Hackers শিক্ষক</strong> (HackersShikkhok.com) v4.0 Complete Ecosystem — ২৮টি সেন্টার, ১৮টি AI অটো-পাইলট, ২,০২৪টি প্রো টুলস, ক্রিয়েটর স্টুডিও এবং প্রিমিয়াম ইমেজসহ Auto-Rezip ডাউনলোড এখন লাইভ!
             </p>
           </div>
 
@@ -240,7 +246,7 @@ export default function App() {
                   activeBottomTab === 'tools-lab' ? 'text-[#00f5d4]' : ''
                 }`}
               >
-                RGB ও ৬০+ টুলস ল্যাব
+                ২,০২৪+ প্রো টুলস ল্যাব
               </button>
               <button
                 onClick={() => setActiveBottomTab('profile')}
@@ -252,6 +258,15 @@ export default function App() {
               </button>
               <button
                 onClick={() => {
+                  const el = document.getElementById('platform-center-hub');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-2.5 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-[#050811] font-bold transition-all cursor-pointer whitespace-nowrap"
+              >
+                🚀 প্ল্যাটফর্ম ও অ্যাপ মেকার
+              </button>
+              <button
+                onClick={() => {
                   const cc = PLATFORM_CENTERS.find((c) => c.slug === 'cyber-command');
                   if (cc) setSelectedCenter(cc);
                   document.getElementById('cyber-command-section')?.scrollIntoView({ behavior: 'smooth' });
@@ -259,6 +274,12 @@ export default function App() {
                 className="px-2.5 py-1 rounded-lg bg-[#00f5d4]/15 border border-[#00f5d4]/40 text-[#00f5d4] hover:bg-[#00f5d4] hover:text-[#050811] font-bold transition-all cursor-pointer whitespace-nowrap"
               >
                 🛡️ সাইবার কমান্ড B2B
+              </button>
+              <button
+                onClick={() => setAuthorityModalPage('services')}
+                className="px-2.5 py-1 rounded-lg bg-purple-500/15 border border-purple-500/40 text-purple-300 hover:bg-purple-500 hover:text-white font-bold transition-all cursor-pointer whitespace-nowrap"
+              >
+                ⚖️ সার্ভিস, লিগ্যাল ও এআই হাব
               </button>
               <button
                 onClick={() => setIsStudioModalOpen(true)}
@@ -743,6 +764,8 @@ export default function App() {
             10. 60+ UNIVERSAL DEVELOPER, MEDIA, PDF & CYBER TOOLS LAB
         ====================================================================== */}
         <DeveloperToolsLab />
+        {/* URL-TO-ANDROID APP GENERATOR & PUBLIC SHOWCASE HUB */}
+        <WpAppGeneratorStudioHub />
 
         {/* =====================================================================
             11. 18 AI AUTOPILOTS, KILL-SWITCH, 10 CPTS, 8 TAXONOMIES, 21 DB TABLES & 114-ITEM QA AUDIT
@@ -778,7 +801,7 @@ export default function App() {
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
                 সাইবার সিকিউরিটি শিক্ষা, ইথিক্যাল হ্যাকিং, কোডিং টিউটোরিয়াল, স্যান্ডবক্সড লাইভ ডেমো,
-                ৬০+ ডেভেলপার ও মিডিয়া টুলস, ক্রিয়েটর স্টুডিও এবং নেটিভ ওয়ার্ডপ্রেস ইকোসিস্টেম।
+                ২,০২৪টি ডেভেলপার ও মিডিয়া টুলস, ক্রিয়েটর স্টুডিও এবং নেটিভ ওয়ার্ডপ্রেস ইকোসিস্টেম।
               </p>
               <div className="flex flex-wrap gap-2 text-[11px] font-mono">
                 <span className="rounded-lg border border-slate-800 bg-slate-950 px-2.5 py-1 text-[#00f5d4]">
@@ -791,51 +814,206 @@ export default function App() {
             </div>
 
             <div className="space-y-2 text-xs">
-              <div className="font-extrabold text-white uppercase tracking-wider">
-                প্ল্যাটফর্ম ক্যাটাগরি
+              <div className="font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#00f5d4]"></span>
+                কোর প্ল্যাটফর্ম ও একাডেমি
               </div>
               <ul className="space-y-1.5 text-slate-400">
-                <li>• সাইবার সিকিউরিটি ও ডিফেন্স ল্যাব</li>
-                <li>• ওয়েব ও ওয়ার্ডপ্রেস ডেভেলপমেন্ট</li>
-                <li>• এইচটিএমএল, সিএসএস, জাভাস্ক্রিপ্ট ও পাইথন</li>
-                <li>• ট্রাবলশুটিং ও ফিক্স গাইড</li>
-                <li>• একাডেমি কোর্স ও সার্টিফিকেশন</li>
-              </ul>
-            </div>
-
-            <div className="space-y-2 text-xs">
-              <div className="font-extrabold text-white uppercase tracking-wider">
-                জনপ্রিয় টুলস ও ল্যাব
-              </div>
-              <ul className="space-y-1.5 text-slate-400">
-                <li>• ১৫টি CSS / RGB / Neon জেনারেটর</li>
-                <li>• স্যান্ডবক্সড HTML/CSS/JS লাইভ ডেমো</li>
-                <li>• JSON / Regex / SHA-256 / Base64 টুলস</li>
-                <li>• ২৪-মডিউল ডিভাইস ডায়াগনস্টিক ল্যাব</li>
-                <li>• ৭-এডিটর ক্রিয়েটর স্টুডিও ও গেমস সেন্টার</li>
-              </ul>
-            </div>
-
-            <div className="space-y-2 text-xs">
-              <div className="font-extrabold text-white uppercase tracking-wider">
-                লিগ্যাল, পলিসি ও ডাউনলোড
-              </div>
-              <ul className="space-y-1.5 text-slate-400">
-                <li>• Privacy Policy &amp; Cookie Isolation</li>
-                <li>• Terms of Use &amp; Ethical Charter</li>
-                <li>• AdSense &amp; DMCA Compliance</li>
                 <li>
                   <button
-                    onClick={() => handleDownloadZip('theme')}
-                    className="text-[#00f5d4] hover:underline font-bold cursor-pointer"
+                    onClick={() => {
+                      setActiveBottomTab('home');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
                   >
-                    🛡️ Download hackersshikkhok-theme.zip
+                    • হোম ও ২৮টি সেন্টার হাব
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      setActiveBottomTab('home');
+                      setSelectedCenter(PLATFORM_CENTERS.find((c) => c.slug === 'cyber') || PLATFORM_CENTERS[2]);
+                    }}
+                    className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
+                  >
+                    • সাইবার একাডেমি ও সিটিএফ ল্যাব
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('platform-center-hub');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="text-[#00f5d4] hover:underline cursor-pointer text-left font-bold"
+                  >
+                    • 📱 ওয়েবসাইট টু অ্যান্ড্রয়েড অ্যাপ মেকার
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('sitemap')}
+                    className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
+                  >
+                    • 🗺️ মাস্টার সাইটম্যাপ ও ক্রল ইনডেক্স
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('llms-txt')}
+                    className="text-emerald-400 hover:underline cursor-pointer text-left font-mono font-bold"
+                  >
+                    • 🤖 llms.txt (ChatGPT/Perplexity নলেজ)
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-2 text-xs">
+              <div className="font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#a78bfa]"></span>
+                সার্ভিস ও পরামর্শ (B2B/B2C)
+              </div>
+              <ul className="space-y-1.5 text-slate-400">
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('services')}
+                    className="hover:text-[#a78bfa] cursor-pointer text-left transition-colors text-white font-bold"
+                  >
+                    • 🛡️ VAPT ও পেনিট্রেশন টেস্টিং অডিট
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('services')}
+                    className="hover:text-[#a78bfa] cursor-pointer text-left transition-colors"
+                  >
+                    • 🧹 ওয়ার্ডপ্রেস ম্যালওয়্যার ক্লিন সার্ভিস
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('services')}
+                    className="hover:text-[#a78bfa] cursor-pointer text-left transition-colors"
+                  >
+                    • ☁️ ক্লাউড সার্ভার হার্ডেনিং সলিউশন
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('advisory')}
+                    className="hover:text-blue-400 cursor-pointer text-left transition-colors text-blue-300 font-bold"
+                  >
+                    • 💡 ওয়ান-অন-ওয়ান মেন্টরশিপ ও পরামর্শ
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('advisory')}
+                    className="hover:text-[#a78bfa] cursor-pointer text-left transition-colors"
+                  >
+                    • 🤝 অ্যাডভাইজর বোর্ডে যোগদান
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-2 text-xs">
+              <div className="font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-pink-500"></span>
+                টুলস স্কেলাবিলিটি ও ল্যাব
+              </div>
+              <ul className="space-y-1.5 text-slate-400">
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('tools-expansion-plan')}
+                    className="text-pink-400 hover:underline cursor-pointer text-left font-bold"
+                  >
+                    • 🚀 ১০,০০০+ টুলস আর্কিটেকচার রোডম্যাপ
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setActiveBottomTab('tools-lab')}
+                    className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
+                  >
+                    • ১৫টি CSS / RGB / Neon জেনারেটর
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setActiveBottomTab('tools-lab')}
+                    className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
+                  >
+                    • ২,০২৪টি অফলাইন-ফার্স্ট ডেভেলপার ও সাইবার টুলস
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('platform-center-hub');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="hover:text-amber-400 cursor-pointer text-left transition-colors"
+                  >
+                    • ডিজিটাল কার্ড, গিফট ও মিনি-গেম স্টুডিও
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-2 text-xs">
+              <div className="font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#ff3366]"></span>
+                লিগ্যাল, AdSense ও পলিসি
+              </div>
+              <ul className="space-y-1.5 text-slate-400">
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('privacy')}
+                    className="hover:text-emerald-400 cursor-pointer text-left transition-colors"
+                  >
+                    • 🔒 Privacy Policy (GDPR / CCPA)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('terms')}
+                    className="hover:text-purple-400 cursor-pointer text-left transition-colors"
+                  >
+                    • ⚖️ Terms &amp; White-Hat Ethical Charter
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('disclaimer')}
+                    className="hover:text-rose-400 cursor-pointer text-left transition-colors"
+                  >
+                    • ⚠️ Legal Disclaimer (আইনি দায়মুক্তি)
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setAuthorityModalPage('dmca')}
+                    className="hover:text-cyan-400 cursor-pointer text-left transition-colors"
+                  >
+                    • 🛡️ DMCA &amp; Copyright Compliance
+                  </button>
+                </li>
+                <li className="pt-1">
+                  <button
+                    onClick={() => handleDownloadZip('theme')}
+                    className="text-[#00f5d4] hover:underline font-bold cursor-pointer text-left"
+                  >
+                    📦 Download hackersshikkhok-theme.zip
                   </button>
                 </li>
                 <li>
                   <button
                     onClick={() => handleDownloadZip('core')}
-                    className="text-purple-300 hover:underline font-bold cursor-pointer"
+                    className="text-purple-300 hover:underline font-bold cursor-pointer text-left"
                   >
                     ⚙️ Download hackersshikkhok-core.zip
                   </button>
@@ -1067,6 +1245,22 @@ export default function App() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Modal: Authority Pages, Legal, Services & AI Grounding Hub */}
+      {authorityModalPage && (
+        <AuthorityPagesAndLegalHubModal
+          initialPageKey={authorityModalPage}
+          onClose={() => setAuthorityModalPage(null)}
+          onOpenAppMaker={() => {
+            const el = document.getElementById('platform-center-hub');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+          onOpenToolsLab={() => {
+            setActiveBottomTab('tools-lab');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
       )}
     </div>
   );

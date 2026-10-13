@@ -6860,18 +6860,82 @@ final class UniversalToolRegistry {
         );
 
         // Merge any dynamic tools stored in database ($wpdb->prefix . 'custom_tools')
-        $dynamic_tools = self::get_database_custom_tools();
-        foreach ( $dynamic_tools as $dt ) {
-            $tools[ $dt['id'] ] = $dt;
+        // Merge 500 Extra Pro Tools Suite
+        if ( class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistryExtra' ) ) {
+             = UniversalToolRegistryExtra::get_extra_tools();
+            foreach (  as  ) {
+                 = ['slug'] ?? (['id'] ?? '');
+                if ( ! empty(  ) ) {
+                    [  ] = array(
+                        'id'             => ,
+                        'name'           => ['name'] ?? '',
+                        'name_bn'        => ['name_bn'] ?? '',
+                        'center'         => 'universal-lab',
+                        'category'       => ['category'] ?? 'Developer',
+                        'icon'           => 'Wrench',
+                        'short_desc'     => ['description'] ?? '',
+                        'processor_type' => 'client',
+                        'keywords'       => array( , strtolower( ['name'] ?? '' ), strtolower( ['category'] ?? '' ) ),
+                        'schema_type'    => 'WebApplication',
+                        'version'        => '2.0.0'
+                    );
+                }
+            }
         }
 
-        self::$cached_catalog = $tools;
-        return self::$cached_catalog;
+        // Merge 1,000 Ultra-Pro Universal Tools Suite
+        if ( class_exists( '\HackersShikkhok\Core\Tools\Master1000ToolsRegistry' ) ) {
+             = Master1000ToolsRegistry::get_1000_tools();
+            foreach (  as  ) {
+                 = ['slug'] ?? (['id'] ?? '');
+                if ( ! empty(  ) ) {
+                    [  ] = array(
+                        'id'             => ,
+                        'name'           => ['name'] ?? '',
+                        'name_bn'        => ['name_bn'] ?? '',
+                        'center'         => 'universal-lab',
+                        'category'       => ['category'] ?? 'Cyber Defensive',
+                        'icon'           => 'Wrench',
+                        'short_desc'     => ['description'] ?? '',
+                        'processor_type' => 'client',
+                        'keywords'       => array( , strtolower( ['name'] ?? '' ), strtolower( ['category'] ?? '' ) ),
+                        'schema_type'    => 'WebApplication',
+                        'version'        => '2.5.0'
+                    );
+                }
+            }
+        }
+
+        // Merge Next-Gen 498 Ultra-Pro Tools Suite (Completing 2,024 Total Tools)
+        if ( class_exists( '\HackersShikkhok\Core\Tools\NextGen498ToolsRegistry' ) ) {
+             = NextGen498ToolsRegistry::get_tools();
+            foreach (  as  =>  ) {
+                [  ] = array(
+                    'id'             => ,
+                    'name'           => ['name'] ?? '',
+                    'name_bn'        => ['name_bn'] ?? '',
+                    'center'         => 'universal-lab',
+                    'category'       => ['category'] ?? 'Developer',
+                    'icon'           => 'ShieldCheck',
+                    'short_desc'     => ['description'] ?? '',
+                    'processor_type' => 'client',
+                    'keywords'       => array( , strtolower( ['name'] ?? '' ), strtolower( ['category'] ?? '' ) ),
+                    'schema_type'    => 'WebApplication',
+                    'version'        => '3.0.0'
+                );
+            }
+        }
+
+        // Merge any dynamic tools stored in database (->prefix . 'custom_tools')
+         = self::get_database_custom_tools();
+        foreach (  as  ) {
+            [ ['id'] ] = ;
+        }
+
+        self:: = ;
+        return self::;
     }
 
-    /**
-     * Search Tools with Intent Matching & Keyword Expansion
-     */
     public static function search_tools( string $query, int $limit = 20 ): array {
         $all = self::get_all_tools();
         $query_clean = strtolower( trim( $query ) );

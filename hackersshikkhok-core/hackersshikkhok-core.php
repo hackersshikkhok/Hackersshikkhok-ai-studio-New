@@ -80,7 +80,7 @@ add_filter( 'plugin_row_meta', static function ( array $meta, string $plugin_fil
         . '<img src="' . $icon_url . '" alt="Hackers শিক্ষক Core Engine" style="width:64px;height:64px;border-radius:10px;border:1px solid #00f5d4;object-fit:cover;flex-shrink:0;" onerror="this.style.display=\'none\'" />'
         . '<div style="font-size:12px;line-height:1.5;">'
         . '<div style="color:#00f5d4;font-weight:700;font-size:13px;">🛡️ Hackers শিক্ষক Core Engine v' . esc_html( HS_CORE_VERSION ) . ' — Developed by Hackers শিক্ষক</div>'
-        . '<div style="color:#94a3b8;margin-top:2px;">28 Platform Centers · Universal Social/Notification/Messaging Engine · 18 AI Autopilots · 11 Universal Factories · 60+ Tools · Creator Studio · Device Lab · Games Center</div>'
+        . '<div style="color:#94a3b8;margin-top:2px;">28 Platform Centers · Universal Social/Notification/Messaging Engine · 18 AI Autopilots · 11 Universal Factories · 1,500+ Ultra-Pro Universal Tools Suite (Developer, VAPT, Cryptography, CSS & SEO) · Creator Studio · Device Lab · Games Center</div>'
         . '<div style="margin-top:6px;"><a href="' . esc_url( HS_OFFICIAL_SITE_URL ) . '" target="_blank" rel="noopener" style="color:#00f5d4;text-decoration:none;font-weight:600;">🌐 Website &amp; Download: https://hackersshikkhok.com</a> &nbsp;|&nbsp; <a href="https://youtube.com/@HackersShikkhok" target="_blank" rel="noopener" style="color:#a78bfa;text-decoration:none;font-weight:600;">▶️ YouTube: @HackersShikkhok</a></div>'
         . '</div></div>';
 

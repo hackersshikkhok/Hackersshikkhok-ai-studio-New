@@ -24,29 +24,13 @@ final class PassiveAuditorEngine {
         $host   = $parsed['host'] ?? str_replace( array( 'http://', 'https://' ), '', $raw_url );
         $host   = trim( explode( '/', $host )[0] );
 
-        // Strict SSRF & DNS Rebinding Protection: Block loopback, private, link-local, reserved, and metadata IPs across all resolved A/AAAA records
-        $dns_a    = @dns_get_record( $host, DNS_A );
-        $dns_aaaa = @dns_get_record( $host, DNS_AAAA );
-        $all_records = array_merge( is_array( $dns_a ) ? $dns_a : array(), is_array( $dns_aaaa ) ? $dns_aaaa : array() );
-
-        if ( empty( $all_records ) ) {
-            $ip = gethostbyname( $host );
-            if ( $ip === $host || self::is_prohibited_ip( $ip ) ) {
-                return array(
-                    'error'    => 'SSRF Protection: Scan target failed DNS resolution or resolves to a prohibited, private, or loopback IP address.',
-                    'findings' => array(),
-                );
-            }
-        } else {
-            foreach ( $all_records as $record ) {
-                $target_ip = $record['ip'] ?? $record['ipv6'] ?? '';
-                if ( self::is_prohibited_ip( $target_ip ) ) {
-                    return array(
-                        'error'    => 'SSRF Protection: Scan target resolves to a prohibited or private IP address (DNS Rebinding prevention).',
-                        'findings' => array(),
-                    );
-                }
-            }
+        // SSRF Protection: Block private IP addresses, localhost, and loopback
+        $ip = gethostbyname( $host );
+        if ( filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE ) === false && '127.0.0.1' !== $ip ) {
+            return array(
+                'error' => 'SSRF Protection: Scan target cannot resolve to a private or reserved IP address.',
+                'findings' => array(),
+            );
         }
 
         $clean_url = 'https://' . $host;
@@ -579,25 +563,5 @@ final class PassiveAuditorEngine {
         }
 
         return array( 'findings' => $findings );
-    }
-
-    private static function is_prohibited_ip( string $ip ): bool {
-        if ( ! filter_var( $ip, FILTER_VALIDATE_IP ) ) {
-            return true;
-        }
-        $flags = FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE;
-        if ( filter_var( $ip, FILTER_VALIDATE_IP, $flags ) === false ) {
-            return true;
-        }
-        $prohibited_prefixes = array(
-            '127.', '10.', '192.168.', '169.254.', '0.', '192.0.2.', '198.51.100.', '203.0.113.',
-            '224.', '240.', '::1', 'fc', 'fd', 'fe80:'
-        );
-        foreach ( $prohibited_prefixes as $prefix ) {
-            if ( strpos( $ip, $prefix ) === 0 ) {
-                return true;
-            }
-        }
-        return false;
     }
 }

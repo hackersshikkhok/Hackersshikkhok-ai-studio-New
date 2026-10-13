@@ -87,6 +87,11 @@ final class RestController {
             'permission_callback' => static fn() => current_user_can( 'manage_options' ),
         ) );
 
+        register_rest_route( 'hackersshikkhok/v1', '/tools/banner/(?P<slug>[a-zA-Z0-9_-]+)', array(
+            'methods'             => WP_REST_Server::READABLE,
+            'callback'            => array( self::class, 'get_tool_banner_svg' ),
+            'permission_callback' => '__return_true',
+        ) );
         register_rest_route( 'hackersshikkhok/v1', '/tools/health', array(
             'methods'             => WP_REST_Server::READABLE,
             'callback'            => array( self::class, 'get_tools_health' ),
@@ -227,5 +232,70 @@ final class RestController {
                 array( 'migration_id' => '004_wallet_ledger_atomic_tables', 'status' => 'applied' ),
             ),
         ), 200 );
+    }
+    public static function get_tool_banner_svg( WP_REST_Request $request ) {
+        $slug = sanitize_key( (string) $request->get_param( 'slug' ) );
+        $all = \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_all_tools();
+        $tool = $all[$slug] ?? null;
+        if ( ! $tool ) {
+            $tool = array(
+                'name'               => ucfirst( str_replace( '-', ' ', $slug ) ),
+                'name_bn'            => 'প্রো টুল',
+                'category'           => 'Developer',
+                'description'        => 'Free client-side developer and cybersecurity tool.',
+                'input_formats'      => 'Text',
+                'output_formats'     => 'Text',
+                'processing_location'=> 'Browser Client Sandbox',
+            );
+        }
+
+        $title_bn = esc_html( $tool['name_bn'] ?? $tool['name'] );
+        $title_en = esc_html( $tool['name'] );
+        $desc     = esc_html( substr( (string) ( $tool['description'] ?? '' ), 0, 100 ) );
+        $input    = esc_html( $tool['input_formats'] ?? 'Payload' );
+        $output   = esc_html( $tool['output_formats'] ?? 'Result' );
+        $loc      = esc_html( $tool['processing_location'] ?? 'Browser Sandbox' );
+
+        $svg = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" .
+'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" style="background:#050811; font-family: ui-monospace, monospace;">' . "\n" .
+'  <defs>' . "\n" .
+'    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">' . "\n" .
+'      <stop offset="0%" stop-color="#050811" />' . "\n" .
+'      <stop offset="50%" stop-color="#0b1120" />' . "\n" .
+'      <stop offset="100%" stop-color="#050811" />' . "\n" .
+'    </linearGradient>' . "\n" .
+'    <filter id="glowRed" x="-20%" y="-20%" width="140%" height="140%">' . "\n" .
+'      <feGaussianBlur stdDeviation="6" result="blur" />' . "\n" .
+'      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>' . "\n" .
+'    </filter>' . "\n" .
+'    <marker id="redArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">' . "\n" .
+'      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ff3366" />' . "\n" .
+'    </marker>' . "\n" .
+'  </defs>' . "\n" .
+'  <rect width="1200" height="630" fill="url(#bgGrad)" />' . "\n" .
+'  <rect x="25" y="25" width="1150" height="580" rx="16" fill="none" stroke="#00f5d4" stroke-width="1.5" stroke-opacity="0.3" />' . "\n" .
+'  <text x="60" y="80" fill="#00f5d4" font-size="14" font-weight="bold">HACKERS শিক্ষক LAB · 2,024 PRO TOOLS</text>' . "\n" .
+'  <text x="1140" y="80" fill="#ff3366" font-size="12" font-weight="bold" text-anchor="end">100% PRIVATE CLIENT EXECUTION</text>' . "\n" .
+'  <text x="60" y="140" fill="#ffffff" font-size="34" font-weight="bold">' . $title_bn . '</text>' . "\n" .
+'  <text x="60" y="175" fill="#00f5d4" font-size="20">' . $title_en . ' · Live Engine</text>' . "\n" .
+'  <text x="60" y="205" fill="#94a3b8" font-size="14">' . $desc . '...</text>' . "\n" .
+'  <g transform="translate(60, 260)">' . "\n" .
+'    <rect x="0" y="0" width="280" height="180" rx="12" fill="#0b1120" stroke="#334155" stroke-width="1.5" />' . "\n" .
+'    <text x="20" y="40" fill="#ff3366" font-size="12" font-weight="bold">STEP 1: INPUT (' . $input . ')</text>' . "\n" .
+'    <path d="M 290 90 L 395 90" stroke="#ff3366" stroke-width="4" marker-end="url(#redArrow)" filter="url(#glowRed)" />' . "\n" .
+'    <rect x="410" y="0" width="310" height="180" rx="12" fill="#071322" stroke="#00f5d4" stroke-width="2" />' . "\n" .
+'    <text x="430" y="40" fill="#00f5d4" font-size="12" font-weight="bold">STEP 2: ' . $loc . '</text>' . "\n" .
+'    <path d="M 730 90 L 835 90" stroke="#ff3366" stroke-width="4" marker-end="url(#redArrow)" filter="url(#glowRed)" />' . "\n" .
+'    <rect x="850" y="0" width="230" height="180" rx="12" fill="#0b1120" stroke="#334155" stroke-width="1.5" />' . "\n" .
+'    <text x="870" y="40" fill="#10b981" font-size="12" font-weight="bold">STEP 3: OUTPUT (' . $output . ')</text>' . "\n" .
+'  </g>' . "\n" .
+'  <text x="60" y="550" fill="#cbd5e1" font-size="12">Google AdSense Safe · 100% Client WebWorker · Rating: 4.9 ★</text>' . "\n" .
+'  <text x="1140" y="550" fill="#00f5d4" font-size="13" font-weight="bold" text-anchor="end">HackersShikkhok.com</text>' . "\n" .
+'</svg>';
+
+        header( 'Content-Type: image/svg+xml; charset=utf-8' );
+        header( 'Cache-Control: public, max-age=86400' );
+        echo $svg;
+        exit;
     }
 }

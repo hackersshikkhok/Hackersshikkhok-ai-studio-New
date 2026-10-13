@@ -12,6 +12,8 @@ use HackersShikkhok\Core\Tools\ToolsEngine;
 use HackersShikkhok\Core\Tools\CssRgbLab;
 use HackersShikkhok\Core\Tools\AdvancedWebToolsSuite;
 use HackersShikkhok\Core\AI\UniversalAutopilotEngine;
+use HackersShikkhok\Core\AI\ApiRotationManager;
+use HackersShikkhok\Core\AI\BotEcosystem;
 use HackersShikkhok\Core\AI\AiTutorEngine;
 use HackersShikkhok\Core\SEO\SeoEngine;
 use HackersShikkhok\Core\SEO\NativeSeoAndSitemapEngine;
@@ -77,6 +79,8 @@ final class Plugin {
         CssRgbLab::register();
         AdvancedWebToolsSuite::register();
         UniversalAutopilotEngine::register();
+        ApiRotationManager::register();
+        BotEcosystem::register();
         UniversalInteractionEngine::register();
         PostPayCounterEngine::register();
         TranslationLedger::register();

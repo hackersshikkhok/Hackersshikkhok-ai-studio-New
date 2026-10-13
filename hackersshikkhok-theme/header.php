@@ -31,7 +31,22 @@ declare(strict_types=1);
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hs-logo-link">Hackers শিক্ষক · hackersshikkhok.com</a>
     </div>
     <nav class="hs-center-nav" aria-label="Primary Navigation">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => false ) ); ?>
+        <?php
+        if ( has_nav_menu( 'primary' ) ) {
+            wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) );
+        } else {
+            ?>
+            <ul class="hs-default-nav" style="display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center; font-size: 13px;">
+                <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color: #cbd5e1; text-decoration: none;">হোম</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/academy/' ) ); ?>" style="color: #cbd5e1; text-decoration: none;">🎓 একাডেমি</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/platform-center/' ) ); ?>" style="color: #00f5d4; font-weight: 700; text-decoration: none;">🚀 প্ল্যাটফর্ম সেন্টার</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/app-maker/' ) ); ?>" style="color: #10b981; font-weight: 700; text-decoration: none;">📱 অ্যাপ মেকার</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/tools/' ) ); ?>" style="color: #cbd5e1; text-decoration: none;">⚡ ৫২০+ টুলস</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/cyber-command/' ) ); ?>" style="color: #cbd5e1; text-decoration: none;">💻 সাইবার কমান্ড</a></li>
+            </ul>
+            <?php
+        }
+        ?>
     </nav>
     <div class="hs-auth-actions">
         <a href="<?php echo esc_url( wp_registration_url() ); ?>" class="hs-btn-register">রেজিস্ট্রেশন</a>

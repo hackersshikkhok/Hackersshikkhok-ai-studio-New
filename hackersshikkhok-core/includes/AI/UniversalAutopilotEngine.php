@@ -150,52 +150,23 @@ final class UniversalAutopilotEngine {
     }
 
     /**
-     * Real HTTP API Dispatcher with fallback hierarchy
+     * Real HTTP API Dispatcher with Multi-Provider Key Rotation & Model Cascade Failover
      */
     public static function request_ai_generation( string $topic, string $center_slug ): array {
-        $gemini_key = (string) get_option( 'hs_gemini_api_key', defined( 'GEMINI_API_KEY' ) ? GEMINI_API_KEY : '' );
-        $claude_key = (string) get_option( 'hs_anthropic_api_key', defined( 'ANTHROPIC_API_KEY' ) ? ANTHROPIC_API_KEY : '' );
-        $openai_key = (string) get_option( 'hs_openai_api_key', defined( 'OPENAI_API_KEY' ) ? OPENAI_API_KEY : '' );
-
         $prompt = self::build_structured_prompt( $topic, $center_slug );
 
-        // 1. Try Gemini API
-        if ( ! empty( $gemini_key ) ) {
-            $gemini_res = self::call_gemini_api( $gemini_key, $prompt );
-            if ( ! empty( $gemini_res ) ) {
+        if ( class_exists( __NAMESPACE__ . '\\ApiRotationManager' ) ) {
+            $dispatch = ApiRotationManager::execute_with_failover( $prompt );
+            if ( ! empty( $dispatch['content'] ) ) {
                 return array(
-                    'content'  => $gemini_res,
-                    'provider' => 'Google Gemini',
-                    'model'    => 'gemini-2.5-flash',
+                    'content'  => $dispatch['content'],
+                    'provider' => $dispatch['provider'],
+                    'model'    => $dispatch['model'],
                 );
             }
         }
 
-        // 2. Try Anthropic Claude API
-        if ( ! empty( $claude_key ) ) {
-            $claude_res = self::call_claude_api( $claude_key, $prompt );
-            if ( ! empty( $claude_res ) ) {
-                return array(
-                    'content'  => $claude_res,
-                    'provider' => 'Anthropic Claude',
-                    'model'    => 'claude-3-5-sonnet-20241022',
-                );
-            }
-        }
-
-        // 3. Try OpenAI API
-        if ( ! empty( $openai_key ) ) {
-            $openai_res = self::call_openai_api( $openai_key, $prompt );
-            if ( ! empty( $openai_res ) ) {
-                return array(
-                    'content'  => $openai_res,
-                    'provider' => 'OpenAI',
-                    'model'    => 'gpt-4o',
-                );
-            }
-        }
-
-        // 4. Deterministic Local Knowledge Engine (Deterministic Fallback when external network is offline)
+        // Deterministic Local Knowledge Engine fallback
         return array(
             'content'  => self::generate_deterministic_technical_blueprint( $topic, $center_slug ),
             'provider' => 'HackersShikkhok-Local-Inference',
