@@ -2,11 +2,12 @@
 /**
  * Hackers শিক্ষক — Multilingual XML Sitemap Index & Child Engine
  *
- * Implements Google Search Console compliant sitemap structure:
+ * Implements Google Search Console compliant sitemap structure with Google Image Sitemap protocol:
  * - /sitemap_index.xml (Master index)
  * - /sitemap-bn.xml (Bengali articles, courses & tools)
  * - /sitemap-en.xml (English articles, courses & tools)
- * - /sitemap-tools.xml (Dedicated free developer & security tools)
+ * - /sitemap-tools.xml (All 2,024+ free developer & security tools with dynamic vector SVG images)
+ * - /sitemap-courses.xml (Cybersecurity Academy courses & CTF labs with SVG banners)
  * - /sitemap-cve.xml (Curated security advisories & CVE analyses)
  *
  * Excludes drafts, private posts, and non-canonical duplicates.
@@ -19,6 +20,7 @@ declare(strict_types=1);
 namespace HackersShikkhok\Core\SEO;
 
 use HackersShikkhok\Core\Localization\TranslationLedger;
+use HackersShikkhok\Core\Tools\UniversalToolRegistry;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -57,6 +59,8 @@ final class MultilingualSitemapEngine {
             self::render_language_sitemap( $type );
         } elseif ( 'tools' === $type ) {
             self::render_tools_sitemap();
+        } elseif ( 'courses' === $type ) {
+            self::render_courses_sitemap();
         } elseif ( 'cve' === $type ) {
             self::render_cve_sitemap();
         } else {
@@ -70,10 +74,11 @@ final class MultilingualSitemapEngine {
         echo '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
         
         $sitemaps = array(
-            'bn'    => current_time( 'c' ),
-            'en'    => current_time( 'c' ),
-            'tools' => current_time( 'c' ),
-            'cve'   => current_time( 'c' ),
+            'bn'      => current_time( 'c' ),
+            'en'      => current_time( 'c' ),
+            'tools'   => current_time( 'c' ),
+            'courses' => current_time( 'c' ),
+            'cve'     => current_time( 'c' ),
         );
 
         foreach ( $sitemaps as $slug => $lastmod ) {
@@ -88,7 +93,7 @@ final class MultilingualSitemapEngine {
 
     private static function render_language_sitemap( string $lang ): void {
         echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' . "\n";
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
 
         // Query only published, publicly queryable posts
         $args = array(
@@ -101,14 +106,15 @@ final class MultilingualSitemapEngine {
         );
 
         $query = new \WP_Query( $args );
+
         if ( $query->have_posts() ) {
             while ( $query->have_posts() ) {
                 $query->the_post();
                 $post_id   = get_the_ID();
                 $permalink = get_permalink();
                 $lastmod   = get_the_modified_date( 'c' );
+                $title     = get_the_title();
 
-                // Prefix English URLs with /en/ if language is en
                 if ( 'en' === $lang ) {
                     $permalink = str_replace( home_url( '/' ), home_url( '/en/' ), $permalink );
                 }
@@ -118,6 +124,18 @@ final class MultilingualSitemapEngine {
                 echo '    <lastmod>' . esc_html( $lastmod ) . "</lastmod>\n";
                 echo "    <changefreq>weekly</changefreq>\n";
                 echo "    <priority>0.8</priority>\n";
+
+                $featured_image = get_the_post_thumbnail_url( $post_id, 'full' );
+                if ( ! $featured_image && get_post_type() === 'tools' ) {
+                    $featured_image = home_url( '/wp-json/hackersshikkhok/v1/tools/banner/' . sanitize_key( get_post_field( 'post_name', $post_id ) ) );
+                }
+                if ( $featured_image ) {
+                    echo "    <image:image>\n";
+                    echo '      <image:loc>' . esc_url( $featured_image ) . "</image:loc>\n";
+                    echo '      <image:title>' . esc_html( $title ) . "</image:title>\n";
+                    echo "    </image:image>\n";
+                }
+
                 echo "  </url>\n";
             }
             wp_reset_postdata();
@@ -128,12 +146,15 @@ final class MultilingualSitemapEngine {
 
     private static function render_tools_sitemap(): void {
         echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
 
+        $emitted_slugs = array();
+
+        // 1. Output published WordPress CPT tools
         $args = array(
             'post_type'      => 'tools',
             'post_status'    => 'publish',
-            'posts_per_page' => 200,
+            'posts_per_page' => 500,
             'orderby'        => 'title',
             'order'          => 'ASC',
             'no_found_rows'  => true,
@@ -143,11 +164,100 @@ final class MultilingualSitemapEngine {
         if ( $query->have_posts() ) {
             while ( $query->have_posts() ) {
                 $query->the_post();
+                $slug = get_post_field( 'post_name', get_the_ID() );
+                $emitted_slugs[ $slug ] = true;
+
+                $svg_banner = home_url( '/wp-json/hackersshikkhok/v1/tools/banner/' . sanitize_key( $slug ) );
+                $tool_title = get_the_title();
+
                 echo "  <url>\n";
                 echo '    <loc>' . esc_url( get_permalink() ) . "</loc>\n";
                 echo '    <lastmod>' . esc_html( get_the_modified_date( 'c' ) ) . "</lastmod>\n";
                 echo "    <changefreq>daily</changefreq>\n";
                 echo "    <priority>0.9</priority>\n";
+                echo "    <image:image>\n";
+                echo '      <image:loc>' . esc_url( $svg_banner ) . "</image:loc>\n";
+                echo '      <image:title>' . esc_html( $tool_title ) . " — Hackers শিক্ষক Free Cyber Security Tool</image:title>\n";
+                echo "      <image:caption>Interactive Vector Architecture Diagram &amp; 100% Client-Side Privacy</image:caption>\n";
+                echo "    </image:image>\n";
+                echo "  </url>\n";
+            }
+            wp_reset_postdata();
+        }
+
+        // 2. Output Registry-based Virtual Tools
+        if ( class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ) {
+            $all_tools = UniversalToolRegistry::get_all_tools();
+            $now_iso = current_time( 'c' );
+            $site_url = home_url( '/' );
+
+            $count = 0;
+            foreach ( $all_tools as $slug => $tool ) {
+                if ( isset( $emitted_slugs[ $slug ] ) ) {
+                    continue;
+                }
+                if ( $count > 1500 ) {
+                    break;
+                }
+                $count++;
+
+                $tool_url   = trailingslashit( $site_url . 'tools/' . sanitize_key( $slug ) );
+                $tool_name  = $tool['name'] ?? ucfirst( str_replace( '-', ' ', $slug ) );
+                $svg_banner = home_url( '/wp-json/hackersshikkhok/v1/tools/banner/' . sanitize_key( $slug ) );
+
+                echo "  <url>\n";
+                echo '    <loc>' . esc_url( $tool_url ) . "</loc>\n";
+                echo '    <lastmod>' . esc_html( $now_iso ) . "</lastmod>\n";
+                echo "    <changefreq>daily</changefreq>\n";
+                echo "    <priority>0.9</priority>\n";
+                echo "    <image:image>\n";
+                echo '      <image:loc>' . esc_url( $svg_banner ) . "</image:loc>\n";
+                echo '      <image:title>' . esc_html( $tool_name ) . " — Free Online Developer Tool</image:title>\n";
+                echo "      <image:caption>Client-Side WebWorker Execution &amp; Instant Vector Architecture Diagram</image:caption>\n";
+                echo "    </image:image>\n";
+                echo "  </url>\n";
+            }
+        }
+
+        echo '</urlset>';
+    }
+
+    private static function render_courses_sitemap(): void {
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
+
+        $args = array(
+            'post_type'      => 'hs_course',
+            'post_status'    => 'publish',
+            'posts_per_page' => 200,
+            'orderby'        => 'modified',
+            'order'          => 'DESC',
+            'no_found_rows'  => true,
+        );
+
+        $query = new \WP_Query( $args );
+        if ( $query->have_posts() ) {
+            while ( $query->have_posts() ) {
+                $query->the_post();
+                $post_id   = get_the_ID();
+                $permalink = get_permalink();
+                $lastmod   = get_the_modified_date( 'c' );
+                $title     = get_the_title();
+                $thumbnail = get_the_post_thumbnail_url( $post_id, 'full' );
+
+                echo "  <url>\n";
+                echo '    <loc>' . esc_url( $permalink ) . "</loc>\n";
+                echo '    <lastmod>' . esc_html( $lastmod ) . "</lastmod>\n";
+                echo "    <changefreq>weekly</changefreq>\n";
+                echo "    <priority>0.95</priority>\n";
+
+                if ( $thumbnail ) {
+                    echo "    <image:image>\n";
+                    echo '      <image:loc>' . esc_url( $thumbnail ) . "</image:loc>\n";
+                    echo '      <image:title>' . esc_html( $title ) . " — Free Cybersecurity Course</image:title>\n";
+                    echo "    </image:image>\n";
+                }
+
                 echo "  </url>\n";
             }
             wp_reset_postdata();

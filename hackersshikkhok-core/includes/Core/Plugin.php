@@ -66,62 +66,73 @@ final class Plugin {
         return self::$instance;
     }
 
+    private static function safe_boot( string $name, callable $callback ): void {
+        try {
+            call_user_func( $callback );
+        } catch ( \Throwable $e ) {
+            DiagnosticInspector::log_system_error( $name, $e );
+        }
+    }
+
     public function boot(): void {
-        SecurityManager::register();
-        SecurityAwarenessDefenseLab::register();
-        SecuritySaaSEngine::register();
-        PostTypeRegistrar::register();
-        TaxonomyRegistrar::register();
-        CenterManager::register();
-        CodeLibrary::register();
-        LiveDemo::register();
-        ToolsEngine::register();
-        CssRgbLab::register();
-        AdvancedWebToolsSuite::register();
-        UniversalAutopilotEngine::register();
-        ApiRotationManager::register();
-        BotEcosystem::register();
-        UniversalInteractionEngine::register();
-        PostPayCounterEngine::register();
-        TranslationLedger::register();
-        SeoEngine::register();
-        NativeSeoAndSitemapEngine::register();
-        GlobalTechnicalSeoEngine::register();
-        MultilingualSitemapEngine::register();
-        SecurityIntelligenceEngine::register();
-        NativeGoogleAndAdsEngine::register();
-        NativeBrandedEmailEngine::register();
-        NativeBrandedAuthEngine::register();
-        NativeClassicEditorEngine::register();
-        CyberAcademyLmsEngine::register();
-        CourseContentImporter::register();
-        Course_Manager::register();
-        CTF_Engine::register();
-        SVG_Annotator::register();
-        Bulk_Course_Importer::register();
-        Theming_Engine::register();
-        Certificate_Engine::register();
-        Wallet_Economy::register();
-        Video_Stream_Shield::register();
-        Content_Protection_Lock::register();
-        Behavioral_Analytics_Engine::register();
-        Autopilot::register();
-        HardwareAndIotEngine::register();
-        EngineeringAndCncLab::register();
-        EliteTriPlatformExpansionSuite::register();
-        LabPeaksControllerStore::register();
-        GamificationAndChallenges::register();
-        BookmarksAndNotifications::register();
-        AiTutorEngine::register();
-        InternalLinker::register();
-        RestController::register();
-        UltimateHackersMasterEngine::register();
-        EliteGlobalPlatformEngine::register();
-        EcosystemControlCenter::register();
+        // Diagnostic Inspector & Error Logger must always boot first
+        DiagnosticInspector::register();
+
+        self::safe_boot( "SecurityManager", array( SecurityManager::class, "register" ) );
+        self::safe_boot( "SecurityAwarenessDefenseLab", array( SecurityAwarenessDefenseLab::class, "register" ) );
+        self::safe_boot( "SecuritySaaSEngine", array( SecuritySaaSEngine::class, "register" ) );
+        self::safe_boot( "PostTypeRegistrar", array( PostTypeRegistrar::class, "register" ) );
+        self::safe_boot( "TaxonomyRegistrar", array( TaxonomyRegistrar::class, "register" ) );
+        self::safe_boot( "CenterManager", array( CenterManager::class, "register" ) );
+        self::safe_boot( "CodeLibrary", array( CodeLibrary::class, "register" ) );
+        self::safe_boot( "LiveDemo", array( LiveDemo::class, "register" ) );
+        self::safe_boot( "ToolsEngine", array( ToolsEngine::class, "register" ) );
+        self::safe_boot( "CssRgbLab", array( CssRgbLab::class, "register" ) );
+        self::safe_boot( "AdvancedWebToolsSuite", array( AdvancedWebToolsSuite::class, "register" ) );
+        self::safe_boot( "UniversalAutopilotEngine", array( UniversalAutopilotEngine::class, "register" ) );
+        self::safe_boot( "ApiRotationManager", array( ApiRotationManager::class, "register" ) );
+        self::safe_boot( "BotEcosystem", array( BotEcosystem::class, "register" ) );
+        self::safe_boot( "UniversalInteractionEngine", array( UniversalInteractionEngine::class, "register" ) );
+        self::safe_boot( "PostPayCounterEngine", array( PostPayCounterEngine::class, "register" ) );
+        self::safe_boot( "TranslationLedger", array( TranslationLedger::class, "register" ) );
+        self::safe_boot( "SeoEngine", array( SeoEngine::class, "register" ) );
+        self::safe_boot( "NativeSeoAndSitemapEngine", array( NativeSeoAndSitemapEngine::class, "register" ) );
+        self::safe_boot( "GlobalTechnicalSeoEngine", array( GlobalTechnicalSeoEngine::class, "register" ) );
+        self::safe_boot( "MultilingualSitemapEngine", array( MultilingualSitemapEngine::class, "register" ) );
+        self::safe_boot( "SecurityIntelligenceEngine", array( SecurityIntelligenceEngine::class, "register" ) );
+        self::safe_boot( "NativeGoogleAndAdsEngine", array( NativeGoogleAndAdsEngine::class, "register" ) );
+        self::safe_boot( "NativeBrandedEmailEngine", array( NativeBrandedEmailEngine::class, "register" ) );
+        self::safe_boot( "NativeBrandedAuthEngine", array( NativeBrandedAuthEngine::class, "register" ) );
+        self::safe_boot( "NativeClassicEditorEngine", array( NativeClassicEditorEngine::class, "register" ) );
+        self::safe_boot( "CyberAcademyLmsEngine", array( CyberAcademyLmsEngine::class, "register" ) );
+        self::safe_boot( "CourseContentImporter", array( CourseContentImporter::class, "register" ) );
+        self::safe_boot( "Course_Manager", array( Course_Manager::class, "register" ) );
+        self::safe_boot( "CTF_Engine", array( CTF_Engine::class, "register" ) );
+        self::safe_boot( "SVG_Annotator", array( SVG_Annotator::class, "register" ) );
+        self::safe_boot( "Bulk_Course_Importer", array( Bulk_Course_Importer::class, "register" ) );
+        self::safe_boot( "Theming_Engine", array( Theming_Engine::class, "register" ) );
+        self::safe_boot( "Certificate_Engine", array( Certificate_Engine::class, "register" ) );
+        self::safe_boot( "Wallet_Economy", array( Wallet_Economy::class, "register" ) );
+        self::safe_boot( "Video_Stream_Shield", array( Video_Stream_Shield::class, "register" ) );
+        self::safe_boot( "Content_Protection_Lock", array( Content_Protection_Lock::class, "register" ) );
+        self::safe_boot( "Behavioral_Analytics_Engine", array( Behavioral_Analytics_Engine::class, "register" ) );
+        self::safe_boot( "Autopilot", array( Autopilot::class, "register" ) );
+        self::safe_boot( "HardwareAndIotEngine", array( HardwareAndIotEngine::class, "register" ) );
+        self::safe_boot( "EngineeringAndCncLab", array( EngineeringAndCncLab::class, "register" ) );
+        self::safe_boot( "EliteTriPlatformExpansionSuite", array( EliteTriPlatformExpansionSuite::class, "register" ) );
+        self::safe_boot( "LabPeaksControllerStore", array( LabPeaksControllerStore::class, "register" ) );
+        self::safe_boot( "GamificationAndChallenges", array( GamificationAndChallenges::class, "register" ) );
+        self::safe_boot( "BookmarksAndNotifications", array( BookmarksAndNotifications::class, "register" ) );
+        self::safe_boot( "AiTutorEngine", array( AiTutorEngine::class, "register" ) );
+        self::safe_boot( "InternalLinker", array( InternalLinker::class, "register" ) );
+        self::safe_boot( "RestController", array( RestController::class, "register" ) );
+        self::safe_boot( "UltimateHackersMasterEngine", array( UltimateHackersMasterEngine::class, "register" ) );
+        self::safe_boot( "EliteGlobalPlatformEngine", array( EliteGlobalPlatformEngine::class, "register" ) );
+        self::safe_boot( "EcosystemControlCenter", array( EcosystemControlCenter::class, "register" ) );
 
         if ( is_admin() ) {
-            ControlCenter::register();
-            PostPayCounterAdmin::register();
+            self::safe_boot( "ControlCenter", array( ControlCenter::class, "register" ) );
+            self::safe_boot( "PostPayCounterAdmin", array( PostPayCounterAdmin::class, "register" ) );
         }
     }
 }

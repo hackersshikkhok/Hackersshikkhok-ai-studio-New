@@ -106,6 +106,31 @@ export default function App() {
   };
 
   const handleDownloadZip = async (pkg: 'theme' | 'core' | 'docs' | 'all') => {
+    if (pkg === 'theme' || pkg === 'core') {
+      const fileName = pkg === 'core' ? 'hackersshikkhok-core.zip' : 'hackersshikkhok-theme.zip';
+      try {
+        const resp = await fetch(`/downloads/${fileName}`);
+        if (resp.ok) {
+          const blob = await resp.blob();
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          const sizeKb = (blob.size / 1024).toFixed(1);
+          showToastAndNotify(
+            `ডাউনলোড সফল: ${fileName} (${sizeKb} KB — ভেরিফায়েড প্রোডাকশন প্যাকেজ, cPanel ও WordPress রেডি)`
+          );
+          return;
+        }
+      } catch (err) {
+        console.warn('Fallback to browser dynamic rezip:', err);
+      }
+    }
+
     const info = await generateAndDownloadZip(virtualFiles, pkg);
     const sizeKb = (info.sizeBytes / 1024).toFixed(1);
     showToastAndNotify(

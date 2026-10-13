@@ -5,7 +5,7 @@
  * Description:       Hackers শিক্ষক (HackersShikkhok.com)-এর অফিসিয়াল মাস্টার কোর ইঞ্জিন প্লাগইন (v4.0.0)। এতে রয়েছে ২৮টি প্ল্যাটফর্ম সেন্টার, ইউনিভার্সাল সোশ্যাল ও ইন্টারেকশন ইঞ্জিন (Follow, Like, Favorite/Save, Share, Deep-linked Comments, Private Messaging, Block, Report, Deduplicated Notifications), আলাদা Points/Level/Badges ও Monetary Wallet Ledger, ১৮টি সেন্টার-ভিত্তিক AI অটো-পাইলট, ১১টি ইউনিভার্সাল ফ্যাক্টরি, Global Emergency Kill Switch, ১০টি Custom Post Types, ৮টি Custom Taxonomies, ২১টি কাস্টম ডাটাবেস টেবিল, ১৫টি CSS/RGB/Neon জেনারেটর, ৬০+ ডেভেলপার/মিডিয়া/PDF/সাইবার টুলস, ক্রিয়েটর স্টুডিও, ডিভাইস ল্যাব এবং গেমস সেন্টার। Developed by Hackers শিক্ষক — Official Website & Download: https://hackersshikkhok.com
  * Version:           4.0.0
  * Requires at least: 6.4
- * Requires PHP:      8.2
+ * Requires PHP:      8.0
  * Author:            Developed by Hackers শিক্ষক
  * Author URI:        https://hackersshikkhok.com
  * Update URI:        https://hackersshikkhok.com
@@ -103,7 +103,7 @@ add_filter( 'plugins_api', static function ( $result, string $action, object $ar
         'download_link' => HS_OFFICIAL_SITE_URL,
         'requires'      => '6.4',
         'tested'        => '6.7',
-        'requires_php'  => '8.2',
+        'requires_php'  => '8.0',
         'banners'       => array(
             'low'  => HS_CORE_URL . 'assets/images/banner-772x250.png',
             'high' => HS_CORE_URL . 'assets/images/banner-772x250.png',

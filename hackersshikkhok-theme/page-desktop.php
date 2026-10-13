@@ -8,7 +8,9 @@ declare(strict_types=1);
 
 get_header();
 
-$wallet = \HackersShikkhok\Core\Users\UserEcosystem::get_wallet_summary( get_current_user_id() );
+$wallet = class_exists( '\HackersShikkhok\Core\Users\UserEcosystem' )
+    ? \HackersShikkhok\Core\Users\UserEcosystem::get_wallet_summary( get_current_user_id() )
+    : array( 'balance' => 0, 'xp' => 0, 'rank' => 'Novice' );
 $rest_nonce = wp_create_nonce( 'wp_rest' );
 ?>
 

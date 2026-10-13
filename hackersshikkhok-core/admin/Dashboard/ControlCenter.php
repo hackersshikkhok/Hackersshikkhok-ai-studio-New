@@ -11,7 +11,7 @@ use HackersShikkhok\Core\AI\AutopilotRegistry;
 
 final class ControlCenter {
     public static function register(): void {
-        add_action( 'admin_menu', array( self::class, 'register_menus' ) );
+        add_action( 'admin_menu', array( self::class, 'register_menus' ), 5 );
     }
 
     public static function register_menus(): void {
