@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
- = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_centers() : array();
- = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_all_tools() : array();
- = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_tool_of_the_day() : null;
+$centers         = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_centers() : array();
+$all_tools       = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_all_tools() : array();
+$tool_of_the_day = class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistry' ) ? \HackersShikkhok\Core\Tools\UniversalToolRegistry::get_tool_of_the_day() : null;
 ?>
 
 <main id="primary" class="site-main hs-tools-super-platform min-h-screen bg-[#06080d] text-slate-100 pb-20">

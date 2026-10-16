@@ -58,9 +58,11 @@ if ( $courses_query->have_posts() ) {
 // Fallback to bundled course catalog package (400 full courses) if database has not yet been populated
 $package_active_course = null;
 if ( empty( $all_courses ) ) {
-    $pkg_path = defined( 'HACKERSSHIKKHOK_CORE_PATH' )
-        ? HACKERSSHIKKHOK_CORE_PATH . 'assets/data/full-courses-content-package.json'
-        : WP_PLUGIN_DIR . '/hackersshikkhok-core/assets/data/full-courses-content-package.json';
+    $pkg_path = defined( 'HS_CORE_PATH' )
+        ? HS_CORE_PATH . 'assets/data/full-courses-content-package.json'
+        : ( defined( 'HACKERSSHIKKHOK_CORE_PATH' )
+            ? HACKERSSHIKKHOK_CORE_PATH . 'assets/data/full-courses-content-package.json'
+            : WP_PLUGIN_DIR . '/hackersshikkhok-core/assets/data/full-courses-content-package.json' );
 
     if ( ! file_exists( $pkg_path ) ) {
         $fallback_pkg_path = get_template_directory() . '/../hackersshikkhok-core/assets/data/full-courses-content-package.json';

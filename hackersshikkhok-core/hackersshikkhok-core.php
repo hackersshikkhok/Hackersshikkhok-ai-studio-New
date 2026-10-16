@@ -30,6 +30,13 @@ define( 'HS_CORE_BASENAME', plugin_basename( __FILE__ ) );
 define( 'HS_OFFICIAL_SITE_URL', 'https://hackersshikkhok.com' );
 define( 'HS_OFFICIAL_BRAND', 'Hackers শিক্ষক' );
 
+if ( ! defined( 'HACKERSSHIKKHOK_CORE_PATH' ) ) {
+    define( 'HACKERSSHIKKHOK_CORE_PATH', HS_CORE_PATH );
+}
+if ( ! defined( 'HACKERSSHIKKHOK_CORE_URL' ) ) {
+    define( 'HACKERSSHIKKHOK_CORE_URL', HS_CORE_URL );
+}
+
 spl_autoload_register( static function ( string $class ): void {
     $prefix = 'HackersShikkhok\\Core\\';
     if ( strncmp( $prefix, $class, strlen( $prefix ) ) !== 0 ) {

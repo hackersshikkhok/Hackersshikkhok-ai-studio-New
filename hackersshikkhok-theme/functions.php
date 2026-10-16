@@ -27,11 +27,36 @@ add_action( 'after_setup_theme', static function (): void {
 
 add_action( 'wp_enqueue_scripts', static function (): void {
     wp_enqueue_style( 'hs-theme-style', get_stylesheet_uri(), array(), '4.0.0' );
-    wp_enqueue_style( 'hs-cyber-lms', get_template_directory_uri() . '/assets/css/cyber-lms.css', array(), '4.0.0' );
+    wp_enqueue_style( 'hs-theme-layout', get_template_directory_uri() . '/assets/css/theme.css', array( 'hs-theme-style' ), '4.0.0' );
+    wp_enqueue_style( 'hs-cyber-lms', get_template_directory_uri() . '/assets/css/cyber-lms.css', array( 'hs-theme-layout' ), '4.0.0' );
+
+    if ( is_page_template( 'page-cyber-command.php' ) || is_page( 'cyber-command' ) ) {
+        wp_enqueue_style( 'hs-cyber-command', get_template_directory_uri() . '/assets/css/cyber-command.css', array( 'hs-theme-layout' ), '4.0.0' );
+        wp_enqueue_script( 'hs-cyber-command-js', get_template_directory_uri() . '/assets/js/cyber-command.js', array(), '4.0.0', true );
+    }
+
     wp_enqueue_script( 'hs-theme-script', get_template_directory_uri() . '/assets/js/theme.js', array(), '4.0.0', true );
     wp_enqueue_script( 'hs-ui-script', get_template_directory_uri() . '/assets/js/hs-ui.js', array(), '4.0.0', true );
     wp_enqueue_script( 'hs-theming-engine', get_template_directory_uri() . '/assets/js/theming-engine.js', array(), '4.0.0', true );
     wp_enqueue_script( 'hs-terminal-engine', get_template_directory_uri() . '/assets/js/terminal-engine.js', array(), '4.0.0', true );
+
+    $payload = array(
+        'ajax_url'           => admin_url( 'admin-ajax.php' ),
+        'rest_url'           => esc_url_raw( rest_url( 'hackersshikkhok/v1/' ) ),
+        'rest_nonce'         => wp_create_nonce( 'wp_rest' ),
+        'site_url'           => home_url( '/' ),
+        'theme_url'          => get_template_directory_uri(),
+        'is_user_logged_in'  => is_user_logged_in(),
+        'current_user_id'    => get_current_user_id(),
+        'official_brand'     => 'Hackers শিক্ষক',
+        'official_site_url'  => 'https://hackersshikkhok.com',
+    );
+
+    wp_localize_script( 'hs-terminal-engine', 'hsTerminalData', $payload );
+    wp_localize_script( 'hs-theme-script', 'hsThemeData', $payload );
+    if ( wp_script_is( 'hs-cyber-command-js', 'enqueued' ) ) {
+        wp_localize_script( 'hs-cyber-command-js', 'hsCommandData', $payload );
+    }
 } );
 
 add_action( 'admin_notices', static function (): void {

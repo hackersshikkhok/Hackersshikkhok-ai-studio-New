@@ -6862,22 +6862,22 @@ final class UniversalToolRegistry {
         // Merge any dynamic tools stored in database ($wpdb->prefix . 'custom_tools')
         // Merge 500 Extra Pro Tools Suite
         if ( class_exists( '\HackersShikkhok\Core\Tools\UniversalToolRegistryExtra' ) ) {
-             = UniversalToolRegistryExtra::get_extra_tools();
-            foreach (  as  ) {
-                 = ['slug'] ?? (['id'] ?? '');
-                if ( ! empty(  ) ) {
-                    [  ] = array(
-                        'id'             => ,
-                        'name'           => ['name'] ?? '',
-                        'name_bn'        => ['name_bn'] ?? '',
+            $extra_tools = UniversalToolRegistryExtra::get_extra_tools();
+            foreach ( $extra_tools as $xt ) {
+                $xt_slug = $xt['slug'] ?? ( $xt['id'] ?? '' );
+                if ( ! empty( $xt_slug ) ) {
+                    $tools[ $xt_slug ] = array(
+                        'id'             => $xt_slug,
+                        'name'           => $xt['name'] ?? '',
+                        'name_bn'        => $xt['name_bn'] ?? '',
                         'center'         => 'universal-lab',
-                        'category'       => ['category'] ?? 'Developer',
+                        'category'       => $xt['category'] ?? 'Developer',
                         'icon'           => 'Wrench',
-                        'short_desc'     => ['description'] ?? '',
+                        'short_desc'     => $xt['description'] ?? '',
                         'processor_type' => 'client',
-                        'keywords'       => array( , strtolower( ['name'] ?? '' ), strtolower( ['category'] ?? '' ) ),
+                        'keywords'       => array( $xt_slug, strtolower( $xt['name'] ?? '' ), strtolower( $xt['category'] ?? '' ) ),
                         'schema_type'    => 'WebApplication',
-                        'version'        => '2.0.0'
+                        'version'        => '2.0.0',
                     );
                 }
             }
@@ -6885,22 +6885,22 @@ final class UniversalToolRegistry {
 
         // Merge 1,000 Ultra-Pro Universal Tools Suite
         if ( class_exists( '\HackersShikkhok\Core\Tools\Master1000ToolsRegistry' ) ) {
-             = Master1000ToolsRegistry::get_1000_tools();
-            foreach (  as  ) {
-                 = ['slug'] ?? (['id'] ?? '');
-                if ( ! empty(  ) ) {
-                    [  ] = array(
-                        'id'             => ,
-                        'name'           => ['name'] ?? '',
-                        'name_bn'        => ['name_bn'] ?? '',
+            $m_tools = Master1000ToolsRegistry::get_1000_tools();
+            foreach ( $m_tools as $mt ) {
+                $mt_slug = $mt['slug'] ?? ( $mt['id'] ?? '' );
+                if ( ! empty( $mt_slug ) ) {
+                    $tools[ $mt_slug ] = array(
+                        'id'             => $mt_slug,
+                        'name'           => $mt['name'] ?? '',
+                        'name_bn'        => $mt['name_bn'] ?? '',
                         'center'         => 'universal-lab',
-                        'category'       => ['category'] ?? 'Cyber Defensive',
+                        'category'       => $mt['category'] ?? 'Cyber Defensive',
                         'icon'           => 'Wrench',
-                        'short_desc'     => ['description'] ?? '',
+                        'short_desc'     => $mt['description'] ?? '',
                         'processor_type' => 'client',
-                        'keywords'       => array( , strtolower( ['name'] ?? '' ), strtolower( ['category'] ?? '' ) ),
+                        'keywords'       => array( $mt_slug, strtolower( $mt['name'] ?? '' ), strtolower( $mt['category'] ?? '' ) ),
                         'schema_type'    => 'WebApplication',
-                        'version'        => '2.5.0'
+                        'version'        => '2.5.0',
                     );
                 }
             }
@@ -6908,32 +6908,34 @@ final class UniversalToolRegistry {
 
         // Merge Next-Gen 498 Ultra-Pro Tools Suite (Completing 2,024 Total Tools)
         if ( class_exists( '\HackersShikkhok\Core\Tools\NextGen498ToolsRegistry' ) ) {
-             = NextGen498ToolsRegistry::get_tools();
-            foreach (  as  =>  ) {
-                [  ] = array(
-                    'id'             => ,
-                    'name'           => ['name'] ?? '',
-                    'name_bn'        => ['name_bn'] ?? '',
+            $ng_tools = NextGen498ToolsRegistry::get_tools();
+            foreach ( $ng_tools as $ng_key => $ng_val ) {
+                $tools[ $ng_key ] = array(
+                    'id'             => $ng_key,
+                    'name'           => $ng_val['name'] ?? '',
+                    'name_bn'        => $ng_val['name_bn'] ?? '',
                     'center'         => 'universal-lab',
-                    'category'       => ['category'] ?? 'Developer',
+                    'category'       => $ng_val['category'] ?? 'Developer',
                     'icon'           => 'ShieldCheck',
-                    'short_desc'     => ['description'] ?? '',
+                    'short_desc'     => $ng_val['description'] ?? '',
                     'processor_type' => 'client',
-                    'keywords'       => array( , strtolower( ['name'] ?? '' ), strtolower( ['category'] ?? '' ) ),
+                    'keywords'       => array( $ng_key, strtolower( $ng_val['name'] ?? '' ), strtolower( $ng_val['category'] ?? '' ) ),
                     'schema_type'    => 'WebApplication',
-                    'version'        => '3.0.0'
+                    'version'        => '3.0.0',
                 );
             }
         }
 
-        // Merge any dynamic tools stored in database (->prefix . 'custom_tools')
-         = self::get_database_custom_tools();
-        foreach (  as  ) {
-            [ ['id'] ] = ;
+        // Merge any dynamic tools stored in database ($wpdb->prefix . 'custom_tools')
+        $db_tools = self::get_database_custom_tools();
+        foreach ( $db_tools as $dbt ) {
+            if ( ! empty( $dbt['id'] ) ) {
+                $tools[ $dbt['id'] ] = $dbt;
+            }
         }
 
-        self:: = ;
-        return self::;
+        self::$cached_catalog = $tools;
+        return self::$cached_catalog;
     }
 
     public static function search_tools( string $query, int $limit = 20 ): array {
