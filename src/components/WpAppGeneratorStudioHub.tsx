@@ -36,7 +36,7 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
     slug: 'hackers-shikkhok-cyber-hub',
     category: 'web-to-app',
     url: 'https://hackersshikkhok.com',
-    appName: 'Hackers শিক্ষক Cyber Hub (Android App)',
+    appName: 'HackersShikkhok Cyber Hub (Android App)',
     packageName: 'com.hackersshikkhok.hub',
     themeColor: '#00f5d4',
     iconName: 'Shield',
@@ -44,13 +44,13 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
     createdAt: '2026-10-10 20:30',
     downloadsCount: 1420,
     rating: 4.9,
-    description: 'Official Android wrapper app for HackersShikkhok.com featuring instant offline CTF access, 520+ developer tools, and real-time terminal simulation. Optimized for "ওয়েবসাইট অ্যাপ মেক" search.',
+    description: 'Official Android wrapper app for HackersShikkhok.com featuring instant offline CTF access, 520+ developer tools, and real-time terminal simulation. Optimized for "Security & Development Protocol" search.',
     manifestCode: `<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hackersshikkhok.hub">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <application android:label="Hackers শিক্ষক" android:icon="@mipmap/ic_launcher" android:theme="@style/Theme.AppCompat.NoActionBar">
+    <application android:label="HackersShikkhok" android:icon="@mipmap/ic_launcher" android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +61,7 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
 </manifest>`,
     apkSize: '4.8 MB',
     status: 'Published',
-    tags: ['ওয়েবসাইট অ্যাপ মেক', 'ওয়ার্ডপ্রেস ওয়েবসাইট অ্যাপ্লিকেশন মেক', 'Android App', 'Cyber Hub']
+    tags: ['  ', '   ', 'Android App', 'Cyber Hub']
   },
   {
     id: 'app-102',
@@ -76,7 +76,7 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
     createdAt: '2026-10-10 21:15',
     downloadsCount: 960,
     rating: 4.8,
-    description: 'ওয়ার্ডপ্রেস উকমার্স স্টোর থেকে এক ক্লিকে তৈরি অ্যান্ড্রয়েড অ্যাপ। পুশ নোটিফিকেশন ও অফলাইন কার্ট সুবিধা সহ।',
+    description: '        ।       ।',
     manifestCode: `<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hs.wpstore">
@@ -87,7 +87,7 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
 </manifest>`,
     apkSize: '4.2 MB',
     status: 'Published',
-    tags: ['ওয়ার্ডপ্রেস ওয়েবসাইট অ্যাপ্লিকেশন মেক', 'WooCommerce', 'Mobile Store']
+    tags: ['   ', 'WooCommerce', 'Mobile Store']
   },
   {
     id: 'app-103',
@@ -102,11 +102,11 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
     createdAt: '2026-10-10 18:40',
     downloadsCount: 2310,
     rating: 5.0,
-    description: 'হোলোগ্রাম ব্যাজ ও এনক্রিপ্টেড কিউআর কোড সহ সাইবার সিকিউরিটি স্টুডেন্ট আইডি কার্ড মেকার টেমপ্লেট।',
+    description: '       Cyber Security     ।',
     manifestCode: '{"type":"cyber_card","badge":"Level-3 Sentinel","qr":"https://hackersshikkhok.com/cert/789"}',
     apkSize: 'Vector SVG',
     status: 'Published',
-    tags: ['কার্ড মেক', 'Digital ID Card', 'Cyber Pass', 'QR Badge']
+    tags: [' ', 'Digital ID Card', 'Cyber Pass', 'QR Badge']
   },
   {
     id: 'app-104',
@@ -121,11 +121,11 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
     createdAt: '2026-10-10 17:20',
     downloadsCount: 1840,
     rating: 4.9,
-    description: 'ক্লিক করলে লাইভ কনফেটি সহ আনবক্স হওয়া সাইবার গিফট বক্স। ফ্রেন্ডদের কাছে লিংক শেয়ার করে সারপ্রাইজ পাঠানো যায়।',
+    description: '       Cyber  ।        ।',
     manifestCode: '{"type":"gift_box","secret":"CYBER_MASTER_2026","voucher":"HACKER50"}',
     apkSize: 'Web Link',
     status: 'Published',
-    tags: ['গিফট মেক', 'Gift Box', 'Surprise Voucher', 'Confetti']
+    tags: [' ', 'Gift Box', 'Surprise Voucher', 'Confetti']
   },
   {
     id: 'app-105',
@@ -140,11 +140,11 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
     createdAt: '2026-10-10 16:00',
     downloadsCount: 3120,
     rating: 4.9,
-    description: 'এইচটিএমএল৫ ক্যানভাস ভিত্তিক ফুল রেসপন্সিভ সাইবার স্নেক গেম। যেকোনো ওয়ার্ডপ্রেস বা স্ট্যাটিক সাইটে সহজে এমবেডযোগ্য।',
+    description: '     Cyber  ।       ।',
     manifestCode: '<canvas id="matrixSnake" width="400" height="400"></canvas>',
     apkSize: 'HTML5 Bundle',
     status: 'Published',
-    tags: ['গেম মেকিং', 'Mini Game', 'Canvas', 'HTML5 Game']
+    tags: [' ', 'Mini Game', 'Canvas', 'HTML5 Game']
   },
   {
     id: 'app-106',
@@ -159,11 +159,11 @@ const INITIAL_GENERATED_APPS: GeneratedAppItem[] = [
     createdAt: '2026-10-10 14:30',
     downloadsCount: 1530,
     rating: 4.8,
-    description: 'নিয়ন গ্লো, টার্মিনাল ফ্রেম ও গ্লিচ টেক্সট সহ প্রফেশনাল ইউটিউব থাম্বনেইল ও সোশাল ব্যানার ডিজাইনার।',
+    description: ' , Terminal            ।',
     manifestCode: '{"preset":"youtube_1280x720","theme":"neon_glitch"}',
     apkSize: 'HD Graphic',
     status: 'Published',
-    tags: ['ডিজাইনিং মেকার', 'Thumbnail Maker', 'Banner Studio', 'Social Card']
+    tags: [' ', 'Thumbnail Maker', 'Banner Studio', 'Social Card']
   }
 ];
 
@@ -187,26 +187,26 @@ export function WpAppGeneratorStudioHub() {
 
   // 1. Web to App Form State
   const [urlInput, setUrlInput] = useState('https://hackersshikkhok.com');
-  const [appNameInput, setAppNameInput] = useState('Hackers শিক্ষক Pro App');
+  const [appNameInput, setAppNameInput] = useState('HackersShikkhok Pro App');
   const [packageNameInput, setPackageNameInput] = useState('com.hackersshikkhok.app');
   const [selectedColor, setSelectedColor] = useState('#00f5d4');
   const [selectedIcon, setSelectedIcon] = useState('Smartphone');
   const [authorInput, setAuthorInput] = useState('Chief Cyber Engineer');
-  const [descriptionInput, setDescriptionInput] = useState('অ্যান্ড্রয়েড ওয়েবভিউ র‍্যাপার অ্যাপ উইথ অফলাইন ক্যাশিং ও পুশ নোটিফিকেশন।');
+  const [descriptionInput, setDescriptionInput] = useState('  ‍       ।');
   const [enableOfflineCache, setEnableOfflineCache] = useState(true);
   const [enableAdMob, setEnableAdMob] = useState(false);
   const [isBuilding, setIsBuilding] = useState(false);
 
   // 2. Card Maker State
-  const [cardName, setCardName] = useState('হৃদয় হাসান (Hridoy Hasan)');
+  const [cardName, setCardName] = useState('  (Hridoy Hasan)');
   const [cardTitle, setCardTitle] = useState('Cyber Security Cadet & Full-Stack Eng');
   const [cardBadge, setCardBadge] = useState('🛡️ LEVEL-4 SENTINEL');
   const [cardQrUrl, setCardQrUrl] = useState('https://hackersshikkhok.com/verify-certificate/');
   const [cardTheme, setCardTheme] = useState<'neon-cyan' | 'purple-matrix' | 'gold-elite'>('neon-cyan');
 
   // 3. Gift Maker State
-  const [giftRecipient, setGiftRecipient] = useState('প্রিয় বন্ধু (Friend)');
-  const [giftMessage, setGiftMessage] = useState('শুভ জন্মদিন! তোমার জন্য হ্যাকার্স শিক্ষক কোর্সে ৫০% ডিসকাউন্ট ভাউচার!');
+  const [giftRecipient, setGiftRecipient] = useState('  (Friend)');
+  const [giftMessage, setGiftMessage] = useState(' !   HackersShikkhok Course %  !');
   const [giftVoucher, setGiftVoucher] = useState('EID-HACKER-50');
   const [isGiftOpened, setIsGiftOpened] = useState(false);
 
@@ -218,7 +218,7 @@ export function WpAppGeneratorStudioHub() {
 
   // 5. Design Studio State
   const [bannerHeading, setBannerHeading] = useState('CYBER DEFENSE 2026');
-  const [bannerSub, setBannerSub] = useState('হ্যাক প্রুফ ওয়ার্ডপ্রেস ও ফুল-স্ট্যাক কোডিং');
+  const [bannerSub, setBannerSub] = useState('    - ');
   const [bannerBg, setBannerBg] = useState<'dark-grid' | 'neon-circuit' | 'cyber-gradient'>('dark-grid');
 
   useEffect(() => {
@@ -307,7 +307,7 @@ export function WpAppGeneratorStudioHub() {
       const finalName = appNameInput.trim() || `${domainName.charAt(0).toUpperCase() + domainName.slice(1)} App`;
       const pkg = packageNameInput.trim() || `com.app.${domainName.replace(/[^a-z0-9]/g, '')}`;
       const slug = `${domainName.replace(/[^a-z0-9]/g, '-')}-app-${Date.now().toString().slice(-4)}`;
-      const desc = descriptionInput.trim() || `High-performance standalone Android wrapper app for ${cleanUrl} built via Hackers শিক্ষক App Studio.`;
+      const desc = descriptionInput.trim() || `High-performance standalone Android wrapper app for ${cleanUrl} built via HackersShikkhok App Studio.`;
 
       const newApp: GeneratedAppItem = {
         id: `app-${Date.now()}`,
@@ -347,7 +347,7 @@ export function WpAppGeneratorStudioHub() {
 </manifest>`,
         apkSize: `${(Math.random() * 1.5 + 3.2).toFixed(1)} MB`,
         status: 'Published',
-        tags: ['ওয়েবসাইট অ্যাপ মেক', 'ওয়ার্ডপ্রেস ওয়েবসাইট অ্যাপ্লিকেশন মেক', 'Android App', domainName]
+        tags: ['  ', '   ', 'Android App', domainName]
       };
 
       setAppsList([newApp, ...appsList]);
@@ -373,11 +373,11 @@ export function WpAppGeneratorStudioHub() {
       createdAt: new Date().toISOString().replace('T', ' ').slice(0, 16),
       downloadsCount: 1,
       rating: 5.0,
-      description: `ডিজিটাল আইডি ও সাইবার পাস তৈরি হয়েছে। ব্যাজ: ${cardBadge}।`,
+      description: `   Cyber   । : ${cardBadge}।`,
       manifestCode: JSON.stringify({ name: cardName, title: cardTitle, badge: cardBadge, qr: cardQrUrl }, null, 2),
       apkSize: 'Vector SVG',
       status: 'Published',
-      tags: ['কার্ড মেক', 'Digital Pass', 'Cyber Card', 'ID Badge']
+      tags: [' ', 'Digital Pass', 'Cyber Card', 'ID Badge']
     };
     setAppsList([newCard, ...appsList]);
     setSelectedAppDetail(newCard);
@@ -392,7 +392,7 @@ export function WpAppGeneratorStudioHub() {
       slug,
       category: 'gift-maker',
       url: `https://hackersshikkhok.com/gift/${slug}`,
-      appName: `সারপ্রাইজ গিফট বক্স for ${giftRecipient}`,
+      appName: `   for ${giftRecipient}`,
       packageName: `gift.box.${slug}`,
       themeColor: '#f43f5e',
       iconName: 'Gift',
@@ -400,11 +400,11 @@ export function WpAppGeneratorStudioHub() {
       createdAt: new Date().toISOString().replace('T', ' ').slice(0, 16),
       downloadsCount: 1,
       rating: 5.0,
-      description: `গিফট বার্তা: "${giftMessage}" | গোপন ভাউচার কোড: ${giftVoucher}`,
+      description: ` : "${giftMessage}" |   : ${giftVoucher}`,
       manifestCode: JSON.stringify({ recipient: giftRecipient, msg: giftMessage, voucher: giftVoucher }, null, 2),
       apkSize: 'Web Gift',
       status: 'Published',
-      tags: ['গিফট মেক', 'Gift Box', 'Surprise Voucher', 'Voucher Code']
+      tags: [' ', 'Gift Box', 'Surprise Voucher', 'Voucher Code']
     };
     setAppsList([newGift, ...appsList]);
     setSelectedAppDetail(newGift);
@@ -427,11 +427,11 @@ export function WpAppGeneratorStudioHub() {
       createdAt: new Date().toISOString().replace('T', ' ').slice(0, 16),
       downloadsCount: 1,
       rating: 5.0,
-      description: 'HTML5 ক্যানভাস ভিত্তিক ফুল রেসপন্সিভ সাইবার আর্কেড গেম। এমবেড কোড ও অফলাইন প্লেয়ার সহ।',
+      description: 'HTML5     Cyber  ।      ।',
       manifestCode: '<canvas id="cyberGame" width="400" height="300"></canvas>',
       apkSize: 'Canvas Game',
       status: 'Published',
-      tags: ['গেম মেকিং', 'Mini Game', 'Canvas Game', 'Cyber Runner']
+      tags: [' ', 'Mini Game', 'Canvas Game', 'Cyber Runner']
     };
     setAppsList([newGame, ...appsList]);
     setSelectedAppDetail(newGame);
@@ -468,7 +468,7 @@ ${app.manifestCode}
 2. In Android Studio, open app/src/main/java/MainActivity.java and set WebView URL to "${app.url}".
 3. Build Signed APK / AAB Bundle for Google Play Store release.
 ==================================================
-Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
+Developed by HackersShikkhok (https://hackersshikkhok.com)
 `;
     const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -500,17 +500,16 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
       app.packageName.toLowerCase().includes(q) ||
       app.author.toLowerCase().includes(q) ||
       app.tags.some(t => t.toLowerCase().includes(q)) ||
-      (q.includes('ওয়েবসাইট') && app.tags.some(t => t.includes('ওয়েবসাইট'))) ||
-      (q.includes('ওয়ার্ডপ্রেস') && app.tags.some(t => t.includes('ওয়ার্ডপ্রেস'))) ||
-      (q.includes('কার্ড') && app.category === 'card-maker') ||
-      (q.includes('গিফট') && app.category === 'gift-maker') ||
-      (q.includes('গেম') && app.category === 'game-maker');
+      (q.includes('') && app.tags.some(t => t.includes(''))) ||
+      (q.includes('') && app.tags.some(t => t.includes(''))) ||
+      (q.includes('') && app.category === 'card-maker') ||
+      (q.includes('') && app.category === 'gift-maker') ||
+      (q.includes('') && app.category === 'game-maker');
 
     return matchesCategory && matchesQuery;
   });
 
-  return (
-    <div id="platform-center-hub" className="bg-[#0b1120] border border-[#00f5d4]/30 rounded-2xl p-5 md:p-8 text-white space-y-6">
+  return (<div id="platform-center-hub" className="bg-[#0b1120] border border-[#00f5d4]/30 rounded-2xl p-5 md:p-8 text-white space-y-6">
       
       {/* Top Banner & SEO H1 Headline */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
@@ -520,16 +519,12 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
               🚀 MULTI-STUDIO PLATFORM CENTER HUB
             </span>
             <span>·</span>
-            <span className="text-slate-400">স্লাগ ও ক্যাটাগরি ফিল্টারিং সিস্টেম</span>
+            <span className="text-slate-400">Cyber Defense Hub</span>
           </div>
           
-          <h2 className="text-2xl md:text-3xl font-extrabold mt-1 tracking-tight">
-            ওয়েবসাইট অ্যাপ মেক, ডিজিটাল কার্ড, গিফট ও গেম ক্রিয়েটর প্ল্যাটফর্ম
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mt-1 tracking-tight">,  ,     Platform</h2>
           
-          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-3xl leading-relaxed">
-            যেকোনো ওয়েবসাইটের লিংক দিয়ে ১ ক্লিকে অ্যান্ড্রয়েড অ্যাপ (APK/AAB), সাইবার আইডি কার্ড, অ্যানিমেটেড গিফট বক্স, এইচটিএমএল৫ মিনি গেম ও প্রফেশনাল ডিজাইন তৈরির পূর্ণাঙ্গ হাব।
-          </p>
+          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-3xl leading-relaxed">(APK/AAB), Cyber  ,   ,         Hub।</p>
         </div>
 
         {/* View Switcher: Hub vs Creator Studio */}
@@ -542,8 +537,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                 : 'text-slate-300 hover:text-white'
             }`}
           >
-            <Compass className="w-3.5 h-3.5" /> প্ল্যাটফর্ম গ্যালারি ({appsList.length})
-          </button>
+            <Compass className="w-3.5 h-3.5" />Platform  ({appsList.length})</button>
           <button
             onClick={() => setActiveView('generator')}
             className={`px-4 py-2 rounded-lg text-xs font-bold cursor-pointer transition-all flex items-center gap-1.5 ${
@@ -552,8 +546,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                 : 'text-slate-300 hover:text-white'
             }`}
           >
-            <Sparkles className="w-3.5 h-3.5" /> ক্রিয়েটর স্টুডিও খুলুন
-          </button>
+            <Sparkles className="w-3.5 h-3.5" />Studio</button>
         </div>
       </div>
 
@@ -565,16 +558,15 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="সার্চ করুন: 'ওয়েবসাইট অ্যাপ মেক', 'ওয়ার্ডপ্রেস ওয়েবসাইট অ্যাপ্লিকেশন মেক', 'কার্ড মেক', 'গিফট মেক', 'গেম মেকিং'..."
+              onChange={(e) =>setSearchQuery(e.target.value)}
+              placeholder="Search: '  ', '   ', ' ', ' ', ' '..."
               className="w-full pl-10 pr-4 py-2.5 bg-[#0b1120] border border-slate-700/80 rounded-xl text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#00f5d4] transition-all"
             />
-            {searchQuery && (
-              <button
+            {searchQuery && (<button
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-white"
               >
-                ✕ ক্লিয়ার
+                ✕ Clear
               </button>
             )}
           </div>
@@ -586,24 +578,20 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
             }}
             className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-[#050811] text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow hover:brightness-110 transition-all whitespace-nowrap"
           >
-            <Plus className="w-4 h-4" /> নতুন আইটেম তৈরি করুন
-          </button>
+            <Plus className="w-4 h-4" />Cyber Defense Hub</button>
         </div>
 
         {/* Quick Trend Keywords Chips */}
         <div className="flex flex-wrap items-center gap-1.5 text-[11px] pt-1">
           <span className="text-slate-400 flex items-center gap-1">
-            <Zap className="w-3 h-3 text-[#00f5d4]" /> জনপ্রিয় সার্চ:
-          </span>
-          {[
-            { label: '🔥 ওয়েবসাইট অ্যাপ মেক', query: 'ওয়েবসাইট অ্যাপ মেক' },
-            { label: '📱 ওয়ার্ডপ্রেস ওয়েবসাইট অ্যাপ্লিকেশন মেক', query: 'ওয়ার্ডপ্রেস ওয়েবসাইট অ্যাপ্লিকেশন মেক' },
-            { label: '🎴 কার্ড মেক', query: 'কার্ড মেক' },
-            { label: '🎁 গিফট মেক', query: 'গিফট মেক' },
-            { label: '🎮 গেম মেকিং', query: 'গেম মেকিং' },
-            { label: '🎨 ডিজাইনিং', query: 'ডিজাইনিং' }
-          ].map((item) => (
-            <button
+            <Zap className="w-3 h-3 text-[#00f5d4]" />:</span>{[
+            { label: '🔥   ', query: '  ' },
+            { label: '📱    ', query: '   ' },
+            { label: '🎴  ', query: ' ' },
+            { label: '🎁  ', query: ' ' },
+            { label: '🎮  ', query: ' ' },
+            { label: '🎨 ', query: '' }
+          ].map((item) => (<button
               key={item.label}
               onClick={() => setSearchQuery(item.query)}
               className="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-[#00f5d4] transition-all cursor-pointer"
@@ -615,19 +603,17 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
       </div>
 
       {/* Category Filter Navigation Bar */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin">
-        {[
-          { id: 'all', label: 'সব ক্যাটাগরি', icon: Layers, count: appsList.length },
-          { id: 'web-to-app', label: '📱 ওয়েবসাইট অ্যাপ মেকার', icon: Smartphone, count: appsList.filter(a => a.category === 'web-to-app').length },
-          { id: 'card-maker', label: '🎴 ডিজিটাল কার্ড মেকার', icon: CreditCard, count: appsList.filter(a => a.category === 'card-maker').length },
-          { id: 'gift-maker', label: '🎁 ডিজিটাল গিফট মেকার', icon: Gift, count: appsList.filter(a => a.category === 'gift-maker').length },
-          { id: 'game-maker', label: '🎮 মিনি গেম মেকিং', icon: Gamepad2, count: appsList.filter(a => a.category === 'game-maker').length },
-          { id: 'design-maker', label: '🎨 ডিজাইনিং মেকার', icon: Palette, count: appsList.filter(a => a.category === 'design-maker').length }
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin">{[
+          { id: 'all', label: ' ', icon: Layers, count: appsList.length },
+          { id: 'web-to-app', label: '📱   ', icon: Smartphone, count: appsList.filter(a => a.category === 'web-to-app').length },
+          { id: 'card-maker', label: '🎴   ', icon: CreditCard, count: appsList.filter(a => a.category === 'card-maker').length },
+          { id: 'gift-maker', label: '🎁   ', icon: Gift, count: appsList.filter(a => a.category === 'gift-maker').length },
+          { id: 'game-maker', label: '🎮   ', icon: Gamepad2, count: appsList.filter(a => a.category === 'game-maker').length },
+          { id: 'design-maker', label: '🎨  ', icon: Palette, count: appsList.filter(a => a.category === 'design-maker').length }
         ].map((cat) => {
           const Icon = cat.icon;
           const isSelected = activeCategory === cat.id;
-          return (
-            <button
+          return (<button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id as any)}
               className={`px-3.5 py-2 rounded-xl text-xs font-bold cursor-pointer whitespace-nowrap transition-all flex items-center gap-2 border ${
@@ -656,19 +642,16 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
           <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800">
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono text-[#00f5d4] flex items-center gap-1">
-                <Wand2 className="w-3.5 h-3.5" /> স্টুডিও মোড সিলেক্ট করুন:
-              </span>
+                <Wand2 className="w-3.5 h-3.5" />Studio   :</span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2">
-              {[
-                { id: 'web-to-app', label: '📱 ওয়েবসাইট অ্যাপ মেক', icon: Smartphone },
-                { id: 'card-maker', label: '🎴 কার্ড মেকার', icon: CreditCard },
-                { id: 'gift-maker', label: '🎁 গিফট মেকার', icon: Gift },
-                { id: 'game-maker', label: '🎮 গেম মেকিং', icon: Gamepad2 },
-                { id: 'design-maker', label: '🎨 ডিজাইন মেকার', icon: Palette }
-              ].map((st) => (
-                <button
+            <div className="flex flex-wrap items-center gap-2">{[
+                { id: 'web-to-app', label: '📱   ', icon: Smartphone },
+                { id: 'card-maker', label: '🎴  ', icon: CreditCard },
+                { id: 'gift-maker', label: '🎁  ', icon: Gift },
+                { id: 'game-maker', label: '🎮  ', icon: Gamepad2 },
+                { id: 'design-maker', label: '🎨  ', icon: Palette }
+              ].map((st) => (<button
                   key={st.id}
                   onClick={() => setActiveStudioMode(st.id as any)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold cursor-pointer transition-all border ${
@@ -690,17 +673,13 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
               <div className="lg:col-span-7 space-y-4">
                 <div className="bg-[#0b1120] p-4 rounded-xl border border-slate-800/80 space-y-3">
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Smartphone className="w-4 h-4 text-[#00f5d4]" /> ওয়েবসাইট / ওয়ার্ডপ্রেস টু অ্যান্ড্রয়েড অ্যাপ কনফিগ
-                  </h3>
-                  <p className="text-xs text-slate-400">
-                    যেকোনো লাইভ ওয়েবসাইট অথবা ওয়ার্ডপ্রেস ব্লগের লিংক দিন। সিস্টেম স্বয়ংক্রিয়ভাবে একটি কমপ্লিট অ্যান্ড্রয়েড নেটিভ র‍্যাপার, মেনিফেস্ট এবং বিল্ড স্ক্রিপ্ট তৈরি করবে।
-                  </p>
+                    <Smartphone className="w-4 h-4 text-[#00f5d4]" />/</h3>
+                  <p className="text-xs text-slate-400">।       ‍,      ।</p>
                 </div>
 
                 <form onSubmit={handleGenerateApp} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">
-                      ওয়েবসাইট লিংক (Target URL) * <span className="text-[#00f5d4]">(যেমন: https://yourdomain.com)</span>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">(Target URL) *<span className="text-[#00f5d4]">(: https://yourdomain.com)</span>
                     </label>
                     <div className="relative">
                       <Globe className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -717,30 +696,28 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1">কাস্টম অ্যাপের নাম (App Name)</label>
+                      <label className="block text-xs font-mono text-slate-300 mb-1">(App Name)</label>
                       <input
                         type="text"
                         value={appNameInput}
-                        onChange={(e) => setAppNameInput(e.target.value)}
-                        placeholder="যেমন: Hackers শিক্ষক Mobile"
+                        onChange={(e) =>setAppNameInput(e.target.value)}
+                        placeholder=": HackersShikkhok Mobile"
                         className="w-full px-3 py-2.5 bg-[#0b1120] border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-[#00f5d4]"
-                      />
-                    </div>
+                      /></div>
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1">প্যাকেজ আইডি (Package Name)</label>
+                      <label className="block text-xs font-mono text-slate-300 mb-1">(Package Name)</label>
                       <input
                         type="text"
                         value={packageNameInput}
-                        onChange={(e) => setPackageNameInput(e.target.value)}
-                        placeholder="যেমন: com.company.app"
+                        onChange={(e) =>setPackageNameInput(e.target.value)}
+                        placeholder=": com.company.app"
                         className="w-full px-3 py-2.5 bg-[#0b1120] border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-[#00f5d4]"
-                      />
-                    </div>
+                      /></div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1">ডেভেলপার বা ব্র্যান্ডের নাম</label>
+                      <label className="block text-xs font-mono text-slate-300 mb-1">Cyber Defense Hub</label>
                       <input
                         type="text"
                         value={authorInput}
@@ -749,7 +726,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1">প্রাইমারি থিম কালার</label>
+                      <label className="block text-xs font-mono text-slate-300 mb-1">Cyber Defense Hub</label>
                       <div className="flex items-center gap-2 pt-1">
                         {['#00f5d4', '#10b981', '#3b82f6', '#7c3aed', '#f43f5e', '#f59e0b'].map((col) => (
                           <button
@@ -775,7 +752,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                         onChange={(e) => setEnableOfflineCache(e.target.checked)}
                         className="rounded accent-[#00f5d4]"
                       />
-                      <span>অফলাইন ক্যাশিং ও সার্ভিস ওয়ার্কার সক্রিয় রাখুন</span>
+                      <span>Cyber Defense Hub</span>
                     </label>
                     <label className="flex items-center gap-2 p-3 rounded-xl bg-[#0b1120] border border-slate-800 text-xs cursor-pointer">
                       <input
@@ -784,7 +761,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                         onChange={(e) => setEnableAdMob(e.target.checked)}
                         className="rounded accent-[#00f5d4]"
                       />
-                      <span>গুগল অ্যাডমব ব্যানার ও ইন্টারস্টিশিয়াল স্লট যোগ করুন</span>
+                      <span>Cyber Defense Hub</span>
                     </label>
                   </div>
 
@@ -795,12 +772,10 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                   >
                     {isBuilding ? (
                       <>
-                        <RefreshCw className="w-4 h-4 animate-spin" /> অ্যান্ড্রয়েড প্রজেক্ট জেনারেট হচ্ছে...
-                      </>
+                        <RefreshCw className="w-4 h-4 animate-spin" />...</>
                     ) : (
                       <>
-                        <Sparkles className="w-4 h-4" /> ইনস্ট্যান্ট অ্যান্ড্রয়েড অ্যাপ প্যাকেজ বিল্ড করুন
-                      </>
+                        <Sparkles className="w-4 h-4" />Cyber Defense Hub</>
                     )}
                   </button>
                 </form>
@@ -844,9 +819,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                     <div className="text-[10px] font-mono text-[#00f5d4] truncate max-w-[200px]">
                       {urlInput || 'https://yourwebsite.com'}
                     </div>
-                    <p className="text-[10px] text-slate-400 line-clamp-3">
-                      ওয়েবসাইটটি মোবাইল ফ্রেন্ডলি মোডে মসৃণভাবে লোড হবে। অফলাইন ক্যাশ ও গুগল অ্যাডসেন্স/অ্যাডমব সাপোর্ট উপলব্ধ।
-                    </p>
+                    <p className="text-[10px] text-slate-400 line-clamp-3">।     /  ।</p>
                     <span className="px-2 py-0.5 rounded bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono">
                       ✓ Ready for APK Compile
                     </span>
@@ -865,16 +838,13 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
               <div className="lg:col-span-6 space-y-4">
                 <div className="bg-[#0b1120] p-4 rounded-xl border border-slate-800 space-y-2">
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <CreditCard className="w-4 h-4 text-[#00f5d4]" /> ডিজিটাল সাইবার কার্ড ও আইডি পাস মেকার
-                  </h3>
-                  <p className="text-xs text-slate-400">
-                    স্টুডেন্ট, ডেভেলপার, বা এন্টারপ্রাইজ টিমের জন্য হোলোগ্রাফিক নিয়ন সাইবার আইডি কার্ড তৈরি করুন।
-                  </p>
+                    <CreditCard className="w-4 h-4 text-[#00f5d4]" />Cyber</h3>
+                  <p className="text-xs text-slate-400">, ,       Cyber    ।</p>
                 </div>
 
                 <div className="space-y-3">
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">পূর্ণ নাম (Full Name)</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">(Full Name)</label>
                     <input
                       type="text"
                       value={cardName}
@@ -883,7 +853,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">পদবী ও ভূমিকা (Designation)</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">(Designation)</label>
                     <input
                       type="text"
                       value={cardTitle}
@@ -893,7 +863,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1">ব্যাজ টাইপ</label>
+                      <label className="block text-xs font-mono text-slate-300 mb-1">Cyber Defense Hub</label>
                       <input
                         type="text"
                         value={cardBadge}
@@ -902,20 +872,20 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono text-slate-300 mb-1">থিম স্টাইল</label>
+                      <label className="block text-xs font-mono text-slate-300 mb-1">Cyber Defense Hub</label>
                       <select
                         value={cardTheme}
                         onChange={(e) => setCardTheme(e.target.value as any)}
                         className="w-full px-3 py-2 bg-[#0b1120] border border-slate-800 rounded-xl text-xs text-white"
                       >
-                        <option value="neon-cyan">নিয়ন সায়ান (Cyber)</option>
-                        <option value="purple-matrix">পার্পল ম্যাট্রিক্স</option>
-                        <option value="gold-elite">গোল্ড এলিট</option>
+                        <option value="neon-cyan">(Cyber)</option>
+                        <option value="purple-matrix">Cyber Defense Hub</option>
+                        <option value="gold-elite">Cyber Defense Hub</option>
                       </select>
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">কিউআর কোড টার্গেট লিংক</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">Cyber Defense Hub</label>
                     <input
                       type="text"
                       value={cardQrUrl}
@@ -927,9 +897,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                   <button
                     onClick={handleCreateCardItem}
                     className="w-full py-2.5 rounded-xl bg-[#00f5d4] text-[#050811] font-bold text-xs cursor-pointer hover:brightness-110 shadow"
-                  >
-                    🎴 কার্ড প্রকাশ করুন ও গ্যালারিতে যোগ করুন
-                  </button>
+                  >🎴</button>
                 </div>
               </div>
 
@@ -979,16 +947,13 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
               <div className="lg:col-span-6 space-y-4">
                 <div className="bg-[#0b1120] p-4 rounded-xl border border-slate-800 space-y-2">
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Gift className="w-4 h-4 text-[#f43f5e]" /> ডিজিটাল অ্যানিমেটেড গিফট বক্স ও ভাউচার মেকার
-                  </h3>
-                  <p className="text-xs text-slate-400">
-                    সারপ্রাইজ বার্তা ও সিক্রেট ভাউচার কোড দিয়ে বন্ধুদের জন্য অ্যানিমেটেড গিফট লিংক তৈরি করুন।
-                  </p>
+                    <Gift className="w-4 h-4 text-[#f43f5e]" />Cyber Defense Hub</h3>
+                  <p className="text-xs text-slate-400">।</p>
                 </div>
 
                 <div className="space-y-3">
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">প্রাপকের নাম (Recipient)</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">(Recipient)</label>
                     <input
                       type="text"
                       value={giftRecipient}
@@ -997,7 +962,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">সারপ্রাইজ বার্তা (Secret Message)</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">(Secret Message)</label>
                     <textarea
                       rows={2}
                       value={giftMessage}
@@ -1006,7 +971,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">ডিসকাউন্ট ভাউচার কোড</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">Cyber Defense Hub</label>
                     <input
                       type="text"
                       value={giftVoucher}
@@ -1018,9 +983,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                   <button
                     onClick={handleCreateGiftItem}
                     className="w-full py-2.5 rounded-xl bg-[#f43f5e] text-white font-bold text-xs cursor-pointer hover:brightness-110 shadow"
-                  >
-                    🎁 গিফট বক্স জেনারেট ও সেভ করুন
-                  </button>
+                  >🎁</button>
                 </div>
               </div>
 
@@ -1035,17 +998,14 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                   }`}>
                     <Gift className={`w-14 h-14 text-white transition-transform ${isGiftOpened ? 'rotate-12' : ''}`} />
                   </div>
-                  <span className="block text-xs font-mono text-[#00f5d4]">
-                    {isGiftOpened ? '🎉 গিফট বক্স আনবক্সড!' : '👉 গিফট বক্সে ক্লিক করে ওপেন করুন'}
-                  </span>
+                  <span className="block text-xs font-mono text-[#00f5d4]">{isGiftOpened ? '🎉   !' : '👉      '}</span>
                 </div>
 
                 {isGiftOpened && (
                   <div className="mt-4 p-4 rounded-xl bg-[#050811] border border-rose-500/40 text-center space-y-2 animate-in fade-in max-w-sm">
                     <span className="text-xs font-bold text-rose-400">Dear {giftRecipient},</span>
                     <p className="text-xs text-slate-200">{giftMessage}</p>
-                    <div className="p-2 rounded bg-rose-500/10 border border-rose-500/30 font-mono text-xs text-white">
-                      ভাউচার কোড: <strong className="text-amber-400">{giftVoucher}</strong>
+                    <div className="p-2 rounded bg-rose-500/10 border border-rose-500/30 font-mono text-xs text-white">:<strong className="text-amber-400">{giftVoucher}</strong>
                     </div>
                   </div>
                 )}
@@ -1059,44 +1019,37 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
               <div className="lg:col-span-5 space-y-4">
                 <div className="bg-[#0b1120] p-4 rounded-xl border border-slate-800 space-y-2">
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Gamepad2 className="w-4 h-4 text-[#10b981]" /> এইচটিএমএল৫ ক্যানভাস মিনি গেম স্টুডিও
-                  </h3>
-                  <p className="text-xs text-slate-400">
-                    যেকোনো ওয়েবসাইটে এমবেডযোগ্য লাইভ ইন্টারঅ্যাক্টিভ আর্কেড গেম। কোড এক্সপোর্ট বা লাইভ প্লেয়ার।
-                  </p>
+                    <Gamepad2 className="w-4 h-4 text-[#10b981]" />Studio</h3>
+                  <p className="text-xs text-slate-400">।     ।</p>
                 </div>
 
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <button
-                      onClick={() => setGameRunning(!gameRunning)}
+                      onClick={() =>setGameRunning(!gameRunning)}
                       className={`flex-1 py-2 rounded-xl text-xs font-bold cursor-pointer transition-all ${
                         gameRunning ? 'bg-rose-500 text-white' : 'bg-[#10b981] text-[#050811]'
                       }`}
                     >
-                      {gameRunning ? '⏸ গেম পজ করুন' : '▶ গেম চালু করুন (Play)'}
-                    </button>
+                      {gameRunning ? '⏸   ' : '▶    (Play)'}</button>
                     <button
-                      onClick={() => {
+                      onClick={() =>{
                         setGameTheme(gameTheme === 'matrix' ? 'cyberpunk' : 'matrix');
                       }}
                       className="px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-300"
                     >
-                      থিম: {gameTheme}
-                    </button>
+                      : {gameTheme}</button>
                   </div>
 
                   <div className="p-3 rounded-xl bg-[#0b1120] border border-slate-800 text-xs font-mono text-slate-300">
-                    <span>লাইভ স্কোর: <strong className="text-[#10b981]">{gameScore}</strong></span><br />
-                    <span>ইঞ্জিন: 60 FPS HTML5 Canvas</span>
+                    <span>:<strong className="text-[#10b981]">{gameScore}</strong></span><br />
+                    <span>Engine: 60 FPS HTML5 Canvas</span>
                   </div>
 
                   <button
                     onClick={handleCreateGameItem}
                     className="w-full py-2.5 rounded-xl bg-[#10b981] text-[#050811] font-bold text-xs cursor-pointer hover:brightness-110 shadow"
-                  >
-                    🎮 এই গেমটি পাবলিশ ও গ্যালারিতে যোগ করুন
-                  </button>
+                  >🎮</button>
                 </div>
               </div>
 
@@ -1121,16 +1074,13 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
               <div className="lg:col-span-6 space-y-4">
                 <div className="bg-[#0b1120] p-4 rounded-xl border border-slate-800 space-y-2">
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Palette className="w-4 h-4 text-[#f59e0b]" /> সাইবার ব্যানার ও সোশাল থাম্বনেইল ডিজাইনার
-                  </h3>
-                  <p className="text-xs text-slate-400">
-                    ইউটিউব থাম্বনেইল, ফেসবুক কভার বা কোডিং আর্টিকেলের জন্য প্রফেশনাল নিয়ন গ্রাফিক ব্যানার তৈরি করুন।
-                  </p>
+                    <Palette className="w-4 h-4 text-[#f59e0b]" />Cyber</h3>
+                  <p className="text-xs text-slate-400">,            ।</p>
                 </div>
 
                 <div className="space-y-3">
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">মেইন হেডিং (Primary Headline)</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">(Primary Headline)</label>
                     <input
                       type="text"
                       value={bannerHeading}
@@ -1139,7 +1089,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">সাবটাইটেল (Subtitle)</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">(Subtitle)</label>
                     <input
                       type="text"
                       value={bannerSub}
@@ -1148,15 +1098,15 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1">ব্যাকগ্রাউন্ড প্যাটার্ন</label>
+                    <label className="block text-xs font-mono text-slate-300 mb-1">Cyber Defense Hub</label>
                     <select
                       value={bannerBg}
                       onChange={(e) => setBannerBg(e.target.value as any)}
                       className="w-full px-3 py-2 bg-[#0b1120] border border-slate-800 rounded-xl text-xs text-white"
                     >
-                      <option value="dark-grid">ডার্ক সাইবার গ্রিড</option>
-                      <option value="neon-circuit">নিয়ন সার্কিট গ্লো</option>
-                      <option value="cyber-gradient">ম্যাট্রিক্স গ্রেডিয়েন্ট</option>
+                      <option value="dark-grid">Cyber</option>
+                      <option value="neon-circuit">Cyber Defense Hub</option>
+                      <option value="cyber-gradient">Cyber Defense Hub</option>
                     </select>
                   </div>
                 </div>
@@ -1197,30 +1147,23 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
       {activeView === 'hub' && (
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono text-slate-400">
-              দেখাচ্ছে {filteredApps.length} টি আইটেম (টোটাল {appsList.length})
-            </span>
+            <span className="text-xs font-mono text-slate-400">{filteredApps.length}   ( {appsList.length})</span>
             <div className="text-xs text-[#00f5d4] flex items-center gap-1 font-mono">
-              <CheckCircle2 className="w-3.5 h-3.5" /> রিয়েল-টাইম সার্চ সিঙ্ক সক্রিয়
-            </div>
+              <CheckCircle2 className="w-3.5 h-3.5" />-</div>
           </div>
 
           {filteredApps.length === 0 ? (
             <div className="p-12 text-center bg-[#050811] rounded-2xl border border-slate-800 space-y-3">
               <AlertCircle className="w-8 h-8 text-amber-400 mx-auto" />
-              <h4 className="text-base font-bold text-white">কোনো ফলাফল পাওয়া যায়নি!</h4>
-              <p className="text-xs text-slate-400 max-w-md mx-auto">
-                '{searchQuery}' এর জন্য কোনো আইটেম পাওয়া যায়নি। অন্য কোনো কিওয়ার্ড দিয়ে সার্চ করুন অথবা 'নতুন আইটেম তৈরি করুন' বাটনে ক্লিক করে তৈরি করুন।
-              </p>
+              <h4 className="text-base font-bold text-white">!</h4>
+              <p className="text-xs text-slate-400 max-w-md mx-auto">'{searchQuery}'      ।     Search  '   '     ।</p>
               <button
-                onClick={() => {
+                onClick={() =>{
                   setSearchQuery('');
                   setActiveCategory('all');
                 }}
                 className="px-4 py-2 rounded-xl bg-slate-800 text-xs font-bold text-[#00f5d4] cursor-pointer"
-              >
-                সব আইটেম রিসেট করুন
-              </button>
+              ></button>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -1282,13 +1225,13 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
                     {/* Technical Meta Card */}
                     <div className="grid grid-cols-2 gap-2 mt-4 text-[11px] font-mono bg-[#0b1120] p-2.5 rounded-xl border border-slate-800/80">
                       <div>
-                        <span className="text-slate-500 block text-[9px]">স্লাগ (Slug):</span>
+                        <span className="text-slate-500 block text-[9px]">(Slug):</span>
                         <span className="text-slate-200 truncate block max-w-[120px]">
                           /{app.slug}
                         </span>
                       </div>
                       <div>
-                        <span className="text-slate-500 block text-[9px]">ডাউনলোড / রেটিং:</span>
+                        <span className="text-slate-500 block text-[9px]">Download / :</span>
                         <span className="text-emerald-400 font-bold">
                           {app.apkSize} · ⭐ {app.rating}
                         </span>
@@ -1305,25 +1248,24 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
 
                     <div className="flex items-center gap-1.5">
                       <button
-                        onClick={() => handleCopySlug(app.slug)}
-                        title="স্লাগ কপি করুন"
+                        onClick={() =>handleCopySlug(app.slug)}
+                        title=" Copy"
                         className="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white cursor-pointer"
                       >
-                        {copiedSlug === app.slug ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                        {copiedSlug === app.slug ?<Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
 
                       <button
                         onClick={() => setSelectedAppDetail(app)}
                         className="px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-200 cursor-pointer flex items-center gap-1"
                       >
-                        <Eye className="w-3.5 h-3.5 text-[#00f5d4]" /> ভিউ
-                      </button>
+                        <Eye className="w-3.5 h-3.5 text-[#00f5d4]" />Cyber Defense Hub</button>
 
                       <button
                         onClick={() => handleDownloadApkPackage(app)}
                         className="px-3 py-1.5 rounded-lg bg-[#00f5d4] hover:bg-[#00f5d4]/90 text-[#050811] text-xs font-bold cursor-pointer flex items-center gap-1 shadow"
                       >
-                        <Download className="w-3.5 h-3.5" /> ডাউনলোড
+                        <Download className="w-3.5 h-3.5" /> Download
                       </button>
                     </div>
                   </div>
@@ -1362,7 +1304,7 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
 
             <div className="space-y-3 text-xs text-slate-300">
               <div className="p-3 rounded-xl bg-[#050811] border border-slate-800 space-y-1">
-                <span className="text-slate-500 font-mono block">টার্গেট লিংক:</span>
+                <span className="text-slate-500 font-mono block">:</span>
                 <a
                   href={selectedAppDetail.url}
                   target="_blank"
@@ -1374,14 +1316,14 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
               </div>
 
               <div>
-                <span className="text-slate-500 font-mono block mb-1">বর্ণনা:</span>
+                <span className="text-slate-500 font-mono block mb-1">:</span>
                 <p className="bg-[#050811] p-3 rounded-xl border border-slate-800 leading-relaxed">
                   {selectedAppDetail.description}
                 </p>
               </div>
 
               <div>
-                <span className="text-slate-500 font-mono block mb-1">মেনিফেস্ট ও কনফিগারেশন কোড:</span>
+                <span className="text-slate-500 font-mono block mb-1">:</span>
                 <pre className="bg-[#050811] border border-slate-800 p-3 rounded-xl text-[11px] font-mono text-[#00f5d4] overflow-x-auto max-h-48">
                   {selectedAppDetail.manifestCode}
                 </pre>
@@ -1389,23 +1331,19 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
             </div>
 
             <div className="flex items-center justify-between pt-4 border-t border-slate-800">
-              <div className="text-xs text-slate-400 font-mono">
-                লেখক: {selectedAppDetail.author} | ডাউনলোড: {selectedAppDetail.downloadsCount}
-              </div>
+              <div className="text-xs text-slate-400 font-mono">: {selectedAppDetail.author} | Download: {selectedAppDetail.downloadsCount}</div>
 
               <div className="flex items-center gap-2">
                 <button
-                  onClick={() => handleCopySlug(selectedAppDetail.slug)}
+                  onClick={() =>handleCopySlug(selectedAppDetail.slug)}
                   className="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs text-slate-300 hover:text-white cursor-pointer"
                 >
-                  স্লাগ লিংক কপি করুন
-                </button>
+                    Copy</button>
                 <button
                   onClick={() => handleDownloadApkPackage(selectedAppDetail)}
                   className="px-4 py-2 rounded-xl bg-[#00f5d4] text-[#050811] font-bold text-xs cursor-pointer hover:brightness-110 flex items-center gap-1.5"
                 >
-                  <Download className="w-3.5 h-3.5" /> প্যাকেজ ডাউনলোড করুন
-                </button>
+                  <Download className="w-3.5 h-3.5" />Download</button>
               </div>
             </div>
           </div>
@@ -1416,34 +1354,28 @@ Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
       <div className="bg-[#050811] border border-slate-800/80 rounded-2xl p-5 md:p-6 space-y-4">
         <div className="flex items-center gap-2 text-sm font-bold text-white">
           <HelpCircle className="w-4 h-4 text-[#00f5d4]" />
-          <span>কীভাবে ওয়েবসাইট ও ওয়ার্ডপ্রেস থেকে অ্যান্ড্রয়েড অ্যাপ মেক করবেন? (সম্পূর্ণ বাংলা গাইড)</span>
+          <span>? ( English )</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
           <div className="p-3.5 rounded-xl bg-[#0b1120] border border-slate-800 space-y-1.5">
-            <span className="font-bold text-[#00f5d4] block">১. ওয়েবসাইটের লিংক দিন</span>
-            <p className="text-slate-400 leading-relaxed">
-              আপনার ওয়ার্ডপ্রেস বা কাস্টম ওয়েবসাইটের ইউআরএল দিন। প্ল্যাটফর্ম সেন্টার স্বয়ংক্রিয়ভাবে মেটাডাটা ও আইকন ডিটেক্ট করবে।
-            </p>
+            <span className="font-bold text-[#00f5d4] block">.</span>
+            <p className="text-slate-400 leading-relaxed">। Platform Center      ।</p>
           </div>
 
           <div className="p-3.5 rounded-xl bg-[#0b1120] border border-slate-800 space-y-1.5">
-            <span className="font-bold text-[#00f5d4] block">২. কনফিগারেশন ও বিল্ড</span>
-            <p className="text-slate-400 leading-relaxed">
-              প্যাকেজ নেম, থিম কালার ও পারমিশন সেট করুন। সিস্টেম তাৎক্ষণিকভাবে Android Studio রেডি প্রজেক্ট তৈরি করবে।
-            </p>
+            <span className="font-bold text-[#00f5d4] block">.</span>
+            <p className="text-slate-400 leading-relaxed">,      ।   Android Studio    ।</p>
           </div>
 
           <div className="p-3.5 rounded-xl bg-[#0b1120] border border-slate-800 space-y-1.5">
-            <span className="font-bold text-[#00f5d4] block">৩. APK রিলিজ ও পাবলিশ</span>
-            <p className="text-slate-400 leading-relaxed">
-              ডাউনলোডকৃত বান্ডিল দিয়ে গুগল প্লে কনসোলে সরাসরি AAB/APK আপলোড করে লাইভ পাবলিশ করা সম্ভব।
-            </p>
+            <span className="font-bold text-[#00f5d4] block">. APK</span>
+            <p className="text-slate-400 leading-relaxed">Download       AAB/APK      ।</p>
           </div>
         </div>
 
         <div className="pt-2 text-[11px] text-slate-500 border-t border-slate-800/60 flex flex-wrap items-center justify-between gap-2">
-          <span>🛡️ ১০০% ক্লায়েন্ট-সাইড নিরাপদ ও প্রিমিয়াম ওয়ার্ডপ্রেস প্লাগইন ও থিম সামঞ্জস্যপূর্ণ।</span>
+          <span>🛡️ % -        ।</span>
           <span>Official Domain: <a href="https://hackersshikkhok.com" target="_blank" rel="noopener noreferrer" className="text-[#00f5d4] hover:underline">hackersshikkhok.com</a></span>
         </div>
       </div>

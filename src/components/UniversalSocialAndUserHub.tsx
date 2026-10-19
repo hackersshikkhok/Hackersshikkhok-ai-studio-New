@@ -46,7 +46,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
 
   // Follow & Block System State
   const [creators, setCreators] = useState([
-    { id: 'cr-1', name: 'Hackers শিক্ষক Core Team', role: 'Verified Creator · Instructor', followers: 14820, isFollowing: true, isBlocked: false, isMuted: false },
+    { id: 'cr-1', name: 'HackersShikkhok Core Team', role: 'Verified Creator · Instructor', followers: 14820, isFollowing: true, isBlocked: false, isMuted: false },
     { id: 'cr-2', name: 'Tanvir Cyber Researcher', role: 'Security Researcher · OWASP Lab', followers: 4310, isFollowing: false, isBlocked: false, isMuted: false },
     { id: 'cr-3', name: 'Nusrat WP Architect', role: 'Developer · Plugin Engineer', followers: 6190, isFollowing: true, isBlocked: false, isMuted: false },
     { id: 'cr-4', name: 'Arif Linux & Cloud Mentor', role: 'Instructor · DevOps', followers: 3290, isFollowing: false, isBlocked: false, isMuted: false }
@@ -68,7 +68,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       id: 1041,
       author: 'Nusrat WP Architect',
       role: 'Verified Creator',
-      text: '@Hackers শিক্ষক নতুন v4.0 ইকোসিস্টেমে Universal Notification এবং Zip-Slip প্রোটেকশন অসাধারণ কাজ করছে!',
+      text: '@HackersShikkhok  v4.0 Ecosystem Universal Notification  Zip-Slip    !',
       likes: 24,
       liked: false,
       time: '14 mins ago'
@@ -77,7 +77,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       id: 1042,
       author: 'Tanvir Cyber Researcher',
       role: 'Researcher',
-      text: 'WebAuthn Passkey ও স্যান্ডবক্সড iframe-এ কুকি আইসোলেশন টেস্ট করেছি—100% নিরাপদ।',
+      text: 'WebAuthn Passkey   iframe-    —100% ।',
       likes: 19,
       liked: true,
       time: '8 mins ago'
@@ -93,8 +93,8 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       unread: 2,
       blocked: false,
       messages: [
-        { from: 'Nusrat WP Architect', text: 'হ্যালো! আমাদের নতুন WP Plugin Boilerplate প্রজেক্টের কোড রিভিউ কি সম্পন্ন হয়েছে?', time: '10:20 AM' },
-        { from: 'You', text: 'হ্যাঁ, Quality Gate-এ 95/100 পেয়েছে এবং ZIP ডাউনলোডের জন্য প্রস্তুত।', time: '10:24 AM' }
+        { from: 'Nusrat WP Architect', text: '!   WP Plugin Boilerplate      ?', time: '10:20 AM' },
+        { from: 'You', text: ', Quality Gate- 95/100   ZIP Download  ।', time: '10:24 AM' }
       ]
     }
   ]);
@@ -118,8 +118,8 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
   // Monetary Wallet Withdrawal State (Separate from Points)
   const [withdrawAmount, setWithdrawAmount] = useState('20');
   const [ledgerHistory, setLedgerHistory] = useState([
-    { id: 'TX-8821', type: 'Credit (Creator Verification Bonus)', amountBdt: '+25.0 ৳', status: 'Approved', date: '2026-09-28' },
-    { id: 'TX-8822', type: 'Credit (Approved Tutorial Royalty)', amountBdt: '+10.5 ৳', status: 'Approved', date: '2026-09-30' }
+    { id: 'TX-8821', type: 'Credit (Creator Verification Bonus)', amountBdt: '+25.0 BDT ', status: 'Approved', date: '2026-09-28' },
+    { id: 'TX-8822', type: 'Credit (Approved Tutorial Royalty)', amountBdt: '+10.5 BDT ', status: 'Approved', date: '2026-09-30' }
   ]);
 
   const userLevel = Math.max(1, Math.floor(walletPoints / 100) + 1);
@@ -132,8 +132,8 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
         const nextFollow = !c.isFollowing;
         onNotify(
           nextFollow
-            ? `আপনি ${c.name}-কে ফলো করেছেন (Deduplicated Notification Sent)`
-            : `${c.name}-কে আনফলো করা হয়েছে`
+            ? ` ${c.name}-   (Deduplicated Notification Sent)`
+            : `${c.name}-   `
         );
         return {
           ...c,
@@ -149,7 +149,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       prev.map((c) => {
         if (c.id !== id) return c;
         const nextBlocked = !c.isBlocked;
-        onNotify(nextBlocked ? `${c.name}-কে ব্লক করা হয়েছে (মেসেজ ও ফলো সীমাবদ্ধ)` : `${c.name}-কে আনব্লক করা হয়েছে`);
+        onNotify(nextBlocked ? `${c.name}-    (   )` : `${c.name}-   `);
         return { ...c, isBlocked: nextBlocked, isFollowing: nextBlocked ? false : c.isFollowing };
       })
     );
@@ -163,7 +163,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       ...prev,
       {
         id: newId,
-        author: 'Hackers শিক্ষক Member',
+        author: 'HackersShikkhok Member',
         role: 'Developer · Lvl ' + userLevel,
         text: commentInput.trim(),
         likes: 1,
@@ -172,7 +172,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       }
     ]);
     setCommentInput('');
-    onAddPoints(5, 'সহায়ক কমেন্ট যোগ করার জন্য +5 Points অর্জিত হয়েছে!');
+    onAddPoints(5, '     +5 Points  !');
   };
 
   const handleSendMessage = (e: React.FormEvent) => {
@@ -190,7 +190,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       )
     );
     setMsgInput('');
-    onNotify('প্রাইভেট মেসেজ নিরাপদে পাঠানো হয়েছে।');
+    onNotify('    ।');
   };
 
   const handleSubmitReport = (e: React.FormEvent) => {
@@ -207,7 +207,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       ...prev
     ]);
     setNewReportTarget('');
-    onNotify('রিপোর্ট মডারেশন কিউতে জমা হয়েছে (Status: New)।');
+    onNotify('Report     (Status: New)।');
   };
 
   const handleRegisterPasskey = () => {
@@ -218,20 +218,17 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       lastUsed: 'Just now'
     };
     setPasskeys((prev) => [...prev, newPk]);
-    onNotify('নতুন WebAuthn Passkey ক্রেডেনশিয়াল নিবন্ধিত হয়েছে!');
+    onNotify(' WebAuthn Passkey   !');
   };
 
-  return (
-    <section className="bg-[#0b1120] border border-[#00f5d4]/25 rounded-2xl p-5 md:p-6 space-y-5">
+  return (<section className="bg-[#0b1120] border border-[#00f5d4]/25 rounded-2xl p-5 md:p-6 space-y-5">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
         <div>
           <div className="text-xs font-mono text-[#00f5d4]">
             UNIVERSAL USER, SOCIAL, INTERACTION, MESSAGING, WALLET &amp; PASSKEY ENGINE
           </div>
-          <h2 className="text-xl md:text-2xl font-bold text-white mt-1">
-            Hackers শিক্ষক — ইউনিভার্সাল প্রোফাইল, ফলো, বুকমার্ক, মেসেজিং, ওয়ালেট ও সিকিউরিটি হাব
-          </h2>
+          <h2 className="text-xl md:text-2xl font-bold text-white mt-1">HackersShikkhok —  Profile, , , , Wallet  Security Hub</h2>
         </div>
 
         {/* Level & Points Badge (Strictly separate from Monetary Balance) */}
@@ -244,24 +241,22 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
           </div>
           <div className="text-right font-mono text-xs">
             <div className="text-amber-400 font-bold">{walletPoints} XP Points</div>
-            <div className="text-[10px] text-slate-400">Points ≠ টাকা</div>
+            <div className="text-[10px] text-slate-400">Points ≠ BDT</div>
           </div>
         </div>
       </div>
 
       {/* Sub-navigation Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-slate-800/70">
-        {[
-          { id: 'profile-geo', label: '👤 প্রোফাইল ও বাংলাদেশ জিও (8 Div / 64 Dist)' },
-          { id: 'follow-feed', label: '🤝 ফলো, আনফলো ও ব্লক সিস্টেম' },
-          { id: 'saved-favorites', label: '🔖 সেভড ও ফেভারিট আইটেম + শেয়ার' },
-          { id: 'comments-qa', label: '💬 নেস্টেড কমেন্ট (#comment-id)' },
-          { id: 'messages', label: '✉️ প্রাইভেট মেসেজিং ইনবক্স' },
-          { id: 'reports-mod', label: '🚩 রিপোর্ট ও মডারেশন কিউ' },
-          { id: 'wallet-points', label: '👛 ওয়ালেট (৳) বনাম পয়েন্টস ও ব্যাজ' },
-          { id: 'security-passkey', label: '🔐 Passkey (WebAuthn), 2FA ও প্রাইভেসি' }
-        ].map((t) => (
-          <button
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-slate-800/70">{[
+          { id: 'profile-geo', label: '👤 Profile  English  (8 Div / 64 Dist)' },
+          { id: 'follow-feed', label: '🤝 ,    ' },
+          { id: 'saved-favorites', label: '🔖     + ' },
+          { id: 'comments-qa', label: '💬   (#comment-id)' },
+          { id: 'messages', label: '✉️   ' },
+          { id: 'reports-mod', label: '🚩 Report   ' },
+          { id: 'wallet-points', label: '👛 Wallet (BDT )  Points  ' },
+          { id: 'security-passkey', label: '🔐 Passkey (WebAuthn), 2FA  ' }
+        ].map((t) => (<button
             key={t.id}
             onClick={() => setActiveSubTab(t.id as typeof activeSubTab)}
             className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap cursor-pointer transition-colors ${
@@ -284,7 +279,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
                 HS
               </div>
               <div>
-                <h3 className="text-base font-bold text-white">Hackers শিক্ষক Verified Creator</h3>
+                <h3 className="text-base font-bold text-white">HackersShikkhok Verified Creator</h3>
                 <p className="text-xs text-slate-400">@hackersshikkhok · Role: Verified Creator &amp; Administrator</p>
                 <div className="text-[11px] font-mono text-[#00f5d4] mt-1">
                   Joined: 2026 · Verified Status: Active ✓
@@ -293,7 +288,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
             </div>
 
             <div className="space-y-2 text-xs pt-2 border-t border-slate-800">
-              <div className="text-slate-400 font-semibold">অর্জিত ব্যাজসমূহ (Earned Badges):</div>
+              <div className="text-slate-400 font-semibold">(Earned Badges):</div>
               <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
                 {[
                   '🛡️ Cyber Learner',
@@ -314,14 +309,13 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
           <div className="lg:col-span-7 bg-[#050811] border border-slate-800 rounded-xl p-5 space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-bold text-[#00f5d4] flex items-center gap-1.5">
-                <MapPin className="w-4 h-4" /> বাংলাদেশ জিও সিস্টেম (৮টি বিভাগ ও ৬৪টি জেলা) + ফিল্ড প্রাইভেসি
-              </h3>
+                <MapPin className="w-4 h-4" />English   (    ) +</h3>
               <span className="text-[11px] font-mono text-slate-400">Granular Privacy Control</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div>
-                <label className="block text-slate-400 mb-1">বিভাগ (Division — 8 Divisions)</label>
+                <label className="block text-slate-400 mb-1">(Division — 8 Divisions)</label>
                 <select
                   value={selectedDivision}
                   onChange={(e) => {
@@ -340,7 +334,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
               </div>
 
               <div>
-                <label className="block text-slate-400 mb-1">জেলা (District — 64 Districts)</label>
+                <label className="block text-slate-400 mb-1">(District — 64 Districts)</label>
                 <select
                   value={selectedDistrict}
                   onChange={(e) => setSelectedDistrict(e.target.value)}
@@ -355,21 +349,21 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
               </div>
 
               <div>
-                <label className="block text-slate-400 mb-1">লোকেশন প্রাইভেসি (Geo Privacy)</label>
+                <label className="block text-slate-400 mb-1">(Geo Privacy)</label>
                 <select
                   value={geoPrivacy}
                   onChange={(e) => setGeoPrivacy(e.target.value as typeof geoPrivacy)}
                   className="w-full px-3 py-2 rounded-lg bg-[#0b1120] border border-slate-700 text-[#00f5d4] font-semibold"
                 >
-                  <option value="Public">Public (সবার জন্য উন্মুক্ত)</option>
-                  <option value="Approximate">Approximate (শুধু বিভাগ দেখাবে)</option>
-                  <option value="Followers Only">Followers Only (শুধু ফলোয়ারদের জন্য)</option>
-                  <option value="Private">Private (শুধু নিজে দেখবেন)</option>
+                  <option value="Public">Public (  )</option>
+                  <option value="Approximate">Approximate (  )</option>
+                  <option value="Followers Only">Followers Only (  )</option>
+                  <option value="Private">Private (  )</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-slate-400 mb-1">প্রোফাইল অ্যাক্টিভিটি প্রাইভেসি (Field Privacy)</label>
+                <label className="block text-slate-400 mb-1">Profile   (Field Privacy)</label>
                 <select
                   value={bioPrivacy}
                   onChange={(e) => setBioPrivacy(e.target.value as typeof bioPrivacy)}
@@ -384,15 +378,13 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
             </div>
 
             <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-800 text-xs">
-              <span className="text-slate-400">
-                নির্বাচিত লোকেশন: <strong className="text-white">{selectedDistrict}, {selectedDivision}</strong> ({geoPrivacy})
+              <span className="text-slate-400">:<strong className="text-white">{selectedDistrict}, {selectedDivision}</strong> ({geoPrivacy})
               </span>
               <button
-                onClick={() => onNotify(`প্রোফাইল ও জিও প্রাইভেসি (${selectedDistrict}, ${geoPrivacy}) সংরক্ষিত হয়েছে!`)}
+                onClick={() =>onNotify(`Profile    (${selectedDistrict}, ${geoPrivacy})  !`)}
                 className="px-4 py-2 rounded-lg bg-[#00f5d4] text-[#050811] font-bold cursor-pointer"
               >
-                প্রোফাইল আপডেট করুন
-              </button>
+                Profile</button>
             </div>
           </div>
         </div>
@@ -495,25 +487,23 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
                       </button>
 
                       <button
-                        onClick={() => {
+                        onClick={() =>{
                           navigator.clipboard?.writeText(`https://hackersshikkhok.com/item/${item.id}`);
-                          onNotify(`লিংক কপি হয়েছে (https://hackersshikkhok.com/item/${item.id})`);
+                          onNotify(` Copied (https://hackersshikkhok.com/item/${item.id})`);
                         }}
                         className="px-2.5 py-1 rounded bg-[#0b1120] border border-slate-800 text-slate-300 hover:text-[#00f5d4] flex items-center gap-1 cursor-pointer"
-                      >
-                        <Share2 className="w-3.5 h-3.5" /> Share ({item.shares})
+                      ><Share2 className="w-3.5 h-3.5" /> Share ({item.shares})
                       </button>
                     </div>
 
                     <button
-                      onClick={() => {
+                      onClick={() =>{
                         setSavedItems((prev) => prev.filter((s) => s.id !== item.id));
-                        onNotify('বুকমার্ক তালিকা থেকে সরানো হয়েছে।');
+                        onNotify('    ।');
                       }}
                       className="text-xs text-slate-400 hover:text-rose-400 cursor-pointer"
                     >
-                      Remove Bookmark
-                    </button>
+                      Remove Bookmark</button>
                   </div>
                 </div>
               ))}
@@ -528,16 +518,13 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
             <input
               type="text"
               value={commentInput}
-              onChange={(e) => setCommentInput(e.target.value)}
-              placeholder="কমেন্ট বা @mention লিখুন (প্রতিটি কমেন্টে ইউনিক #comment-id ডিপ-লিংক তৈরি হবে)..."
+              onChange={(e) =>setCommentInput(e.target.value)}
+              placeholder="  @mention  (   #comment-id -  )..."
               className="flex-1 px-3.5 py-2 rounded-xl bg-[#050811] border border-slate-800 text-xs text-white focus:outline-none focus:border-[#00f5d4]"
-            />
-            <button
+            /><button
               type="submit"
               className="px-4 py-2 rounded-xl bg-[#00f5d4] text-[#050811] font-bold text-xs cursor-pointer"
-            >
-              কমেন্ট পোস্ট করুন
-            </button>
+            >Cyber Defense Hub</button>
           </form>
 
           <div className="space-y-2.5">
@@ -557,7 +544,7 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
                     onClick={(e) => {
                       e.preventDefault();
                       navigator.clipboard?.writeText(`https://hackersshikkhok.com/#comment-${c.id}`);
-                      onNotify(`Deep-link কপি হয়েছে: #comment-${c.id}`);
+                      onNotify(`Deep-link Copied: #comment-${c.id}`);
                     }}
                     className="font-mono text-[#00f5d4] hover:underline"
                   >
@@ -602,11 +589,10 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
             <input
               type="text"
               value={msgInput}
-              onChange={(e) => setMsgInput(e.target.value)}
-              placeholder="প্রাইভেট মেসেজ লিখুন..."
+              onChange={(e) =>setMsgInput(e.target.value)}
+              placeholder="  ..."
               className="flex-1 px-3.5 py-2 rounded-lg bg-[#0b1120] border border-slate-800 text-xs text-white"
-            />
-            <button
+            /><button
               type="submit"
               className="px-4 py-2 rounded-lg bg-[#00f5d4] text-[#050811] font-bold text-xs cursor-pointer"
             >
@@ -620,19 +606,18 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
       {activeSubTab === 'reports-mod' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
           <form onSubmit={handleSubmitReport} className="lg:col-span-5 bg-[#050811] border border-slate-800 rounded-xl p-4 space-y-3 text-xs">
-            <h4 className="font-bold text-white">নতুন রিপোর্ট / ফ্ল্যাগ জমা দিন (Universal Report Engine)</h4>
+            <h4 className="font-bold text-white">Report /    (Universal Report Engine)</h4>
             <div>
               <label className="block text-slate-400 mb-1">Content / User / Tool / Comment ID</label>
               <input
                 type="text"
                 value={newReportTarget}
-                onChange={(e) => setNewReportTarget(e.target.value)}
-                placeholder="যেমন: Comment #1042 বা Tool #12"
+                onChange={(e) =>setNewReportTarget(e.target.value)}
+                placeholder=": Comment #1042  Tool #12"
                 className="w-full px-3 py-2 rounded-lg bg-[#0b1120] border border-slate-800 text-white"
-              />
-            </div>
+              /></div>
             <div>
-              <label className="block text-slate-400 mb-1">রিপোর্টের কারণ (Reason)</label>
+              <label className="block text-slate-400 mb-1">Report  (Reason)</label>
               <select
                 value={newReportReason}
                 onChange={(e) => setNewReportReason(e.target.value)}
@@ -649,13 +634,11 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
             <button
               type="submit"
               className="w-full py-2 rounded-lg bg-rose-500 hover:bg-rose-600 text-white font-bold cursor-pointer"
-            >
-              রিপোর্ট জমা দিন
-            </button>
+            >Report</button>
           </form>
 
           <div className="lg:col-span-7 bg-[#050811] border border-slate-800 rounded-xl p-4 space-y-2.5 text-xs">
-            <h4 className="font-bold text-white">অ্যাডমিন ও মডারেটর রিপোর্ট কিউ (New / Under Review / Resolved)</h4>
+            <h4 className="font-bold text-white">Report  (New / Under Review / Resolved)</h4>
             {reports.map((r) => (
               <div key={r.id} className="p-3 rounded-lg bg-[#0b1120] border border-slate-800 flex items-center justify-between">
                 <div>
@@ -674,12 +657,10 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 text-xs">
           <div className="bg-[#050811] border border-slate-800 rounded-xl p-4 space-y-3">
             <div className="flex items-center justify-between">
-              <h4 className="font-bold text-[#00f5d4]">১. Monetary Wallet Balance (৳ BDT — Atomic Ledger)</h4>
-              <span className="font-mono text-lg font-extrabold text-white">{walletBalance.toFixed(1)} ৳</span>
+              <h4 className="font-bold text-[#00f5d4]">. Monetary Wallet Balance (BDT  BDT — Atomic Ledger)</h4>
+              <span className="font-mono text-lg font-extrabold text-white">{walletBalance.toFixed(1)} BDT </span>
             </div>
-            <p className="text-slate-400">
-              সার্ভার-সাইড অ্যাটমিক লেজার দ্বারা সুরক্ষিত। ক্লায়েন্ট-সাইড থেকে কোনো ইউজার ব্যালেন্স পরিবর্তন করতে পারবে না।
-            </p>
+            <p className="text-slate-400">-    । -    Balance    ।</p>
             <div className="space-y-1.5">
               {ledgerHistory.map((tx) => (
                 <div key={tx.id} className="p-2.5 rounded bg-[#0b1120] border border-slate-800 flex justify-between font-mono">
@@ -696,34 +677,32 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
                 className="w-28 px-3 py-1.5 rounded bg-[#0b1120] border border-slate-800 text-white font-mono"
               />
               <button
-                onClick={() => {
+                onClick={() =>{
                   setLedgerHistory((prev) => [
                     {
                       id: `TX-${8823 + prev.length}`,
                       type: 'Withdrawal Request (Pending Admin Review)',
-                      amountBdt: `-${withdrawAmount} ৳`,
+                      amountBdt: `-${withdrawAmount} BDT `,
                       status: 'Pending',
                       date: 'Just now'
                     },
                     ...prev
                   ]);
-                  onNotify(`উইথড্রয়াল রিকোয়েস্ট (${withdrawAmount} ৳) অ্যাডমিন রিভিউয়ের জন্য জমা হয়েছে।`);
+                  onNotify(`  (${withdrawAmount} BDT )     ।`);
                 }}
                 className="px-4 py-1.5 rounded bg-[#00f5d4] text-[#050811] font-bold cursor-pointer"
               >
-                Request Withdrawal
-              </button>
+                Request Withdrawal</button>
             </div>
           </div>
 
           <div className="bg-[#050811] border border-slate-800 rounded-xl p-4 space-y-3">
             <div className="flex items-center justify-between">
-              <h4 className="font-bold text-amber-400">২. Learning Points, XP, Levels &amp; Badges (Non-Monetary)</h4>
+              <h4 className="font-bold text-amber-400">. Learning Points, XP, Levels &amp; Badges (Non-Monetary)</h4>
               <span className="font-mono text-lg font-extrabold text-amber-400">{walletPoints} Points</span>
             </div>
             <p className="text-slate-300">
-              <strong>নীতিমালা:</strong> কখনোই <code>Points = টাকা</code> ধরা হয় না। কোর্স, কুইজ, সহায়ক উত্তর, গেম স্কোর ও কমিউনিটি কন্ট্রিবিউশনের মাধ্যমে পয়েন্ট ও লেভেল বৃদ্ধি পায়।
-            </p>
+              <strong>:</strong>Cyber Defense Hub<code>Points = BDT</code>। Course, ,  ,       Points    ।</p>
             <div className="p-3 rounded-lg bg-[#0b1120] border border-slate-800 font-mono space-y-1">
               <div>Current Level: Level {userLevel} (Next Level at {userLevel * 100} Points)</div>
               <div>Active Badges: 6 Verified Skill Badges</div>
@@ -755,14 +734,13 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
                     <div className="text-[11px] font-mono text-slate-400">Created: {pk.created} · Last used: {pk.lastUsed}</div>
                   </div>
                   <button
-                    onClick={() => {
+                    onClick={() =>{
                       setPasskeys((prev) => prev.filter((p) => p.id !== pk.id));
-                      onNotify('Passkey ডিভাইস রিভোক করা হয়েছে।');
+                      onNotify('Passkey    ।');
                     }}
                     className="text-rose-400 hover:underline cursor-pointer"
                   >
-                    Revoke
-                  </button>
+                    Revoke</button>
                 </div>
               ))}
             </div>
@@ -783,17 +761,15 @@ export const UniversalSocialAndUserHub: React.FC<UniversalSocialAndUserHubProps>
             </div>
             <div className="flex flex-wrap gap-2 pt-1">
               <button
-                onClick={() => onNotify('আপনার সম্পূর্ণ প্রোফাইল ও প্রজেক্ট ডাটা JSON আকারে এক্সপোর্ট প্রস্তুত হয়েছে।')}
+                onClick={() =>onNotify('  Profile    JSON    ।')}
                 className="px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold cursor-pointer"
               >
-                📥 Export Account Data (JSON)
-              </button>
+                📥 Export Account Data (JSON)</button>
               <button
-                onClick={() => onNotify('অন্যান্য সকল সেশন সফলভাবে লগআউট/রিভোক করা হয়েছে।')}
+                onClick={() =>onNotify('   Success /  ।')}
                 className="px-3.5 py-2 rounded-lg bg-rose-950/60 hover:bg-rose-900/70 text-rose-200 border border-rose-800/50 font-semibold cursor-pointer"
               >
-                Revoke Other Sessions
-              </button>
+                Revoke Other Sessions</button>
             </div>
           </div>
         </div>

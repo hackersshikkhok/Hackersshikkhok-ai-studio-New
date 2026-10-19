@@ -122,29 +122,25 @@ document.querySelectorAll('.hs-neon-cta').forEach((btn) => {
           <div className="text-xs font-mono text-[#00f5d4] tracking-wider">
             CSS / RGB / NEON CODE LAB · 15 REAL-TIME GENERATORS
           </div>
-          <h2 className="text-xl md:text-2xl font-bold text-white mt-1">
-            ১৫টি ইন্টারঅ্যাক্টিভ CSS / RGB / নিয়ন জেনারেটর ল্যাব
-          </h2>
+          <h2 className="text-xl md:text-2xl font-bold text-white mt-1">CSS / RGB /  Generator Lab</h2>
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={handleReset}
             className="px-3.5 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 text-xs font-medium flex items-center gap-1.5 transition-colors cursor-pointer"
           >
-            <RotateCcw className="w-3.5 h-3.5" /> রিসেট (Reset)
-          </button>
+            <RotateCcw className="w-3.5 h-3.5" />(Reset)</button>
           <button
             onClick={handleCopy}
             className="px-3.5 py-2 rounded-lg bg-[#00f5d4]/15 hover:bg-[#00f5d4]/25 text-[#00f5d4] border border-[#00f5d4]/40 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
           >
             {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-            {copied ? 'কপি হয়েছে!' : 'কোড কপি'}
-          </button>
+            {copied ? 'Copied!' : ' '}</button>
           <button
             onClick={handleDownload}
             className="px-3.5 py-2 rounded-lg bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
           >
-            <Download className="w-3.5 h-3.5" /> ডাউনলোড
+            <Download className="w-3.5 h-3.5" /> Download
           </button>
         </div>
       </div>
@@ -169,9 +165,7 @@ document.querySelectorAll('.hs-neon-cta').forEach((btn) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6">
         {/* Controls Column */}
         <div className="lg:col-span-4 space-y-4 bg-[#050811] p-4 rounded-xl border border-slate-800/90">
-          <div className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
-            কাস্টমাইজেশন কন্ট্রোল (Instant Live Controls)
-          </div>
+          <div className="text-xs font-semibold text-slate-300 uppercase tracking-wider">(Instant Live Controls)</div>
 
           <div className="grid grid-cols-2 gap-3">
             <label className="block">
@@ -334,9 +328,7 @@ document.querySelectorAll('.hs-neon-cta').forEach((btn) => {
                 HACKERSSHIKKHOK · {activeGenObj.id.toUpperCase()}
               </div>
               <h3 className="text-lg font-bold mt-1">{activeGenObj.nameBn}</h3>
-              <p className="text-xs opacity-80 mt-1.5 leading-relaxed">
-                কন্ট্রোল পরিবর্তন করার সাথে সাথে প্রিভিউ এবং HTML/CSS/JS কোড রিয়েল-টাইমে আপডেট হচ্ছে।
-              </p>
+              <p className="text-xs opacity-80 mt-1.5 leading-relaxed">HTML/CSS/JS  -  ।</p>
               <button
                 type="button"
                 style={{
@@ -344,9 +336,7 @@ document.querySelectorAll('.hs-neon-cta').forEach((btn) => {
                   borderRadius: `${Math.max(6, Math.round(borderRadius / 2))}px`
                 }}
                 className="mt-4 px-4 py-2 text-xs font-bold text-[#050811] cursor-pointer"
-              >
-                অ্যাকশন বাটন প্রিভিউ (Live Test)
-              </button>
+              >(Live Test)</button>
             </div>
           </div>
 

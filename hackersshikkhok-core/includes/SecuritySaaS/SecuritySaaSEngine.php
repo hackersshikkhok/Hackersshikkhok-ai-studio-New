@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Enterprise Cyber Command & Security Audit SaaS Engine
+ * HackersShikkhok — Enterprise Cyber Command & Security Audit SaaS Engine
  *
  * 14-Module Enterprise Cyber Defense, Vulnerability Lifecycle Management,
  * Passive Web Auditor, AI Remediation, & B2B Client Portal.
@@ -242,7 +242,7 @@ final class SecuritySaaSEngine {
         $user_id    = get_current_user_id();
 
         if ( empty( $target_url ) ) {
-            wp_send_json_error( array( 'message' => 'টার্গেট ডোমেন বা ইউআরএল প্রদান করুন।' ) );
+            wp_send_json_error( array( 'message' => '     ।' ) );
         }
 
         $result = PassiveAuditorEngine::execute_audit( $target_url, $mode, $user_id );
@@ -255,9 +255,9 @@ final class SecuritySaaSEngine {
         $verified  = TargetManager::verify_target_ownership( $target_id );
 
         if ( $verified ) {
-            wp_send_json_success( array( 'message' => 'ডোমেন মালিকানা সফলভাবে যাচাই ও সক্রিয় করা হয়েছে।' ) );
+            wp_send_json_success( array( 'message' => '       ।' ) );
         } else {
-            wp_send_json_error( array( 'message' => 'মালিকানা যাচাই ব্যর্থ হয়েছে। DNS TXT রেকর্ড অথবা ভেরিফিকেশন ফাইল চেক করুন।' ) );
+            wp_send_json_error( array( 'message' => '   । DNS TXT      ।' ) );
         }
     }
 
@@ -265,7 +265,7 @@ final class SecuritySaaSEngine {
         check_ajax_referer( 'hs_cyber_command_nonce', 'nonce' );
         $user_id = get_current_user_id();
         if ( ! $user_id ) {
-            wp_send_json_error( array( 'message' => 'অনুরোধ জমা দিতে লগইন করুন।' ) );
+            wp_send_json_error( array( 'message' => '    ।' ) );
         }
 
         $company = isset( $_POST['company_name'] ) ? sanitize_text_field( wp_unslash( $_POST['company_name'] ) ) : '';
@@ -287,9 +287,9 @@ final class SecuritySaaSEngine {
 
         $updated = FindingsLedger::update_status( $finding_id, $status );
         if ( $updated ) {
-            wp_send_json_success( array( 'message' => 'ভালনারেবিলিটি স্ট্যাটাস সফলভাবে আপডেট করা হয়েছে।' ) );
+            wp_send_json_success( array( 'message' => '     ।' ) );
         } else {
-            wp_send_json_error( array( 'message' => 'স্ট্যাটাস আপডেট ব্যর্থ হয়েছে।' ) );
+            wp_send_json_error( array( 'message' => '   ।' ) );
         }
     }
 
@@ -310,13 +310,13 @@ final class SecuritySaaSEngine {
         $result = SecurityWebhooksDispatcher::dispatch_event( $user_id, 'test_alert', array(
             'target_url'   => 'https://hackersshikkhok.com',
             'health_score' => 88,
-            'summary'      => 'Test dispatch verification from Hackers শিক্ষক Cyber Command Webhook Dispatcher.',
+            'summary'      => 'Test dispatch verification from HackersShikkhok Cyber Command Webhook Dispatcher.',
         ) );
 
         if ( $result['success'] ) {
-            wp_send_json_success( array( 'message' => 'টেস্ট অ্যালার্ট পেডলোড সফলভাবে পাঠানো হয়েছে!', 'result' => $result ) );
+            wp_send_json_success( array( 'message' => '     !', 'result' => $result ) );
         } else {
-            wp_send_json_error( array( 'message' => 'ওয়েবহুক ডিসপ্যাচ ব্যর্থ: ' . ( $result['error'] ?? 'Unknown' ), 'result' => $result ) );
+            wp_send_json_error( array( 'message' => '  : ' . ( $result['error'] ?? 'Unknown' ), 'result' => $result ) );
         }
     }
 

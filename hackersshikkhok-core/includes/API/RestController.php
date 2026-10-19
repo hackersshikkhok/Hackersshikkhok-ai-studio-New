@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Master REST API Controller with Object-Level Authorization & Real Diagnostics
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class RestController {
 
@@ -240,7 +240,7 @@ final class RestController {
         if ( ! $tool ) {
             $tool = array(
                 'name'               => ucfirst( str_replace( '-', ' ', $slug ) ),
-                'name_bn'            => 'প্রো টুল',
+                'name_bn'            => 'Pro Tool',
                 'category'           => 'Developer',
                 'description'        => 'Free client-side developer and cybersecurity tool.',
                 'input_formats'      => 'Text',
@@ -274,7 +274,7 @@ final class RestController {
 '  </defs>' . "\n" .
 '  <rect width="1200" height="630" fill="url(#bgGrad)" />' . "\n" .
 '  <rect x="25" y="25" width="1150" height="580" rx="16" fill="none" stroke="#00f5d4" stroke-width="1.5" stroke-opacity="0.3" />' . "\n" .
-'  <text x="60" y="80" fill="#00f5d4" font-size="14" font-weight="bold">HACKERS শিক্ষক LAB · 2,024 PRO TOOLS</text>' . "\n" .
+'  <text x="60" y="80" fill="#00f5d4" font-size="14" font-weight="bold">HackersShikkhok LAB · 2,024 PRO TOOLS</text>' . "\n" .
 '  <text x="1140" y="80" fill="#ff3366" font-size="12" font-weight="bold" text-anchor="end">100% PRIVATE CLIENT EXECUTION</text>' . "\n" .
 '  <text x="60" y="140" fill="#ffffff" font-size="34" font-weight="bold">' . $title_bn . '</text>' . "\n" .
 '  <text x="60" y="175" fill="#00f5d4" font-size="20">' . $title_en . ' · Live Engine</text>' . "\n" .

@@ -1,7 +1,7 @@
 <?php
 /**
- * Safe Uninstall Handler for Hackers শিক্ষক Core Engine.
- * Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Safe Uninstall Handler for HackersShikkhok Core Engine.
+ * Developed by HackersShikkhok (https://hackersshikkhok.com)
  * Preserves all user content, custom post types, and database tables unless explicit purge is enabled in settings.
  */
 

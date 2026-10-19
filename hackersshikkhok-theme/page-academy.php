@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Hackers শিক্ষক Cybersecurity Academy & Dynamic LMS Player
+ * Template Name: HackersShikkhok Cybersecurity Academy & Dynamic LMS Player
  * Theme Presentation Layer for Courses, Levels 0-8, 3-Column LMS Player & Public Certificate Verification
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 
 declare(strict_types=1);
@@ -80,7 +80,7 @@ if ( empty( $all_courses ) ) {
                 $course_info = array(
                     'post_id'       => 0,
                     'slug'          => $c_slug,
-                    'title'         => $c_item['titleBn'] ?? ($c_item['titleEn'] ?? 'Course'),
+                    'title'         => $c_item['titleEn'] ?? ($c_item['title'] ?? ($c_item['titleBn'] ?? 'Course')),
                     'title_en'      => $c_item['titleEn'] ?? '',
                     'category_id'   => $c_item['categoryId'] ?? 'cybersecurity',
                     'level'         => (int) ( $c_item['level'] ?? 1 ),
@@ -132,9 +132,10 @@ if ( $active_course_post ) {
 
 $first_lesson = $active_modules[0]['lessons'][0] ?? array(
     'id' => 'l1',
-    'titleBn' => '১.১ পরিচিতি ও প্র্যাকটিস',
+    'titleEn' => '1.1 System Architecture & Hands-on Lab',
+    'title' => '1.1 System Architecture & Hands-on Lab',
     'type' => 'Video Lecture',
-    'contentMarkdownBn' => 'পাঠের বিবরণ লোড হচ্ছে...'
+    'contentMarkdownEn' => 'Loading instructional briefing and lab environment...'
 );
 ?>
 
@@ -144,12 +145,12 @@ $first_lesson = $active_modules[0]['lessons'][0] ?? array(
         <div class="hs-academy-header-inner">
             <div class="hs-academy-brand">
                 <div class="hs-academy-badge">🛡️ ACADEMY PRO</div>
-                <h1 class="hs-academy-title">Hackers শিক্ষক Cyber Academy &amp; LMS Hub</h1>
+                <h1 class="hs-academy-title">HackersShikkhok Cyber Academy &amp; LMS Hub</h1>
             </div>
             
             <!-- Dynamic Course Selector Dropdown -->
             <div class="hs-course-picker">
-                <label for="hs-course-select" class="hs-picker-label">কোর্স নির্বাচন:</label>
+                <label for="hs-course-select" class="hs-picker-label">Select Course:</label>
                 <select id="hs-course-select" onchange="HS_ACADEMY.switchCourse(this.value)">
                     <?php if ( ! empty( $all_courses ) ) : 
                         $grouped_courses = array();
@@ -181,7 +182,7 @@ $first_lesson = $active_modules[0]['lessons'][0] ?? array(
                 </div>
                 <div class="hs-stat-chip">
                     <span class="hs-stat-label">WALLET</span>
-                    <span class="hs-stat-value">৳ <?php echo esc_html( number_format( (float) $wallet_data['balance_bdt'], 2 ) ); ?></span>
+                    <span class="hs-stat-value">BDT <?php echo esc_html( number_format( (float) $wallet_data['balance_bdt'], 2 ) ); ?> BDT</span>
                 </div>
                 <button class="hs-btn-verify-cert" onclick="HS_ACADEMY.openCertModal()">📜 Verify Certificate</button>
             </div>
@@ -266,18 +267,58 @@ $first_lesson = $active_modules[0]['lessons'][0] ?? array(
                 <!-- Lecture Content Stage -->
                 <div class="hs-stage-content active" id="hs-stage-lecture">
                     <div class="hs-lesson-body" id="hs-lesson-body-text">
-                        <div class="hs-video-container">
+                        <div class="hs-video-container" style="position:relative;background:#050811;border-radius:12px;overflow:hidden;border:1px solid rgba(0,245,212,0.3);">
                             <iframe 
                                 id="hs-video-frame" 
-                                src="https://www.youtube-nocookie.com/embed/videoseries?list=PLr6-GrHGFmWzN5j_4X33q1m8v7yQk9m2e" 
-                                title="Hackers শিক্ষক Cyber Tutorial Player" 
+                                src="https://www.youtube-nocookie.com/embed?listType=search&list=HackersShikkhok" 
+                                title="HackersShikkhok Official Academy Player" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
+                                allowfullscreen
+                                style="width:100%;aspect-ratio:16/9;border:none;">
                             </iframe>
+                            <div style="padding:10px 14px;background:rgba(11,17,32,0.9);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;">
+                                <span style="color:#cbd5e1;">▶ HackersShikkhok Official Video Stream</span>
+                                <a href="https://youtube.com/@HackersShikkhok" target="_blank" rel="noopener noreferrer" style="color:#ef4444;font-weight:700;text-decoration:none;">
+                                    Subscribe on YouTube ➔
+                                </a>
+                            </div>
                         </div>
-                        <div class="hs-lesson-notes-content" id="hs-dynamic-lesson-content">
-                            <h3><?php echo esc_html( $first_lesson['titleBn'] ?? 'Lesson Instruction' ); ?></h3>
-                            <p><?php echo esc_html( $first_lesson['contentMarkdownBn'] ?? 'ইনস্ট্রাকশনাল বিবরণী...' ); ?></p>
+                        <div class="hs-lesson-notes-content" id="hs-dynamic-lesson-content" style="margin-top:20px;line-height:1.7;">
+                            <?php 
+                            $raw_lesson_text = (string) ( $first_lesson['contentMarkdownEn'] ?? ( $first_lesson['contentMarkdownBn'] ?? '' ) );
+                            $lesson_title = (string) ( $first_lesson['titleEn'] ?? ( $first_lesson['title'] ?? 'Lesson 1.1 Instruction' ) );
+                            
+                            // Clean broken punctuation artifacts
+                            $cleaned = preg_replace( '/\*\*\s*,\s*:\*\*\s*\*\*/', '', $raw_lesson_text );
+                            $cleaned = preg_replace( '/\*\*\.\s*--\s*:\*\*\s*\*\*/', '', $cleaned );
+                            $cleaned = preg_replace( '/\*\*\s*\.\s*:\*\*\s*-\s*,/', '', $cleaned );
+                            $cleaned = preg_replace( '/[•\s]+:[^a-zA-Z0-9\n]+/', '', $cleaned );
+                            $cleaned = trim( $cleaned );
+
+                            if ( empty( $cleaned ) || strlen( $cleaned ) < 30 ) : ?>
+                                <div class="hs-lesson-briefing-card" style="background:#0b1120;border:1px solid rgba(0,245,212,0.25);border-radius:14px;padding:24px;">
+                                    <div style="display:inline-block;padding:2px 10px;background:rgba(0,245,212,0.12);border:1px solid #00f5d4;color:#00f5d4;font-size:11px;font-weight:800;border-radius:6px;margin-bottom:12px;">
+                                        ⚡ DEFENSIVE CORE CURRICULUM
+                                    </div>
+                                    <h3 style="color:#fff;font-size:1.3rem;font-weight:800;margin-bottom:10px;"><?php echo esc_html( $lesson_title ); ?></h3>
+                                    <p style="color:#94a3b8;font-size:14px;">In this specialized module, students master foundational defensive cybersecurity architecture, threat intelligence analysis, and defensive mitigation standards.</p>
+                                    
+                                    <h4 style="color:#00f5d4;font-size:15px;margin:16px 0 8px 0;">🎯 Key Learning Objectives:</h4>
+                                    <ul style="color:#cbd5e1;font-size:13px;padding-left:20px;line-height:1.8;">
+                                        <li>Understand threat vectors, reconnaissance patterns, and attack surface minimization.</li>
+                                        <li>Implement input sanitization, parameterized prepared statements, and cryptographic HMAC token verification.</li>
+                                        <li>Deploy defensive monitoring rules, audit logs, and zero-trust authorization boundaries.</li>
+                                    </ul>
+                                    
+                                    <h4 style="color:#a78bfa;font-size:15px;margin:16px 0 8px 0;">💻 Hands-On Laboratory Execution:</h4>
+                                    <p style="color:#94a3b8;font-size:13px;">Switch to the <strong>Sandboxed Terminal Lab</strong> or <strong>Red Arrow Vector Diagrams</strong> tab above to inspect the architectural flow and submit your CTF flag.</p>
+                                </div>
+                            <?php else : ?>
+                                <h3 style="color:#fff;font-size:1.3rem;font-weight:800;margin-bottom:10px;"><?php echo esc_html( $lesson_title ); ?></h3>
+                                <div style="color:#cbd5e1;font-size:14px;">
+                                    <?php echo nl2br( esc_html( $cleaned ) ); ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -307,7 +348,7 @@ $first_lesson = $active_modules[0]['lessons'][0] ?? array(
                             <span class="hs-term-title">hs-lab-session@hackersshikkhok:~ (Isolated Sandbox)</span>
                         </div>
                         <div class="hs-term-body" id="hs-term-output">
-                            <p class="hs-term-line">Welcome to Hackers শিক্ষক Defensive Security Interactive Sandbox v4.1.0.</p>
+                            <p class="hs-term-line">Welcome to HackersShikkhok Defensive Security Interactive Sandbox v4.1.0.</p>
                             <p class="hs-term-line">Active Course: [<?php echo esc_html( $active_course_slug ); ?>] | Type 'help', 'status', 'scan', 'verify-hmac', or 'clear' to execute authorized lab commands.</p>
                             <div class="hs-term-prompt-line">
                                 <span class="hs-term-prompt">scholar@hs-academy:~$</span>
@@ -359,20 +400,20 @@ $first_lesson = $active_modules[0]['lessons'][0] ?? array(
                         <option value="male">👨 Male Cyber Voice</option>
                     </select>
                     <button id="hs-tts-play-btn" class="hs-tts-btn" style="background:rgba(0,245,212,0.15);border:1px solid #00f5d4;color:#00f5d4;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer;">
-                        🔊 লেকচার শুনুন (TTS)
+                        🔊 Listen Lecture (TTS)
                     </button>
                 </div>
-                <small style="color:#64748b;font-size:10px;">Browser Native SpeechSynthesis — বাংলা ও ইংরেজি অডিও রিডিং</small>
+                <small style="color:#64748b;font-size:10px;">Browser Native SpeechSynthesis — Zero Remote Telemetry</small>
             </div>
 
             <!-- CTF Flag & Active Bounty Card -->
             <div class="hs-console-widget hs-ctf-box" style="border:1px solid #ff3366;background:rgba(255,51,102,0.06);padding:12px;border-radius:10px;margin-bottom:12px;">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
                     <strong style="color:#ff3366;font-size:12px;">🚩 ACTIVE CTF CHALLENGE</strong>
-                    <span style="background:#ff3366;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:bold;">+150 XP &amp; ৳25 BDT</span>
+                    <span style="background:#ff3366;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:bold;">+150 XP &amp; BDT 25 BDT</span>
                 </div>
                 <p style="font-size:11px;color:#e2e8f0;margin:0 0 8px 0;line-height:1.4;">
-                    টার্মিনালে <code>exploit sqli</code> চালিয়ে ফ্ল্যাগ সংগ্রহ করুন এবং <code>submit-flag &lt;TOKEN&gt;</code> দিয়ে ওয়ালেটে ক্রেডিট গ্রহণ করুন।
+                    Run <code>exploit sqli</code> in the terminal to capture the flag, then execute <code>submit-flag &lt;TOKEN&gt;</code> to credit bounties directly to your wallet.
                 </p>
                 <div style="font-family:monospace;font-size:10px;background:#050811;padding:6px;border-radius:6px;border:1px solid #334155;color:#38bdf8;">
                     Hint: prepared statement literal binding
@@ -406,7 +447,7 @@ $first_lesson = $active_modules[0]['lessons'][0] ?? array(
                 <button class="hs-modal-close" onclick="HS_ACADEMY.closeCertModal()">✕</button>
             </div>
             <div class="hs-modal-body">
-                <p>Enter any Hackers শিক্ষক Certificate Code to cryptographically verify its authenticity against our server HMAC ledger.</p>
+                <p>Enter any HackersShikkhok Certificate Code to cryptographically verify its authenticity against our server HMAC ledger.</p>
                 <div class="hs-form-row">
                     <input type="text" id="hs-cert-verify-input" placeholder="e.g. HS-CERT-2026-X9A7B2C" />
                     <button class="hs-btn-primary" onclick="HS_ACADEMY.verifyCertificateCode()">Verify Signature</button>
@@ -439,7 +480,26 @@ window.HS_ACADEMY = (function() {
             
             const dynContent = document.getElementById('hs-dynamic-lesson-content');
             if (dynContent) {
-                dynContent.innerHTML = `<h3>${title}</h3><p>এই পাঠের বিস্তারিত ইনস্ট্রাকশন ও ল্যাব মেটেরিয়াল লোড হয়েছে। উপরে সংশ্লিষ্ট ট্যাব থেকে ল্যাব বা পরীক্ষা সম্পন্ন করুন।</p>`;
+                dynContent.innerHTML = `
+                    <div class="hs-lesson-briefing-card" style="background:#0b1120;border:1px solid rgba(0,245,212,0.25);border-radius:14px;padding:24px;">
+                        <div style="display:inline-block;padding:2px 10px;background:rgba(0,245,212,0.12);border:1px solid #00f5d4;color:#00f5d4;font-size:11px;font-weight:800;border-radius:6px;margin-bottom:12px;">
+                            ⚡ ACTIVE LESSON BRIEFING
+                        </div>
+                        <h3 style="color:#fff;font-size:1.3rem;font-weight:800;margin-bottom:10px;">${title}</h3>
+                        <p style="color:#94a3b8;font-size:14px;margin-bottom:16px;">This module focuses on defensive vulnerability research, secure coding mechanisms, and real-time mitigation protocols.</p>
+                        
+                        <h4 style="color:#00f5d4;font-size:14px;margin-bottom:8px;">🎯 Target Learning Objectives:</h4>
+                        <ul style="color:#cbd5e1;font-size:13px;padding-left:20px;line-height:1.7;margin-bottom:16px;">
+                            <li>Architectural threat modeling and attack vector surface minimization.</li>
+                            <li>Defensive input sanitization, prepared statements, and cryptographic verification.</li>
+                            <li>Real-time telemetry logging, sandboxed terminal validation, and CTF flag capture.</li>
+                        </ul>
+                        
+                        <div style="background:#06080d;border:1px solid rgba(167,139,250,0.3);border-radius:10px;padding:14px;color:#a78bfa;font-size:13px;">
+                            <strong>💡 Pro-Tip:</strong> Use the <strong>Sandboxed Terminal Lab</strong> tab above to execute live commands and verify your defensive solution.
+                        </div>
+                    </div>
+                `;
             }
 
             if (type.includes('Lab') || type.includes('terminal')) {
@@ -475,7 +535,7 @@ window.HS_ACADEMY = (function() {
             if (btn) btn.classList.add('active');
             const wrapper = document.getElementById('hs-dynamic-diagram-wrapper');
             if (!wrapper) return;
-            wrapper.innerHTML = '<div style="color:#00f5d4;padding:20px;text-align:center;">⏳ ডায়াগ্রাম রেন্ডার হচ্ছে...</div>';
+            wrapper.innerHTML = '<div style="color:#00f5d4;padding:20px;text-align:center;">⏳ Rendering vector diagram...</div>';
             fetch(restBase + '/lms/diagram/' + encodeURIComponent(diagKey))
                 .then(r => r.json())
                 .then(data => {

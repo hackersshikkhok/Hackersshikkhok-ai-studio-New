@@ -13,7 +13,7 @@ use WP_REST_Response;
 /**
  * Master Ecosystem Control Center & Global Feature Flag Manager
  * Central command hub for Theme Presets, Animation Engine, Feature Flags, and Subsystems.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class EcosystemControlCenter {
 
@@ -28,8 +28,8 @@ final class EcosystemControlCenter {
 
     public static function register_admin_menu(): void {
         add_menu_page(
-            'Hackers শিক্ষক Ecosystem',
-            '🛡️ Hackers শিক্ষক',
+            'HackersShikkhok Ecosystem',
+            '🛡️ HackersShikkhok',
             'manage_options',
             'hackersshikkhok-ecosystem',
             array( self::class, 'render_control_center_page' ),
@@ -125,6 +125,6 @@ final class EcosystemControlCenter {
     }
 
     public static function render_control_center_page(): void {
-        echo '<div class="wrap"><h1>🛡️ Hackers শিক্ষক Master Ecosystem Control Center</h1><p>Control platform subsystems, theme visual modes, animation engine, and hardware IoT gateways.</p><div id="hs-admin-ecosystem-app"></div></div>';
+        echo '<div class="wrap"><h1>🛡️ HackersShikkhok Master Ecosystem Control Center</h1><p>Control platform subsystems, theme visual modes, animation engine, and hardware IoT gateways.</p><div id="hs-admin-ecosystem-app"></div></div>';
     }
 }

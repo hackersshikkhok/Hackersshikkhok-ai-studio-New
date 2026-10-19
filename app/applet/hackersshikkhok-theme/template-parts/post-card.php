@@ -1,13 +1,13 @@
 <?php
 /**
  * Template part for displaying posts in a futuristic cyber card grid
- * Theme: Hackers শিক্ষক 2040 Cyber & Coding Hub Theme
+ * Theme: HackersShikkhok 2040 Cyber & Coding Hub Theme
  */
 
 declare(strict_types=1);
 
 $categories = get_the_category();
-$cat_name = ! empty( $categories ) ? $categories[0]->name : 'টিউটোরিয়াল';
+$cat_name = ! empty( $categories ) ? $categories[0]->name : '';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'hs-cyber-card hs-post-card' ); ?>>
@@ -38,10 +38,10 @@ $cat_name = ! empty( $categories ) ? $categories[0]->name : 'টিউটোর�
 
     <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);">
         <span style="font-size:12px;color:#cbd5e1;">
-            লেখক: <strong><?php echo esc_html( get_the_author() ); ?></strong>
+            : <strong><?php echo esc_html( get_the_author() ); ?></strong>
         </span>
         <a href="<?php the_permalink(); ?>" class="hs-btn-secondary" style="padding:6px 14px;font-size:12px;border-radius:6px;">
-            পড়ুন &rarr;
+             &rarr;
         </a>
     </div>
 </article>

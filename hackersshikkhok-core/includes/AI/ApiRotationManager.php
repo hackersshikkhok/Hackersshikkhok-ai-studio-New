@@ -1,8 +1,8 @@
 <?php
 /**
  * ApiRotationManager - Enterprise Multi-Provider AI Key Pool, Quota Tracker & Model Cascading Engine
- * Part of Hackers শিক্ষক Core Engine (v4.0.0)
- * Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Part of HackersShikkhok Core Engine (v4.0.0)
+ * Developed by HackersShikkhok (https://hackersshikkhok.com)
  *
  * Core Capabilities:
  * 1. Multi-Provider Support: Google Gemini, OpenAI, Anthropic Claude, Groq, DeepSeek, Local Deterministic
@@ -322,7 +322,7 @@ final class ApiRotationManager {
         $body = wp_json_encode( array(
             'model'       => $model,
             'messages'    => array(
-                array( 'role' => 'system', 'content' => 'You are Hackers শিক্ষক Senior Full-Stack and Cyber Security Lead Engineer.' ),
+                array( 'role' => 'system', 'content' => 'You are HackersShikkhok Senior Full-Stack and Cyber Security Lead Engineer.' ),
                 array( 'role' => 'user', 'content' => $prompt ),
             ),
             'temperature' => 0.4,
@@ -618,11 +618,11 @@ final class ApiRotationManager {
     private static function generate_local_fallback( string $prompt ): string {
         return sprintf(
             "<article class=\"hs-verified-guide\">\n" .
-            "<h2>প্র্যাকটিক্যাল সাইবার সিকিউরিটি ও সিস্টেম আর্কিটেকচার গাইড</h2>\n" .
-            "<p>এই টেকনিক্যাল গাইডটি <strong>Hackers শিক্ষক লোকাল ডিটারমিনিস্টিক নলেজ ইঞ্জিন</strong> দ্বারা ভ্যালিডেট ও কম্পাইল করা হয়েছে।</p>\n" .
-            "<h3>১. সিস্টেম ওভারভিউ ও মূল কনসেপ্ট</h3>\n" .
-            "<p>অনলাইন আক্রমণ প্রতিরোধ ও সাইবার সিকিউরিটি কাঠামোর প্রতিটি স্তর সঠিকভাবে কনফিগার করা জরুরি। ইনপুট স্যানিটাইজেশন, প্রিপেয়ার্ড স্টেটমেন্ট এবং ননস ভ্যালিডেশন ছাড়া কোনো অ্যাপ্লিকেশন প্রোডাকশনে রিলিজ করা উচিত নয়।</p>\n" .
-            "<h3>২. সিকিউর কোড ইমপ্লিমেন্টেশন</h3>\n" .
+            "<h2>      </h2>\n" .
+            "<p>   <strong>HackersShikkhok    </strong>      ।</p>\n" .
+            "<h3>.     </h3>\n" .
+            "<p>            ।  ,             ।</p>\n" .
+            "<h3>.   </h3>\n" .
             "<pre><code class=\"language-php\">// Secure Implementation Example\n" .
             "declare(strict_types=1);\n\n" .
             "function hs_secure_handler( wp_post \$post ): void {\n" .
@@ -632,13 +632,13 @@ final class ApiRotationManager {
             "    }\n" .
             "    // Process with prepared statements\n" .
             "}</code></pre>\n" .
-            "<h3>৩. প্রোডাকশন অডিট ও সিকিউরিটি চেকলিস্ট</h3>\n" .
+            "<h3>.     </h3>\n" .
             "<ul>\n" .
-            "<li>✅ OWASP Top 10 কমপ্লায়েন্স নিশ্চিত করুন।</li>\n" .
-            "<li>✅ রিয়েল-টাইম রেট লিমিটিং ও ফায়ারওয়াল সক্রিয় রাখুন।</li>\n" .
-            "<li>✅ মাল্টি-প্রোভাইডার এআই এপিআই কি রোটেশন কনফিগার করুন।</li>\n" .
+            "<li>✅ OWASP Top 10   ।</li>\n" .
+            "<li>✅ -      ।</li>\n" .
+            "<li>✅ -      ।</li>\n" .
             "</ul>\n" .
-            "<p><em>গাইড রেফারেন্স: Hackers শিক্ষক (https://hackersshikkhok.com) · Verified by Chief Systems Architect</em></p>\n" .
+            "<p><em> : HackersShikkhok (https://hackersshikkhok.com) · Verified by Chief Systems Architect</em></p>\n" .
             "</article>"
         );
     }

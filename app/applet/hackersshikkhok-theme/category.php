@@ -1,6 +1,6 @@
 <?php
 /**
- * Category Archive Template - Hackers শিক্ষক
+ * Category Archive Template - HackersShikkhok
  */
 
 declare(strict_types=1);
@@ -10,7 +10,7 @@ get_header();
 
 <main id="primary" class="site-main hs-archive-container">
     <div style="background:linear-gradient(135deg, rgba(11,17,32,0.95), rgba(6,8,13,0.9));border:1px solid var(--hs-border);border-radius:16px;padding:32px 24px;margin-bottom:32px;">
-        <span class="hs-card-badge">ক্যাটাগরি আর্কাইভ</span>
+        <span class="hs-card-badge"> </span>
         <h1 style="color:#ffffff;font-size:1.75rem;font-weight:800;margin:10px 0 6px;">
             <?php single_cat_title(); ?>
         </h1>
@@ -32,15 +32,15 @@ get_header();
             <?php
             the_posts_pagination( array(
                 'mid_size'  => 2,
-                'prev_text' => __( '&larr; পূর্ববর্তী', 'hackersshikkhok-theme' ),
-                'next_text' => __( 'পরবর্তী &rarr;', 'hackersshikkhok-theme' ),
+                'prev_text' => __( '&larr; ', 'hackersshikkhok-theme' ),
+                'next_text' => __( ' &rarr;', 'hackersshikkhok-theme' ),
             ) );
             ?>
         </div>
     <?php else : ?>
         <div class="hs-cyber-card" style="text-align:center;padding:48px 24px;">
-            <p style="color:var(--hs-text-muted);">এই ক্যাটাগরিতে এখনো কোনো পোস্ট নেই।</p>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hs-btn-primary">হোমপেজে ফিরে যান</a>
+            <p style="color:var(--hs-text-muted);">     ।</p>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hs-btn-primary">  </a>
         </div>
     <?php endif; ?>
 </main>

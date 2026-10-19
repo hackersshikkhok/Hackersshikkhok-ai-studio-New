@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Hackers শিক্ষক Cyber Desktop & Web OS Workspace
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Template Name: HackersShikkhok Cyber Desktop & Web OS Workspace
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 
 declare(strict_types=1);
@@ -10,7 +10,7 @@ get_header();
 
 $wallet = class_exists( '\HackersShikkhok\Core\Users\UserEcosystem' )
     ? \HackersShikkhok\Core\Users\UserEcosystem::get_wallet_summary( get_current_user_id() )
-    : array( 'balance' => 0, 'xp' => 0, 'rank' => 'Novice' );
+    : array( 'balance_bdt' => 0, 'points' => 0, 'ledger_rows' => 0 );
 $rest_nonce = wp_create_nonce( 'wp_rest' );
 ?>
 
@@ -55,7 +55,7 @@ $rest_nonce = wp_create_nonce( 'wp_rest' );
     <!-- Desktop Taskbar -->
     <footer class="hs-desktop-taskbar">
         <button class="hs-start-btn" onclick="HS_DESKTOP.toggleStartMenu()">
-            <span class="hs-logo-glow">🛡️</span> <strong>Hackers শিক্ষক OS</strong>
+            <span class="hs-logo-glow">🛡️</span> <strong>HackersShikkhok OS</strong>
         </button>
 
         <div class="hs-taskbar-apps" id="hs-taskbar-active-apps"></div>

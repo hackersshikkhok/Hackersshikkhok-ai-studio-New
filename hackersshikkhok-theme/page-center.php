@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Hackers শিক্ষক Platform Center
+ * Template Name: HackersShikkhok Platform Center
  */
 declare(strict_types=1);
 get_header();

@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — AI Remediation & Executive Patching Engine
+ * HackersShikkhok — AI Remediation & Executive Patching Engine
  *
  * Generates tailored Nginx, Apache, PHP, and Cloudflare WAF code patches,
  * plus business impact summaries translated for C-level executives.

@@ -2,7 +2,7 @@
 /**
  * Advanced Web Tools Suite: YouTube Downloader Pro, WP Detector Pro, & Plagiarism Checker Pro
  * Inspired by SaveFrom, WPDetector, and DupliChecker.
- * Brand: Hackers শিক্ষক (HackersShikkhok.com)
+ * Brand: HackersShikkhok (HackersShikkhok.com)
  */
 declare(strict_types=1);
 

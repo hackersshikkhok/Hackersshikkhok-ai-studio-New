@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Real Snapshot Backup & Transactional Restore Engine
  * Writes physical JSON dump artifacts to disk, validates SHA-256 checksums, and restores tables atomically.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class BackupEngine {
 

@@ -367,7 +367,7 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
       date: new Date().toLocaleString()
     };
     setBackupSnapshots((prev) => [newEntry, ...prev]);
-    setMigrationToast(`✓ নতুন ব্যাকআপ স্ন্যাপশট "${newId}" সফলভাবে জেনারেট হয়েছে (SHA-256 ভেরিফাইড)!`);
+    setMigrationToast(`✓    "${newId}" Success   (SHA-256 )!`);
     setTimeout(() => setMigrationToast(null), 3000);
   };
 
@@ -380,12 +380,11 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
       date: new Date().toLocaleString()
     };
     setMigrations((prev) => [...prev, newMig]);
-    setMigrationToast(`✓ মাইগ্রেশন "${newMig.id}" সফলভাবে এক্সিকিউট হয়েছে (Idempotent & Repeat-Safe)!`);
+    setMigrationToast(`✓  "${newMig.id}" Success Execute  (Idempotent & Repeat-Safe)!`);
     setTimeout(() => setMigrationToast(null), 3000);
   };
 
-  return (
-    <section
+  return (<section
       id="engineering-hardening-hub"
       className="mx-auto max-w-[1440px] px-4 py-8 sm:px-6 border-t-2 border-[#00f5d4]/40 space-y-6"
     >
@@ -397,14 +396,10 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
               <ShieldCheck className="h-4 w-4" />
               FINAL ENGINEERING COMPLETION + HARDENING + GAP CLOSURE SPECIFICATION
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-              🛡️ মাস্টার ইঞ্জিনিয়ারিং হার্ডেনিং, ৩৬০° ইনভেন্টরি, ব্যাকআপ ও লাইভ স্টেট-অ্যাকশন চেইন
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              পূর্বের কোনো ফিচার বা কোড ডিলিট না করে সম্পূর্ণ ইকোসিস্টেমের পুঙ্খানুপুঙ্খ অডিট, ডাটাবেস
-              ইনটেগ্রিটি, সার্ভার-সাইড পারমিশন হার্ডেনিং, ইউনিভার্সাল এরর হ্যান্ডলিং ও নলেজ গ্রাফ
-              সংযোগ।
-            </p>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">🛡️  Engine , ° ,    -</h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Ecosystem  Audit, 
+              , -  ,      
+              ।</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
@@ -418,19 +413,17 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
         </div>
 
         {/* 7 Interactive Engineering Hardening Tabs */}
-        <div className="mt-6 flex flex-wrap gap-2 border-t border-slate-800/90 pt-4">
-          {[
-            { id: 'inventory_gap_matrix', label: '১. সম্পূর্ণ সিস্টেম ইনভেন্টরি ও গ্যাপ অ্যানালাইসিস', icon: FileCheck2 },
-            { id: 'e2e_chain_verifier', label: '২. এন্ড-টু-এন্ড লাইভ স্টেট ও অ্যাকশন চেইন', icon: Network },
-            { id: 'universal_error_engine', label: '৩. ইউনিভার্সাল এরর ইঞ্জিন ও ৬টি UI স্টেট', icon: AlertTriangle },
-            { id: 'database_migrations_backup', label: '৪. ডাটাবেস মাইগ্রেশন ও ব্যাকআপ/রিকভারি সেন্টার', icon: Database },
-            { id: 'ai_vault_job_safety', label: '৫. সুরক্ষিত AI কি-ভল্ট, মডেল রাউটিং ও জব কিউ', icon: Cpu },
-            { id: 'knowledge_graph_search', label: '৬. নলেজ গ্রাফ ও ইউনিফাইড সার্চ ইঞ্জিন', icon: Search },
-            { id: 'admin_health_command', label: '৭. অ্যাডমিন কমান্ড সেন্টার ও সিস্টেম হেলথ অডিট', icon: Activity }
+        <div className="mt-6 flex flex-wrap gap-2 border-t border-slate-800/90 pt-4">{[
+            { id: 'inventory_gap_matrix', label: '.      ', icon: FileCheck2 },
+            { id: 'e2e_chain_verifier', label: '. --     ', icon: Network },
+            { id: 'universal_error_engine', label: '.   Engine   UI ', icon: AlertTriangle },
+            { id: 'database_migrations_backup', label: '.    / Center', icon: Database },
+            { id: 'ai_vault_job_safety', label: '.  AI -,     ', icon: Cpu },
+            { id: 'knowledge_graph_search', label: '.      Engine', icon: Search },
+            { id: 'admin_health_command', label: '.   Center    Audit', icon: Activity }
           ].map((tab) => {
             const Icon = tab.icon;
-            return (
-              <button
+            return (<button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as typeof activeTab)}
                 className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-extrabold transition cursor-pointer ${
@@ -457,25 +450,22 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
               <span className="text-xs font-mono text-[#00f5d4] uppercase font-bold">
                 SECTIONS 2 &amp; 54 · 360° SYSTEM INVENTORY &amp; GAP ANALYSIS MATRIX
               </span>
-              <h3 className="text-lg font-extrabold text-white mt-0.5">
-                সম্পূর্ণ সিস্টেম অডিট, আর্কিটেকচার ম্যাপিং ও প্রোডাকশন রেডিনেস
-              </h3>
+              <h3 className="text-lg font-extrabold text-white mt-0.5">Audit,</h3>
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
               <input
                 type="text"
                 value={inventorySearch}
-                onChange={(e) => setInventorySearch(e.target.value)}
-                placeholder="সিস্টেম বা ফাইল খুঁজুন..."
+                onChange={(e) =>setInventorySearch(e.target.value)}
+                placeholder="   ..."
                 className="rounded-xl border border-slate-700 bg-slate-950 px-3.5 py-1.5 text-xs text-white"
-              />
-              <select
+              /><select
                 value={inventoryFilter}
                 onChange={(e) => setInventoryFilter(e.target.value)}
                 className="rounded-xl border border-slate-700 bg-slate-950 px-3 py-1.5 text-xs text-[#00f5d4] font-bold"
               >
-                <option value="all">সকল স্ট্যাটাস (All Items)</option>
+                <option value="all">(All Items)</option>
                 <option value="ready">Production Ready</option>
                 <option value="partial">Partially Implemented</option>
                 <option value="external">External Config Required</option>
@@ -557,27 +547,23 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
               <span className="text-xs font-mono text-[#00f5d4]">
                 SECTION 3 · VERIFIABLE STATE &amp; ACTION TELEMETRY
               </span>
-              <h3 className="text-lg font-extrabold text-white mt-0.5">
-                লাইভ এন্ড-টু-এন্ড অ্যাকশন চেইন টেস্টার
-              </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                কোনো ফিচার কেবল প্রিভিউতে সীমাবদ্ধ নয়; UI ক্লিক থেকে শুরু করে PHP Engine, Nonce ভেরিফিকেশন,
-                Prepared SQL এবং রেসপন্স রেন্ডারিং পর্যন্ত সম্পূর্ণ চেইন সরাসরি পরীক্ষা করুন।
-              </p>
+              <h3 className="text-lg font-extrabold text-white mt-0.5">--</h3>
+              <p className="text-xs text-slate-400 mt-1">; UI     PHP Engine, Nonce ,
+                Prepared SQL         ।</p>
             </div>
 
             <div className="space-y-2">
-              <label className="block text-xs font-bold text-slate-300">পরীক্ষার বিষয় নির্বাচন করুন:</label>
+              <label className="block text-xs font-bold text-slate-300">:</label>
               <select
                 value={chainActionType}
                 onChange={(e) => setChainActionType(e.target.value as typeof chainActionType)}
                 className="w-full rounded-xl border border-slate-700 bg-slate-950 p-2.5 text-xs text-white"
               >
-                <option value="save_metabox">১. কাস্টম SEO মেটাবক্স সেভ (Nonce + Capability Check)</option>
-                <option value="verify_cert">২. সার্টিফিকেট ভেরিফিকেশন (/academy/certificate/ID)</option>
-                <option value="validate_lab">৩. সাইবার ল্যাব ফ্ল্যাগ ভ্যালিডেশন (SHA-256 Hash Match)</option>
-                <option value="autopilot_dry_run">৪. অটোপাইলট ড্রিম্পল পাইপলাইন ও কোয়ালিটি গেট</option>
-                <option value="create_backup">৫. সিস্টেম ব্যাকআপ স্ন্যাপশট জেনারেশন (SHA-256 Manifest)</option>
+                <option value="save_metabox">.  SEO   (Nonce + Capability Check)</option>
+                <option value="verify_cert">. Certificate  (/academy/certificate/ID)</option>
+                <option value="validate_lab">. Cyber Lab   (SHA-256 Hash Match)</option>
+                <option value="autopilot_dry_run">.</option>
+                <option value="create_backup">.     (SHA-256 Manifest)</option>
               </select>
             </div>
 
@@ -587,8 +573,7 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
               className="w-full rounded-xl bg-[#00f5d4] py-3 text-xs font-extrabold text-slate-950 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isChainRunning ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Play className="h-4 w-4" />}
-              {isChainRunning ? 'চেইন এক্সিকিউট হচ্ছে...' : 'লাইভ এন্ড-টু-এন্ড চেইন রান করুন'}
-            </button>
+              {isChainRunning ? ' Execute ...' : ' --  Run'}</button>
           </div>
 
           <div className="lg:col-span-7 rounded-xl border border-slate-800 bg-slate-950 p-4 space-y-3 font-mono text-xs">
@@ -599,9 +584,7 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
 
             <div className="space-y-2 min-h-[220px]">
               {chainLogs.length === 0 ? (
-                <div className="text-slate-500 py-8 text-center">
-                  বাম পাশের "লাইভ এন্ড-টু-এন্ড চেইন রান করুন" বাটনে ক্লিক করে ৯-ধাপের এক্সিকিউশন দেখুন।
-                </div>
+                <div className="text-slate-500 py-8 text-center">" --  Run"    -  View।</div>
               ) : (
                 chainLogs.map((log, idx) => (
                   <div key={idx} className="text-emerald-300 flex items-start gap-2">
@@ -623,17 +606,13 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
           <div className="lg:col-span-5 space-y-4">
             <div>
               <span className="text-xs font-mono text-[#00f5d4]">SECTION 5 · UNIVERSAL ERROR ARCHITECTURE</span>
-              <h3 className="text-lg font-extrabold text-white mt-0.5">
-                ইউনিভার্সাল এরর হ্যান্ডলিং ও ৬টি UI স্টেট
-              </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                ব্যবহারকারীর সামনে কখনো কোনো অপরিশোধিত (raw) PHP স্ট্যাক ট্রেস বা JS এরর প্রকাশ করা হয় না।
-                সর্বদা স্ট্রাকচার্ড এরর কোড ও স্পষ্ট ইউজার ফ্রেন্ডলি মেসেজ দেখানো হয়।
-              </p>
+              <h3 className="text-lg font-extrabold text-white mt-0.5">UI</h3>
+              <p className="text-xs text-slate-400 mt-1">(raw) PHP    JS     ।
+                          ।</p>
             </div>
 
             <div className="space-y-2">
-              <label className="block text-xs font-bold text-slate-300">এরর কোড সিমুলেশন নির্বাচন করুন:</label>
+              <label className="block text-xs font-bold text-slate-300">:</label>
               <select
                 value={simulatedErrorCode}
                 onChange={(e) => {
@@ -675,48 +654,47 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
             {simulatedUiState === 'loading' && (
               <div className="space-y-3">
                 <RefreshCw className="h-8 w-8 text-[#00f5d4] animate-spin mx-auto" />
-                <div className="text-sm font-bold text-white">অনুরোধ প্রসেস হচ্ছে...</div>
-                <div className="text-xs text-slate-400">দয়া করে অপেক্ষা করুন, সার্ভার রেসপন্স তৈরি হচ্ছে।</div>
+                <div className="text-sm font-bold text-white">...</div>
+                <div className="text-xs text-slate-400">,    ।</div>
               </div>
             )}
             {simulatedUiState === 'success' && (
               <div className="space-y-3">
                 <CheckCircle2 className="h-10 w-10 text-emerald-400 mx-auto" />
-                <div className="text-sm font-bold text-white">অপারেশন সফলভাবে সম্পন্ন হয়েছে!</div>
-                <div className="text-xs text-slate-300">কোড: success · ডাটাবেস ও মেটা আপডেট সম্পন্ন।</div>
+                <div className="text-sm font-bold text-white">Success  !</div>
+                <div className="text-xs text-slate-300">: success ·     ।</div>
               </div>
             )}
             {simulatedUiState === 'warning' && (
               <div className="space-y-3">
                 <AlertTriangle className="h-10 w-10 text-amber-400 mx-auto" />
-                <div className="text-sm font-bold text-white">ইনপুট ভ্যালিডেশন সতর্কতা</div>
-                <div className="text-xs text-slate-300">দয়া করে আবশ্যকীয় ফিল্ডগুলো সঠিক ফরম্যাটে পূরণ করুন।</div>
+                <div className="text-sm font-bold text-white">Warning</div>
+                <div className="text-xs text-slate-300">।</div>
               </div>
             )}
             {simulatedUiState === 'error' && (
               <div className="space-y-3">
                 <XCircle className="h-10 w-10 text-rose-400 mx-auto" />
-                <div className="text-sm font-bold text-white">নিরাপদ এরর ফলব্যাক সক্রিয় হয়েছে</div>
-                <div className="text-xs text-slate-400">কোড: {simulatedErrorCode} · র-স্ট্যাক ট্রেস প্রতিরোধ করা হয়েছে।</div>
+                <div className="text-sm font-bold text-white">Cyber Defense Hub</div>
+                <div className="text-xs text-slate-400">: {simulatedErrorCode} · -    ।</div>
               </div>
             )}
             {simulatedUiState === 'empty' && (
               <div className="space-y-3">
                 <Archive className="h-10 w-10 text-slate-500 mx-auto" />
-                <div className="text-sm font-bold text-white">কোনো রেকর্ড পাওয়া যায়নি (Empty State)</div>
-                <div className="text-xs text-slate-400">আপনার সার্চ বা ফিল্টারের সাথে মিলে এমন কোনো ডেটা নেই।</div>
+                <div className="text-sm font-bold text-white">(Empty State)</div>
+                <div className="text-xs text-slate-400">।</div>
               </div>
             )}
             {simulatedUiState === 'retry' && (
               <div className="space-y-3">
                 <RefreshCw className="h-8 w-8 text-amber-400 mx-auto" />
-                <div className="text-sm font-bold text-white">সংযোগ সময়সীমা অতিক্রম করেছে (Timeout)</div>
+                <div className="text-sm font-bold text-white">(Timeout)</div>
                 <button
-                  onClick={() => setSimulatedUiState('success')}
+                  onClick={() =>setSimulatedUiState('success')}
                   className="rounded-xl bg-[#00f5d4] px-4 py-2 text-xs font-bold text-slate-950 cursor-pointer"
                 >
-                  পুনরায় চেষ্টা করুন (Retry)
-                </button>
+                     (Retry)</button>
               </div>
             )}
           </div>
@@ -732,9 +710,7 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div>
                 <span className="text-xs font-mono text-[#00f5d4]">SECTIONS 8 &amp; 9 · DATABASE MIGRATIONS</span>
-                <h3 className="text-base font-extrabold text-white mt-0.5">
-                  রিপিট-সেফ ডাটাবেস মাইগ্রেশন ম্যানেজার (Idempotent dbDelta)
-                </h3>
+                <h3 className="text-base font-extrabold text-white mt-0.5">-    (Idempotent dbDelta)</h3>
               </div>
               <button
                 onClick={handleRunMigration}
@@ -766,9 +742,7 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div>
                 <span className="text-xs font-mono text-[#00f5d4]">SECTION 10 · BACKUP &amp; RECOVERY CENTER</span>
-                <h3 className="text-base font-extrabold text-white mt-0.5">
-                  অ্যাডমিন কনফিগ ও স্কিমা স্ন্যাপশট ব্যাকআপ
-                </h3>
+                <h3 className="text-base font-extrabold text-white mt-0.5">Cyber Defense Hub</h3>
               </div>
               <button
                 onClick={handleCreateBackupSnapshot}
@@ -821,17 +795,13 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
           <div className="lg:col-span-5 space-y-4">
             <div>
               <span className="text-xs font-mono text-[#00f5d4]">SECTIONS 11–13 · AI INFRASTRUCTURE HARDENING</span>
-              <h3 className="text-lg font-extrabold text-white mt-0.5">
-                সার্ভার-সাইড AI কি-ভল্ট, প্রোভাইডার পুল ও জব কিউ সেফটি
-              </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                কোনো সিক্রেট কি ক্লায়েন্ট সাইডে এক্সপোজ হয় না। কুয়োটা লিমিট ও ফেইল্ড কি কুলডাউন স্বয়ংক্রিয়ভাবে
-                ফলব্যাক প্রোভাইডারে ট্রাফিক পাঠায়।
-              </p>
+              <h3 className="text-lg font-extrabold text-white mt-0.5">- AI -,</h3>
+              <p className="text-xs text-slate-400 mt-1">।       
+                   ।</p>
             </div>
 
             <div className="space-y-2">
-              <label className="block text-xs font-bold text-slate-300">অ্যাক্টিভ মডেল রাউটিং প্রেফারেন্স:</label>
+              <label className="block text-xs font-bold text-slate-300">:</label>
               <div className="grid grid-cols-2 gap-2">
                 {(['gemini', 'openai', 'claude', 'local'] as const).map((prov) => (
                   <button
@@ -865,7 +835,7 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
           </div>
 
           <div className="lg:col-span-7 space-y-3">
-            <div className="text-xs font-bold text-white mb-2">সার্ভার-সাইড কি-পুল ও কোটা ট্র্যাকার:</div>
+            <div className="text-xs font-bold text-white mb-2">- -   :</div>
             {activeKeyPool.map((k) => (
               <div
                 key={k.id}
@@ -898,24 +868,19 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
           <div className="lg:col-span-5 space-y-4">
             <div>
               <span className="text-xs font-mono text-[#00f5d4]">SECTIONS 20 &amp; 40 · KNOWLEDGE GRAPH &amp; SEARCH</span>
-              <h3 className="text-lg font-extrabold text-white mt-0.5">
-                নলেজ গ্রাফ ও ইউনিফাইড সাইট সার্চ
-              </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                টিউটোরিয়াল ↔ কোর্স ↔ লেসন ↔ ল্যাব ↔ কুইজ ↔ টুল ↔ কোড ↔ ভিডিও ↔ FAQ এর মধ্যকার রিলেশনাল
-                বাইন্ডিং।
-              </p>
+              <h3 className="text-lg font-extrabold text-white mt-0.5">Cyber Defense Hub</h3>
+              <p className="text-xs text-slate-400 mt-1">↔ Course ↔ Lesson ↔ Lab ↔  ↔ Tool ↔  ↔  ↔ FAQ   
+                ।</p>
             </div>
 
             <div className="space-y-2">
               <input
                 type="text"
                 value={unifiedQuery}
-                onChange={(e) => setUnifiedQuery(e.target.value)}
-                placeholder="যেকোনো রিসোর্স খুঁজুন (যেমন: OWASP, Nonce, Linux)..."
+                onChange={(e) =>setUnifiedQuery(e.target.value)}
+                placeholder="   (: OWASP, Nonce, Linux)..."
                 className="w-full rounded-xl border border-slate-700 bg-slate-950 p-2.5 text-xs text-white"
-              />
-              <div className="flex flex-wrap gap-1.5">
+              /><div className="flex flex-wrap gap-1.5">
                 {(['all', 'tutorials', 'hs_course', 'tools', 'code'] as const).map((t) => (
                   <button
                     key={t}
@@ -934,16 +899,12 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
           </div>
 
           <div className="lg:col-span-7 rounded-xl border border-slate-800 bg-slate-950 p-4 space-y-3 text-xs">
-            <div className="font-bold text-white border-b border-slate-800 pb-2">
-              নলেজ গ্রাফ বাইন্ডিং ফলাফল ({unifiedQuery}):
-            </div>
-            {[
-              { type: 'Tutorial', title: 'WordPress Nonce ও Prepared SQL গাইড', link: '/tutorials/wp-nonce-guide' },
-              { type: 'Course', title: 'অথরাইজড ওয়েব অ্যাপ্লিকেশন সিকিউরিটি (OWASP Top 10)', link: '/academy/course-l4-web-app-sec' },
+            <div className="font-bold text-white border-b border-slate-800 pb-2">({unifiedQuery}):</div>{[
+              { type: 'Tutorial', title: 'WordPress Nonce  Prepared SQL ', link: '/tutorials/wp-nonce-guide' },
+              { type: 'Course', title: '   Security (OWASP Top 10)', link: '/academy/course-l4-web-app-sec' },
               { type: 'Tool', title: 'WP Security Headers & CSP Generator', link: '/tools/wp-security-headers-generator' },
               { type: 'Code Snippet', title: 'REST Permission Callback & Nonce Verify', link: '/code/wp-rest-permission-callback-snippet' }
-            ].map((res, i) => (
-              <div
+            ].map((res, i) => (<div
                 key={i}
                 className="rounded-lg border border-slate-800 bg-slate-900 p-2.5 flex items-center justify-between"
               >
@@ -970,9 +931,7 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
               <span className="text-xs font-mono text-[#00f5d4] uppercase font-bold">
                 SECTIONS 41, 42 &amp; 43 · ADMIN MASTER COMMAND &amp; HEALTH AUDIT
               </span>
-              <h3 className="text-lg font-extrabold text-white mt-0.5">
-                সিস্টেম হেলথ ড্যাশবোর্ড ও ট্যাম্পার-রেজিস্ট্যান্ট অডিট লগ
-              </h3>
+              <h3 className="text-lg font-extrabold text-white mt-0.5">Dashboard  - Audit</h3>
             </div>
             <span className="rounded-lg bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 font-mono text-xs text-emerald-300 font-bold">
               All 12 Core Subsystems: HEALTHY
@@ -1006,7 +965,7 @@ export const EngineeringCompletionAndHardeningHub: React.FC = () => {
 
           {/* Tamper-Resistant Audit Log Table */}
           <div className="space-y-2">
-            <div className="text-xs font-bold text-white">রিয়েল-টাইম সিকিউরিটি অডিট লগ (wp_hs_audit_logs):</div>
+            <div className="text-xs font-bold text-white">- Security Audit  (wp_hs_audit_logs):</div>
             <div className="space-y-1.5">
               {auditLogs.map((log, idx) => (
                 <div

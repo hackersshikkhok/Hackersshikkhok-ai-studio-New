@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Universal Autopilot Engine — Multi-Provider API Transport, Deterministic Quality Gate & Self-Repair
  * Integrates real HTTP transports for Google Gemini, Anthropic Claude, and OpenAI GPT-4o.
  * Zero-Mocking, Zero-Random Scoring.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class UniversalAutopilotEngine {
 

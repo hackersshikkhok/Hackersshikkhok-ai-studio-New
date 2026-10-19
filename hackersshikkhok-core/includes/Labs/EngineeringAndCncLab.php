@@ -13,7 +13,7 @@ use WP_REST_Response;
 /**
  * Engineering Lab & CNC / Fabrication Tool Suite
  * High-precision calculators for Electrical, Mechanical, and CNC machining workflows.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class EngineeringAndCncLab {
 

@@ -15,7 +15,7 @@ use WP_REST_Response;
  * 
  * Safely, idempotently imports the 80 Master Courses and their substantive modules,
  * lessons, quizzes, labs, and assignments into WordPress CPTs ('hs_course') and PostMeta.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class CourseContentImporter {
 

@@ -277,7 +277,7 @@ final class Bulk_Course_Importer {
                         'course_id'       => $course_id,
                         'slug'            => $l_slug,
                         'title'           => sanitize_text_field( $les['title'] ),
-                        'content_md'      => $les['content_md'] ?? '## ডিফেন্সিভ সিকিউরিটি বিশ্লেষণ...',
+                        'content_md'      => $les['content_md'] ?? '##   ...',
                         'video_url'       => esc_url_raw( $les['video_url'] ?? 'https://iframe.mediadelivery.net/play/demo/hls' ),
                         'video_provider'  => 'bunny_stream',
                         'svg_diagram_key' => sanitize_text_field( $les['svg_diagram_key'] ?? 'network_flow' ),
@@ -314,7 +314,7 @@ final class Bulk_Course_Importer {
                             'challenge_title' => sanitize_text_field( $ctf['title'] ?? $les['title'] . ' CTF Sandbox' ),
                             'flag_hash'       => $salted_hash,
                             'flag_salt'       => $salt,
-                            'hint'            => sanitize_textarea_field( $ctf['hint'] ?? 'টার্মিনালে inspect বা scan কমান্ড রান করুন।' ),
+                            'hint'            => sanitize_textarea_field( $ctf['hint'] ?? ' inspect  scan   ।' ),
                             'xp_reward'       => intval( $ctf['xp'] ?? 150 ),
                             'bdt_reward'      => floatval( $ctf['bdt'] ?? 25.00 ),
                             'difficulty'      => sanitize_text_field( $ctf['difficulty'] ?? 'medium' ),
@@ -355,7 +355,7 @@ final class Bulk_Course_Importer {
                     array(
                         'slug'            => 'architecture-and-threat-modeling',
                         'title'           => 'Threat Modeling & Defensive Blueprint',
-                        'content_md'      => "### {$c_name} আর্কিটেকচার পর্যালোচনা\n\nসিস্টেমের অ্যাটাক সারফেস নির্ধারণ এবং ডিফেন্সিভ কন্ট্রোল স্থাপন।",
+                        'content_md'      => "### {$c_name}  \n\n       ।",
                         'video_url'       => 'https://iframe.mediadelivery.net/embed/hs/stream-01',
                         'svg_diagram_key' => 'threat_model',
                         'is_free'         => 1,
@@ -373,7 +373,7 @@ final class Bulk_Course_Importer {
                     array(
                         'slug'            => 'packet-analysis-and-headers',
                         'title'           => 'Header Inspection & Cryptographic Hygiene',
-                        'content_md'      => "### ক্রিপ্টোগ্রাফিক হেডার ও ফিল্টারিং\n\nনিরাপদ হেডার ইমপ্লিমেন্টেশন ও ট্রাফিক অ্যানালাইসিস।",
+                        'content_md'      => "###    \n\n     ।",
                         'video_url'       => 'https://iframe.mediadelivery.net/embed/hs/stream-02',
                         'svg_diagram_key' => 'jwt_auth_flow',
                         'is_free'         => 0,
@@ -388,7 +388,7 @@ final class Bulk_Course_Importer {
                     array(
                         'slug'            => 'hands-on-sandbox-hardening',
                         'title'           => 'Hardening Controls & Security Mitigation',
-                        'content_md'      => "### বাস্তব ল্যাব এনভায়রনমেন্ট অ্যানালাইসিস\n\nপ্রস্তুতকৃত রিয়েল-টাইম স্যান্ডবক্সে ডিফেন্সিভ টেস্ট ও ফ্লাগ সাবমিশন।",
+                        'content_md'      => "###    \n\n -      ।",
                         'video_url'       => 'https://iframe.mediadelivery.net/embed/hs/stream-03',
                         'svg_diagram_key' => 'sqli_prevention',
                         'is_free'         => 0,
@@ -453,7 +453,7 @@ final class Bulk_Course_Importer {
                 'price_bdt'           => $item[4],
                 'xp_reward'           => $item[5],
                 'completion_badge_id' => $item[6],
-                'description'         => "সম্পূর্ণ প্রফেশনাল হ্যান্ডস-অন ল্যাব ও ডিফেন্সিভ কাউন্টারমেজার্স সহ {$item[0]} স্পেশালাইজেশন ট্র্যাক।",
+                'description'         => "  -      {$item[0]}  ।",
             );
         }
 
@@ -486,7 +486,7 @@ final class Bulk_Course_Importer {
                 'price_bdt'           => $item[4],
                 'xp_reward'           => $item[5],
                 'completion_badge_id' => $item[6],
-                'description'         => "অ্যাডভান্সড সোশ্যাল ইঞ্জিনিয়ারিং, ফিশিং থ্রেট সিমুলেশন ও এন্টারপ্রাইজ ডিফেন্স ট্র্যাক: {$item[0]}।",
+                'description'         => "  ,       : {$item[0]}।",
             );
         }
 
@@ -523,7 +523,7 @@ final class Bulk_Course_Importer {
                 'price_bdt'           => $item[4],
                 'xp_reward'           => $item[5],
                 'completion_badge_id' => $item[6],
-                'description'         => "কম্প্রিহেনসিভ নেটওয়ার্ক ও রেড টিম অফেন্সিভ অপারেশনস ট্র্যাক: {$item[0]}।",
+                'description'         => "       : {$item[0]}।",
             );
         }
 
@@ -558,7 +558,7 @@ final class Bulk_Course_Importer {
                 'price_bdt'           => $item[4],
                 'xp_reward'           => $item[5],
                 'completion_badge_id' => $item[6],
-                'description'         => "ডিজিটাল ফরেনসিক্স, এসওসি অ্যানালাইসিস ও ব্লু টিম ডিফেন্স ট্র্যাক: {$item[0]}।",
+                'description'         => " ,       : {$item[0]}।",
             );
         }
 
@@ -593,7 +593,7 @@ final class Bulk_Course_Importer {
                 'price_bdt'           => $item[4],
                 'xp_reward'           => $item[5],
                 'completion_badge_id' => $item[6],
-                'description'         => "অ্যাডভান্সড এক্সপ্লয়ট ডেভেলপমেন্ট, রিভার্স ইঞ্জিনিয়ারিং ও কার্নেল এক্সপ্লয়টেশন ট্র্যাক: {$item[0]}।",
+                'description'         => "  ,      : {$item[0]}।",
             );
         }
 

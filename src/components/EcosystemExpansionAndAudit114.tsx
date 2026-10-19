@@ -29,7 +29,7 @@ export interface VerificationItem114 {
 }
 
 export const COMPLETE_114_LIST: VerificationItem114[] = [
-  { id: 1, category: 'Brand & Architecture', requirement: 'Official Brand "Hackers শিক্ষক" (HackersShikkhok.com | @HackersShikkhok)', status: 'COMPLETE', location: 'metadata.json, index.html, src/App.tsx, style.css, hackersshikkhok-core.php', howTested: 'Inspected header, hero, theme/plugin headers, and exported ZIP files' },
+  { id: 1, category: 'Brand & Architecture', requirement: 'Official Brand "HackersShikkhok" (HackersShikkhok.com | @HackersShikkhok)', status: 'COMPLETE', location: 'metadata.json, index.html, src/App.tsx, style.css, hackersshikkhok-core.php', howTested: 'Inspected header, hero, theme/plugin headers, and exported ZIP files' },
   { id: 2, category: 'Brand & Architecture', requirement: 'Strict Core Plugin vs Theme Separation (No Business Logic in Theme)', status: 'COMPLETE', location: 'src/data/wpVirtualFiles.ts (hackersshikkhok-core vs hackersshikkhok-theme)', howTested: 'Verified CPTs, DB schema, REST routes, and AI classes reside only in hackersshikkhok-core' },
   { id: 3, category: 'Brand & Architecture', requirement: 'Theme Screenshot (screenshot.png 1200x900) & Plugin Icon/Banner PNGs', status: 'COMPLETE', location: 'src/data/wpVirtualFiles.ts (createPngBlobFromImage), WpInstalledPreviewShowcase.tsx', howTested: 'Downloaded ZIPs and verified binary PNG files inside theme & plugin archives' },
   { id: 4, category: 'Brand & Architecture', requirement: 'Dynamic Browser JSZip Auto-Rezip for Theme, Plugin & Docs', status: 'COMPLETE', location: 'src/data/wpVirtualFiles.ts (generateAndDownloadZip), WpPackageStudioModal.tsx', howTested: 'Edited PHP/CSS file in WP Studio and verified immediate re-bundled .zip download' },
@@ -50,7 +50,7 @@ export const COMPLETE_114_LIST: VerificationItem114[] = [
   { id: 19, category: 'Notifications', requirement: 'Universal Notification Engine with Deduplication & Mark All Read', status: 'PARTIAL', location: 'src/App.tsx, UniversalSocialEngine.php', howTested: 'Tested live toast & notification dropdown in React; cross-session persistence requires live WP DB' },
   { id: 20, category: 'User Profile & BD Geo', requirement: 'Bangladesh 8 Divisions & 64 Districts Selector in User Profile', status: 'COMPLETE', location: 'src/data/platformData.ts (BANGLADESH_DIVISIONS_DISTRICTS), UniversalSocialAndUserHub.tsx', howTested: 'Switched all 8 Divisions and verified all 64 cascading Districts populate accurately' },
   { id: 21, category: 'User Profile & BD Geo', requirement: '4-Tier Location & Profile Privacy (Public, Approximate, Followers Only, Private)', status: 'COMPLETE', location: 'UniversalSocialAndUserHub.tsx (profile-geo tab)', howTested: 'Changed geoPrivacy state and verified live Public Profile Preview card masks/shows district' },
-  { id: 22, category: 'Points vs Wallet', requirement: 'Strict Separation of Monetary Wallet Balance (BDT) vs Non-Monetary Points', status: 'COMPLETE', location: 'src/App.tsx, UniversalSocialAndUserHub.tsx, DatabaseManager.php', howTested: 'Verified earning Points (+10/+15) increments walletPoints only and never changes walletBalance (35.5 ৳)' },
+  { id: 22, category: 'Points vs Wallet', requirement: 'Strict Separation of Monetary Wallet Balance (BDT) vs Non-Monetary Points', status: 'COMPLETE', location: 'src/App.tsx, UniversalSocialAndUserHub.tsx, DatabaseManager.php', howTested: 'Verified earning Points (+10/+15) increments walletPoints only and never changes walletBalance (35.5 BDT )' },
   { id: 23, category: 'Points vs Wallet', requirement: 'Monetary Wallet Ledger (Credit, Debit, Pending, Withdrawal Request)', status: 'PARTIAL', location: 'UniversalSocialAndUserHub.tsx (wallet-points tab), WalletLedger.php', howTested: 'Tested withdrawal request entry in UI + PHP atomic transaction class; live payout requires payment gateway/WP DB' },
   { id: 24, category: 'Points vs Wallet', requirement: 'Points, XP, Levels & Automatic Badge Progression', status: 'COMPLETE', location: 'UniversalSocialAndUserHub.tsx, CreatorStudioDeviceLabAndGames.tsx', howTested: 'Earned points in Cyber Quiz and verified Level & XP progress bar calculation' },
   { id: 25, category: 'Security & Auth', requirement: 'WebAuthn Passkey (Public Key Credential) & 2FA TOTP Security Panel', status: 'PARTIAL', location: 'UniversalSocialAndUserHub.tsx (security-passkey tab)', howTested: 'UI management for passkey/2FA + WP usermeta schema ready; real hardware ceremony requires HTTPS production origin' },
@@ -89,7 +89,7 @@ export const COMPLETE_114_LIST: VerificationItem114[] = [
   { id: 54, category: 'Search & Discovery', requirement: 'Tool Favorites / Bookmarks Integration with Saved Dashboard', status: 'COMPLETE', location: 'src/components/UniversalSocialAndUserHub.tsx (saved-favorites tab, Filter: Tool)', howTested: 'Filtered Saved & Favorites dashboard by "Tool" type and verified bookmarked tool card' },
   { id: 55, category: 'Search & Discovery', requirement: 'Tool Usage History (Recently Used & Most Used Tools Tracking)', status: 'PARTIAL', location: 'src/components/EcosystemExpansionAndAudit114.tsx, wp_hs_tool_usage table', howTested: 'Usage counters and history schema implemented; per-user persistent browser/DB history list is partial' },
   { id: 56, category: 'Search & Discovery', requirement: 'Tool of the Day Spotlight Widget', status: 'COMPLETE', location: 'src/components/EcosystemExpansionAndAudit114.tsx (related-discovery-health tab)', howTested: 'Verified "TOOL OF THE DAY: PDF & Archive Zip-Slip Security Inspector" spotlight card in UI' },
-  { id: 57, category: 'Search & Discovery', requirement: 'New Tool Radar & Trending Tools Feed', status: 'COMPLETE', location: 'src/components/EcosystemExpansionAndAudit114.tsx (related-discovery-health tab)', howTested: 'Verified "NEW TOOL RADAR & TRENDING: SRT <-> WebVTT Subtitle & Video Frame Extractor" card' },
+  { id: 57, category: 'Search & Discovery', requirement: 'New Tool Radar & Trending Tools Feed', status: 'COMPLETE', location: 'src/components/EcosystemExpansionAndAudit114.tsx (related-discovery-health tab)', howTested: 'Verified "NEW TOOL RADAR & TRENDING: SRT <->WebVTT Subtitle & Video Frame Extractor" card' },
   { id: 58, category: 'Tool Telemetry', requirement: 'Tool Analytics (Views, Runs, Unique Users, Completion Rate, Avg Processing Time)', status: 'PARTIAL', location: 'src/components/EcosystemExpansionAndAudit114.tsx, wp_hs_tool_usage in DatabaseManager.php', howTested: 'Analytics table UI and MySQL schema verified; real-time event ingestion requires active WP REST backend' },
   { id: 59, category: 'Tool Telemetry', requirement: 'Tool Health Monitor (Operational, Degraded, Error, Disabled, Maintenance Statuses)', status: 'COMPLETE', location: 'src/components/DeveloperToolsLab.tsx, EcosystemExpansionAndAudit114.tsx', howTested: 'Verified live "Operational" badge on active tools and "Disabled (Client-First Mode)" on 4K FFmpeg worker' },
   { id: 60, category: 'Quality & Editorial', requirement: '100-Point Content Quality Gate (Originality 20, Usefulness 20, Code 20, SEO 15, Security 10, UX/Docs/Sources 15)', status: 'COMPLETE', location: 'hackersshikkhok-core/includes/AI/QualityGateEvaluator.php, AutopilotAndArchitectureHub.tsx', howTested: 'Audited PHP rubric calculation in QualityGateEvaluator::evaluate() and ran test job in Autopilot tab' },
@@ -116,7 +116,7 @@ export const COMPLETE_114_LIST: VerificationItem114[] = [
   { id: 81, category: 'AI Infrastructure', requirement: 'Server-Side API Key Pool, Rotation & Masking (Zero Frontend Secret Exposure)', status: 'COMPLETE', location: 'hackersshikkhok-core/includes/AI/KeyVaultManager.php, .env.example', howTested: 'Verified zero hardcoded API keys in frontend bundle and audited KeyVaultManager.php encryption/masking' },
   { id: 82, category: 'AI Infrastructure', requirement: 'AI Model Registry & Provider Abstraction (Gemini / OpenAI / Claude Compatible Adapter)', status: 'COMPLETE', location: 'hackersshikkhok-core/includes/AI/ProviderGateway.php, platformData.ts', howTested: 'Inspected provider abstraction interface in wpVirtualFiles.ts' },
   { id: 83, category: 'AI Infrastructure', requirement: 'Universal AI Job Queue (Queued, Running, Paused, Retrying, Completed, Needs Review)', status: 'COMPLETE', location: 'wp_hs_ai_jobs in DatabaseManager.php, AutopilotAndArchitectureHub.tsx', howTested: 'Tested Run Test on Autopilot rows and verified job state transitions in UI' },
-  { id: 84, category: 'AI Companion', requirement: 'Maya (✨ মায়া) Cyber & Coding Companion Chat Drawer with Floating Badge & Bottom Tab', status: 'COMPLETE', location: 'src/App.tsx (isChatOpen, chatMessages, handleSendChat)', howTested: 'Clicked glowing ✨ মায়া button in bottom 5-tab bar, sent message, and verified instant reply' },
+  { id: 84, category: 'AI Companion', requirement: 'Maya (✨ ) Cyber & Coding Companion Chat Drawer with Floating Badge & Bottom Tab', status: 'COMPLETE', location: 'src/App.tsx (isChatOpen, chatMessages, handleSendChat)', howTested: 'Clicked glowing ✨  button in bottom 5-tab bar, sent message, and verified instant reply' },
   { id: 85, category: 'Notifications', requirement: 'Cross-Module Notification Integration (ZIP Download, Follow, Comment, Points, Security, Kill-Switch)', status: 'COMPLETE', location: 'src/App.tsx (showToastAndNotify, notifications state)', howTested: 'Triggered actions across 5 components and verified unified toast + notification bell counter updates' },
   { id: 86, category: 'Database Hygiene', requirement: 'Automated Log Pruning & Retention Policies across all 21 Custom Tables (30/45/60/90 Days)', status: 'COMPLETE', location: 'src/data/platformData.ts (CUSTOM_DB_TABLES retentionPolicy), DatabaseManager.php', howTested: 'Inspected retentionPolicy column for all 21 tables in DB Tables tab' },
   { id: 87, category: 'Storage Hygiene', requirement: 'Temporary Build & Upload File Cleanup + MIME/Extension/Size Validation', status: 'COMPLETE', location: 'hackersshikkhok-core/includes/Downloads/DownloadManager.php, wp_hs_download_logs', howTested: 'Audited DownloadManager.php MIME whitelist and 60-minute temp cleanup rule' },
@@ -144,7 +144,7 @@ export const COMPLETE_114_LIST: VerificationItem114[] = [
   { id: 109, category: 'Documentation QA', requirement: 'API-DOCUMENTATION.md — REST Endpoints, Permission Callbacks & Rate Limits', status: 'COMPLETE', location: 'hackersshikkhok-docs/API-DOCUMENTATION.md in src/data/wpVirtualFiles.ts', howTested: 'Verified REST route documentation in wpVirtualFiles.ts' },
   { id: 110, category: 'Documentation QA', requirement: 'CHANGELOG.md — Version History from v1.0.0 to v4.0.0 Complete Ecosystem', status: 'COMPLETE', location: 'hackersshikkhok-docs/CHANGELOG.md in src/data/wpVirtualFiles.ts', howTested: 'Verified v4.0.0 release notes in wpVirtualFiles.ts' },
   { id: 111, category: 'Interactive Studio QA', requirement: 'In-Browser WordPress File Editor (Edit Existing PHP/CSS/JS/MD & Add New File to Package)', status: 'COMPLETE', location: 'src/components/WpPackageStudioModal.tsx', howTested: 'Created new file in WP Studio, edited content, saved, and verified file count increment' },
-  { id: 112, category: 'Header & Layout QA', requirement: 'Top Live Notice Bar (🔴 লাইভ নোটিশ), Stacked Theme/Plugin Download Buttons & Wallet Bar', status: 'COMPLETE', location: 'src/App.tsx (Lines 140–360)', howTested: 'Verified exact visual placement of live notice, stacked zip buttons, and 35.5 ৳ | 420 Points bar' },
+  { id: 112, category: 'Header & Layout QA', requirement: 'Top Live Notice Bar (🔴  ), Stacked Theme/Plugin Download Buttons & Wallet Bar', status: 'COMPLETE', location: 'src/App.tsx (Lines 140–360)', howTested: 'Verified exact visual placement of live notice, stacked zip buttons, and 35.5 BDT  | 420 Points bar' },
   { id: 113, category: 'Build & Type Safety QA', requirement: 'Zero TypeScript Compilation or Bundler Errors Across Entire Codebase', status: 'COMPLETE', location: 'tsconfig.json, vite.config.ts, src/**/*', howTested: 'Executed compile_applet tool and verified "Build succeeded - the applet is compiled"' },
   { id: 114, category: 'Final Acceptance QA', requirement: 'Granular 1-to-114 Independent Verification Matrix with Honest Status Classification', status: 'COMPLETE', location: 'src/components/EcosystemExpansionAndAudit114.tsx (COMPLETE_114_LIST)', howTested: 'Verified all 114 individual rows render with exact Status, Location, and Test Method (zero aggregate rows)' }
 ];
@@ -167,7 +167,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
     'LinkedIn'
   ]);
   const [socialPostTitle, setSocialPostTitle] = useState(
-    'নতুন টিউটোরিয়াল: ওয়ার্ডপ্রেস REST API সিকিউরিটি ও OWASP Top 10 ডিফেন্স ল্যাব'
+    ' :  REST API Security  OWASP Top 10 Defense Lab'
   );
   const [socialScheduleMode, setSocialScheduleMode] = useState<'Publish Queue' | 'Schedule Later' | 'Draft Only'>('Publish Queue');
   const [socialLogs, setSocialLogs] = useState([
@@ -214,27 +214,24 @@ export const EcosystemExpansionAndAudit114: React.FC<{
       },
       ...prev
     ]);
-    onNotify('সোশ্যাল পাবলিশিং ওয়ার্কফ্লোতে কনটেন্ট ফরম্যাট ও কিউ করা হয়েছে!');
+    onNotify('        !');
   };
 
   const handleRunFactory = (factoryName: string) => {
     setFactoryOutputLog(
       `[${new Date().toLocaleTimeString()}] 🏭 ${factoryName} Executed:\nStep 1 (Trend/Requirement Check): Passed (Confidence 93%)\nStep 2 (Duplicate/Similarity Check): 0 Conflicts Found\nStep 3 (Generation & AST/Security Validation): Passed (Zero eval/shell_exec)\nStep 4 (SEO, Schema, Thumbnail & Related Graph): Linked to 4 Tools & 2 Courses\nStep 5 (100-Point Quality Gate): Score 94/100 -> Saved as Pending Review Draft!`
     );
-    onNotify(`${factoryName} পাইপলাইন সফলভাবে সম্পন্ন হয়েছে (Quality Score: 94/100)!`);
+    onNotify(`${factoryName}  Success   (Quality Score: 94/100)!`);
   };
 
-  return (
-    <section className="bg-[#0b1120] border-2 border-[#00f5d4]/40 rounded-2xl p-5 md:p-6 space-y-6 shadow-[0_0_40px_rgba(0,245,212,0.08)]">
+  return (<section className="bg-[#0b1120] border-2 border-[#00f5d4]/40 rounded-2xl p-5 md:p-6 space-y-6 shadow-[0_0_40px_rgba(0,245,212,0.08)]">
       {/* Header & Navigation Tabs */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-800">
         <div>
           <div className="text-xs font-mono text-[#00f5d4] tracking-wider uppercase">
             GRANULAR 1-TO-114 INDEPENDENT VERIFICATION MATRIX · ZERO AGGREGATE ROWS · HONEST AUDIT
           </div>
-          <h2 className="text-xl md:text-2xl font-bold text-white mt-1">
-            ফাইনাল ভেরিফিকেশন রিপোর্ট (#1 – #114 প্রতিটি রিকোয়ারমেন্ট আলাদাভাবে প্রমাণিত)
-          </h2>
+          <h2 className="text-xl md:text-2xl font-bold text-white mt-1">Report (#1 – #114    )</h2>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
@@ -246,8 +243,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
                 : 'bg-[#050811] text-slate-300 border border-slate-800'
             }`}
           >
-            <ShieldCheck className="w-4 h-4" /> #1–#114 গ্র্যানুলার ভেরিফিকেশন টেবিল
-          </button>
+            <ShieldCheck className="w-4 h-4" />#1–#114</button>
           <button
             onClick={() => setActiveSection('social-publishing')}
             className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer ${
@@ -256,8 +252,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
                 : 'bg-[#050811] text-slate-300 border border-slate-800'
             }`}
           >
-            <Share2 className="w-4 h-4" /> সোশ্যাল পাবলিশিং ওয়ার্কফ্লো
-          </button>
+            <Share2 className="w-4 h-4" />Cyber Defense Hub</button>
           <button
             onClick={() => setActiveSection('trend-factories')}
             className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer ${
@@ -266,8 +261,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
                 : 'bg-[#050811] text-slate-300 border border-slate-800'
             }`}
           >
-            <Factory className="w-4 h-4" /> ট্রেন্ড ইন্টেলিজেন্স ও ১১টি ফ্যাক্টরি
-          </button>
+            <Factory className="w-4 h-4" />Cyber Defense Hub</button>
           <button
             onClick={() => setActiveSection('related-discovery-health')}
             className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer ${
@@ -276,8 +270,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
                 : 'bg-[#050811] text-slate-300 border border-slate-800'
             }`}
           >
-            <Network className="w-4 h-4" /> রিলেটেড ইঞ্জিন, টুল হেলথ ও অ্যানালিটিক্স
-          </button>
+            <Network className="w-4 h-4" />Engine, Tool</button>
         </div>
       </div>
 
@@ -407,9 +400,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
             </div>
 
             <div>
-              <label className="block text-slate-400 mb-1.5 font-semibold">
-                ১. টার্গেট প্ল্যাটফর্ম নির্বাচন করুন (Multi-Platform Adapter):
-              </label>
+              <label className="block text-slate-400 mb-1.5 font-semibold">.  Platform   (Multi-Platform Adapter):</label>
               <div className="flex flex-wrap gap-2">
                 {[
                   'YouTube (@HackersShikkhok)',
@@ -441,9 +432,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
             </div>
 
             <div>
-              <label className="block text-slate-400 mb-1 font-semibold">
-                ২. কনটেন্ট শিরোনাম ও ক্যাপশন (Auto-Hashtags, UTM &amp; Thumbnail Bound):
-              </label>
+              <label className="block text-slate-400 mb-1 font-semibold">.     (Auto-Hashtags, UTM &amp; Thumbnail Bound):</label>
               <textarea
                 rows={3}
                 value={socialPostTitle}
@@ -480,9 +469,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
             <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 flex items-start gap-2.5">
               <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
               <div>
-                <strong className="block text-amber-300">Honest API / OAuth Dependency Notice:</strong>
-                ওয়েবসাইটের নিজস্ব পোস্ট (`HackersShikkhok.com`) সরাসরি প্রকাশিত হয়। তবে YouTube, Facebook, TikTok, Instagram বা LinkedIn-এর এক্সটার্নাল সার্ভারে স্বয়ংক্রিয় পোস্ট পাঠানোর জন্য ওয়ার্ডপ্রেস অ্যাডমিনে সংশ্লিষ্ট প্ল্যাটফর্মের ভ্যালিড OAuth Access Token সংযুক্ত থাকতে হবে। টোকেন না থাকলে সিস্টেম ভুয়া সফলতার দাবি না করে নিরাপদে <strong>Queued (OAuth Check)</strong> স্টেটে রাখে।
-              </div>
+                <strong className="block text-amber-300">Honest API / OAuth Dependency Notice:</strong>(`HackersShikkhok.com`)   ।  YouTube, Facebook, TikTok, Instagram  LinkedIn-          Platform  OAuth Access Token   ।      Success<strong>Queued (OAuth Check)</strong>।</div>
             </div>
 
             <div className="space-y-2.5">
@@ -579,9 +566,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
                 <span className="font-mono text-purple-300 font-bold">
                   SHARED UNIVERSAL FACTORY ARCHITECTURE (11 SPECIALIZED FACTORIES)
                 </span>
-                <h3 className="text-base font-bold text-white mt-0.5">
-                  যেকোনো ফ্যাক্টরিতে ক্লিক করে পূর্ণাঙ্গ ভ্যালিডেশন ও কোয়ালিটি গেট পাইপলাইন টেস্ট করুন:
-                </h3>
+                <h3 className="text-base font-bold text-white mt-0.5">:</h3>
               </div>
             </div>
 
@@ -644,8 +629,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
                 ├── <strong>Related Tool:</strong> Image Watermark &amp; Social Ratio Studio (Score: 0.96)
               </div>
               <div className="text-slate-300">
-                ├── <strong>Related Tutorial:</strong> কীভাবে ছবি আপলোডের আগে গোপন GPS EXIF মেটাডেটা মুছে ফেলবেন (Score: 0.95)
-              </div>
+                ├── <strong>Related Tutorial:</strong>GPS EXIF    (Score: 0.95)</div>
               <div className="text-slate-300">
                 ├── <strong>Related Course:</strong> Web Performance &amp; Privacy Hardening Track (Score: 0.92)
               </div>
@@ -663,9 +647,7 @@ export const EcosystemExpansionAndAudit114: React.FC<{
                 <div className="font-bold text-white text-sm mt-1">
                   PDF &amp; Archive Zip-Slip Security Inspector
                 </div>
-                <div className="text-slate-300 mt-1">
-                  আজ ১,৪২০+ বার ব্যবহৃত · ১০০% ব্রাউজার স্যান্ডবক্সড
-                </div>
+                <div className="text-slate-300 mt-1">,+   · %</div>
               </div>
 
               <div className="p-3.5 rounded-xl bg-gradient-to-br from-purple-500/15 to-transparent border border-purple-500/40">

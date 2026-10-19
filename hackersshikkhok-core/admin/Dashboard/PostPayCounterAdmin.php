@@ -77,7 +77,7 @@ final class PostPayCounterAdmin {
         ?>
         <div class="wrap" style="color: #f8fafc; font-family: Inter, sans-serif;">
             <h1 style="color: #00f5d4; font-size: 26px; font-weight: 800; margin-bottom: 20px;">
-                💰 Hackers শিক্ষক PostPay Counter &amp; Earning Calculator (Pro Edition)
+                💰 HackersShikkhok PostPay Counter &amp; Earning Calculator (Pro Edition)
             </h1>
 
             <?php settings_errors( 'hs_ppc_messages' ); ?>
@@ -86,7 +86,7 @@ final class PostPayCounterAdmin {
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px;">
                 <div style="background: #0b1120; border: 1px solid rgba(0,245,212,0.3); border-radius: 12px; padding: 20px;">
                     <div style="color: #94a3b8; font-size: 13px; font-weight: 600;">Total Payout Liability</div>
-                    <div style="color: #00f5d4; font-size: 28px; font-weight: 800; margin-top: 6px;">৳<?php echo number_format( $total_earnings, 2 ); ?></div>
+                    <div style="color: #00f5d4; font-size: 28px; font-weight: 800; margin-top: 6px;">BDT <?php echo number_format( $total_earnings, 2 ); ?></div>
                 </div>
                 <div style="background: #0b1120; border: 1px solid rgba(167,139,250,0.3); border-radius: 12px; padding: 20px;">
                     <div style="color: #94a3b8; font-size: 13px; font-weight: 600;">Monetized Views</div>
@@ -189,7 +189,7 @@ final class PostPayCounterAdmin {
                                         <td style="padding:10px;"><?php echo esc_html( $row['user_nicename'] ?? 'User #' . $row['user_id'] ); ?></td>
                                         <td style="padding:10px;"><span style="background: rgba(0,245,212,0.1); color: #00f5d4; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600;"><?php echo esc_html( strtoupper( $row['earning_type'] ) ); ?></span></td>
                                         <td style="padding:10px;"><?php echo (int) $row['post_id'] > 0 ? '#' . (int) $row['post_id'] : '—'; ?></td>
-                                        <td style="padding:10px; font-weight:700; color: #38bdf8;">৳<?php echo number_format( (float)$row['amount'], 2 ); ?></td>
+                                        <td style="padding:10px; font-weight:700; color: #38bdf8;"><?php echo number_format( (float)$row['amount'], 2 ); ?></td>
                                         <td style="padding:10px;"><?php echo esc_html( $row['status'] ); ?></td>
                                         <td style="padding:10px; color: #94a3b8; font-size:11px;"><?php echo esc_html( $row['created_at'] ); ?></td>
                                     </tr>

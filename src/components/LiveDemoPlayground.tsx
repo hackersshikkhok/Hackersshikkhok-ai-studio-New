@@ -86,9 +86,7 @@ try {
             <ShieldCheck className="w-4 h-4" />
             <span>SANDBOXED LIVE DEMO ENGINE · ORIGIN ISOLATED · NO COOKIE/PARENT DOM ACCESS</span>
           </div>
-          <h2 className="text-xl font-bold text-white mt-1">
-            লাইভ কোড ডেমো ও স্যান্ডবক্স প্লেগ্রাউন্ড (HTML / CSS / JS)
-          </h2>
+          <h2 className="text-xl font-bold text-white mt-1">(HTML / CSS / JS)</h2>
         </div>
 
         {/* Action Buttons: Run, Reset, Refresh, Copy, Download, Fullscreen */}
@@ -136,7 +134,7 @@ try {
 
       {/* Preset Code Library Selector */}
       <div className="flex flex-wrap items-center gap-2 py-3 border-b border-slate-800/70">
-        <span className="text-xs text-slate-400 mr-1">কোড লাইব্রেরি প্রিসেট:</span>
+        <span className="text-xs text-slate-400 mr-1">:</span>
         {CODE_LIBRARY_SNIPPETS.map((item) => (
           <button
             key={item.id}

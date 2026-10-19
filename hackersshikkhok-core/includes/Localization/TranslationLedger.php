@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Multilingual Translation Ledger & Global Routing Registry
+ * HackersShikkhok — Multilingual Translation Ledger & Global Routing Registry
  *
  * Provides a robust, zero-third-party dependency translation relational ledger
  * connecting English, Bengali, Arabic, and Spanish posts, terms, and custom entities.
@@ -22,7 +22,7 @@ final class TranslationLedger {
         'bn' => array(
             'code'      => 'bn',
             'locale'    => 'bn_BD',
-            'name'      => 'বাংলা',
+            'name'      => 'English',
             'name_en'   => 'Bengali',
             'direction' => 'ltr',
             'flag'      => '🇧🇩',

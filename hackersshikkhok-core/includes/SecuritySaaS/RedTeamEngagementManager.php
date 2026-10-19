@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Enterprise Red Team Engagement Manager
+ * HackersShikkhok — Enterprise Red Team Engagement Manager
  *
  * Manages manual penetration testing proposals, Scope definition,
  * Rules of Engagement (RoE), and milestone sign-offs.
@@ -26,7 +26,7 @@ final class RedTeamEngagementManager {
         $table = $wpdb->prefix . 'hs_redteam_engagements';
 
         if ( empty( $company ) || empty( $email ) || empty( $scope ) ) {
-            return array( 'success' => false, 'message' => 'কোম্পানি নাম, ইমেইল এবং টার্গেট স্কোপ পূরণ করা আবশ্যক।' );
+            return array( 'success' => false, 'message' => ' ,       ।' );
         }
 
         $inserted = $wpdb->insert(
@@ -50,11 +50,11 @@ final class RedTeamEngagementManager {
             return array(
                 'success'       => true,
                 'engagement_id' => $wpdb->insert_id,
-                'message'       => 'রেড টিম পেনিট্রেশন টেস্টিং অনুরোধ সফলভাবে গৃহীত হয়েছে! আমাদের চিফ সিকিউরিটি আর্কিটেক্ট দ্রুত যোগাযোগ করবেন।',
+                'message'       => '       !       ।',
             );
         }
 
-        return array( 'success' => false, 'message' => 'অনুরোধ সংরক্ষণ করা সম্ভব হয়নি। ডাটাবেস এরর।' );
+        return array( 'success' => false, 'message' => '    ।  ।' );
     }
 
     public static function rest_submit_engagement( WP_REST_Request $request ): WP_REST_Response {

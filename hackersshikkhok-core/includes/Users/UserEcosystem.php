@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Authoritative User Wallet Ledger & Learning XP System
  * Strictly separates non-monetary Learning Points/XP/Badges from Monetary Wallet Balance (BDT).
  * Purely SQL Ledger-backed Authority with Database Row Locking & Idempotency.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class UserEcosystem {
 
@@ -114,7 +114,7 @@ final class UserEcosystem {
             $wpdb->query( 'ROLLBACK' );
             return array(
                 'success' => false,
-                'error'   => 'Insufficient wallet balance. Required: ৳' . number_format( $amount_bdt, 2 ) . ', Available: ৳' . number_format( $prev_balance, 2 ),
+                'error'   => 'Insufficient wallet balance. Required: ' . number_format( $amount_bdt, 2 ) . ', Available: ' . number_format( $prev_balance, 2 ),
             );
         }
 

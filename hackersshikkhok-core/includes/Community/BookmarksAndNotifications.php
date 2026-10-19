@@ -12,7 +12,7 @@ use WP_REST_Response;
 
 /**
  * Universal Bookmark ("My Library") & Notification Center Subsystem
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class BookmarksAndNotifications {
 
@@ -102,7 +102,7 @@ final class BookmarksAndNotifications {
             $notifications = array(
                 array(
                     'id'        => 'notif_welcome',
-                    'title'     => 'Welcome to Hackers শিক্ষক Super Platform!',
+                    'title'     => 'Welcome to HackersShikkhok Super Platform!',
                     'body'      => 'Explore our Cyber Academy, Hardware Lab, Engineering Calculators, and Creator Studio.',
                     'type'      => 'system',
                     'read'      => false,

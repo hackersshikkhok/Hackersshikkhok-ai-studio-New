@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Universal Tool Registry & Master Catalog (520+ Tools Super Platform)
- * Brand: Hackers শিক্ষক (HackersShikkhok.com)
+ * Brand: HackersShikkhok (HackersShikkhok.com)
  * 
  * Provides structured metadata, Centers (38), Categories (104), and 520+ Genuine Tools.
  * Supports Search Intent Matching, Programmatic SEO (WebApplication Schema),
@@ -24,29 +24,52 @@ final class UniversalToolRegistry {
      */
     public static function get_centers(): array {
         return array(
-            'web-dev' => array('slug' => 'web-dev', 'name' => 'Web Developer Center', 'name_bn' => 'ওয়েব ডেভেলপার সেন্টার', 'icon' => 'Globe', 'description' => 'Professional web development tools for HTML, CSS, JavaScript, responsive design, and DOM manipulation.', 'accent' => '#00ff66', 'count' => 50),
-            'programming' => array('slug' => 'programming', 'name' => 'Programming & Code Center', 'name_bn' => 'প্রোগ্রামিং ও কোড সেন্টার', 'icon' => 'Code2', 'description' => 'Multi-language code formatters, minifiers, diff viewers, tokenizers, and compiler helpers.', 'accent' => '#00f0ff', 'count' => 60),
-            'data-json' => array('slug' => 'data-json', 'name' => 'Data / JSON / XML Center', 'name_bn' => 'ডাটা, JSON ও XML সেন্টার', 'icon' => 'Database', 'description' => 'High-speed JSON, CSV, XML, YAML parsers, converters, validators, and dataset generators.', 'accent' => '#f59e0b', 'count' => 45),
-            'text-writing' => array('slug' => 'text-writing', 'name' => 'Text & Writing Center', 'name_bn' => 'টেক্সট ও কন্টেন্ট সেন্টার', 'icon' => 'FileText', 'description' => 'Word counters, typography formatters, case converters, line organizers, and diff analyzers.', 'accent' => '#3b82f6', 'count' => 35),
-            'image' => array('slug' => 'image', 'name' => 'Image Lab & Optimization Center', 'name_bn' => 'ইমেজ ও ফটো অপ্টিমাইজেশন ল্যাব', 'icon' => 'Image', 'description' => 'In-browser image compression, WebP conversion, cropping, EXIF viewer, SVG optimizer, and palettes.', 'accent' => '#ec4899', 'count' => 40),
-            'video' => array('slug' => 'video', 'name' => 'Video Center', 'name_bn' => 'ভিডিও ইউটিলিটি সেন্টার', 'icon' => 'Video', 'description' => 'Video metadata inspector, aspect ratio calculator, thumbnail extractor, subtitle synchronizer, and bitrate estimator.', 'accent' => '#8b5cf6', 'count' => 25),
-            'audio' => array('slug' => 'audio', 'name' => 'Audio Center', 'name_bn' => 'অডিও ইউটিলিটি সেন্টার', 'icon' => 'Music', 'description' => 'Audio waveform analyzer, bitrate checker, frequency visualizer, and format inspector.', 'accent' => '#10b981', 'count' => 25),
-            'pdf-docs' => array('slug' => 'pdf-docs', 'name' => 'PDF & Document Center', 'name_bn' => 'পিডিএফ ও ডকুমেন্ট সেন্টার', 'icon' => 'BookOpen', 'description' => 'Client-side PDF page counter, text-to-pdf exporter, metadata inspector, and word count analyzer.', 'accent' => '#ef4444', 'count' => 25),
-            'cybersecurity' => array('slug' => 'cybersecurity', 'name' => 'Cybersecurity Education Center', 'name_bn' => 'সাইবার সিকিউরিটি এডুকেশন ল্যাব', 'icon' => 'ShieldAlert', 'description' => 'Defensive security analyzers, password entropy calculator, JWT decoder, hash identifier, and CSP generator.', 'accent' => '#00ff66', 'count' => 50),
-            'network' => array('slug' => 'network', 'name' => 'Network Center', 'name_bn' => 'নেটওয়ার্কিং ও আইপি সেন্টার', 'icon' => 'Network', 'description' => 'IPv4/IPv6 subnet calculator, CIDR visualizer, DNS record guide, port directory, and latency explainers.', 'accent' => '#06b6d4', 'count' => 25),
-            'engineering' => array('slug' => 'engineering', 'name' => 'Engineering Center', 'name_bn' => 'ইঞ্জিনিয়ারিং ক্যালকুলেটর হাব', 'icon' => 'Wrench', 'description' => 'Ohm\'s law, voltage divider, torque, gear ratio, thermal dissipation, and unit conversion engines.', 'accent' => '#f97316', 'count' => 30),
-            'electronics' => array('slug' => 'electronics', 'name' => 'Electronics Lab', 'name_bn' => 'ইলেকট্রনিক্স ল্যাব ও কম্পোনেন্ট গাইড', 'icon' => 'Cpu', 'description' => 'Resistor color code decoder, SMD capacitor code, LED current resistor, and 555 timer calculator.', 'accent' => '#eab308', 'count' => 30),
-            'cnc-fabrication' => array('slug' => 'cnc-fabrication', 'name' => 'CNC & Fabrication Center', 'name_bn' => 'সিএনসি ও মেকানিক্যাল ফেব্রিকেশন', 'icon' => 'Layers', 'description' => 'G-code statistics analyzer, speeds & feeds calculator, sheet metal bend deduction, and bolt circle matrix.', 'accent' => '#64748b', 'count' => 20),
-            'calculator' => array('slug' => 'calculator', 'name' => 'Mathematics & Finance Calculator', 'name_bn' => 'ম্যাথ ও ফিন্যান্স ক্যালকুলেটর', 'icon' => 'Calculator', 'description' => 'Compound interest, loan EMI, scientific equations, date difference, and percentage calculators.', 'accent' => '#14b8a6', 'count' => 35),
-            'color-design' => array('slug' => 'color-design', 'name' => 'Color & Design Center', 'name_bn' => 'কালার ও ডিজাইন ল্যাব', 'icon' => 'Palette', 'description' => 'HEX/RGB/HSL converter, WCAG contrast analyzer, gradient generator, and neon glow builder.', 'accent' => '#a855f7', 'count' => 25),
-            'qr-barcode' => array('slug' => 'qr-barcode', 'name' => 'QR & Barcode Center', 'name_bn' => 'কিউআর ও বারকোড সেন্টার', 'icon' => 'QrCode', 'description' => 'High-resolution QR code generator (Wi-Fi, URL, vCard), barcode generator, and scanner engine.', 'accent' => '#0284c7', 'count' => 20),
-            'device-lab' => array('slug' => 'device-lab', 'name' => 'Device Lab & Hardware Inspector', 'name_bn' => 'ডিভাইস ডায়াগনস্টিক ল্যাব', 'icon' => 'Monitor', 'description' => 'Screen resolution, WebGL capability, microphone/camera latency test, and keyboard event inspector.', 'accent' => '#4f46e5', 'count' => 20),
-            'seo' => array('slug' => 'seo', 'name' => 'SEO & Webmaster Center', 'name_bn' => 'এসইও ও সার্চ ইঞ্জিন অপ্টিমাইজেশন', 'icon' => 'Search', 'description' => 'Meta tag preview, OpenGraph builder, Robots.txt builder, Sitemap validator, and keyword density checker.', 'accent' => '#16a34a', 'count' => 25),
-            'youtube' => array('slug' => 'youtube', 'name' => 'YouTube Creator Center', 'name_bn' => 'ইউটিউব ক্রিয়েটর টুলস', 'icon' => 'Youtube', 'description' => 'Thumbnail safe zone preview, title length auditor, chapter timestamp generator, and tag formatter.', 'accent' => '#dc2626', 'count' => 20),
-            'social-media' => array('slug' => 'social-media', 'name' => 'Social Media Center', 'name_bn' => 'সোশ্যাল মিডিয়া টুলস', 'icon' => 'Share2', 'description' => 'Social image dimension reference, caption formatter, hashtag organizer, and bio builder.', 'accent' => '#2563eb', 'count' => 20),
-            'ai' => array('slug' => 'ai', 'name' => 'AI Prompt & Workflow Center', 'name_bn' => 'এআই প্রম্পট ও কোডিং সেন্টার', 'icon' => 'Sparkles', 'description' => 'Prompt template builder, token estimator, structured JSON schema builder for LLMs, and prompt library.', 'accent' => '#00ff66', 'count' => 20),
-            'hardware-iot' => array('slug' => 'hardware-iot', 'name' => 'Hardware & IoT Center', 'name_bn' => 'হার্ডওয়্যার ও আইওটি ল্যাব', 'icon' => 'Radio', 'description' => 'ESP32/Arduino pinout guides, secure MQTT/REST telemetry visualizer, and sensor interfacing formulas.', 'accent' => '#0ea5e9', 'count' => 20),
-            'productivity' => array('slug' => 'productivity', 'name' => 'Productivity & Time Center', 'name_bn' => 'প্রোডাক্টিভিটি ও টাইম সেন্টার', 'icon' => 'Clock', 'description' => 'Pomodoro timer, world clock timezone converter, unix epoch timestamp parser, and checklist manager.', 'accent' => '#f43f5e', 'count' => 20)
+            'web-dev' => array('slug' => 'web-dev', 'name'             => 'Web Developer Center',
+                'name_bn'          => 'Web Developer Center', 'icon' => 'Globe', 'description' => 'Professional web development tools for HTML, CSS, JavaScript, responsive design, and DOM manipulation.', 'accent' => '#00ff66', 'count' => 50),
+            'programming' => array('slug' => 'programming', 'name'             => 'Programming & Code Center',
+                'name_bn'          => 'Programming & Code Center', 'icon' => 'Code2', 'description' => 'Multi-language code formatters, minifiers, diff viewers, tokenizers, and compiler helpers.', 'accent' => '#00f0ff', 'count' => 60),
+            'data-json' => array('slug' => 'data-json', 'name'             => 'Data / JSON / XML Center',
+                'name_bn'          => 'Data / JSON / XML Center', 'icon' => 'Database', 'description' => 'High-speed JSON, CSV, XML, YAML parsers, converters, validators, and dataset generators.', 'accent' => '#f59e0b', 'count' => 45),
+            'text-writing' => array('slug' => 'text-writing', 'name'             => 'Text & Writing Center',
+                'name_bn'          => 'Text & Writing Center', 'icon' => 'FileText', 'description' => 'Word counters, typography formatters, case converters, line organizers, and diff analyzers.', 'accent' => '#3b82f6', 'count' => 35),
+            'image' => array('slug' => 'image', 'name'             => 'Image Lab & Optimization Center',
+                'name_bn'          => 'Image Lab & Optimization Center', 'icon' => 'Image', 'description' => 'In-browser image compression, WebP conversion, cropping, EXIF viewer, SVG optimizer, and palettes.', 'accent' => '#ec4899', 'count' => 40),
+            'video' => array('slug' => 'video', 'name'             => 'Video Center',
+                'name_bn'          => 'Video Center', 'icon' => 'Video', 'description' => 'Video metadata inspector, aspect ratio calculator, thumbnail extractor, subtitle synchronizer, and bitrate estimator.', 'accent' => '#8b5cf6', 'count' => 25),
+            'audio' => array('slug' => 'audio', 'name'             => 'Audio Center',
+                'name_bn'          => 'Audio Center', 'icon' => 'Music', 'description' => 'Audio waveform analyzer, bitrate checker, frequency visualizer, and format inspector.', 'accent' => '#10b981', 'count' => 25),
+            'pdf-docs' => array('slug' => 'pdf-docs', 'name'             => 'PDF & Document Center',
+                'name_bn'          => 'PDF & Document Center', 'icon' => 'BookOpen', 'description' => 'Client-side PDF page counter, text-to-pdf exporter, metadata inspector, and word count analyzer.', 'accent' => '#ef4444', 'count' => 25),
+            'cybersecurity' => array('slug' => 'cybersecurity', 'name'             => 'Cybersecurity Education Center',
+                'name_bn'          => 'Cybersecurity Education Center', 'icon' => 'ShieldAlert', 'description' => 'Defensive security analyzers, password entropy calculator, JWT decoder, hash identifier, and CSP generator.', 'accent' => '#00ff66', 'count' => 50),
+            'network' => array('slug' => 'network', 'name'             => 'Network Center',
+                'name_bn'          => 'Network Center', 'icon' => 'Network', 'description' => 'IPv4/IPv6 subnet calculator, CIDR visualizer, DNS record guide, port directory, and latency explainers.', 'accent' => '#06b6d4', 'count' => 25),
+            'engineering' => array('slug' => 'engineering', 'name'             => 'Engineering Center',
+                'name_bn'          => 'Engineering Center', 'icon' => 'Wrench', 'description' => 'Ohm\'s law, voltage divider, torque, gear ratio, thermal dissipation, and unit conversion engines.', 'accent' => '#f97316', 'count' => 30),
+            'electronics' => array('slug' => 'electronics', 'name'             => 'Electronics Lab',
+                'name_bn'          => 'Electronics Lab', 'icon' => 'Cpu', 'description' => 'Resistor color code decoder, SMD capacitor code, LED current resistor, and 555 timer calculator.', 'accent' => '#eab308', 'count' => 30),
+            'cnc-fabrication' => array('slug' => 'cnc-fabrication', 'name'             => 'CNC & Fabrication Center',
+                'name_bn'          => 'CNC & Fabrication Center', 'icon' => 'Layers', 'description' => 'G-code statistics analyzer, speeds & feeds calculator, sheet metal bend deduction, and bolt circle matrix.', 'accent' => '#64748b', 'count' => 20),
+            'calculator' => array('slug' => 'calculator', 'name'             => 'Mathematics & Finance Calculator',
+                'name_bn'          => 'Mathematics & Finance Calculator', 'icon' => 'Calculator', 'description' => 'Compound interest, loan EMI, scientific equations, date difference, and percentage calculators.', 'accent' => '#14b8a6', 'count' => 35),
+            'color-design' => array('slug' => 'color-design', 'name'             => 'Color & Design Center',
+                'name_bn'          => 'Color & Design Center', 'icon' => 'Palette', 'description' => 'HEX/RGB/HSL converter, WCAG contrast analyzer, gradient generator, and neon glow builder.', 'accent' => '#a855f7', 'count' => 25),
+            'qr-barcode' => array('slug' => 'qr-barcode', 'name'             => 'QR & Barcode Center',
+                'name_bn'          => 'QR & Barcode Center', 'icon' => 'QrCode', 'description' => 'High-resolution QR code generator (Wi-Fi, URL, vCard), barcode generator, and scanner engine.', 'accent' => '#0284c7', 'count' => 20),
+            'device-lab' => array('slug' => 'device-lab', 'name'             => 'Device Lab & Hardware Inspector',
+                'name_bn'          => 'Device Lab & Hardware Inspector', 'icon' => 'Monitor', 'description' => 'Screen resolution, WebGL capability, microphone/camera latency test, and keyboard event inspector.', 'accent' => '#4f46e5', 'count' => 20),
+            'seo' => array('slug' => 'seo', 'name'             => 'SEO & Webmaster Center',
+                'name_bn'          => 'SEO & Webmaster Center', 'icon' => 'Search', 'description' => 'Meta tag preview, OpenGraph builder, Robots.txt builder, Sitemap validator, and keyword density checker.', 'accent' => '#16a34a', 'count' => 25),
+            'youtube' => array('slug' => 'youtube', 'name'             => 'YouTube Creator Center',
+                'name_bn'          => 'YouTube Creator Center', 'icon' => 'Youtube', 'description' => 'Thumbnail safe zone preview, title length auditor, chapter timestamp generator, and tag formatter.', 'accent' => '#dc2626', 'count' => 20),
+            'social-media' => array('slug' => 'social-media', 'name'             => 'Social Media Center',
+                'name_bn'          => 'Social Media Center', 'icon' => 'Share2', 'description' => 'Social image dimension reference, caption formatter, hashtag organizer, and bio builder.', 'accent' => '#2563eb', 'count' => 20),
+            'ai' => array('slug' => 'ai', 'name'             => 'AI Prompt & Workflow Center',
+                'name_bn'          => 'AI Prompt & Workflow Center', 'icon' => 'Sparkles', 'description' => 'Prompt template builder, token estimator, structured JSON schema builder for LLMs, and prompt library.', 'accent' => '#00ff66', 'count' => 20),
+            'hardware-iot' => array('slug' => 'hardware-iot', 'name'             => 'Hardware & IoT Center',
+                'name_bn'          => 'Hardware & IoT Center', 'icon' => 'Radio', 'description' => 'ESP32/Arduino pinout guides, secure MQTT/REST telemetry visualizer, and sensor interfacing formulas.', 'accent' => '#0ea5e9', 'count' => 20),
+            'productivity' => array('slug' => 'productivity', 'name'             => 'Productivity & Time Center',
+                'name_bn'          => 'Productivity & Time Center', 'icon' => 'Clock', 'description' => 'Pomodoro timer, world clock timezone converter, unix epoch timestamp parser, and checklist manager.', 'accent' => '#f43f5e', 'count' => 20)
         );
     }
 
@@ -61,8 +84,8 @@ final class UniversalToolRegistry {
         $tools = array();
         $tools['html-beautifier'] = array(
             'id' => 'html-beautifier',
-            'name' => 'HTML Beautifier & Formatter',
-            'name_bn' => 'HTML বিউটিফায়ার ও ফরম্যাটার',
+            'name'             => 'HTML Beautifier & Formatter',
+                'name_bn'          => 'HTML Beautifier & Formatter',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'Code',
@@ -74,8 +97,8 @@ final class UniversalToolRegistry {
         );
         $tools['html-minifier'] = array(
             'id' => 'html-minifier',
-            'name' => 'HTML Minifier & Compressor',
-            'name_bn' => 'HTML মিনিফায়ার ও কম্প্রেসর',
+            'name'             => 'HTML Minifier & Compressor',
+                'name_bn'          => 'HTML Minifier & Compressor',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'Minimize2',
@@ -87,8 +110,8 @@ final class UniversalToolRegistry {
         );
         $tools['html-validator'] = array(
             'id' => 'html-validator',
-            'name' => 'HTML5 Syntax & Tag Validator',
-            'name_bn' => 'HTML5 সিনট্যাক্স টেস্টার',
+            'name'             => 'HTML5 Syntax & Tag Validator',
+                'name_bn'          => 'HTML5 Syntax & Tag Validator',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'CheckSquare',
@@ -100,8 +123,8 @@ final class UniversalToolRegistry {
         );
         $tools['html-table-generator'] = array(
             'id' => 'html-table-generator',
-            'name' => 'HTML Table Generator',
-            'name_bn' => 'HTML টেবিল জেনারেটর',
+            'name'             => 'HTML Table Generator',
+                'name_bn'          => 'HTML Table Generator',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'Grid',
@@ -113,8 +136,8 @@ final class UniversalToolRegistry {
         );
         $tools['html-entity-encoder'] = array(
             'id' => 'html-entity-encoder',
-            'name' => 'HTML Entity Encoder & Escaper',
-            'name_bn' => 'HTML এনটিটি এনকোডার',
+            'name'             => 'HTML Entity Encoder & Escaper',
+                'name_bn'          => 'HTML Entity Encoder & Escaper',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'Shield',
@@ -126,8 +149,8 @@ final class UniversalToolRegistry {
         );
         $tools['html-entity-decoder'] = array(
             'id' => 'html-entity-decoder',
-            'name' => 'HTML Entity Decoder',
-            'name_bn' => 'HTML এনটিটি ডিকোডার',
+            'name'             => 'HTML Entity Decoder',
+                'name_bn'          => 'HTML Entity Decoder',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'Unlock',
@@ -139,8 +162,8 @@ final class UniversalToolRegistry {
         );
         $tools['html-tag-stripper'] = array(
             'id' => 'html-tag-stripper',
-            'name' => 'HTML Tag Stripper & Plain Text Extractor',
-            'name_bn' => 'HTML ট্যাগ স্ট্রিপার',
+            'name'             => 'HTML Tag Stripper & Plain Text Extractor',
+                'name_bn'          => 'HTML Tag Stripper & Plain Text Extractor',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'Scissors',
@@ -152,8 +175,8 @@ final class UniversalToolRegistry {
         );
         $tools['html-link-extractor'] = array(
             'id' => 'html-link-extractor',
-            'name' => 'HTML Anchor & Hyperlink Extractor',
-            'name_bn' => 'HTML লিংক এক্সট্রাক্টর',
+            'name'             => 'HTML Anchor & Hyperlink Extractor',
+                'name_bn'          => 'HTML Anchor & Hyperlink Extractor',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'Link',
@@ -165,8 +188,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-minifier'] = array(
             'id' => 'css-minifier',
-            'name' => 'CSS Minifier & Stylesheet Compressor',
-            'name_bn' => 'CSS মিনিফায়ার',
+            'name'             => 'CSS Minifier & Stylesheet Compressor',
+                'name_bn'          => 'CSS Minifier & Stylesheet Compressor',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Minimize',
@@ -178,8 +201,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-beautifier'] = array(
             'id' => 'css-beautifier',
-            'name' => 'CSS Beautifier & Formatter',
-            'name_bn' => 'CSS বিউটিফায়ার',
+            'name'             => 'CSS Beautifier & Formatter',
+                'name_bn'          => 'CSS Beautifier & Formatter',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Layout',
@@ -191,8 +214,8 @@ final class UniversalToolRegistry {
         );
         $tools['youtube-downloader'] = array(
             'id' => 'youtube-downloader',
-            'name' => 'YouTube & Media Video Downloader Pro',
-            'name_bn' => 'ইউটিউব ভিডিও ডাউনলোডার প্রো',
+            'name'             => 'YouTube & Media Video Downloader Pro',
+                'name_bn'          => 'YouTube & Media Video Downloader Pro',
             'center' => 'video',
             'category' => 'Video Tools',
             'icon' => 'Youtube',
@@ -204,8 +227,8 @@ final class UniversalToolRegistry {
         );
         $tools['wp-detector'] = array(
             'id' => 'wp-detector',
-            'name' => 'WordPress Theme & Plugin Detector Pro',
-            'name_bn' => 'ওয়ার্ডপ্রেস থিম ও প্লাগইন ডিটেক্টর',
+            'name'             => 'WordPress Theme & Plugin Detector Pro',
+                'name_bn'          => 'WordPress Theme & Plugin Detector Pro',
             'center' => 'seo',
             'category' => 'WordPress Tools',
             'icon' => 'Search',
@@ -217,8 +240,8 @@ final class UniversalToolRegistry {
         );
         $tools['plagiarism-checker'] = array(
             'id' => 'plagiarism-checker',
-            'name' => 'AI Plagiarism & Originality Checker Pro',
-            'name_bn' => 'প্লাজিয়ারিজম ও অরিজিনালিটি চেকার',
+            'name'             => 'AI Plagiarism & Originality Checker Pro',
+                'name_bn'          => 'AI Plagiarism & Originality Checker Pro',
             'center' => 'text-writing',
             'category' => 'Content Tools',
             'icon' => 'FileText',
@@ -230,8 +253,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-gradient-generator'] = array(
             'id' => 'css-gradient-generator',
-            'name' => 'CSS Neon & RGB Gradient Generator',
-            'name_bn' => 'CSS গ্র্যাডিয়েন্ট জেনারেটর',
+            'name'             => 'CSS Neon & RGB Gradient Generator',
+                'name_bn'          => 'CSS Neon & RGB Gradient Generator',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Palette',
@@ -243,8 +266,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-box-shadow-generator'] = array(
             'id' => 'css-box-shadow-generator',
-            'name' => 'CSS Box Shadow & Neon Glow Builder',
-            'name_bn' => 'CSS বক্স শ্যাডো জেনারেটর',
+            'name'             => 'CSS Box Shadow & Neon Glow Builder',
+                'name_bn'          => 'CSS Box Shadow & Neon Glow Builder',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Sun',
@@ -256,8 +279,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-glassmorphism-generator'] = array(
             'id' => 'css-glassmorphism-generator',
-            'name' => 'CSS Glassmorphism UI Generator',
-            'name_bn' => 'CSS গ্লাসমরফিজম জেনারেটর',
+            'name'             => 'CSS Glassmorphism UI Generator',
+                'name_bn'          => 'CSS Glassmorphism UI Generator',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Sparkles',
@@ -269,8 +292,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-border-radius-generator'] = array(
             'id' => 'css-border-radius-generator',
-            'name' => 'CSS Border Radius & Blob Shaper',
-            'name_bn' => 'CSS বর্ডার রেডিয়াস জেনারেটর',
+            'name'             => 'CSS Border Radius & Blob Shaper',
+                'name_bn'          => 'CSS Border Radius & Blob Shaper',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Square',
@@ -282,8 +305,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-flexbox-playground'] = array(
             'id' => 'css-flexbox-playground',
-            'name' => 'Interactive CSS Flexbox Playground',
-            'name_bn' => 'CSS ফ্লেক্সবক্স প্লেগ্রাউন্ড',
+            'name'             => 'Interactive CSS Flexbox Playground',
+                'name_bn'          => 'Interactive CSS Flexbox Playground',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Columns',
@@ -295,8 +318,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-grid-generator'] = array(
             'id' => 'css-grid-generator',
-            'name' => 'CSS Grid Layout Builder',
-            'name_bn' => 'CSS গ্রিড লেআউট বিল্ডার',
+            'name'             => 'CSS Grid Layout Builder',
+                'name_bn'          => 'CSS Grid Layout Builder',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Grid',
@@ -308,8 +331,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-button-generator'] = array(
             'id' => 'css-button-generator',
-            'name' => 'CSS Cyber Neon Button Studio',
-            'name_bn' => 'CSS নিয়ন বাটন জেনারেটর',
+            'name'             => 'CSS Cyber Neon Button Studio',
+                'name_bn'          => 'CSS Cyber Neon Button Studio',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'MousePointer',
@@ -321,8 +344,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-animation-generator'] = array(
             'id' => 'css-animation-generator',
-            'name' => 'CSS Keyframe Animation Builder',
-            'name_bn' => 'CSS অ্যানিমেশন জেনারেটর',
+            'name'             => 'CSS Keyframe Animation Builder',
+                'name_bn'          => 'CSS Keyframe Animation Builder',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Play',
@@ -334,8 +357,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-text-shadow-generator'] = array(
             'id' => 'css-text-shadow-generator',
-            'name' => 'CSS Text Shadow & Neon Text Builder',
-            'name_bn' => 'CSS টেক্সট শ্যাডো জেনারেটর',
+            'name'             => 'CSS Text Shadow & Neon Text Builder',
+                'name_bn'          => 'CSS Text Shadow & Neon Text Builder',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Type',
@@ -347,8 +370,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-font-loader-generator'] = array(
             'id' => 'css-font-loader-generator',
-            'name' => 'CSS @font-face Code Generator',
-            'name_bn' => 'CSS ফন্ট লোডার জেনারেটর',
+            'name'             => 'CSS @font-face Code Generator',
+                'name_bn'          => 'CSS @font-face Code Generator',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'FileText',
@@ -360,8 +383,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-units-converter'] = array(
             'id' => 'css-units-converter',
-            'name' => 'CSS Unit Converter (px to rem, em, vh, vw)',
-            'name_bn' => 'CSS ইউনিট কনভার্টার',
+            'name'             => 'CSS Unit Converter (px to rem, em, vh, vw)',
+                'name_bn'          => 'CSS Unit Converter (px to rem, em, vh, vw)',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Maximize',
@@ -373,8 +396,8 @@ final class UniversalToolRegistry {
         );
         $tools['css-clamp-calculator'] = array(
             'id' => 'css-clamp-calculator',
-            'name' => 'CSS clamp() Responsive Typography Tool',
-            'name_bn' => 'CSS clamp() ক্যালকুলেটর',
+            'name'             => 'CSS clamp() Responsive Typography Tool',
+                'name_bn'          => 'CSS clamp() Responsive Typography Tool',
             'center' => 'web-dev',
             'category' => 'CSS Tools',
             'icon' => 'Sliders',
@@ -386,8 +409,8 @@ final class UniversalToolRegistry {
         );
         $tools['js-beautifier'] = array(
             'id' => 'js-beautifier',
-            'name' => 'JavaScript Formatter & Beautifier',
-            'name_bn' => 'JavaScript বিউটিফায়ার',
+            'name'             => 'JavaScript Formatter & Beautifier',
+                'name_bn'          => 'JavaScript Formatter & Beautifier',
             'center' => 'web-dev',
             'category' => 'JavaScript Tools',
             'icon' => 'Code',
@@ -399,8 +422,8 @@ final class UniversalToolRegistry {
         );
         $tools['js-minifier'] = array(
             'id' => 'js-minifier',
-            'name' => 'JavaScript Minifier & Stripper',
-            'name_bn' => 'JavaScript মিনিফায়ার',
+            'name'             => 'JavaScript Minifier & Stripper',
+                'name_bn'          => 'JavaScript Minifier & Stripper',
             'center' => 'web-dev',
             'category' => 'JavaScript Tools',
             'icon' => 'Minimize2',
@@ -412,8 +435,8 @@ final class UniversalToolRegistry {
         );
         $tools['js-event-keycode-inspector'] = array(
             'id' => 'js-event-keycode-inspector',
-            'name' => 'JavaScript Keyboard Event & KeyCode Inspector',
-            'name_bn' => 'JS কীবোর্ড কী-কোড ইন্সপেক্টর',
+            'name'             => 'JavaScript Keyboard Event & KeyCode Inspector',
+                'name_bn'          => 'JavaScript Keyboard Event & KeyCode Inspector',
             'center' => 'web-dev',
             'category' => 'JavaScript Tools',
             'icon' => 'Command',
@@ -425,8 +448,8 @@ final class UniversalToolRegistry {
         );
         $tools['js-cookie-parser'] = array(
             'id' => 'js-cookie-parser',
-            'name' => 'JavaScript Document Cookie Inspector',
-            'name_bn' => 'JS কুকি পার্সার ও ইন্সপেক্টর',
+            'name'             => 'JavaScript Document Cookie Inspector',
+                'name_bn'          => 'JavaScript Document Cookie Inspector',
             'center' => 'web-dev',
             'category' => 'JavaScript Tools',
             'icon' => 'Cookie',
@@ -438,8 +461,8 @@ final class UniversalToolRegistry {
         );
         $tools['js-storage-helper'] = array(
             'id' => 'js-storage-helper',
-            'name' => 'LocalStorage & SessionStorage Manager',
-            'name_bn' => 'লোকাল-স্টোরেজ সহকারী',
+            'name'             => 'LocalStorage & SessionStorage Manager',
+                'name_bn'          => 'LocalStorage & SessionStorage Manager',
             'center' => 'web-dev',
             'category' => 'JavaScript Tools',
             'icon' => 'Database',
@@ -451,8 +474,8 @@ final class UniversalToolRegistry {
         );
         $tools['js-sri-hash-generator'] = array(
             'id' => 'js-sri-hash-generator',
-            'name' => 'Subresource Integrity (SRI) Hash Builder',
-            'name_bn' => 'SRI হ্যাশ জেনারেটর',
+            'name'             => 'Subresource Integrity (SRI) Hash Builder',
+                'name_bn'          => 'Subresource Integrity (SRI) Hash Builder',
             'center' => 'web-dev',
             'category' => 'JavaScript Tools',
             'icon' => 'Lock',
@@ -464,8 +487,8 @@ final class UniversalToolRegistry {
         );
         $tools['js-ast-token-counter'] = array(
             'id' => 'js-ast-token-counter',
-            'name' => 'JavaScript Token & AST Line Counter',
-            'name_bn' => 'JS টোকেন ও লাইন কাউন্টার',
+            'name'             => 'JavaScript Token & AST Line Counter',
+                'name_bn'          => 'JavaScript Token & AST Line Counter',
             'center' => 'web-dev',
             'category' => 'JavaScript Tools',
             'icon' => 'Cpu',
@@ -477,8 +500,8 @@ final class UniversalToolRegistry {
         );
         $tools['meta-tag-generator'] = array(
             'id' => 'meta-tag-generator',
-            'name' => 'SEO Meta Tag & OpenGraph Builder',
-            'name_bn' => 'SEO মেটা ট্যাগ ও ওপেনগ্রাফ জেনারেটর',
+            'name'             => 'SEO Meta Tag & OpenGraph Builder',
+                'name_bn'          => 'SEO Meta Tag & OpenGraph Builder',
             'center' => 'web-dev',
             'category' => 'SEO Web',
             'icon' => 'Globe',
@@ -490,8 +513,8 @@ final class UniversalToolRegistry {
         );
         $tools['meta-heading-auditor'] = array(
             'id' => 'meta-heading-auditor',
-            'name' => 'HTML Heading Structure (H1-H6) Auditor',
-            'name_bn' => 'হেডিং স্ট্রাকচার অডিটর',
+            'name'             => 'HTML Heading Structure (H1-H6) Auditor',
+                'name_bn'          => 'HTML Heading Structure (H1-H6) Auditor',
             'center' => 'web-dev',
             'category' => 'SEO Web',
             'icon' => 'List',
@@ -503,8 +526,8 @@ final class UniversalToolRegistry {
         );
         $tools['meta-canonical-checker'] = array(
             'id' => 'meta-canonical-checker',
-            'name' => 'Canonical URL Directive Inspector',
-            'name_bn' => 'ক্যানোনিকাল URL ইন্সপেক্টর',
+            'name'             => 'Canonical URL Directive Inspector',
+                'name_bn'          => 'Canonical URL Directive Inspector',
             'center' => 'web-dev',
             'category' => 'SEO Web',
             'icon' => 'CheckCircle',
@@ -516,8 +539,8 @@ final class UniversalToolRegistry {
         );
         $tools['open-graph-generator'] = array(
             'id' => 'open-graph-generator',
-            'name' => 'OpenGraph Social Card Meta Generator',
-            'name_bn' => 'ওপেনগ্রাফ সোশ্যাল কার্ড জেনারেটর',
+            'name'             => 'OpenGraph Social Card Meta Generator',
+                'name_bn'          => 'OpenGraph Social Card Meta Generator',
             'center' => 'web-dev',
             'category' => 'SEO Web',
             'icon' => 'Share2',
@@ -529,8 +552,8 @@ final class UniversalToolRegistry {
         );
         $tools['twitter-card-generator'] = array(
             'id' => 'twitter-card-generator',
-            'name' => 'Twitter / X Card Meta Generator',
-            'name_bn' => 'টুইটার কার্ড মেটা জেনারেটর',
+            'name'             => 'Twitter / X Card Meta Generator',
+                'name_bn'          => 'Twitter / X Card Meta Generator',
             'center' => 'web-dev',
             'category' => 'SEO Web',
             'icon' => 'Twitter',
@@ -542,8 +565,8 @@ final class UniversalToolRegistry {
         );
         $tools['robots-txt-builder'] = array(
             'id' => 'robots-txt-builder',
-            'name' => 'Robots.txt Rule & Directives Builder',
-            'name_bn' => 'Robots.txt রুলস বিল্ডার',
+            'name'             => 'Robots.txt Rule & Directives Builder',
+                'name_bn'          => 'Robots.txt Rule & Directives Builder',
             'center' => 'web-dev',
             'category' => 'SEO Web',
             'icon' => 'FileText',
@@ -555,8 +578,8 @@ final class UniversalToolRegistry {
         );
         $tools['sitemap-xml-validator'] = array(
             'id' => 'sitemap-xml-validator',
-            'name' => 'XML Sitemap Directives Validator',
-            'name_bn' => 'XML সাইটম্যাপ ভ্যালিডেটর',
+            'name'             => 'XML Sitemap Directives Validator',
+                'name_bn'          => 'XML Sitemap Directives Validator',
             'center' => 'web-dev',
             'category' => 'SEO Web',
             'icon' => 'FileCode',
@@ -568,8 +591,8 @@ final class UniversalToolRegistry {
         );
         $tools['web-vitals-calculator'] = array(
             'id' => 'web-vitals-calculator',
-            'name' => 'Core Web Vitals Threshold Inspector',
-            'name_bn' => 'Core Web Vitals অডিটর',
+            'name'             => 'Core Web Vitals Threshold Inspector',
+                'name_bn'          => 'Core Web Vitals Threshold Inspector',
             'center' => 'web-dev',
             'category' => 'SEO Web',
             'icon' => 'Activity',
@@ -581,8 +604,8 @@ final class UniversalToolRegistry {
         );
         $tools['http-status-directory'] = array(
             'id' => 'http-status-directory',
-            'name' => 'HTTP Status Codes Reference Directory',
-            'name_bn' => 'HTTP স্ট্যাটাস কোড ডিরেক্টরি',
+            'name'             => 'HTTP Status Codes Reference Directory',
+                'name_bn'          => 'HTTP Status Codes Reference Directory',
             'center' => 'web-dev',
             'category' => 'HTTP Tools',
             'icon' => 'Info',
@@ -594,8 +617,8 @@ final class UniversalToolRegistry {
         );
         $tools['http-headers-inspector'] = array(
             'id' => 'http-headers-inspector',
-            'name' => 'HTTP Request & Response Headers Inspector',
-            'name_bn' => 'HTTP হেডার্স ইন্সপেক্টর',
+            'name'             => 'HTTP Request & Response Headers Inspector',
+                'name_bn'          => 'HTTP Request & Response Headers Inspector',
             'center' => 'web-dev',
             'category' => 'HTTP Tools',
             'icon' => 'List',
@@ -607,8 +630,8 @@ final class UniversalToolRegistry {
         );
         $tools['cors-header-generator'] = array(
             'id' => 'cors-header-generator',
-            'name' => 'CORS Policy Header Generator',
-            'name_bn' => 'CORS পলিসি হেডার জেনারেটর',
+            'name'             => 'CORS Policy Header Generator',
+                'name_bn'          => 'CORS Policy Header Generator',
             'center' => 'web-dev',
             'category' => 'HTTP Tools',
             'icon' => 'Shield',
@@ -620,8 +643,8 @@ final class UniversalToolRegistry {
         );
         $tools['uri-component-encoder'] = array(
             'id' => 'uri-component-encoder',
-            'name' => 'JavaScript encodeURIComponent Encoder',
-            'name_bn' => 'URI কম্পোনেন্ট এনকোডার',
+            'name'             => 'JavaScript encodeURIComponent Encoder',
+                'name_bn'          => 'JavaScript encodeURIComponent Encoder',
             'center' => 'web-dev',
             'category' => 'URL Tools',
             'icon' => 'Link',
@@ -633,8 +656,8 @@ final class UniversalToolRegistry {
         );
         $tools['uri-component-decoder'] = array(
             'id' => 'uri-component-decoder',
-            'name' => 'JavaScript decodeURIComponent Decoder',
-            'name_bn' => 'URI কম্পোনেন্ট ডিকোডার',
+            'name'             => 'JavaScript decodeURIComponent Decoder',
+                'name_bn'          => 'JavaScript decodeURIComponent Decoder',
             'center' => 'web-dev',
             'category' => 'URL Tools',
             'icon' => 'Link2',
@@ -646,8 +669,8 @@ final class UniversalToolRegistry {
         );
         $tools['url-parser-tool'] = array(
             'id' => 'url-parser-tool',
-            'name' => 'URL Protocol & Query Parameter Parser',
-            'name_bn' => 'URL পার্সার ও কুয়েরি টুল',
+            'name'             => 'URL Protocol & Query Parameter Parser',
+                'name_bn'          => 'URL Protocol & Query Parameter Parser',
             'center' => 'web-dev',
             'category' => 'URL Tools',
             'icon' => 'Search',
@@ -659,8 +682,8 @@ final class UniversalToolRegistry {
         );
         $tools['base64-url-safe-codec'] = array(
             'id' => 'base64-url-safe-codec',
-            'name' => 'Base64URL Safe Encoder & Decoder',
-            'name_bn' => 'Base64URL সেফ কোডেক',
+            'name'             => 'Base64URL Safe Encoder & Decoder',
+                'name_bn'          => 'Base64URL Safe Encoder & Decoder',
             'center' => 'web-dev',
             'category' => 'Encoders',
             'icon' => 'Binary',
@@ -672,8 +695,8 @@ final class UniversalToolRegistry {
         );
         $tools['ascii-entity-converter'] = array(
             'id' => 'ascii-entity-converter',
-            'name' => 'ASCII Character Code to Entity Converter',
-            'name_bn' => 'ASCII এনটিটি কনভার্টার',
+            'name'             => 'ASCII Character Code to Entity Converter',
+                'name_bn'          => 'ASCII Character Code to Entity Converter',
             'center' => 'web-dev',
             'category' => 'Encoders',
             'icon' => 'Hash',
@@ -685,8 +708,8 @@ final class UniversalToolRegistry {
         );
         $tools['hex-string-converter'] = array(
             'id' => 'hex-string-converter',
-            'name' => 'Hexadecimal String Encoder & Decoder',
-            'name_bn' => 'হেক্সাডেসিমাল কনভার্টার',
+            'name'             => 'Hexadecimal String Encoder & Decoder',
+                'name_bn'          => 'Hexadecimal String Encoder & Decoder',
             'center' => 'web-dev',
             'category' => 'Encoders',
             'icon' => 'Code2',
@@ -698,8 +721,8 @@ final class UniversalToolRegistry {
         );
         $tools['data-uri-generator'] = array(
             'id' => 'data-uri-generator',
-            'name' => 'Text & SVG Data URI Generator',
-            'name_bn' => 'Data URI জেনারেটর',
+            'name'             => 'Text & SVG Data URI Generator',
+                'name_bn'          => 'Text & SVG Data URI Generator',
             'center' => 'web-dev',
             'category' => 'Encoders',
             'icon' => 'File',
@@ -711,8 +734,8 @@ final class UniversalToolRegistry {
         );
         $tools['svg-path-optimizer'] = array(
             'id' => 'svg-path-optimizer',
-            'name' => 'SVG Path & Code Optimizer',
-            'name_bn' => 'SVG পাথ অপ্টিমাইজার',
+            'name'             => 'SVG Path & Code Optimizer',
+                'name_bn'          => 'SVG Path & Code Optimizer',
             'center' => 'web-dev',
             'category' => 'SVG Tools',
             'icon' => 'Feather',
@@ -724,8 +747,8 @@ final class UniversalToolRegistry {
         );
         $tools['svg-to-css-datauri'] = array(
             'id' => 'svg-to-css-datauri',
-            'name' => 'SVG Vector to CSS Background Image Converter',
-            'name_bn' => 'SVG to CSS ব্যাকগ্রাউন্ড',
+            'name'             => 'SVG Vector to CSS Background Image Converter',
+                'name_bn'          => 'SVG Vector to CSS Background Image Converter',
             'center' => 'web-dev',
             'category' => 'SVG Tools',
             'icon' => 'Image',
@@ -737,8 +760,8 @@ final class UniversalToolRegistry {
         );
         $tools['favicon-ico-generator'] = array(
             'id' => 'favicon-ico-generator',
-            'name' => 'Favicon HTML Head Tag Generator',
-            'name_bn' => 'ফেভিকন ট্যাগ জেনারেটর',
+            'name'             => 'Favicon HTML Head Tag Generator',
+                'name_bn'          => 'Favicon HTML Head Tag Generator',
             'center' => 'web-dev',
             'category' => 'HTML Tools',
             'icon' => 'Bookmark',
@@ -750,8 +773,8 @@ final class UniversalToolRegistry {
         );
         $tools['md5-hash-generator'] = array(
             'id' => 'md5-hash-generator',
-            'name' => 'MD5 Message Digest Generator',
-            'name_bn' => 'MD5 হ্যাশ জেনারেটর',
+            'name'             => 'MD5 Message Digest Generator',
+                'name_bn'          => 'MD5 Message Digest Generator',
             'center' => 'cybersecurity',
             'category' => 'Hashing',
             'icon' => 'Hash',
@@ -763,8 +786,8 @@ final class UniversalToolRegistry {
         );
         $tools['sha1-hash-generator'] = array(
             'id' => 'sha1-hash-generator',
-            'name' => 'SHA-1 Hash Generator',
-            'name_bn' => 'SHA-1 হ্যাশ জেনারেটর',
+            'name'             => 'SHA-1 Hash Generator',
+                'name_bn'          => 'SHA-1 Hash Generator',
             'center' => 'cybersecurity',
             'category' => 'Hashing',
             'icon' => 'Hash',
@@ -776,8 +799,8 @@ final class UniversalToolRegistry {
         );
         $tools['sha256-hash-generator'] = array(
             'id' => 'sha256-hash-generator',
-            'name' => 'SHA-256 Cryptographic Digest Generator',
-            'name_bn' => 'SHA-256 হ্যাশ জেনারেটর',
+            'name'             => 'SHA-256 Cryptographic Digest Generator',
+                'name_bn'          => 'SHA-256 Cryptographic Digest Generator',
             'center' => 'cybersecurity',
             'category' => 'Hashing',
             'icon' => 'ShieldCheck',
@@ -789,8 +812,8 @@ final class UniversalToolRegistry {
         );
         $tools['sha512-hash-generator'] = array(
             'id' => 'sha512-hash-generator',
-            'name' => 'SHA-512 Cryptographic Digest Generator',
-            'name_bn' => 'SHA-512 হ্যাশ জেনারেটর',
+            'name'             => 'SHA-512 Cryptographic Digest Generator',
+                'name_bn'          => 'SHA-512 Cryptographic Digest Generator',
             'center' => 'cybersecurity',
             'category' => 'Hashing',
             'icon' => 'Lock',
@@ -802,8 +825,8 @@ final class UniversalToolRegistry {
         );
         $tools['hmac-sha256-generator'] = array(
             'id' => 'hmac-sha256-generator',
-            'name' => 'HMAC-SHA256 Message Authentication Code Builder',
-            'name_bn' => 'HMAC-SHA256 মেসেজ অথেন্টিকেটর',
+            'name'             => 'HMAC-SHA256 Message Authentication Code Builder',
+                'name_bn'          => 'HMAC-SHA256 Message Authentication Code Builder',
             'center' => 'cybersecurity',
             'category' => 'Hashing',
             'icon' => 'Key',
@@ -815,8 +838,8 @@ final class UniversalToolRegistry {
         );
         $tools['bcrypt-hash-inspector'] = array(
             'id' => 'bcrypt-hash-inspector',
-            'name' => 'Bcrypt Hash Structure Inspector',
-            'name_bn' => 'Bcrypt হ্যাশ ইন্সপেক্টর',
+            'name'             => 'Bcrypt Hash Structure Inspector',
+                'name_bn'          => 'Bcrypt Hash Structure Inspector',
             'center' => 'cybersecurity',
             'category' => 'Hashing',
             'icon' => 'Database',
@@ -828,8 +851,8 @@ final class UniversalToolRegistry {
         );
         $tools['argon2-hash-identifier'] = array(
             'id' => 'argon2-hash-identifier',
-            'name' => 'Argon2id Hash Format Identifier',
-            'name_bn' => 'Argon2id হ্যাশ আইডেন্টিফায়ার',
+            'name'             => 'Argon2id Hash Format Identifier',
+                'name_bn'          => 'Argon2id Hash Format Identifier',
             'center' => 'cybersecurity',
             'category' => 'Hashing',
             'icon' => 'Cpu',
@@ -841,8 +864,8 @@ final class UniversalToolRegistry {
         );
         $tools['password-entropy-calculator'] = array(
             'id' => 'password-entropy-calculator',
-            'name' => 'Password Bit Entropy & Strength Calculator',
-            'name_bn' => 'পাসওয়ার্ড এন্ট্রপি ক্যালকুলেটর',
+            'name'             => 'Password Bit Entropy & Strength Calculator',
+                'name_bn'          => 'Password Bit Entropy & Strength Calculator',
             'center' => 'cybersecurity',
             'category' => 'Password Security',
             'icon' => 'ShieldAlert',
@@ -854,8 +877,8 @@ final class UniversalToolRegistry {
         );
         $tools['passphrase-generator'] = array(
             'id' => 'passphrase-generator',
-            'name' => 'High-Entropy Diceware Passphrase Generator',
-            'name_bn' => 'হাই-এন্ট্রপি পাসফ্রেজ জেনারেটর',
+            'name'             => 'High-Entropy Diceware Passphrase Generator',
+                'name_bn'          => 'High-Entropy Diceware Passphrase Generator',
             'center' => 'cybersecurity',
             'category' => 'Password Security',
             'icon' => 'RefreshCw',
@@ -867,8 +890,8 @@ final class UniversalToolRegistry {
         );
         $tools['password-strength-meter'] = array(
             'id' => 'password-strength-meter',
-            'name' => 'NIST 800-63B Password Compliance Checker',
-            'name_bn' => 'NIST পাসওয়ার্ড কমপ্লায়েন্স চেকার',
+            'name'             => 'NIST 800-63B Password Compliance Checker',
+                'name_bn'          => 'NIST 800-63B Password Compliance Checker',
             'center' => 'cybersecurity',
             'category' => 'Password Security',
             'icon' => 'CheckSquare',
@@ -880,8 +903,8 @@ final class UniversalToolRegistry {
         );
         $tools['hash-identifier-tool'] = array(
             'id' => 'hash-identifier-tool',
-            'name' => 'Cryptographic Hash Algorithm Identifier',
-            'name_bn' => 'হ্যাশ আইডেন্টিফায়ার টুল',
+            'name'             => 'Cryptographic Hash Algorithm Identifier',
+                'name_bn'          => 'Cryptographic Hash Algorithm Identifier',
             'center' => 'cybersecurity',
             'category' => 'Cryptography',
             'icon' => 'Search',
@@ -893,8 +916,8 @@ final class UniversalToolRegistry {
         );
         $tools['cidr-subnet-calculator'] = array(
             'id' => 'cidr-subnet-calculator',
-            'name' => 'IPv4 Subnet & CIDR Mask Calculator',
-            'name_bn' => 'IPv4 সাবনেট ও CIDR ক্যালকুলেটর',
+            'name'             => 'IPv4 Subnet & CIDR Mask Calculator',
+                'name_bn'          => 'IPv4 Subnet & CIDR Mask Calculator',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'Network',
@@ -906,8 +929,8 @@ final class UniversalToolRegistry {
         );
         $tools['ipv4-to-binary-converter'] = array(
             'id' => 'ipv4-to-binary-converter',
-            'name' => 'IPv4 Address to Binary / Hex Converter',
-            'name_bn' => 'IPv4 বাইনারি ও হেক্স কনভার্টার',
+            'name'             => 'IPv4 Address to Binary / Hex Converter',
+                'name_bn'          => 'IPv4 Address to Binary / Hex Converter',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'Binary',
@@ -919,8 +942,8 @@ final class UniversalToolRegistry {
         );
         $tools['ipv6-address-parser'] = array(
             'id' => 'ipv6-address-parser',
-            'name' => 'IPv6 Address Expander & Compressor',
-            'name_bn' => 'IPv6 অ্যাড্রেস পার্সার',
+            'name'             => 'IPv6 Address Expander & Compressor',
+                'name_bn'          => 'IPv6 Address Expander & Compressor',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'Globe',
@@ -932,8 +955,8 @@ final class UniversalToolRegistry {
         );
         $tools['mac-address-formatter'] = array(
             'id' => 'mac-address-formatter',
-            'name' => 'MAC Address Format Normalizer',
-            'name_bn' => 'MAC অ্যাড্রেস ফরম্যাটার',
+            'name'             => 'MAC Address Format Normalizer',
+                'name_bn'          => 'MAC Address Format Normalizer',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'Cpu',
@@ -945,8 +968,8 @@ final class UniversalToolRegistry {
         );
         $tools['port-directory-reference'] = array(
             'id' => 'port-directory-reference',
-            'name' => 'TCP / UDP Well-Known Ports Directory',
-            'name_bn' => 'TCP/UDP পোর্ট ডিরেক্টরি',
+            'name'             => 'TCP / UDP Well-Known Ports Directory',
+                'name_bn'          => 'TCP / UDP Well-Known Ports Directory',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'List',
@@ -958,8 +981,8 @@ final class UniversalToolRegistry {
         );
         $tools['dns-record-types-guide'] = array(
             'id' => 'dns-record-types-guide',
-            'name' => 'DNS Record Types (A, AAAA, MX, TXT, CNAME) Guide',
-            'name_bn' => 'DNS রেকর্ডস রেফারেন্স গাইড',
+            'name'             => 'DNS Record Types (A, AAAA, MX, TXT, CNAME) Guide',
+                'name_bn'          => 'DNS Record Types (A, AAAA, MX, TXT, CNAME) Guide',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'BookOpen',
@@ -971,8 +994,8 @@ final class UniversalToolRegistry {
         );
         $tools['security-headers-audit'] = array(
             'id' => 'security-headers-audit',
-            'name' => 'HTTP Security Headers & CSP Generator',
-            'name_bn' => 'HTTP সিকিউরিটি হেডার্স অডিটর',
+            'name'             => 'HTTP Security Headers & CSP Generator',
+                'name_bn'          => 'HTTP Security Headers & CSP Generator',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'Shield',
@@ -984,8 +1007,8 @@ final class UniversalToolRegistry {
         );
         $tools['ssl-tls-cipher-suite-guide'] = array(
             'id' => 'ssl-tls-cipher-suite-guide',
-            'name' => 'SSL / TLS Cipher Suite Security Reference',
-            'name_bn' => 'SSL/TLS সাইফার সুইট রেফারেন্স',
+            'name'             => 'SSL / TLS Cipher Suite Security Reference',
+                'name_bn'          => 'SSL / TLS Cipher Suite Security Reference',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'Lock',
@@ -997,8 +1020,8 @@ final class UniversalToolRegistry {
         );
         $tools['caesar-cipher-tool'] = array(
             'id' => 'caesar-cipher-tool',
-            'name' => 'Caesar Cipher Encoder & Decoder',
-            'name_bn' => 'সিজার সাইফার কোডেক',
+            'name'             => 'Caesar Cipher Encoder & Decoder',
+                'name_bn'          => 'Caesar Cipher Encoder & Decoder',
             'center' => 'cybersecurity',
             'category' => 'Classical Ciphers',
             'icon' => 'Key',
@@ -1010,8 +1033,8 @@ final class UniversalToolRegistry {
         );
         $tools['rot13-encoder-decoder'] = array(
             'id' => 'rot13-encoder-decoder',
-            'name' => 'ROT13 & ROT47 Text Encoder',
-            'name_bn' => 'ROT13 ও ROT47 এনকোডার',
+            'name'             => 'ROT13 & ROT47 Text Encoder',
+                'name_bn'          => 'ROT13 & ROT47 Text Encoder',
             'center' => 'cybersecurity',
             'category' => 'Classical Ciphers',
             'icon' => 'RefreshCw',
@@ -1023,8 +1046,8 @@ final class UniversalToolRegistry {
         );
         $tools['atbash-cipher-tool'] = array(
             'id' => 'atbash-cipher-tool',
-            'name' => 'Atbash Alphabet Reverse Cipher',
-            'name_bn' => 'এটবাশ সাইফার টুল',
+            'name'             => 'Atbash Alphabet Reverse Cipher',
+                'name_bn'          => 'Atbash Alphabet Reverse Cipher',
             'center' => 'cybersecurity',
             'category' => 'Classical Ciphers',
             'icon' => 'Code2',
@@ -1036,8 +1059,8 @@ final class UniversalToolRegistry {
         );
         $tools['vigenere-cipher-tool'] = array(
             'id' => 'vigenere-cipher-tool',
-            'name' => 'Vigenère Polyalphabetic Cipher Tool',
-            'name_bn' => 'ভিজেনেরে সাইফার কোডেক',
+            'name'             => 'Vigenère Polyalphabetic Cipher Tool',
+                'name_bn'          => 'Vigenère Polyalphabetic Cipher Tool',
             'center' => 'cybersecurity',
             'category' => 'Classical Ciphers',
             'icon' => 'Sliders',
@@ -1049,8 +1072,8 @@ final class UniversalToolRegistry {
         );
         $tools['url-security-analyzer'] = array(
             'id' => 'url-security-analyzer',
-            'name' => 'URL Malicious Vector & Redirect Inspector',
-            'name_bn' => 'URL সিকিউরিটি অ্যানালাইজার',
+            'name'             => 'URL Malicious Vector & Redirect Inspector',
+                'name_bn'          => 'URL Malicious Vector & Redirect Inspector',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'AlertTriangle',
@@ -1062,8 +1085,8 @@ final class UniversalToolRegistry {
         );
         $tools['reverse-dns-ptr-guide'] = array(
             'id' => 'reverse-dns-ptr-guide',
-            'name' => 'Reverse DNS & PTR Record Reference',
-            'name_bn' => 'রিভার্স DNS ও PTR গাইড',
+            'name'             => 'Reverse DNS & PTR Record Reference',
+                'name_bn'          => 'Reverse DNS & PTR Record Reference',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'Globe',
@@ -1075,8 +1098,8 @@ final class UniversalToolRegistry {
         );
         $tools['ip-geolocation-guide'] = array(
             'id' => 'ip-geolocation-guide',
-            'name' => 'IP Address Geolocation & ASN Reference',
-            'name_bn' => 'IP জিওলোকেশন ও ASN রেফারেন্স',
+            'name'             => 'IP Address Geolocation & ASN Reference',
+                'name_bn'          => 'IP Address Geolocation & ASN Reference',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'MapPin',
@@ -1088,8 +1111,8 @@ final class UniversalToolRegistry {
         );
         $tools['ping-latency-estimator'] = array(
             'id' => 'ping-latency-estimator',
-            'name' => 'Network Latency & RTT Calculator',
-            'name_bn' => 'নেটওয়ার্ক ল্যাটেন্সি ক্যালকুলেটর',
+            'name'             => 'Network Latency & RTT Calculator',
+                'name_bn'          => 'Network Latency & RTT Calculator',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'Activity',
@@ -1101,8 +1124,8 @@ final class UniversalToolRegistry {
         );
         $tools['bandwidth-transfer-calculator'] = array(
             'id' => 'bandwidth-transfer-calculator',
-            'name' => 'Network Bandwidth & File Download Time Calculator',
-            'name_bn' => 'বান্ধউইথ ও ডাউনলোড টাইম',
+            'name'             => 'Network Bandwidth & File Download Time Calculator',
+                'name_bn'          => 'Network Bandwidth & File Download Time Calculator',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'Download',
@@ -1114,8 +1137,8 @@ final class UniversalToolRegistry {
         );
         $tools['packet-loss-explainer'] = array(
             'id' => 'packet-loss-explainer',
-            'name' => 'Packet Loss & Jitter Impact Simulator',
-            'name_bn' => 'প্যাকেট লস ও জিটার সিমুলেটর',
+            'name'             => 'Packet Loss & Jitter Impact Simulator',
+                'name_bn'          => 'Packet Loss & Jitter Impact Simulator',
             'center' => 'cybersecurity',
             'category' => 'Network Defense',
             'icon' => 'BarChart2',
@@ -1127,8 +1150,8 @@ final class UniversalToolRegistry {
         );
         $tools['user-agent-parser-tool'] = array(
             'id' => 'user-agent-parser-tool',
-            'name' => 'HTTP User-Agent Header Parser',
-            'name_bn' => 'User-Agent হেডার পার্সার',
+            'name'             => 'HTTP User-Agent Header Parser',
+                'name_bn'          => 'HTTP User-Agent Header Parser',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'Monitor',
@@ -1140,8 +1163,8 @@ final class UniversalToolRegistry {
         );
         $tools['client-fingerprint-detector'] = array(
             'id' => 'client-fingerprint-detector',
-            'name' => 'Browser Client Feature & Fingerprint Inspector',
-            'name_bn' => 'ক্লায়েন্ট ফিঙ্গারপ্রিন্ট চেকার',
+            'name'             => 'Browser Client Feature & Fingerprint Inspector',
+                'name_bn'          => 'Browser Client Feature & Fingerprint Inspector',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'Fingerprint',
@@ -1153,8 +1176,8 @@ final class UniversalToolRegistry {
         );
         $tools['webauthn-passkey-guide'] = array(
             'id' => 'webauthn-passkey-guide',
-            'name' => 'WebAuthn & FIDO2 Passkey Security Guide',
-            'name_bn' => 'WebAuthn ও পাসকী রেফারেন্স',
+            'name'             => 'WebAuthn & FIDO2 Passkey Security Guide',
+                'name_bn'          => 'WebAuthn & FIDO2 Passkey Security Guide',
             'center' => 'cybersecurity',
             'category' => 'Authentication',
             'icon' => 'Key',
@@ -1166,8 +1189,8 @@ final class UniversalToolRegistry {
         );
         $tools['owasp-top-10-reference'] = array(
             'id' => 'owasp-top-10-reference',
-            'name' => 'OWASP Top 10 Security Risks Directory',
-            'name_bn' => 'OWASP Top 10 সিকিউরিটি রিস্ক',
+            'name'             => 'OWASP Top 10 Security Risks Directory',
+                'name_bn'          => 'OWASP Top 10 Security Risks Directory',
             'center' => 'cybersecurity',
             'category' => 'Defensive Security',
             'icon' => 'ShieldAlert',
@@ -1179,8 +1202,8 @@ final class UniversalToolRegistry {
         );
         $tools['xss-payload-sanitizer'] = array(
             'id' => 'xss-payload-sanitizer',
-            'name' => 'XSS Payload Escaper & Sanitizer Test',
-            'name_bn' => 'XSS পেলোড স্যানিটাইজার',
+            'name'             => 'XSS Payload Escaper & Sanitizer Test',
+                'name_bn'          => 'XSS Payload Escaper & Sanitizer Test',
             'center' => 'cybersecurity',
             'category' => 'Defensive Security',
             'icon' => 'ShieldCheck',
@@ -1192,8 +1215,8 @@ final class UniversalToolRegistry {
         );
         $tools['sqli-prevention-escaper'] = array(
             'id' => 'sqli-prevention-escaper',
-            'name' => 'SQL Injection Escaping & Prepared Statement Guide',
-            'name_bn' => 'SQL Injenction প্রতিরোধ গাইড',
+            'name'             => 'SQL Injection Escaping & Prepared Statement Guide',
+                'name_bn'          => 'SQL Injection Escaping & Prepared Statement Guide',
             'center' => 'cybersecurity',
             'category' => 'Defensive Security',
             'icon' => 'Database',
@@ -1205,8 +1228,8 @@ final class UniversalToolRegistry {
         );
         $tools['hsts-header-builder'] = array(
             'id' => 'hsts-header-builder',
-            'name' => 'HTTP Strict Transport Security (HSTS) Builder',
-            'name_bn' => 'HSTS হেডার বিল্ডার',
+            'name'             => 'HTTP Strict Transport Security (HSTS) Builder',
+                'name_bn'          => 'HTTP Strict Transport Security (HSTS) Builder',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'Lock',
@@ -1218,8 +1241,8 @@ final class UniversalToolRegistry {
         );
         $tools['referrer-policy-builder'] = array(
             'id' => 'referrer-policy-builder',
-            'name' => 'HTTP Referrer-Policy Header Builder',
-            'name_bn' => 'Referrer-Policy হেডার বিল্ডার',
+            'name'             => 'HTTP Referrer-Policy Header Builder',
+                'name_bn'          => 'HTTP Referrer-Policy Header Builder',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'EyeOff',
@@ -1231,8 +1254,8 @@ final class UniversalToolRegistry {
         );
         $tools['permissions-policy-builder'] = array(
             'id' => 'permissions-policy-builder',
-            'name' => 'HTTP Permissions-Policy (Feature-Policy) Builder',
-            'name_bn' => 'Permissions-Policy বিল্ডার',
+            'name'             => 'HTTP Permissions-Policy (Feature-Policy) Builder',
+                'name_bn'          => 'HTTP Permissions-Policy (Feature-Policy) Builder',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'Sliders',
@@ -1244,8 +1267,8 @@ final class UniversalToolRegistry {
         );
         $tools['base32-encoder-decoder'] = array(
             'id' => 'base32-encoder-decoder',
-            'name' => 'Base32 String Encoder & Decoder',
-            'name_bn' => 'Base32 এনকোডার ও ডিকোডার',
+            'name'             => 'Base32 String Encoder & Decoder',
+                'name_bn'          => 'Base32 String Encoder & Decoder',
             'center' => 'cybersecurity',
             'category' => 'Encoders',
             'icon' => 'Binary',
@@ -1257,8 +1280,8 @@ final class UniversalToolRegistry {
         );
         $tools['binary-to-text-converter'] = array(
             'id' => 'binary-to-text-converter',
-            'name' => 'Binary Bit Sequence to Text Converter',
-            'name_bn' => 'বাইনারি টেক্সট কনভার্টার',
+            'name'             => 'Binary Bit Sequence to Text Converter',
+                'name_bn'          => 'Binary Bit Sequence to Text Converter',
             'center' => 'cybersecurity',
             'category' => 'Encoders',
             'icon' => 'Code',
@@ -1270,8 +1293,8 @@ final class UniversalToolRegistry {
         );
         $tools['text-to-binary-converter'] = array(
             'id' => 'text-to-binary-converter',
-            'name' => 'Text to 8-Bit Binary Converter',
-            'name_bn' => 'টেক্সট বাইনারি কনভার্টার',
+            'name'             => 'Text to 8-Bit Binary Converter',
+                'name_bn'          => 'Text to 8-Bit Binary Converter',
             'center' => 'cybersecurity',
             'category' => 'Encoders',
             'icon' => 'Code2',
@@ -1283,8 +1306,8 @@ final class UniversalToolRegistry {
         );
         $tools['morse-code-generator'] = array(
             'id' => 'morse-code-generator',
-            'name' => 'Morse Code Audio & Text Encoder',
-            'name_bn' => 'মোর্স কোড জেনারেটর',
+            'name'             => 'Morse Code Audio & Text Encoder',
+                'name_bn'          => 'Morse Code Audio & Text Encoder',
             'center' => 'cybersecurity',
             'category' => 'Encoders',
             'icon' => 'Radio',
@@ -1296,8 +1319,8 @@ final class UniversalToolRegistry {
         );
         $tools['steganography-exif-checker'] = array(
             'id' => 'steganography-exif-checker',
-            'name' => 'EXIF Image Steganography Metadata Inspector',
-            'name_bn' => 'EXIF স্টেগানোগ্রাফি আইডেন্টিফায়ার',
+            'name'             => 'EXIF Image Steganography Metadata Inspector',
+                'name_bn'          => 'EXIF Image Steganography Metadata Inspector',
             'center' => 'cybersecurity',
             'category' => 'Defensive Security',
             'icon' => 'Image',
@@ -1309,8 +1332,8 @@ final class UniversalToolRegistry {
         );
         $tools['security-txt-builder'] = array(
             'id' => 'security-txt-builder',
-            'name' => 'security.txt Vulnerability Disclosure Policy Builder',
-            'name_bn' => 'security.txt পলিসি বিল্ডার',
+            'name'             => 'security.txt Vulnerability Disclosure Policy Builder',
+                'name_bn'          => 'security.txt Vulnerability Disclosure Policy Builder',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'FileText',
@@ -1322,8 +1345,8 @@ final class UniversalToolRegistry {
         );
         $tools['jwt-inspector-tool'] = array(
             'id' => 'jwt-inspector-tool',
-            'name' => 'Client-Side JWT Payload Inspector',
-            'name_bn' => 'JWT টোকেন ইন্সপেক্টর',
+            'name'             => 'Client-Side JWT Payload Inspector',
+                'name_bn'          => 'Client-Side JWT Payload Inspector',
             'center' => 'cybersecurity',
             'category' => 'Auth & Tokens',
             'icon' => 'Key',
@@ -1335,8 +1358,8 @@ final class UniversalToolRegistry {
         );
         $tools['bcrypt-cost-calculator'] = array(
             'id' => 'bcrypt-cost-calculator',
-            'name' => 'Bcrypt Hashing Delay & Cost Calculator',
-            'name_bn' => 'Bcrypt কস্ট ও ডিলে ক্যালকুলেটর',
+            'name'             => 'Bcrypt Hashing Delay & Cost Calculator',
+                'name_bn'          => 'Bcrypt Hashing Delay & Cost Calculator',
             'center' => 'cybersecurity',
             'category' => 'Hashing',
             'icon' => 'Clock',
@@ -1348,8 +1371,8 @@ final class UniversalToolRegistry {
         );
         $tools['dns-spf-record-builder'] = array(
             'id' => 'dns-spf-record-builder',
-            'name' => 'DNS SPF (Sender Policy Framework) Builder',
-            'name_bn' => 'DNS SPF রেকর্ড বিল্ডার',
+            'name'             => 'DNS SPF (Sender Policy Framework) Builder',
+                'name_bn'          => 'DNS SPF (Sender Policy Framework) Builder',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'Mail',
@@ -1361,8 +1384,8 @@ final class UniversalToolRegistry {
         );
         $tools['dns-dmarc-record-builder'] = array(
             'id' => 'dns-dmarc-record-builder',
-            'name' => 'DNS DMARC Policy Record Builder',
-            'name_bn' => 'DNS DMARC পলিসি বিল্ডার',
+            'name'             => 'DNS DMARC Policy Record Builder',
+                'name_bn'          => 'DNS DMARC Policy Record Builder',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'ShieldCheck',
@@ -1374,8 +1397,8 @@ final class UniversalToolRegistry {
         );
         $tools['cors-preflight-guide'] = array(
             'id' => 'cors-preflight-guide',
-            'name' => 'CORS Preflight & OPTIONS Request Guide',
-            'name_bn' => 'CORS ফ্রি-ফ্লাইট ট্রাবলশুটার',
+            'name'             => 'CORS Preflight & OPTIONS Request Guide',
+                'name_bn'          => 'CORS Preflight & OPTIONS Request Guide',
             'center' => 'cybersecurity',
             'category' => 'Web Defense',
             'icon' => 'HelpCircle',
@@ -1387,8 +1410,8 @@ final class UniversalToolRegistry {
         );
         $tools['totp-secret-key-inspector'] = array(
             'id' => 'totp-secret-key-inspector',
-            'name' => 'TOTP 2FA Secret Key & URI Inspector',
-            'name_bn' => 'TOTP 2FA সিক্রেট কী ইন্সপেক্টর',
+            'name'             => 'TOTP 2FA Secret Key & URI Inspector',
+                'name_bn'          => 'TOTP 2FA Secret Key & URI Inspector',
             'center' => 'cybersecurity',
             'category' => 'Authentication',
             'icon' => 'Smartphone',
@@ -1400,8 +1423,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-format-and-clean-1'] = array(
             'id' => 'py-format-and-clean-1',
-            'name' => 'Python Formatter & Beautifier (#1)',
-            'name_bn' => 'পাইথন ফরম্যাটার ও বিউটিফায়ার (#1)',
+            'name'             => 'Python Formatter & Beautifier (#1)',
+                'name_bn'          => 'Python Formatter & Beautifier (#1)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Code',
@@ -1413,8 +1436,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-minify-and-compress-2'] = array(
             'id' => 'py-minify-and-compress-2',
-            'name' => 'Python Minifier & Stripper (#2)',
-            'name_bn' => 'পাইথন মিনিফায়ার ও স্ট্রিপার (#2)',
+            'name'             => 'Python Minifier & Stripper (#2)',
+                'name_bn'          => 'Python Minifier & Stripper (#2)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Minimize2',
@@ -1426,8 +1449,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-validate-syntax-for-3'] = array(
             'id' => 'py-validate-syntax-for-3',
-            'name' => 'Python Validator & Syntax Checker (#3)',
-            'name_bn' => 'পাইথন ভ্যালিডেটর ও চেকার (#3)',
+            'name'             => 'Python Validator & Syntax Checker (#3)',
+                'name_bn'          => 'Python Validator & Syntax Checker (#3)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'CheckSquare',
@@ -1439,8 +1462,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-convert-and-transform-4'] = array(
             'id' => 'py-convert-and-transform-4',
-            'name' => 'Python Converter & Exporter (#4)',
-            'name_bn' => 'পাইথন কনভার্টার ও এক্সপোর্টার (#4)',
+            'name'             => 'Python Converter & Exporter (#4)',
+                'name_bn'          => 'Python Converter & Exporter (#4)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'RefreshCw',
@@ -1452,8 +1475,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-analyze-metrics-for-5'] = array(
             'id' => 'py-analyze-metrics-for-5',
-            'name' => 'Python Analyzer & Inspector (#5)',
-            'name_bn' => 'পাইথন অ্যানালাইজার ও ইন্সপেক্টর (#5)',
+            'name'             => 'Python Analyzer & Inspector (#5)',
+                'name_bn'          => 'Python Analyzer & Inspector (#5)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Search',
@@ -1465,8 +1488,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-generate-code-and-data-for-6'] = array(
             'id' => 'py-generate-code-and-data-for-6',
-            'name' => 'Python Generator & Builder (#6)',
-            'name_bn' => 'পাইথন জেনারেটর ও বিল্ডার (#6)',
+            'name'             => 'Python Generator & Builder (#6)',
+                'name_bn'          => 'Python Generator & Builder (#6)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Sparkles',
@@ -1478,8 +1501,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-calculate-values-for-7'] = array(
             'id' => 'py-calculate-values-for-7',
-            'name' => 'Python Calculator & Solver (#7)',
-            'name_bn' => 'পাইথন ক্যালকুলেটর ও সলভার (#7)',
+            'name'             => 'Python Calculator & Solver (#7)',
+                'name_bn'          => 'Python Calculator & Solver (#7)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Calculator',
@@ -1491,8 +1514,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-encode-and-decode-8'] = array(
             'id' => 'py-encode-and-decode-8',
-            'name' => 'Python Encoder & Decoder (#8)',
-            'name_bn' => 'পাইথন এনকোডার ও ডিকোডার (#8)',
+            'name'             => 'Python Encoder & Decoder (#8)',
+                'name_bn'          => 'Python Encoder & Decoder (#8)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Binary',
@@ -1504,8 +1527,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-inspect-real-time-telemetry-for-9'] = array(
             'id' => 'py-inspect-real-time-telemetry-for-9',
-            'name' => 'Python Telemetry Inspector (#9)',
-            'name_bn' => 'পাইথন টেলিমেট্রি ইন্সপেক্টর (#9)',
+            'name'             => 'Python Telemetry Inspector (#9)',
+                'name_bn'          => 'Python Telemetry Inspector (#9)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Activity',
@@ -1517,8 +1540,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-compare-differences-for-10'] = array(
             'id' => 'py-compare-differences-for-10',
-            'name' => 'Python Diff & Comparison Tool (#10)',
-            'name_bn' => 'পাইথন ডিফ ও তুলনা টুল (#10)',
+            'name'             => 'Python Diff & Comparison Tool (#10)',
+                'name_bn'          => 'Python Diff & Comparison Tool (#10)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'GitCompare',
@@ -1530,8 +1553,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-sanitize-and-escape-11'] = array(
             'id' => 'py-sanitize-and-escape-11',
-            'name' => 'Python Escaper & Sanitizer (#11)',
-            'name_bn' => 'পাইথন স্যানিটাইজার ও এসকেপার (#11)',
+            'name'             => 'Python Escaper & Sanitizer (#11)',
+                'name_bn'          => 'Python Escaper & Sanitizer (#11)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Shield',
@@ -1543,8 +1566,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-build-schemas-for-12'] = array(
             'id' => 'py-build-schemas-for-12',
-            'name' => 'Python Schema & Model Builder (#12)',
-            'name_bn' => 'পাইথন স্কিমা ও মডেল বিল্ডার (#12)',
+            'name'             => 'Python Schema & Model Builder (#12)',
+                'name_bn'          => 'Python Schema & Model Builder (#12)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Layers',
@@ -1556,8 +1579,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-batch-process-13'] = array(
             'id' => 'py-batch-process-13',
-            'name' => 'Python Batch Processor (#13)',
-            'name_bn' => 'পাইথন ব্যাচ প্রসেসর (#13)',
+            'name'             => 'Python Batch Processor (#13)',
+                'name_bn'          => 'Python Batch Processor (#13)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'Cpu',
@@ -1569,8 +1592,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-generate-templates-for-14'] = array(
             'id' => 'py-generate-templates-for-14',
-            'name' => 'Python Template & Snippet Tool (#14)',
-            'name_bn' => 'পাইথন টেমপ্লেট ও স্নিপেট টুল (#14)',
+            'name'             => 'Python Template & Snippet Tool (#14)',
+                'name_bn'          => 'Python Template & Snippet Tool (#14)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'FileText',
@@ -1582,8 +1605,8 @@ final class UniversalToolRegistry {
         );
         $tools['py-audit-health-and-diagnostics-for-15'] = array(
             'id' => 'py-audit-health-and-diagnostics-for-15',
-            'name' => 'Python Diagnostic Auditor (#15)',
-            'name_bn' => 'পাইথন ডায়াগনস্টিক অডিটর (#15)',
+            'name'             => 'Python Diagnostic Auditor (#15)',
+                'name_bn'          => 'Python Diagnostic Auditor (#15)',
             'center' => 'programming',
             'category' => 'Python Tools',
             'icon' => 'ShieldCheck',
@@ -1595,8 +1618,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-format-and-clean-16'] = array(
             'id' => 'php-format-and-clean-16',
-            'name' => 'PHP Formatter & Beautifier (#16)',
-            'name_bn' => 'পিএইচপি ফরম্যাটার ও বিউটিফায়ার (#16)',
+            'name'             => 'PHP Formatter & Beautifier (#16)',
+                'name_bn'          => 'PHP Formatter & Beautifier (#16)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Code',
@@ -1608,8 +1631,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-minify-and-compress-17'] = array(
             'id' => 'php-minify-and-compress-17',
-            'name' => 'PHP Minifier & Stripper (#17)',
-            'name_bn' => 'পিএইচপি মিনিফায়ার ও স্ট্রিপার (#17)',
+            'name'             => 'PHP Minifier & Stripper (#17)',
+                'name_bn'          => 'PHP Minifier & Stripper (#17)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Minimize2',
@@ -1621,8 +1644,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-validate-syntax-for-18'] = array(
             'id' => 'php-validate-syntax-for-18',
-            'name' => 'PHP Validator & Syntax Checker (#18)',
-            'name_bn' => 'পিএইচপি ভ্যালিডেটর ও চেকার (#18)',
+            'name'             => 'PHP Validator & Syntax Checker (#18)',
+                'name_bn'          => 'PHP Validator & Syntax Checker (#18)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'CheckSquare',
@@ -1634,8 +1657,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-convert-and-transform-19'] = array(
             'id' => 'php-convert-and-transform-19',
-            'name' => 'PHP Converter & Exporter (#19)',
-            'name_bn' => 'পিএইচপি কনভার্টার ও এক্সপোর্টার (#19)',
+            'name'             => 'PHP Converter & Exporter (#19)',
+                'name_bn'          => 'PHP Converter & Exporter (#19)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'RefreshCw',
@@ -1647,8 +1670,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-analyze-metrics-for-20'] = array(
             'id' => 'php-analyze-metrics-for-20',
-            'name' => 'PHP Analyzer & Inspector (#20)',
-            'name_bn' => 'পিএইচপি অ্যানালাইজার ও ইন্সপেক্টর (#20)',
+            'name'             => 'PHP Analyzer & Inspector (#20)',
+                'name_bn'          => 'PHP Analyzer & Inspector (#20)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Search',
@@ -1660,8 +1683,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-generate-code-and-data-for-21'] = array(
             'id' => 'php-generate-code-and-data-for-21',
-            'name' => 'PHP Generator & Builder (#21)',
-            'name_bn' => 'পিএইচপি জেনারেটর ও বিল্ডার (#21)',
+            'name'             => 'PHP Generator & Builder (#21)',
+                'name_bn'          => 'PHP Generator & Builder (#21)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Sparkles',
@@ -1673,8 +1696,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-calculate-values-for-22'] = array(
             'id' => 'php-calculate-values-for-22',
-            'name' => 'PHP Calculator & Solver (#22)',
-            'name_bn' => 'পিএইচপি ক্যালকুলেটর ও সলভার (#22)',
+            'name'             => 'PHP Calculator & Solver (#22)',
+                'name_bn'          => 'PHP Calculator & Solver (#22)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Calculator',
@@ -1686,8 +1709,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-encode-and-decode-23'] = array(
             'id' => 'php-encode-and-decode-23',
-            'name' => 'PHP Encoder & Decoder (#23)',
-            'name_bn' => 'পিএইচপি এনকোডার ও ডিকোডার (#23)',
+            'name'             => 'PHP Encoder & Decoder (#23)',
+                'name_bn'          => 'PHP Encoder & Decoder (#23)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Binary',
@@ -1699,8 +1722,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-inspect-real-time-telemetry-for-24'] = array(
             'id' => 'php-inspect-real-time-telemetry-for-24',
-            'name' => 'PHP Telemetry Inspector (#24)',
-            'name_bn' => 'পিএইচপি টেলিমেট্রি ইন্সপেক্টর (#24)',
+            'name'             => 'PHP Telemetry Inspector (#24)',
+                'name_bn'          => 'PHP Telemetry Inspector (#24)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Activity',
@@ -1712,8 +1735,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-compare-differences-for-25'] = array(
             'id' => 'php-compare-differences-for-25',
-            'name' => 'PHP Diff & Comparison Tool (#25)',
-            'name_bn' => 'পিএইচপি ডিফ ও তুলনা টুল (#25)',
+            'name'             => 'PHP Diff & Comparison Tool (#25)',
+                'name_bn'          => 'PHP Diff & Comparison Tool (#25)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'GitCompare',
@@ -1725,8 +1748,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-sanitize-and-escape-26'] = array(
             'id' => 'php-sanitize-and-escape-26',
-            'name' => 'PHP Escaper & Sanitizer (#26)',
-            'name_bn' => 'পিএইচপি স্যানিটাইজার ও এসকেপার (#26)',
+            'name'             => 'PHP Escaper & Sanitizer (#26)',
+                'name_bn'          => 'PHP Escaper & Sanitizer (#26)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Shield',
@@ -1738,8 +1761,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-build-schemas-for-27'] = array(
             'id' => 'php-build-schemas-for-27',
-            'name' => 'PHP Schema & Model Builder (#27)',
-            'name_bn' => 'পিএইচপি স্কিমা ও মডেল বিল্ডার (#27)',
+            'name'             => 'PHP Schema & Model Builder (#27)',
+                'name_bn'          => 'PHP Schema & Model Builder (#27)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Layers',
@@ -1751,8 +1774,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-batch-process-28'] = array(
             'id' => 'php-batch-process-28',
-            'name' => 'PHP Batch Processor (#28)',
-            'name_bn' => 'পিএইচপি ব্যাচ প্রসেসর (#28)',
+            'name'             => 'PHP Batch Processor (#28)',
+                'name_bn'          => 'PHP Batch Processor (#28)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'Cpu',
@@ -1764,8 +1787,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-generate-templates-for-29'] = array(
             'id' => 'php-generate-templates-for-29',
-            'name' => 'PHP Template & Snippet Tool (#29)',
-            'name_bn' => 'পিএইচপি টেমপ্লেট ও স্নিপেট টুল (#29)',
+            'name'             => 'PHP Template & Snippet Tool (#29)',
+                'name_bn'          => 'PHP Template & Snippet Tool (#29)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'FileText',
@@ -1777,8 +1800,8 @@ final class UniversalToolRegistry {
         );
         $tools['php-audit-health-and-diagnostics-for-30'] = array(
             'id' => 'php-audit-health-and-diagnostics-for-30',
-            'name' => 'PHP Diagnostic Auditor (#30)',
-            'name_bn' => 'পিএইচপি ডায়াগনস্টিক অডিটর (#30)',
+            'name'             => 'PHP Diagnostic Auditor (#30)',
+                'name_bn'          => 'PHP Diagnostic Auditor (#30)',
             'center' => 'programming',
             'category' => 'PHP Tools',
             'icon' => 'ShieldCheck',
@@ -1790,8 +1813,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-format-and-clean-31'] = array(
             'id' => 'ts-format-and-clean-31',
-            'name' => 'TypeScript Formatter & Beautifier (#31)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট ফরম্যাটার ও বিউটিফায়ার (#31)',
+            'name'             => 'TypeScript Formatter & Beautifier (#31)',
+                'name_bn'          => 'TypeScript Formatter & Beautifier (#31)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Code',
@@ -1803,8 +1826,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-minify-and-compress-32'] = array(
             'id' => 'ts-minify-and-compress-32',
-            'name' => 'TypeScript Minifier & Stripper (#32)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট মিনিফায়ার ও স্ট্রিপার (#32)',
+            'name'             => 'TypeScript Minifier & Stripper (#32)',
+                'name_bn'          => 'TypeScript Minifier & Stripper (#32)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Minimize2',
@@ -1816,8 +1839,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-validate-syntax-for-33'] = array(
             'id' => 'ts-validate-syntax-for-33',
-            'name' => 'TypeScript Validator & Syntax Checker (#33)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট ভ্যালিডেটর ও চেকার (#33)',
+            'name'             => 'TypeScript Validator & Syntax Checker (#33)',
+                'name_bn'          => 'TypeScript Validator & Syntax Checker (#33)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'CheckSquare',
@@ -1829,8 +1852,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-convert-and-transform-34'] = array(
             'id' => 'ts-convert-and-transform-34',
-            'name' => 'TypeScript Converter & Exporter (#34)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট কনভার্টার ও এক্সপোর্টার (#34)',
+            'name'             => 'TypeScript Converter & Exporter (#34)',
+                'name_bn'          => 'TypeScript Converter & Exporter (#34)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'RefreshCw',
@@ -1842,8 +1865,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-analyze-metrics-for-35'] = array(
             'id' => 'ts-analyze-metrics-for-35',
-            'name' => 'TypeScript Analyzer & Inspector (#35)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট অ্যানালাইজার ও ইন্সপেক্টর (#35)',
+            'name'             => 'TypeScript Analyzer & Inspector (#35)',
+                'name_bn'          => 'TypeScript Analyzer & Inspector (#35)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Search',
@@ -1855,8 +1878,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-generate-code-and-data-for-36'] = array(
             'id' => 'ts-generate-code-and-data-for-36',
-            'name' => 'TypeScript Generator & Builder (#36)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট জেনারেটর ও বিল্ডার (#36)',
+            'name'             => 'TypeScript Generator & Builder (#36)',
+                'name_bn'          => 'TypeScript Generator & Builder (#36)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Sparkles',
@@ -1868,8 +1891,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-calculate-values-for-37'] = array(
             'id' => 'ts-calculate-values-for-37',
-            'name' => 'TypeScript Calculator & Solver (#37)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট ক্যালকুলেটর ও সলভার (#37)',
+            'name'             => 'TypeScript Calculator & Solver (#37)',
+                'name_bn'          => 'TypeScript Calculator & Solver (#37)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Calculator',
@@ -1881,8 +1904,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-encode-and-decode-38'] = array(
             'id' => 'ts-encode-and-decode-38',
-            'name' => 'TypeScript Encoder & Decoder (#38)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট এনকোডার ও ডিকোডার (#38)',
+            'name'             => 'TypeScript Encoder & Decoder (#38)',
+                'name_bn'          => 'TypeScript Encoder & Decoder (#38)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Binary',
@@ -1894,8 +1917,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-inspect-real-time-telemetry-for-39'] = array(
             'id' => 'ts-inspect-real-time-telemetry-for-39',
-            'name' => 'TypeScript Telemetry Inspector (#39)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট টেলিমেট্রি ইন্সপেক্টর (#39)',
+            'name'             => 'TypeScript Telemetry Inspector (#39)',
+                'name_bn'          => 'TypeScript Telemetry Inspector (#39)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Activity',
@@ -1907,8 +1930,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-compare-differences-for-40'] = array(
             'id' => 'ts-compare-differences-for-40',
-            'name' => 'TypeScript Diff & Comparison Tool (#40)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট ডিফ ও তুলনা টুল (#40)',
+            'name'             => 'TypeScript Diff & Comparison Tool (#40)',
+                'name_bn'          => 'TypeScript Diff & Comparison Tool (#40)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'GitCompare',
@@ -1920,8 +1943,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-sanitize-and-escape-41'] = array(
             'id' => 'ts-sanitize-and-escape-41',
-            'name' => 'TypeScript Escaper & Sanitizer (#41)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট স্যানিটাইজার ও এসকেপার (#41)',
+            'name'             => 'TypeScript Escaper & Sanitizer (#41)',
+                'name_bn'          => 'TypeScript Escaper & Sanitizer (#41)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Shield',
@@ -1933,8 +1956,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-build-schemas-for-42'] = array(
             'id' => 'ts-build-schemas-for-42',
-            'name' => 'TypeScript Schema & Model Builder (#42)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট স্কিমা ও মডেল বিল্ডার (#42)',
+            'name'             => 'TypeScript Schema & Model Builder (#42)',
+                'name_bn'          => 'TypeScript Schema & Model Builder (#42)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Layers',
@@ -1946,8 +1969,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-batch-process-43'] = array(
             'id' => 'ts-batch-process-43',
-            'name' => 'TypeScript Batch Processor (#43)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট ব্যাচ প্রসেসর (#43)',
+            'name'             => 'TypeScript Batch Processor (#43)',
+                'name_bn'          => 'TypeScript Batch Processor (#43)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'Cpu',
@@ -1959,8 +1982,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-generate-templates-for-44'] = array(
             'id' => 'ts-generate-templates-for-44',
-            'name' => 'TypeScript Template & Snippet Tool (#44)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট টেমপ্লেট ও স্নিপেট টুল (#44)',
+            'name'             => 'TypeScript Template & Snippet Tool (#44)',
+                'name_bn'          => 'TypeScript Template & Snippet Tool (#44)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'FileText',
@@ -1972,8 +1995,8 @@ final class UniversalToolRegistry {
         );
         $tools['ts-audit-health-and-diagnostics-for-45'] = array(
             'id' => 'ts-audit-health-and-diagnostics-for-45',
-            'name' => 'TypeScript Diagnostic Auditor (#45)',
-            'name_bn' => 'টাইপস্ক্রিপ্ট ডায়াগনস্টিক অডিটর (#45)',
+            'name'             => 'TypeScript Diagnostic Auditor (#45)',
+                'name_bn'          => 'TypeScript Diagnostic Auditor (#45)',
             'center' => 'programming',
             'category' => 'JavaScript & TS',
             'icon' => 'ShieldCheck',
@@ -1985,8 +2008,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-format-and-clean-46'] = array(
             'id' => 'cpp-format-and-clean-46',
-            'name' => 'C++ & Java Formatter & Beautifier (#46)',
-            'name_bn' => 'সি++ ও জাভা ফরম্যাটার ও বিউটিফায়ার (#46)',
+            'name'             => 'C++ & Java Formatter & Beautifier (#46)',
+                'name_bn'          => 'C++ & Java Formatter & Beautifier (#46)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Code',
@@ -1998,8 +2021,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-minify-and-compress-47'] = array(
             'id' => 'cpp-minify-and-compress-47',
-            'name' => 'C++ & Java Minifier & Stripper (#47)',
-            'name_bn' => 'সি++ ও জাভা মিনিফায়ার ও স্ট্রিপার (#47)',
+            'name'             => 'C++ & Java Minifier & Stripper (#47)',
+                'name_bn'          => 'C++ & Java Minifier & Stripper (#47)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Minimize2',
@@ -2011,8 +2034,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-validate-syntax-for-48'] = array(
             'id' => 'cpp-validate-syntax-for-48',
-            'name' => 'C++ & Java Validator & Syntax Checker (#48)',
-            'name_bn' => 'সি++ ও জাভা ভ্যালিডেটর ও চেকার (#48)',
+            'name'             => 'C++ & Java Validator & Syntax Checker (#48)',
+                'name_bn'          => 'C++ & Java Validator & Syntax Checker (#48)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'CheckSquare',
@@ -2024,8 +2047,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-convert-and-transform-49'] = array(
             'id' => 'cpp-convert-and-transform-49',
-            'name' => 'C++ & Java Converter & Exporter (#49)',
-            'name_bn' => 'সি++ ও জাভা কনভার্টার ও এক্সপোর্টার (#49)',
+            'name'             => 'C++ & Java Converter & Exporter (#49)',
+                'name_bn'          => 'C++ & Java Converter & Exporter (#49)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'RefreshCw',
@@ -2037,8 +2060,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-analyze-metrics-for-50'] = array(
             'id' => 'cpp-analyze-metrics-for-50',
-            'name' => 'C++ & Java Analyzer & Inspector (#50)',
-            'name_bn' => 'সি++ ও জাভা অ্যানালাইজার ও ইন্সপেক্টর (#50)',
+            'name'             => 'C++ & Java Analyzer & Inspector (#50)',
+                'name_bn'          => 'C++ & Java Analyzer & Inspector (#50)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Search',
@@ -2050,8 +2073,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-generate-code-and-data-for-51'] = array(
             'id' => 'cpp-generate-code-and-data-for-51',
-            'name' => 'C++ & Java Generator & Builder (#51)',
-            'name_bn' => 'সি++ ও জাভা জেনারেটর ও বিল্ডার (#51)',
+            'name'             => 'C++ & Java Generator & Builder (#51)',
+                'name_bn'          => 'C++ & Java Generator & Builder (#51)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Sparkles',
@@ -2063,8 +2086,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-calculate-values-for-52'] = array(
             'id' => 'cpp-calculate-values-for-52',
-            'name' => 'C++ & Java Calculator & Solver (#52)',
-            'name_bn' => 'সি++ ও জাভা ক্যালকুলেটর ও সলভার (#52)',
+            'name'             => 'C++ & Java Calculator & Solver (#52)',
+                'name_bn'          => 'C++ & Java Calculator & Solver (#52)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Calculator',
@@ -2076,8 +2099,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-encode-and-decode-53'] = array(
             'id' => 'cpp-encode-and-decode-53',
-            'name' => 'C++ & Java Encoder & Decoder (#53)',
-            'name_bn' => 'সি++ ও জাভা এনকোডার ও ডিকোডার (#53)',
+            'name'             => 'C++ & Java Encoder & Decoder (#53)',
+                'name_bn'          => 'C++ & Java Encoder & Decoder (#53)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Binary',
@@ -2089,8 +2112,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-inspect-real-time-telemetry-for-54'] = array(
             'id' => 'cpp-inspect-real-time-telemetry-for-54',
-            'name' => 'C++ & Java Telemetry Inspector (#54)',
-            'name_bn' => 'সি++ ও জাভা টেলিমেট্রি ইন্সপেক্টর (#54)',
+            'name'             => 'C++ & Java Telemetry Inspector (#54)',
+                'name_bn'          => 'C++ & Java Telemetry Inspector (#54)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Activity',
@@ -2102,8 +2125,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-compare-differences-for-55'] = array(
             'id' => 'cpp-compare-differences-for-55',
-            'name' => 'C++ & Java Diff & Comparison Tool (#55)',
-            'name_bn' => 'সি++ ও জাভা ডিফ ও তুলনা টুল (#55)',
+            'name'             => 'C++ & Java Diff & Comparison Tool (#55)',
+                'name_bn'          => 'C++ & Java Diff & Comparison Tool (#55)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'GitCompare',
@@ -2115,8 +2138,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-sanitize-and-escape-56'] = array(
             'id' => 'cpp-sanitize-and-escape-56',
-            'name' => 'C++ & Java Escaper & Sanitizer (#56)',
-            'name_bn' => 'সি++ ও জাভা স্যানিটাইজার ও এসকেপার (#56)',
+            'name'             => 'C++ & Java Escaper & Sanitizer (#56)',
+                'name_bn'          => 'C++ & Java Escaper & Sanitizer (#56)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Shield',
@@ -2128,8 +2151,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-build-schemas-for-57'] = array(
             'id' => 'cpp-build-schemas-for-57',
-            'name' => 'C++ & Java Schema & Model Builder (#57)',
-            'name_bn' => 'সি++ ও জাভা স্কিমা ও মডেল বিল্ডার (#57)',
+            'name'             => 'C++ & Java Schema & Model Builder (#57)',
+                'name_bn'          => 'C++ & Java Schema & Model Builder (#57)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Layers',
@@ -2141,8 +2164,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-batch-process-58'] = array(
             'id' => 'cpp-batch-process-58',
-            'name' => 'C++ & Java Batch Processor (#58)',
-            'name_bn' => 'সি++ ও জাভা ব্যাচ প্রসেসর (#58)',
+            'name'             => 'C++ & Java Batch Processor (#58)',
+                'name_bn'          => 'C++ & Java Batch Processor (#58)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'Cpu',
@@ -2154,8 +2177,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-generate-templates-for-59'] = array(
             'id' => 'cpp-generate-templates-for-59',
-            'name' => 'C++ & Java Template & Snippet Tool (#59)',
-            'name_bn' => 'সি++ ও জাভা টেমপ্লেট ও স্নিপেট টুল (#59)',
+            'name'             => 'C++ & Java Template & Snippet Tool (#59)',
+                'name_bn'          => 'C++ & Java Template & Snippet Tool (#59)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'FileText',
@@ -2167,8 +2190,8 @@ final class UniversalToolRegistry {
         );
         $tools['cpp-audit-health-and-diagnostics-for-60'] = array(
             'id' => 'cpp-audit-health-and-diagnostics-for-60',
-            'name' => 'C++ & Java Diagnostic Auditor (#60)',
-            'name_bn' => 'সি++ ও জাভা ডায়াগনস্টিক অডিটর (#60)',
+            'name'             => 'C++ & Java Diagnostic Auditor (#60)',
+                'name_bn'          => 'C++ & Java Diagnostic Auditor (#60)',
             'center' => 'programming',
             'category' => 'Java & C++',
             'icon' => 'ShieldCheck',
@@ -2180,8 +2203,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-format-and-clean-61'] = array(
             'id' => 'sql-format-and-clean-61',
-            'name' => 'SQL Query Formatter & Beautifier (#61)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ ফরম্যাটার ও বিউটিফায়ার (#61)',
+            'name'             => 'SQL Query Formatter & Beautifier (#61)',
+                'name_bn'          => 'SQL Query Formatter & Beautifier (#61)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Code',
@@ -2193,8 +2216,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-minify-and-compress-62'] = array(
             'id' => 'sql-minify-and-compress-62',
-            'name' => 'SQL Query Minifier & Stripper (#62)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ মিনিফায়ার ও স্ট্রিপার (#62)',
+            'name'             => 'SQL Query Minifier & Stripper (#62)',
+                'name_bn'          => 'SQL Query Minifier & Stripper (#62)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Minimize2',
@@ -2206,8 +2229,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-validate-syntax-for-63'] = array(
             'id' => 'sql-validate-syntax-for-63',
-            'name' => 'SQL Query Validator & Syntax Checker (#63)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ ভ্যালিডেটর ও চেকার (#63)',
+            'name'             => 'SQL Query Validator & Syntax Checker (#63)',
+                'name_bn'          => 'SQL Query Validator & Syntax Checker (#63)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'CheckSquare',
@@ -2219,8 +2242,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-convert-and-transform-64'] = array(
             'id' => 'sql-convert-and-transform-64',
-            'name' => 'SQL Query Converter & Exporter (#64)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ কনভার্টার ও এক্সপোর্টার (#64)',
+            'name'             => 'SQL Query Converter & Exporter (#64)',
+                'name_bn'          => 'SQL Query Converter & Exporter (#64)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'RefreshCw',
@@ -2232,8 +2255,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-analyze-metrics-for-65'] = array(
             'id' => 'sql-analyze-metrics-for-65',
-            'name' => 'SQL Query Analyzer & Inspector (#65)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ অ্যানালাইজার ও ইন্সপেক্টর (#65)',
+            'name'             => 'SQL Query Analyzer & Inspector (#65)',
+                'name_bn'          => 'SQL Query Analyzer & Inspector (#65)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Search',
@@ -2245,8 +2268,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-generate-code-and-data-for-66'] = array(
             'id' => 'sql-generate-code-and-data-for-66',
-            'name' => 'SQL Query Generator & Builder (#66)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ জেনারেটর ও বিল্ডার (#66)',
+            'name'             => 'SQL Query Generator & Builder (#66)',
+                'name_bn'          => 'SQL Query Generator & Builder (#66)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Sparkles',
@@ -2258,8 +2281,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-calculate-values-for-67'] = array(
             'id' => 'sql-calculate-values-for-67',
-            'name' => 'SQL Query Calculator & Solver (#67)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ ক্যালকুলেটর ও সলভার (#67)',
+            'name'             => 'SQL Query Calculator & Solver (#67)',
+                'name_bn'          => 'SQL Query Calculator & Solver (#67)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Calculator',
@@ -2271,8 +2294,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-encode-and-decode-68'] = array(
             'id' => 'sql-encode-and-decode-68',
-            'name' => 'SQL Query Encoder & Decoder (#68)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ এনকোডার ও ডিকোডার (#68)',
+            'name'             => 'SQL Query Encoder & Decoder (#68)',
+                'name_bn'          => 'SQL Query Encoder & Decoder (#68)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Binary',
@@ -2284,8 +2307,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-inspect-real-time-telemetry-for-69'] = array(
             'id' => 'sql-inspect-real-time-telemetry-for-69',
-            'name' => 'SQL Query Telemetry Inspector (#69)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ টেলিমেট্রি ইন্সপেক্টর (#69)',
+            'name'             => 'SQL Query Telemetry Inspector (#69)',
+                'name_bn'          => 'SQL Query Telemetry Inspector (#69)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Activity',
@@ -2297,8 +2320,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-compare-differences-for-70'] = array(
             'id' => 'sql-compare-differences-for-70',
-            'name' => 'SQL Query Diff & Comparison Tool (#70)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ ডিফ ও তুলনা টুল (#70)',
+            'name'             => 'SQL Query Diff & Comparison Tool (#70)',
+                'name_bn'          => 'SQL Query Diff & Comparison Tool (#70)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'GitCompare',
@@ -2310,8 +2333,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-sanitize-and-escape-71'] = array(
             'id' => 'sql-sanitize-and-escape-71',
-            'name' => 'SQL Query Escaper & Sanitizer (#71)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ স্যানিটাইজার ও এসকেপার (#71)',
+            'name'             => 'SQL Query Escaper & Sanitizer (#71)',
+                'name_bn'          => 'SQL Query Escaper & Sanitizer (#71)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Shield',
@@ -2323,8 +2346,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-build-schemas-for-72'] = array(
             'id' => 'sql-build-schemas-for-72',
-            'name' => 'SQL Query Schema & Model Builder (#72)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ স্কিমা ও মডেল বিল্ডার (#72)',
+            'name'             => 'SQL Query Schema & Model Builder (#72)',
+                'name_bn'          => 'SQL Query Schema & Model Builder (#72)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Layers',
@@ -2336,8 +2359,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-batch-process-73'] = array(
             'id' => 'sql-batch-process-73',
-            'name' => 'SQL Query Batch Processor (#73)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ ব্যাচ প্রসেসর (#73)',
+            'name'             => 'SQL Query Batch Processor (#73)',
+                'name_bn'          => 'SQL Query Batch Processor (#73)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'Cpu',
@@ -2349,8 +2372,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-generate-templates-for-74'] = array(
             'id' => 'sql-generate-templates-for-74',
-            'name' => 'SQL Query Template & Snippet Tool (#74)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ টেমপ্লেট ও স্নিপেট টুল (#74)',
+            'name'             => 'SQL Query Template & Snippet Tool (#74)',
+                'name_bn'          => 'SQL Query Template & Snippet Tool (#74)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'FileText',
@@ -2362,8 +2385,8 @@ final class UniversalToolRegistry {
         );
         $tools['sql-audit-health-and-diagnostics-for-75'] = array(
             'id' => 'sql-audit-health-and-diagnostics-for-75',
-            'name' => 'SQL Query Diagnostic Auditor (#75)',
-            'name_bn' => 'এসকিউএল ডাটাবেজ ডায়াগনস্টিক অডিটর (#75)',
+            'name'             => 'SQL Query Diagnostic Auditor (#75)',
+                'name_bn'          => 'SQL Query Diagnostic Auditor (#75)',
             'center' => 'programming',
             'category' => 'SQL & Database',
             'icon' => 'ShieldCheck',
@@ -2375,8 +2398,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-format-and-clean-76'] = array(
             'id' => 'sh-format-and-clean-76',
-            'name' => 'Shell & Bash Formatter & Beautifier (#76)',
-            'name_bn' => 'শেল ও ব্যাশ ফরম্যাটার ও বিউটিফায়ার (#76)',
+            'name'             => 'Shell & Bash Formatter & Beautifier (#76)',
+                'name_bn'          => 'Shell & Bash Formatter & Beautifier (#76)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Code',
@@ -2388,8 +2411,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-minify-and-compress-77'] = array(
             'id' => 'sh-minify-and-compress-77',
-            'name' => 'Shell & Bash Minifier & Stripper (#77)',
-            'name_bn' => 'শেল ও ব্যাশ মিনিফায়ার ও স্ট্রিপার (#77)',
+            'name'             => 'Shell & Bash Minifier & Stripper (#77)',
+                'name_bn'          => 'Shell & Bash Minifier & Stripper (#77)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Minimize2',
@@ -2401,8 +2424,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-validate-syntax-for-78'] = array(
             'id' => 'sh-validate-syntax-for-78',
-            'name' => 'Shell & Bash Validator & Syntax Checker (#78)',
-            'name_bn' => 'শেল ও ব্যাশ ভ্যালিডেটর ও চেকার (#78)',
+            'name'             => 'Shell & Bash Validator & Syntax Checker (#78)',
+                'name_bn'          => 'Shell & Bash Validator & Syntax Checker (#78)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'CheckSquare',
@@ -2414,8 +2437,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-convert-and-transform-79'] = array(
             'id' => 'sh-convert-and-transform-79',
-            'name' => 'Shell & Bash Converter & Exporter (#79)',
-            'name_bn' => 'শেল ও ব্যাশ কনভার্টার ও এক্সপোর্টার (#79)',
+            'name'             => 'Shell & Bash Converter & Exporter (#79)',
+                'name_bn'          => 'Shell & Bash Converter & Exporter (#79)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'RefreshCw',
@@ -2427,8 +2450,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-analyze-metrics-for-80'] = array(
             'id' => 'sh-analyze-metrics-for-80',
-            'name' => 'Shell & Bash Analyzer & Inspector (#80)',
-            'name_bn' => 'শেল ও ব্যাশ অ্যানালাইজার ও ইন্সপেক্টর (#80)',
+            'name'             => 'Shell & Bash Analyzer & Inspector (#80)',
+                'name_bn'          => 'Shell & Bash Analyzer & Inspector (#80)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Search',
@@ -2440,8 +2463,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-generate-code-and-data-for-81'] = array(
             'id' => 'sh-generate-code-and-data-for-81',
-            'name' => 'Shell & Bash Generator & Builder (#81)',
-            'name_bn' => 'শেল ও ব্যাশ জেনারেটর ও বিল্ডার (#81)',
+            'name'             => 'Shell & Bash Generator & Builder (#81)',
+                'name_bn'          => 'Shell & Bash Generator & Builder (#81)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Sparkles',
@@ -2453,8 +2476,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-calculate-values-for-82'] = array(
             'id' => 'sh-calculate-values-for-82',
-            'name' => 'Shell & Bash Calculator & Solver (#82)',
-            'name_bn' => 'শেল ও ব্যাশ ক্যালকুলেটর ও সলভার (#82)',
+            'name'             => 'Shell & Bash Calculator & Solver (#82)',
+                'name_bn'          => 'Shell & Bash Calculator & Solver (#82)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Calculator',
@@ -2466,8 +2489,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-encode-and-decode-83'] = array(
             'id' => 'sh-encode-and-decode-83',
-            'name' => 'Shell & Bash Encoder & Decoder (#83)',
-            'name_bn' => 'শেল ও ব্যাশ এনকোডার ও ডিকোডার (#83)',
+            'name'             => 'Shell & Bash Encoder & Decoder (#83)',
+                'name_bn'          => 'Shell & Bash Encoder & Decoder (#83)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Binary',
@@ -2479,8 +2502,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-inspect-real-time-telemetry-for-84'] = array(
             'id' => 'sh-inspect-real-time-telemetry-for-84',
-            'name' => 'Shell & Bash Telemetry Inspector (#84)',
-            'name_bn' => 'শেল ও ব্যাশ টেলিমেট্রি ইন্সপেক্টর (#84)',
+            'name'             => 'Shell & Bash Telemetry Inspector (#84)',
+                'name_bn'          => 'Shell & Bash Telemetry Inspector (#84)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Activity',
@@ -2492,8 +2515,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-compare-differences-for-85'] = array(
             'id' => 'sh-compare-differences-for-85',
-            'name' => 'Shell & Bash Diff & Comparison Tool (#85)',
-            'name_bn' => 'শেল ও ব্যাশ ডিফ ও তুলনা টুল (#85)',
+            'name'             => 'Shell & Bash Diff & Comparison Tool (#85)',
+                'name_bn'          => 'Shell & Bash Diff & Comparison Tool (#85)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'GitCompare',
@@ -2505,8 +2528,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-sanitize-and-escape-86'] = array(
             'id' => 'sh-sanitize-and-escape-86',
-            'name' => 'Shell & Bash Escaper & Sanitizer (#86)',
-            'name_bn' => 'শেল ও ব্যাশ স্যানিটাইজার ও এসকেপার (#86)',
+            'name'             => 'Shell & Bash Escaper & Sanitizer (#86)',
+                'name_bn'          => 'Shell & Bash Escaper & Sanitizer (#86)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Shield',
@@ -2518,8 +2541,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-build-schemas-for-87'] = array(
             'id' => 'sh-build-schemas-for-87',
-            'name' => 'Shell & Bash Schema & Model Builder (#87)',
-            'name_bn' => 'শেল ও ব্যাশ স্কিমা ও মডেল বিল্ডার (#87)',
+            'name'             => 'Shell & Bash Schema & Model Builder (#87)',
+                'name_bn'          => 'Shell & Bash Schema & Model Builder (#87)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Layers',
@@ -2531,8 +2554,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-batch-process-88'] = array(
             'id' => 'sh-batch-process-88',
-            'name' => 'Shell & Bash Batch Processor (#88)',
-            'name_bn' => 'শেল ও ব্যাশ ব্যাচ প্রসেসর (#88)',
+            'name'             => 'Shell & Bash Batch Processor (#88)',
+                'name_bn'          => 'Shell & Bash Batch Processor (#88)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'Cpu',
@@ -2544,8 +2567,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-generate-templates-for-89'] = array(
             'id' => 'sh-generate-templates-for-89',
-            'name' => 'Shell & Bash Template & Snippet Tool (#89)',
-            'name_bn' => 'শেল ও ব্যাশ টেমপ্লেট ও স্নিপেট টুল (#89)',
+            'name'             => 'Shell & Bash Template & Snippet Tool (#89)',
+                'name_bn'          => 'Shell & Bash Template & Snippet Tool (#89)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'FileText',
@@ -2557,8 +2580,8 @@ final class UniversalToolRegistry {
         );
         $tools['sh-audit-health-and-diagnostics-for-90'] = array(
             'id' => 'sh-audit-health-and-diagnostics-for-90',
-            'name' => 'Shell & Bash Diagnostic Auditor (#90)',
-            'name_bn' => 'শেল ও ব্যাশ ডায়াগনস্টিক অডিটর (#90)',
+            'name'             => 'Shell & Bash Diagnostic Auditor (#90)',
+                'name_bn'          => 'Shell & Bash Diagnostic Auditor (#90)',
             'center' => 'programming',
             'category' => 'Shell & Bash',
             'icon' => 'ShieldCheck',
@@ -2570,8 +2593,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-format-and-clean-91'] = array(
             'id' => 'json-format-and-clean-91',
-            'name' => 'JSON Dataset Formatter & Beautifier (#91)',
-            'name_bn' => 'জেসন ডাটা ফরম্যাটার ও বিউটিফায়ার (#91)',
+            'name'             => 'JSON Dataset Formatter & Beautifier (#91)',
+                'name_bn'          => 'JSON Dataset Formatter & Beautifier (#91)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Code',
@@ -2583,8 +2606,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-minify-and-compress-92'] = array(
             'id' => 'json-minify-and-compress-92',
-            'name' => 'JSON Dataset Minifier & Stripper (#92)',
-            'name_bn' => 'জেসন ডাটা মিনিফায়ার ও স্ট্রিপার (#92)',
+            'name'             => 'JSON Dataset Minifier & Stripper (#92)',
+                'name_bn'          => 'JSON Dataset Minifier & Stripper (#92)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Minimize2',
@@ -2596,8 +2619,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-validate-syntax-for-93'] = array(
             'id' => 'json-validate-syntax-for-93',
-            'name' => 'JSON Dataset Validator & Syntax Checker (#93)',
-            'name_bn' => 'জেসন ডাটা ভ্যালিডেটর ও চেকার (#93)',
+            'name'             => 'JSON Dataset Validator & Syntax Checker (#93)',
+                'name_bn'          => 'JSON Dataset Validator & Syntax Checker (#93)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'CheckSquare',
@@ -2609,8 +2632,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-convert-and-transform-94'] = array(
             'id' => 'json-convert-and-transform-94',
-            'name' => 'JSON Dataset Converter & Exporter (#94)',
-            'name_bn' => 'জেসন ডাটা কনভার্টার ও এক্সপোর্টার (#94)',
+            'name'             => 'JSON Dataset Converter & Exporter (#94)',
+                'name_bn'          => 'JSON Dataset Converter & Exporter (#94)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'RefreshCw',
@@ -2622,8 +2645,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-analyze-metrics-for-95'] = array(
             'id' => 'json-analyze-metrics-for-95',
-            'name' => 'JSON Dataset Analyzer & Inspector (#95)',
-            'name_bn' => 'জেসন ডাটা অ্যানালাইজার ও ইন্সপেক্টর (#95)',
+            'name'             => 'JSON Dataset Analyzer & Inspector (#95)',
+                'name_bn'          => 'JSON Dataset Analyzer & Inspector (#95)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Search',
@@ -2635,8 +2658,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-generate-code-and-data-for-96'] = array(
             'id' => 'json-generate-code-and-data-for-96',
-            'name' => 'JSON Dataset Generator & Builder (#96)',
-            'name_bn' => 'জেসন ডাটা জেনারেটর ও বিল্ডার (#96)',
+            'name'             => 'JSON Dataset Generator & Builder (#96)',
+                'name_bn'          => 'JSON Dataset Generator & Builder (#96)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Sparkles',
@@ -2648,8 +2671,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-calculate-values-for-97'] = array(
             'id' => 'json-calculate-values-for-97',
-            'name' => 'JSON Dataset Calculator & Solver (#97)',
-            'name_bn' => 'জেসন ডাটা ক্যালকুলেটর ও সলভার (#97)',
+            'name'             => 'JSON Dataset Calculator & Solver (#97)',
+                'name_bn'          => 'JSON Dataset Calculator & Solver (#97)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Calculator',
@@ -2661,8 +2684,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-encode-and-decode-98'] = array(
             'id' => 'json-encode-and-decode-98',
-            'name' => 'JSON Dataset Encoder & Decoder (#98)',
-            'name_bn' => 'জেসন ডাটা এনকোডার ও ডিকোডার (#98)',
+            'name'             => 'JSON Dataset Encoder & Decoder (#98)',
+                'name_bn'          => 'JSON Dataset Encoder & Decoder (#98)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Binary',
@@ -2674,8 +2697,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-inspect-real-time-telemetry-for-99'] = array(
             'id' => 'json-inspect-real-time-telemetry-for-99',
-            'name' => 'JSON Dataset Telemetry Inspector (#99)',
-            'name_bn' => 'জেসন ডাটা টেলিমেট্রি ইন্সপেক্টর (#99)',
+            'name'             => 'JSON Dataset Telemetry Inspector (#99)',
+                'name_bn'          => 'JSON Dataset Telemetry Inspector (#99)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Activity',
@@ -2687,8 +2710,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-compare-differences-for-100'] = array(
             'id' => 'json-compare-differences-for-100',
-            'name' => 'JSON Dataset Diff & Comparison Tool (#100)',
-            'name_bn' => 'জেসন ডাটা ডিফ ও তুলনা টুল (#100)',
+            'name'             => 'JSON Dataset Diff & Comparison Tool (#100)',
+                'name_bn'          => 'JSON Dataset Diff & Comparison Tool (#100)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'GitCompare',
@@ -2700,8 +2723,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-sanitize-and-escape-101'] = array(
             'id' => 'json-sanitize-and-escape-101',
-            'name' => 'JSON Dataset Escaper & Sanitizer (#101)',
-            'name_bn' => 'জেসন ডাটা স্যানিটাইজার ও এসকেপার (#101)',
+            'name'             => 'JSON Dataset Escaper & Sanitizer (#101)',
+                'name_bn'          => 'JSON Dataset Escaper & Sanitizer (#101)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Shield',
@@ -2713,8 +2736,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-build-schemas-for-102'] = array(
             'id' => 'json-build-schemas-for-102',
-            'name' => 'JSON Dataset Schema & Model Builder (#102)',
-            'name_bn' => 'জেসন ডাটা স্কিমা ও মডেল বিল্ডার (#102)',
+            'name'             => 'JSON Dataset Schema & Model Builder (#102)',
+                'name_bn'          => 'JSON Dataset Schema & Model Builder (#102)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Layers',
@@ -2726,8 +2749,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-batch-process-103'] = array(
             'id' => 'json-batch-process-103',
-            'name' => 'JSON Dataset Batch Processor (#103)',
-            'name_bn' => 'জেসন ডাটা ব্যাচ প্রসেসর (#103)',
+            'name'             => 'JSON Dataset Batch Processor (#103)',
+                'name_bn'          => 'JSON Dataset Batch Processor (#103)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'Cpu',
@@ -2739,8 +2762,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-generate-templates-for-104'] = array(
             'id' => 'json-generate-templates-for-104',
-            'name' => 'JSON Dataset Template & Snippet Tool (#104)',
-            'name_bn' => 'জেসন ডাটা টেমপ্লেট ও স্নিপেট টুল (#104)',
+            'name'             => 'JSON Dataset Template & Snippet Tool (#104)',
+                'name_bn'          => 'JSON Dataset Template & Snippet Tool (#104)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'FileText',
@@ -2752,8 +2775,8 @@ final class UniversalToolRegistry {
         );
         $tools['json-audit-health-and-diagnostics-for-105'] = array(
             'id' => 'json-audit-health-and-diagnostics-for-105',
-            'name' => 'JSON Dataset Diagnostic Auditor (#105)',
-            'name_bn' => 'জেসন ডাটা ডায়াগনস্টিক অডিটর (#105)',
+            'name'             => 'JSON Dataset Diagnostic Auditor (#105)',
+                'name_bn'          => 'JSON Dataset Diagnostic Auditor (#105)',
             'center' => 'data-json',
             'category' => 'JSON Data',
             'icon' => 'ShieldCheck',
@@ -2765,8 +2788,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-format-and-clean-106'] = array(
             'id' => 'csv-format-and-clean-106',
-            'name' => 'CSV Spreadsheet Formatter & Beautifier (#106)',
-            'name_bn' => 'সিএসভি ডাটা ফরম্যাটার ও বিউটিফায়ার (#106)',
+            'name'             => 'CSV Spreadsheet Formatter & Beautifier (#106)',
+                'name_bn'          => 'CSV Spreadsheet Formatter & Beautifier (#106)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Code',
@@ -2778,8 +2801,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-minify-and-compress-107'] = array(
             'id' => 'csv-minify-and-compress-107',
-            'name' => 'CSV Spreadsheet Minifier & Stripper (#107)',
-            'name_bn' => 'সিএসভি ডাটা মিনিফায়ার ও স্ট্রিপার (#107)',
+            'name'             => 'CSV Spreadsheet Minifier & Stripper (#107)',
+                'name_bn'          => 'CSV Spreadsheet Minifier & Stripper (#107)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Minimize2',
@@ -2791,8 +2814,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-validate-syntax-for-108'] = array(
             'id' => 'csv-validate-syntax-for-108',
-            'name' => 'CSV Spreadsheet Validator & Syntax Checker (#108)',
-            'name_bn' => 'সিএসভি ডাটা ভ্যালিডেটর ও চেকার (#108)',
+            'name'             => 'CSV Spreadsheet Validator & Syntax Checker (#108)',
+                'name_bn'          => 'CSV Spreadsheet Validator & Syntax Checker (#108)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'CheckSquare',
@@ -2804,8 +2827,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-convert-and-transform-109'] = array(
             'id' => 'csv-convert-and-transform-109',
-            'name' => 'CSV Spreadsheet Converter & Exporter (#109)',
-            'name_bn' => 'সিএসভি ডাটা কনভার্টার ও এক্সপোর্টার (#109)',
+            'name'             => 'CSV Spreadsheet Converter & Exporter (#109)',
+                'name_bn'          => 'CSV Spreadsheet Converter & Exporter (#109)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'RefreshCw',
@@ -2817,8 +2840,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-analyze-metrics-for-110'] = array(
             'id' => 'csv-analyze-metrics-for-110',
-            'name' => 'CSV Spreadsheet Analyzer & Inspector (#110)',
-            'name_bn' => 'সিএসভি ডাটা অ্যানালাইজার ও ইন্সপেক্টর (#110)',
+            'name'             => 'CSV Spreadsheet Analyzer & Inspector (#110)',
+                'name_bn'          => 'CSV Spreadsheet Analyzer & Inspector (#110)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Search',
@@ -2830,8 +2853,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-generate-code-and-data-for-111'] = array(
             'id' => 'csv-generate-code-and-data-for-111',
-            'name' => 'CSV Spreadsheet Generator & Builder (#111)',
-            'name_bn' => 'সিএসভি ডাটা জেনারেটর ও বিল্ডার (#111)',
+            'name'             => 'CSV Spreadsheet Generator & Builder (#111)',
+                'name_bn'          => 'CSV Spreadsheet Generator & Builder (#111)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Sparkles',
@@ -2843,8 +2866,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-calculate-values-for-112'] = array(
             'id' => 'csv-calculate-values-for-112',
-            'name' => 'CSV Spreadsheet Calculator & Solver (#112)',
-            'name_bn' => 'সিএসভি ডাটা ক্যালকুলেটর ও সলভার (#112)',
+            'name'             => 'CSV Spreadsheet Calculator & Solver (#112)',
+                'name_bn'          => 'CSV Spreadsheet Calculator & Solver (#112)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Calculator',
@@ -2856,8 +2879,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-encode-and-decode-113'] = array(
             'id' => 'csv-encode-and-decode-113',
-            'name' => 'CSV Spreadsheet Encoder & Decoder (#113)',
-            'name_bn' => 'সিএসভি ডাটা এনকোডার ও ডিকোডার (#113)',
+            'name'             => 'CSV Spreadsheet Encoder & Decoder (#113)',
+                'name_bn'          => 'CSV Spreadsheet Encoder & Decoder (#113)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Binary',
@@ -2869,8 +2892,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-inspect-real-time-telemetry-for-114'] = array(
             'id' => 'csv-inspect-real-time-telemetry-for-114',
-            'name' => 'CSV Spreadsheet Telemetry Inspector (#114)',
-            'name_bn' => 'সিএসভি ডাটা টেলিমেট্রি ইন্সপেক্টর (#114)',
+            'name'             => 'CSV Spreadsheet Telemetry Inspector (#114)',
+                'name_bn'          => 'CSV Spreadsheet Telemetry Inspector (#114)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Activity',
@@ -2882,8 +2905,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-compare-differences-for-115'] = array(
             'id' => 'csv-compare-differences-for-115',
-            'name' => 'CSV Spreadsheet Diff & Comparison Tool (#115)',
-            'name_bn' => 'সিএসভি ডাটা ডিফ ও তুলনা টুল (#115)',
+            'name'             => 'CSV Spreadsheet Diff & Comparison Tool (#115)',
+                'name_bn'          => 'CSV Spreadsheet Diff & Comparison Tool (#115)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'GitCompare',
@@ -2895,8 +2918,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-sanitize-and-escape-116'] = array(
             'id' => 'csv-sanitize-and-escape-116',
-            'name' => 'CSV Spreadsheet Escaper & Sanitizer (#116)',
-            'name_bn' => 'সিএসভি ডাটা স্যানিটাইজার ও এসকেপার (#116)',
+            'name'             => 'CSV Spreadsheet Escaper & Sanitizer (#116)',
+                'name_bn'          => 'CSV Spreadsheet Escaper & Sanitizer (#116)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Shield',
@@ -2908,8 +2931,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-build-schemas-for-117'] = array(
             'id' => 'csv-build-schemas-for-117',
-            'name' => 'CSV Spreadsheet Schema & Model Builder (#117)',
-            'name_bn' => 'সিএসভি ডাটা স্কিমা ও মডেল বিল্ডার (#117)',
+            'name'             => 'CSV Spreadsheet Schema & Model Builder (#117)',
+                'name_bn'          => 'CSV Spreadsheet Schema & Model Builder (#117)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Layers',
@@ -2921,8 +2944,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-batch-process-118'] = array(
             'id' => 'csv-batch-process-118',
-            'name' => 'CSV Spreadsheet Batch Processor (#118)',
-            'name_bn' => 'সিএসভি ডাটা ব্যাচ প্রসেসর (#118)',
+            'name'             => 'CSV Spreadsheet Batch Processor (#118)',
+                'name_bn'          => 'CSV Spreadsheet Batch Processor (#118)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'Cpu',
@@ -2934,8 +2957,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-generate-templates-for-119'] = array(
             'id' => 'csv-generate-templates-for-119',
-            'name' => 'CSV Spreadsheet Template & Snippet Tool (#119)',
-            'name_bn' => 'সিএসভি ডাটা টেমপ্লেট ও স্নিপেট টুল (#119)',
+            'name'             => 'CSV Spreadsheet Template & Snippet Tool (#119)',
+                'name_bn'          => 'CSV Spreadsheet Template & Snippet Tool (#119)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'FileText',
@@ -2947,8 +2970,8 @@ final class UniversalToolRegistry {
         );
         $tools['csv-audit-health-and-diagnostics-for-120'] = array(
             'id' => 'csv-audit-health-and-diagnostics-for-120',
-            'name' => 'CSV Spreadsheet Diagnostic Auditor (#120)',
-            'name_bn' => 'সিএসভি ডাটা ডায়াগনস্টিক অডিটর (#120)',
+            'name'             => 'CSV Spreadsheet Diagnostic Auditor (#120)',
+                'name_bn'          => 'CSV Spreadsheet Diagnostic Auditor (#120)',
             'center' => 'data-json',
             'category' => 'CSV & Spreadsheets',
             'icon' => 'ShieldCheck',
@@ -2960,8 +2983,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-format-and-clean-121'] = array(
             'id' => 'yaml-format-and-clean-121',
-            'name' => 'XML & YAML Formatter & Beautifier (#121)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল ফরম্যাটার ও বিউটিফায়ার (#121)',
+            'name'             => 'XML & YAML Formatter & Beautifier (#121)',
+                'name_bn'          => 'XML & YAML Formatter & Beautifier (#121)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Code',
@@ -2973,8 +2996,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-minify-and-compress-122'] = array(
             'id' => 'yaml-minify-and-compress-122',
-            'name' => 'XML & YAML Minifier & Stripper (#122)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল মিনিফায়ার ও স্ট্রিপার (#122)',
+            'name'             => 'XML & YAML Minifier & Stripper (#122)',
+                'name_bn'          => 'XML & YAML Minifier & Stripper (#122)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Minimize2',
@@ -2986,8 +3009,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-validate-syntax-for-123'] = array(
             'id' => 'yaml-validate-syntax-for-123',
-            'name' => 'XML & YAML Validator & Syntax Checker (#123)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল ভ্যালিডেটর ও চেকার (#123)',
+            'name'             => 'XML & YAML Validator & Syntax Checker (#123)',
+                'name_bn'          => 'XML & YAML Validator & Syntax Checker (#123)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'CheckSquare',
@@ -2999,8 +3022,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-convert-and-transform-124'] = array(
             'id' => 'yaml-convert-and-transform-124',
-            'name' => 'XML & YAML Converter & Exporter (#124)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল কনভার্টার ও এক্সপোর্টার (#124)',
+            'name'             => 'XML & YAML Converter & Exporter (#124)',
+                'name_bn'          => 'XML & YAML Converter & Exporter (#124)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'RefreshCw',
@@ -3012,8 +3035,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-analyze-metrics-for-125'] = array(
             'id' => 'yaml-analyze-metrics-for-125',
-            'name' => 'XML & YAML Analyzer & Inspector (#125)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল অ্যানালাইজার ও ইন্সপেক্টর (#125)',
+            'name'             => 'XML & YAML Analyzer & Inspector (#125)',
+                'name_bn'          => 'XML & YAML Analyzer & Inspector (#125)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Search',
@@ -3025,8 +3048,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-generate-code-and-data-for-126'] = array(
             'id' => 'yaml-generate-code-and-data-for-126',
-            'name' => 'XML & YAML Generator & Builder (#126)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল জেনারেটর ও বিল্ডার (#126)',
+            'name'             => 'XML & YAML Generator & Builder (#126)',
+                'name_bn'          => 'XML & YAML Generator & Builder (#126)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Sparkles',
@@ -3038,8 +3061,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-calculate-values-for-127'] = array(
             'id' => 'yaml-calculate-values-for-127',
-            'name' => 'XML & YAML Calculator & Solver (#127)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল ক্যালকুলেটর ও সলভার (#127)',
+            'name'             => 'XML & YAML Calculator & Solver (#127)',
+                'name_bn'          => 'XML & YAML Calculator & Solver (#127)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Calculator',
@@ -3051,8 +3074,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-encode-and-decode-128'] = array(
             'id' => 'yaml-encode-and-decode-128',
-            'name' => 'XML & YAML Encoder & Decoder (#128)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল এনকোডার ও ডিকোডার (#128)',
+            'name'             => 'XML & YAML Encoder & Decoder (#128)',
+                'name_bn'          => 'XML & YAML Encoder & Decoder (#128)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Binary',
@@ -3064,8 +3087,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-inspect-real-time-telemetry-for-129'] = array(
             'id' => 'yaml-inspect-real-time-telemetry-for-129',
-            'name' => 'XML & YAML Telemetry Inspector (#129)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল টেলিমেট্রি ইন্সপেক্টর (#129)',
+            'name'             => 'XML & YAML Telemetry Inspector (#129)',
+                'name_bn'          => 'XML & YAML Telemetry Inspector (#129)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Activity',
@@ -3077,8 +3100,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-compare-differences-for-130'] = array(
             'id' => 'yaml-compare-differences-for-130',
-            'name' => 'XML & YAML Diff & Comparison Tool (#130)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল ডিফ ও তুলনা টুল (#130)',
+            'name'             => 'XML & YAML Diff & Comparison Tool (#130)',
+                'name_bn'          => 'XML & YAML Diff & Comparison Tool (#130)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'GitCompare',
@@ -3090,8 +3113,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-sanitize-and-escape-131'] = array(
             'id' => 'yaml-sanitize-and-escape-131',
-            'name' => 'XML & YAML Escaper & Sanitizer (#131)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল স্যানিটাইজার ও এসকেপার (#131)',
+            'name'             => 'XML & YAML Escaper & Sanitizer (#131)',
+                'name_bn'          => 'XML & YAML Escaper & Sanitizer (#131)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Shield',
@@ -3103,8 +3126,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-build-schemas-for-132'] = array(
             'id' => 'yaml-build-schemas-for-132',
-            'name' => 'XML & YAML Schema & Model Builder (#132)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল স্কিমা ও মডেল বিল্ডার (#132)',
+            'name'             => 'XML & YAML Schema & Model Builder (#132)',
+                'name_bn'          => 'XML & YAML Schema & Model Builder (#132)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Layers',
@@ -3116,8 +3139,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-batch-process-133'] = array(
             'id' => 'yaml-batch-process-133',
-            'name' => 'XML & YAML Batch Processor (#133)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল ব্যাচ প্রসেসর (#133)',
+            'name'             => 'XML & YAML Batch Processor (#133)',
+                'name_bn'          => 'XML & YAML Batch Processor (#133)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'Cpu',
@@ -3129,8 +3152,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-generate-templates-for-134'] = array(
             'id' => 'yaml-generate-templates-for-134',
-            'name' => 'XML & YAML Template & Snippet Tool (#134)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল টেমপ্লেট ও স্নিপেট টুল (#134)',
+            'name'             => 'XML & YAML Template & Snippet Tool (#134)',
+                'name_bn'          => 'XML & YAML Template & Snippet Tool (#134)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'FileText',
@@ -3142,8 +3165,8 @@ final class UniversalToolRegistry {
         );
         $tools['yaml-audit-health-and-diagnostics-for-135'] = array(
             'id' => 'yaml-audit-health-and-diagnostics-for-135',
-            'name' => 'XML & YAML Diagnostic Auditor (#135)',
-            'name_bn' => 'এক্সএমএল ও ওয়াইএএমএল ডায়াগনস্টিক অডিটর (#135)',
+            'name'             => 'XML & YAML Diagnostic Auditor (#135)',
+                'name_bn'          => 'XML & YAML Diagnostic Auditor (#135)',
             'center' => 'data-json',
             'category' => 'XML & YAML',
             'icon' => 'ShieldCheck',
@@ -3155,8 +3178,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-format-and-clean-136'] = array(
             'id' => 'txt-format-and-clean-136',
-            'name' => 'Text Processing Formatter & Beautifier (#136)',
-            'name_bn' => 'টেক্সট প্রসেসিং ফরম্যাটার ও বিউটিফায়ার (#136)',
+            'name'             => 'Text Processing Formatter & Beautifier (#136)',
+                'name_bn'          => 'Text Processing Formatter & Beautifier (#136)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Code',
@@ -3168,8 +3191,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-minify-and-compress-137'] = array(
             'id' => 'txt-minify-and-compress-137',
-            'name' => 'Text Processing Minifier & Stripper (#137)',
-            'name_bn' => 'টেক্সট প্রসেসিং মিনিফায়ার ও স্ট্রিপার (#137)',
+            'name'             => 'Text Processing Minifier & Stripper (#137)',
+                'name_bn'          => 'Text Processing Minifier & Stripper (#137)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Minimize2',
@@ -3181,8 +3204,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-validate-syntax-for-138'] = array(
             'id' => 'txt-validate-syntax-for-138',
-            'name' => 'Text Processing Validator & Syntax Checker (#138)',
-            'name_bn' => 'টেক্সট প্রসেসিং ভ্যালিডেটর ও চেকার (#138)',
+            'name'             => 'Text Processing Validator & Syntax Checker (#138)',
+                'name_bn'          => 'Text Processing Validator & Syntax Checker (#138)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'CheckSquare',
@@ -3194,8 +3217,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-convert-and-transform-139'] = array(
             'id' => 'txt-convert-and-transform-139',
-            'name' => 'Text Processing Converter & Exporter (#139)',
-            'name_bn' => 'টেক্সট প্রসেসিং কনভার্টার ও এক্সপোর্টার (#139)',
+            'name'             => 'Text Processing Converter & Exporter (#139)',
+                'name_bn'          => 'Text Processing Converter & Exporter (#139)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'RefreshCw',
@@ -3207,8 +3230,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-analyze-metrics-for-140'] = array(
             'id' => 'txt-analyze-metrics-for-140',
-            'name' => 'Text Processing Analyzer & Inspector (#140)',
-            'name_bn' => 'টেক্সট প্রসেসিং অ্যানালাইজার ও ইন্সপেক্টর (#140)',
+            'name'             => 'Text Processing Analyzer & Inspector (#140)',
+                'name_bn'          => 'Text Processing Analyzer & Inspector (#140)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Search',
@@ -3220,8 +3243,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-generate-code-and-data-for-141'] = array(
             'id' => 'txt-generate-code-and-data-for-141',
-            'name' => 'Text Processing Generator & Builder (#141)',
-            'name_bn' => 'টেক্সট প্রসেসিং জেনারেটর ও বিল্ডার (#141)',
+            'name'             => 'Text Processing Generator & Builder (#141)',
+                'name_bn'          => 'Text Processing Generator & Builder (#141)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Sparkles',
@@ -3233,8 +3256,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-calculate-values-for-142'] = array(
             'id' => 'txt-calculate-values-for-142',
-            'name' => 'Text Processing Calculator & Solver (#142)',
-            'name_bn' => 'টেক্সট প্রসেসিং ক্যালকুলেটর ও সলভার (#142)',
+            'name'             => 'Text Processing Calculator & Solver (#142)',
+                'name_bn'          => 'Text Processing Calculator & Solver (#142)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Calculator',
@@ -3246,8 +3269,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-encode-and-decode-143'] = array(
             'id' => 'txt-encode-and-decode-143',
-            'name' => 'Text Processing Encoder & Decoder (#143)',
-            'name_bn' => 'টেক্সট প্রসেসিং এনকোডার ও ডিকোডার (#143)',
+            'name'             => 'Text Processing Encoder & Decoder (#143)',
+                'name_bn'          => 'Text Processing Encoder & Decoder (#143)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Binary',
@@ -3259,8 +3282,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-inspect-real-time-telemetry-for-144'] = array(
             'id' => 'txt-inspect-real-time-telemetry-for-144',
-            'name' => 'Text Processing Telemetry Inspector (#144)',
-            'name_bn' => 'টেক্সট প্রসেসিং টেলিমেট্রি ইন্সপেক্টর (#144)',
+            'name'             => 'Text Processing Telemetry Inspector (#144)',
+                'name_bn'          => 'Text Processing Telemetry Inspector (#144)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Activity',
@@ -3272,8 +3295,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-compare-differences-for-145'] = array(
             'id' => 'txt-compare-differences-for-145',
-            'name' => 'Text Processing Diff & Comparison Tool (#145)',
-            'name_bn' => 'টেক্সট প্রসেসিং ডিফ ও তুলনা টুল (#145)',
+            'name'             => 'Text Processing Diff & Comparison Tool (#145)',
+                'name_bn'          => 'Text Processing Diff & Comparison Tool (#145)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'GitCompare',
@@ -3285,8 +3308,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-sanitize-and-escape-146'] = array(
             'id' => 'txt-sanitize-and-escape-146',
-            'name' => 'Text Processing Escaper & Sanitizer (#146)',
-            'name_bn' => 'টেক্সট প্রসেসিং স্যানিটাইজার ও এসকেপার (#146)',
+            'name'             => 'Text Processing Escaper & Sanitizer (#146)',
+                'name_bn'          => 'Text Processing Escaper & Sanitizer (#146)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Shield',
@@ -3298,8 +3321,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-build-schemas-for-147'] = array(
             'id' => 'txt-build-schemas-for-147',
-            'name' => 'Text Processing Schema & Model Builder (#147)',
-            'name_bn' => 'টেক্সট প্রসেসিং স্কিমা ও মডেল বিল্ডার (#147)',
+            'name'             => 'Text Processing Schema & Model Builder (#147)',
+                'name_bn'          => 'Text Processing Schema & Model Builder (#147)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Layers',
@@ -3311,8 +3334,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-batch-process-148'] = array(
             'id' => 'txt-batch-process-148',
-            'name' => 'Text Processing Batch Processor (#148)',
-            'name_bn' => 'টেক্সট প্রসেসিং ব্যাচ প্রসেসর (#148)',
+            'name'             => 'Text Processing Batch Processor (#148)',
+                'name_bn'          => 'Text Processing Batch Processor (#148)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'Cpu',
@@ -3324,8 +3347,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-generate-templates-for-149'] = array(
             'id' => 'txt-generate-templates-for-149',
-            'name' => 'Text Processing Template & Snippet Tool (#149)',
-            'name_bn' => 'টেক্সট প্রসেসিং টেমপ্লেট ও স্নিপেট টুল (#149)',
+            'name'             => 'Text Processing Template & Snippet Tool (#149)',
+                'name_bn'          => 'Text Processing Template & Snippet Tool (#149)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'FileText',
@@ -3337,8 +3360,8 @@ final class UniversalToolRegistry {
         );
         $tools['txt-audit-health-and-diagnostics-for-150'] = array(
             'id' => 'txt-audit-health-and-diagnostics-for-150',
-            'name' => 'Text Processing Diagnostic Auditor (#150)',
-            'name_bn' => 'টেক্সট প্রসেসিং ডায়াগনস্টিক অডিটর (#150)',
+            'name'             => 'Text Processing Diagnostic Auditor (#150)',
+                'name_bn'          => 'Text Processing Diagnostic Auditor (#150)',
             'center' => 'text-writing',
             'category' => 'Text Tools',
             'icon' => 'ShieldCheck',
@@ -3350,8 +3373,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-format-and-clean-151'] = array(
             'id' => 'img-format-and-clean-151',
-            'name' => 'Image Converter Formatter & Beautifier (#151)',
-            'name_bn' => 'ইমেজ কনভার্টার ফরম্যাটার ও বিউটিফায়ার (#151)',
+            'name'             => 'Image Converter Formatter & Beautifier (#151)',
+                'name_bn'          => 'Image Converter Formatter & Beautifier (#151)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Code',
@@ -3363,8 +3386,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-minify-and-compress-152'] = array(
             'id' => 'img-minify-and-compress-152',
-            'name' => 'Image Converter Minifier & Stripper (#152)',
-            'name_bn' => 'ইমেজ কনভার্টার মিনিফায়ার ও স্ট্রিপার (#152)',
+            'name'             => 'Image Converter Minifier & Stripper (#152)',
+                'name_bn'          => 'Image Converter Minifier & Stripper (#152)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Minimize2',
@@ -3376,8 +3399,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-validate-syntax-for-153'] = array(
             'id' => 'img-validate-syntax-for-153',
-            'name' => 'Image Converter Validator & Syntax Checker (#153)',
-            'name_bn' => 'ইমেজ কনভার্টার ভ্যালিডেটর ও চেকার (#153)',
+            'name'             => 'Image Converter Validator & Syntax Checker (#153)',
+                'name_bn'          => 'Image Converter Validator & Syntax Checker (#153)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'CheckSquare',
@@ -3389,8 +3412,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-convert-and-transform-154'] = array(
             'id' => 'img-convert-and-transform-154',
-            'name' => 'Image Converter Converter & Exporter (#154)',
-            'name_bn' => 'ইমেজ কনভার্টার কনভার্টার ও এক্সপোর্টার (#154)',
+            'name'             => 'Image Converter Converter & Exporter (#154)',
+                'name_bn'          => 'Image Converter Converter & Exporter (#154)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'RefreshCw',
@@ -3402,8 +3425,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-analyze-metrics-for-155'] = array(
             'id' => 'img-analyze-metrics-for-155',
-            'name' => 'Image Converter Analyzer & Inspector (#155)',
-            'name_bn' => 'ইমেজ কনভার্টার অ্যানালাইজার ও ইন্সপেক্টর (#155)',
+            'name'             => 'Image Converter Analyzer & Inspector (#155)',
+                'name_bn'          => 'Image Converter Analyzer & Inspector (#155)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Search',
@@ -3415,8 +3438,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-generate-code-and-data-for-156'] = array(
             'id' => 'img-generate-code-and-data-for-156',
-            'name' => 'Image Converter Generator & Builder (#156)',
-            'name_bn' => 'ইমেজ কনভার্টার জেনারেটর ও বিল্ডার (#156)',
+            'name'             => 'Image Converter Generator & Builder (#156)',
+                'name_bn'          => 'Image Converter Generator & Builder (#156)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Sparkles',
@@ -3428,8 +3451,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-calculate-values-for-157'] = array(
             'id' => 'img-calculate-values-for-157',
-            'name' => 'Image Converter Calculator & Solver (#157)',
-            'name_bn' => 'ইমেজ কনভার্টার ক্যালকুলেটর ও সলভার (#157)',
+            'name'             => 'Image Converter Calculator & Solver (#157)',
+                'name_bn'          => 'Image Converter Calculator & Solver (#157)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Calculator',
@@ -3441,8 +3464,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-encode-and-decode-158'] = array(
             'id' => 'img-encode-and-decode-158',
-            'name' => 'Image Converter Encoder & Decoder (#158)',
-            'name_bn' => 'ইমেজ কনভার্টার এনকোডার ও ডিকোডার (#158)',
+            'name'             => 'Image Converter Encoder & Decoder (#158)',
+                'name_bn'          => 'Image Converter Encoder & Decoder (#158)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Binary',
@@ -3454,8 +3477,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-inspect-real-time-telemetry-for-159'] = array(
             'id' => 'img-inspect-real-time-telemetry-for-159',
-            'name' => 'Image Converter Telemetry Inspector (#159)',
-            'name_bn' => 'ইমেজ কনভার্টার টেলিমেট্রি ইন্সপেক্টর (#159)',
+            'name'             => 'Image Converter Telemetry Inspector (#159)',
+                'name_bn'          => 'Image Converter Telemetry Inspector (#159)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Activity',
@@ -3467,8 +3490,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-compare-differences-for-160'] = array(
             'id' => 'img-compare-differences-for-160',
-            'name' => 'Image Converter Diff & Comparison Tool (#160)',
-            'name_bn' => 'ইমেজ কনভার্টার ডিফ ও তুলনা টুল (#160)',
+            'name'             => 'Image Converter Diff & Comparison Tool (#160)',
+                'name_bn'          => 'Image Converter Diff & Comparison Tool (#160)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'GitCompare',
@@ -3480,8 +3503,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-sanitize-and-escape-161'] = array(
             'id' => 'img-sanitize-and-escape-161',
-            'name' => 'Image Converter Escaper & Sanitizer (#161)',
-            'name_bn' => 'ইমেজ কনভার্টার স্যানিটাইজার ও এসকেপার (#161)',
+            'name'             => 'Image Converter Escaper & Sanitizer (#161)',
+                'name_bn'          => 'Image Converter Escaper & Sanitizer (#161)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Shield',
@@ -3493,8 +3516,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-build-schemas-for-162'] = array(
             'id' => 'img-build-schemas-for-162',
-            'name' => 'Image Converter Schema & Model Builder (#162)',
-            'name_bn' => 'ইমেজ কনভার্টার স্কিমা ও মডেল বিল্ডার (#162)',
+            'name'             => 'Image Converter Schema & Model Builder (#162)',
+                'name_bn'          => 'Image Converter Schema & Model Builder (#162)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Layers',
@@ -3506,8 +3529,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-batch-process-163'] = array(
             'id' => 'img-batch-process-163',
-            'name' => 'Image Converter Batch Processor (#163)',
-            'name_bn' => 'ইমেজ কনভার্টার ব্যাচ প্রসেসর (#163)',
+            'name'             => 'Image Converter Batch Processor (#163)',
+                'name_bn'          => 'Image Converter Batch Processor (#163)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'Cpu',
@@ -3519,8 +3542,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-generate-templates-for-164'] = array(
             'id' => 'img-generate-templates-for-164',
-            'name' => 'Image Converter Template & Snippet Tool (#164)',
-            'name_bn' => 'ইমেজ কনভার্টার টেমপ্লেট ও স্নিপেট টুল (#164)',
+            'name'             => 'Image Converter Template & Snippet Tool (#164)',
+                'name_bn'          => 'Image Converter Template & Snippet Tool (#164)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'FileText',
@@ -3532,8 +3555,8 @@ final class UniversalToolRegistry {
         );
         $tools['img-audit-health-and-diagnostics-for-165'] = array(
             'id' => 'img-audit-health-and-diagnostics-for-165',
-            'name' => 'Image Converter Diagnostic Auditor (#165)',
-            'name_bn' => 'ইমেজ কনভার্টার ডায়াগনস্টিক অডিটর (#165)',
+            'name'             => 'Image Converter Diagnostic Auditor (#165)',
+                'name_bn'          => 'Image Converter Diagnostic Auditor (#165)',
             'center' => 'image',
             'category' => 'Image Conversion',
             'icon' => 'ShieldCheck',
@@ -3545,8 +3568,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-format-and-clean-166'] = array(
             'id' => 'pdf-format-and-clean-166',
-            'name' => 'PDF Document Formatter & Beautifier (#166)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট ফরম্যাটার ও বিউটিফায়ার (#166)',
+            'name'             => 'PDF Document Formatter & Beautifier (#166)',
+                'name_bn'          => 'PDF Document Formatter & Beautifier (#166)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Code',
@@ -3558,8 +3581,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-minify-and-compress-167'] = array(
             'id' => 'pdf-minify-and-compress-167',
-            'name' => 'PDF Document Minifier & Stripper (#167)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট মিনিফায়ার ও স্ট্রিপার (#167)',
+            'name'             => 'PDF Document Minifier & Stripper (#167)',
+                'name_bn'          => 'PDF Document Minifier & Stripper (#167)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Minimize2',
@@ -3571,8 +3594,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-validate-syntax-for-168'] = array(
             'id' => 'pdf-validate-syntax-for-168',
-            'name' => 'PDF Document Validator & Syntax Checker (#168)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট ভ্যালিডেটর ও চেকার (#168)',
+            'name'             => 'PDF Document Validator & Syntax Checker (#168)',
+                'name_bn'          => 'PDF Document Validator & Syntax Checker (#168)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'CheckSquare',
@@ -3584,8 +3607,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-convert-and-transform-169'] = array(
             'id' => 'pdf-convert-and-transform-169',
-            'name' => 'PDF Document Converter & Exporter (#169)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট কনভার্টার ও এক্সপোর্টার (#169)',
+            'name'             => 'PDF Document Converter & Exporter (#169)',
+                'name_bn'          => 'PDF Document Converter & Exporter (#169)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'RefreshCw',
@@ -3597,8 +3620,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-analyze-metrics-for-170'] = array(
             'id' => 'pdf-analyze-metrics-for-170',
-            'name' => 'PDF Document Analyzer & Inspector (#170)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট অ্যানালাইজার ও ইন্সপেক্টর (#170)',
+            'name'             => 'PDF Document Analyzer & Inspector (#170)',
+                'name_bn'          => 'PDF Document Analyzer & Inspector (#170)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Search',
@@ -3610,8 +3633,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-generate-code-and-data-for-171'] = array(
             'id' => 'pdf-generate-code-and-data-for-171',
-            'name' => 'PDF Document Generator & Builder (#171)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট জেনারেটর ও বিল্ডার (#171)',
+            'name'             => 'PDF Document Generator & Builder (#171)',
+                'name_bn'          => 'PDF Document Generator & Builder (#171)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Sparkles',
@@ -3623,8 +3646,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-calculate-values-for-172'] = array(
             'id' => 'pdf-calculate-values-for-172',
-            'name' => 'PDF Document Calculator & Solver (#172)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট ক্যালকুলেটর ও সলভার (#172)',
+            'name'             => 'PDF Document Calculator & Solver (#172)',
+                'name_bn'          => 'PDF Document Calculator & Solver (#172)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Calculator',
@@ -3636,8 +3659,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-encode-and-decode-173'] = array(
             'id' => 'pdf-encode-and-decode-173',
-            'name' => 'PDF Document Encoder & Decoder (#173)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট এনকোডার ও ডিকোডার (#173)',
+            'name'             => 'PDF Document Encoder & Decoder (#173)',
+                'name_bn'          => 'PDF Document Encoder & Decoder (#173)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Binary',
@@ -3649,8 +3672,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-inspect-real-time-telemetry-for-174'] = array(
             'id' => 'pdf-inspect-real-time-telemetry-for-174',
-            'name' => 'PDF Document Telemetry Inspector (#174)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট টেলিমেট্রি ইন্সপেক্টর (#174)',
+            'name'             => 'PDF Document Telemetry Inspector (#174)',
+                'name_bn'          => 'PDF Document Telemetry Inspector (#174)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Activity',
@@ -3662,8 +3685,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-compare-differences-for-175'] = array(
             'id' => 'pdf-compare-differences-for-175',
-            'name' => 'PDF Document Diff & Comparison Tool (#175)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট ডিফ ও তুলনা টুল (#175)',
+            'name'             => 'PDF Document Diff & Comparison Tool (#175)',
+                'name_bn'          => 'PDF Document Diff & Comparison Tool (#175)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'GitCompare',
@@ -3675,8 +3698,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-sanitize-and-escape-176'] = array(
             'id' => 'pdf-sanitize-and-escape-176',
-            'name' => 'PDF Document Escaper & Sanitizer (#176)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট স্যানিটাইজার ও এসকেপার (#176)',
+            'name'             => 'PDF Document Escaper & Sanitizer (#176)',
+                'name_bn'          => 'PDF Document Escaper & Sanitizer (#176)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Shield',
@@ -3688,8 +3711,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-build-schemas-for-177'] = array(
             'id' => 'pdf-build-schemas-for-177',
-            'name' => 'PDF Document Schema & Model Builder (#177)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট স্কিমা ও মডেল বিল্ডার (#177)',
+            'name'             => 'PDF Document Schema & Model Builder (#177)',
+                'name_bn'          => 'PDF Document Schema & Model Builder (#177)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Layers',
@@ -3701,8 +3724,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-batch-process-178'] = array(
             'id' => 'pdf-batch-process-178',
-            'name' => 'PDF Document Batch Processor (#178)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট ব্যাচ প্রসেসর (#178)',
+            'name'             => 'PDF Document Batch Processor (#178)',
+                'name_bn'          => 'PDF Document Batch Processor (#178)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'Cpu',
@@ -3714,8 +3737,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-generate-templates-for-179'] = array(
             'id' => 'pdf-generate-templates-for-179',
-            'name' => 'PDF Document Template & Snippet Tool (#179)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট টেমপ্লেট ও স্নিপেট টুল (#179)',
+            'name'             => 'PDF Document Template & Snippet Tool (#179)',
+                'name_bn'          => 'PDF Document Template & Snippet Tool (#179)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'FileText',
@@ -3727,8 +3750,8 @@ final class UniversalToolRegistry {
         );
         $tools['pdf-audit-health-and-diagnostics-for-180'] = array(
             'id' => 'pdf-audit-health-and-diagnostics-for-180',
-            'name' => 'PDF Document Diagnostic Auditor (#180)',
-            'name_bn' => 'পিডিএফ ডকুমেন্ট ডায়াগনস্টিক অডিটর (#180)',
+            'name'             => 'PDF Document Diagnostic Auditor (#180)',
+                'name_bn'          => 'PDF Document Diagnostic Auditor (#180)',
             'center' => 'pdf-docs',
             'category' => 'PDF Utilities',
             'icon' => 'ShieldCheck',
@@ -3740,8 +3763,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-format-and-clean-181'] = array(
             'id' => 'aud-format-and-clean-181',
-            'name' => 'Audio Frequency Formatter & Beautifier (#181)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি ফরম্যাটার ও বিউটিফায়ার (#181)',
+            'name'             => 'Audio Frequency Formatter & Beautifier (#181)',
+                'name_bn'          => 'Audio Frequency Formatter & Beautifier (#181)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Code',
@@ -3753,8 +3776,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-minify-and-compress-182'] = array(
             'id' => 'aud-minify-and-compress-182',
-            'name' => 'Audio Frequency Minifier & Stripper (#182)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি মিনিফায়ার ও স্ট্রিপার (#182)',
+            'name'             => 'Audio Frequency Minifier & Stripper (#182)',
+                'name_bn'          => 'Audio Frequency Minifier & Stripper (#182)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Minimize2',
@@ -3766,8 +3789,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-validate-syntax-for-183'] = array(
             'id' => 'aud-validate-syntax-for-183',
-            'name' => 'Audio Frequency Validator & Syntax Checker (#183)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি ভ্যালিডেটর ও চেকার (#183)',
+            'name'             => 'Audio Frequency Validator & Syntax Checker (#183)',
+                'name_bn'          => 'Audio Frequency Validator & Syntax Checker (#183)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'CheckSquare',
@@ -3779,8 +3802,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-convert-and-transform-184'] = array(
             'id' => 'aud-convert-and-transform-184',
-            'name' => 'Audio Frequency Converter & Exporter (#184)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি কনভার্টার ও এক্সপোর্টার (#184)',
+            'name'             => 'Audio Frequency Converter & Exporter (#184)',
+                'name_bn'          => 'Audio Frequency Converter & Exporter (#184)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'RefreshCw',
@@ -3792,8 +3815,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-analyze-metrics-for-185'] = array(
             'id' => 'aud-analyze-metrics-for-185',
-            'name' => 'Audio Frequency Analyzer & Inspector (#185)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি অ্যানালাইজার ও ইন্সপেক্টর (#185)',
+            'name'             => 'Audio Frequency Analyzer & Inspector (#185)',
+                'name_bn'          => 'Audio Frequency Analyzer & Inspector (#185)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Search',
@@ -3805,8 +3828,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-generate-code-and-data-for-186'] = array(
             'id' => 'aud-generate-code-and-data-for-186',
-            'name' => 'Audio Frequency Generator & Builder (#186)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি জেনারেটর ও বিল্ডার (#186)',
+            'name'             => 'Audio Frequency Generator & Builder (#186)',
+                'name_bn'          => 'Audio Frequency Generator & Builder (#186)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Sparkles',
@@ -3818,8 +3841,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-calculate-values-for-187'] = array(
             'id' => 'aud-calculate-values-for-187',
-            'name' => 'Audio Frequency Calculator & Solver (#187)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি ক্যালকুলেটর ও সলভার (#187)',
+            'name'             => 'Audio Frequency Calculator & Solver (#187)',
+                'name_bn'          => 'Audio Frequency Calculator & Solver (#187)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Calculator',
@@ -3831,8 +3854,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-encode-and-decode-188'] = array(
             'id' => 'aud-encode-and-decode-188',
-            'name' => 'Audio Frequency Encoder & Decoder (#188)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি এনকোডার ও ডিকোডার (#188)',
+            'name'             => 'Audio Frequency Encoder & Decoder (#188)',
+                'name_bn'          => 'Audio Frequency Encoder & Decoder (#188)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Binary',
@@ -3844,8 +3867,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-inspect-real-time-telemetry-for-189'] = array(
             'id' => 'aud-inspect-real-time-telemetry-for-189',
-            'name' => 'Audio Frequency Telemetry Inspector (#189)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি টেলিমেট্রি ইন্সপেক্টর (#189)',
+            'name'             => 'Audio Frequency Telemetry Inspector (#189)',
+                'name_bn'          => 'Audio Frequency Telemetry Inspector (#189)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Activity',
@@ -3857,8 +3880,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-compare-differences-for-190'] = array(
             'id' => 'aud-compare-differences-for-190',
-            'name' => 'Audio Frequency Diff & Comparison Tool (#190)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি ডিফ ও তুলনা টুল (#190)',
+            'name'             => 'Audio Frequency Diff & Comparison Tool (#190)',
+                'name_bn'          => 'Audio Frequency Diff & Comparison Tool (#190)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'GitCompare',
@@ -3870,8 +3893,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-sanitize-and-escape-191'] = array(
             'id' => 'aud-sanitize-and-escape-191',
-            'name' => 'Audio Frequency Escaper & Sanitizer (#191)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি স্যানিটাইজার ও এসকেপার (#191)',
+            'name'             => 'Audio Frequency Escaper & Sanitizer (#191)',
+                'name_bn'          => 'Audio Frequency Escaper & Sanitizer (#191)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Shield',
@@ -3883,8 +3906,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-build-schemas-for-192'] = array(
             'id' => 'aud-build-schemas-for-192',
-            'name' => 'Audio Frequency Schema & Model Builder (#192)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি স্কিমা ও মডেল বিল্ডার (#192)',
+            'name'             => 'Audio Frequency Schema & Model Builder (#192)',
+                'name_bn'          => 'Audio Frequency Schema & Model Builder (#192)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Layers',
@@ -3896,8 +3919,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-batch-process-193'] = array(
             'id' => 'aud-batch-process-193',
-            'name' => 'Audio Frequency Batch Processor (#193)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি ব্যাচ প্রসেসর (#193)',
+            'name'             => 'Audio Frequency Batch Processor (#193)',
+                'name_bn'          => 'Audio Frequency Batch Processor (#193)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'Cpu',
@@ -3909,8 +3932,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-generate-templates-for-194'] = array(
             'id' => 'aud-generate-templates-for-194',
-            'name' => 'Audio Frequency Template & Snippet Tool (#194)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি টেমপ্লেট ও স্নিপেট টুল (#194)',
+            'name'             => 'Audio Frequency Template & Snippet Tool (#194)',
+                'name_bn'          => 'Audio Frequency Template & Snippet Tool (#194)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'FileText',
@@ -3922,8 +3945,8 @@ final class UniversalToolRegistry {
         );
         $tools['aud-audit-health-and-diagnostics-for-195'] = array(
             'id' => 'aud-audit-health-and-diagnostics-for-195',
-            'name' => 'Audio Frequency Diagnostic Auditor (#195)',
-            'name_bn' => 'অডিও ফ্রিকোয়েন্সি ডায়াগনস্টিক অডিটর (#195)',
+            'name'             => 'Audio Frequency Diagnostic Auditor (#195)',
+                'name_bn'          => 'Audio Frequency Diagnostic Auditor (#195)',
             'center' => 'audio',
             'category' => 'Audio Utilities',
             'icon' => 'ShieldCheck',
@@ -3935,8 +3958,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-format-and-clean-196'] = array(
             'id' => 'vid-format-and-clean-196',
-            'name' => 'Video Frame Formatter & Beautifier (#196)',
-            'name_bn' => 'ভিডিও ফ্রেম ফরম্যাটার ও বিউটিফায়ার (#196)',
+            'name'             => 'Video Frame Formatter & Beautifier (#196)',
+                'name_bn'          => 'Video Frame Formatter & Beautifier (#196)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Code',
@@ -3948,8 +3971,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-minify-and-compress-197'] = array(
             'id' => 'vid-minify-and-compress-197',
-            'name' => 'Video Frame Minifier & Stripper (#197)',
-            'name_bn' => 'ভিডিও ফ্রেম মিনিফায়ার ও স্ট্রিপার (#197)',
+            'name'             => 'Video Frame Minifier & Stripper (#197)',
+                'name_bn'          => 'Video Frame Minifier & Stripper (#197)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Minimize2',
@@ -3961,8 +3984,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-validate-syntax-for-198'] = array(
             'id' => 'vid-validate-syntax-for-198',
-            'name' => 'Video Frame Validator & Syntax Checker (#198)',
-            'name_bn' => 'ভিডিও ফ্রেম ভ্যালিডেটর ও চেকার (#198)',
+            'name'             => 'Video Frame Validator & Syntax Checker (#198)',
+                'name_bn'          => 'Video Frame Validator & Syntax Checker (#198)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'CheckSquare',
@@ -3974,8 +3997,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-convert-and-transform-199'] = array(
             'id' => 'vid-convert-and-transform-199',
-            'name' => 'Video Frame Converter & Exporter (#199)',
-            'name_bn' => 'ভিডিও ফ্রেম কনভার্টার ও এক্সপোর্টার (#199)',
+            'name'             => 'Video Frame Converter & Exporter (#199)',
+                'name_bn'          => 'Video Frame Converter & Exporter (#199)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'RefreshCw',
@@ -3987,8 +4010,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-analyze-metrics-for-200'] = array(
             'id' => 'vid-analyze-metrics-for-200',
-            'name' => 'Video Frame Analyzer & Inspector (#200)',
-            'name_bn' => 'ভিডিও ফ্রেম অ্যানালাইজার ও ইন্সপেক্টর (#200)',
+            'name'             => 'Video Frame Analyzer & Inspector (#200)',
+                'name_bn'          => 'Video Frame Analyzer & Inspector (#200)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Search',
@@ -4000,8 +4023,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-generate-code-and-data-for-201'] = array(
             'id' => 'vid-generate-code-and-data-for-201',
-            'name' => 'Video Frame Generator & Builder (#201)',
-            'name_bn' => 'ভিডিও ফ্রেম জেনারেটর ও বিল্ডার (#201)',
+            'name'             => 'Video Frame Generator & Builder (#201)',
+                'name_bn'          => 'Video Frame Generator & Builder (#201)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Sparkles',
@@ -4013,8 +4036,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-calculate-values-for-202'] = array(
             'id' => 'vid-calculate-values-for-202',
-            'name' => 'Video Frame Calculator & Solver (#202)',
-            'name_bn' => 'ভিডিও ফ্রেম ক্যালকুলেটর ও সলভার (#202)',
+            'name'             => 'Video Frame Calculator & Solver (#202)',
+                'name_bn'          => 'Video Frame Calculator & Solver (#202)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Calculator',
@@ -4026,8 +4049,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-encode-and-decode-203'] = array(
             'id' => 'vid-encode-and-decode-203',
-            'name' => 'Video Frame Encoder & Decoder (#203)',
-            'name_bn' => 'ভিডিও ফ্রেম এনকোডার ও ডিকোডার (#203)',
+            'name'             => 'Video Frame Encoder & Decoder (#203)',
+                'name_bn'          => 'Video Frame Encoder & Decoder (#203)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Binary',
@@ -4039,8 +4062,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-inspect-real-time-telemetry-for-204'] = array(
             'id' => 'vid-inspect-real-time-telemetry-for-204',
-            'name' => 'Video Frame Telemetry Inspector (#204)',
-            'name_bn' => 'ভিডিও ফ্রেম টেলিমেট্রি ইন্সপেক্টর (#204)',
+            'name'             => 'Video Frame Telemetry Inspector (#204)',
+                'name_bn'          => 'Video Frame Telemetry Inspector (#204)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Activity',
@@ -4052,8 +4075,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-compare-differences-for-205'] = array(
             'id' => 'vid-compare-differences-for-205',
-            'name' => 'Video Frame Diff & Comparison Tool (#205)',
-            'name_bn' => 'ভিডিও ফ্রেম ডিফ ও তুলনা টুল (#205)',
+            'name'             => 'Video Frame Diff & Comparison Tool (#205)',
+                'name_bn'          => 'Video Frame Diff & Comparison Tool (#205)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'GitCompare',
@@ -4065,8 +4088,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-sanitize-and-escape-206'] = array(
             'id' => 'vid-sanitize-and-escape-206',
-            'name' => 'Video Frame Escaper & Sanitizer (#206)',
-            'name_bn' => 'ভিডিও ফ্রেম স্যানিটাইজার ও এসকেপার (#206)',
+            'name'             => 'Video Frame Escaper & Sanitizer (#206)',
+                'name_bn'          => 'Video Frame Escaper & Sanitizer (#206)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Shield',
@@ -4078,8 +4101,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-build-schemas-for-207'] = array(
             'id' => 'vid-build-schemas-for-207',
-            'name' => 'Video Frame Schema & Model Builder (#207)',
-            'name_bn' => 'ভিডিও ফ্রেম স্কিমা ও মডেল বিল্ডার (#207)',
+            'name'             => 'Video Frame Schema & Model Builder (#207)',
+                'name_bn'          => 'Video Frame Schema & Model Builder (#207)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Layers',
@@ -4091,8 +4114,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-batch-process-208'] = array(
             'id' => 'vid-batch-process-208',
-            'name' => 'Video Frame Batch Processor (#208)',
-            'name_bn' => 'ভিডিও ফ্রেম ব্যাচ প্রসেসর (#208)',
+            'name'             => 'Video Frame Batch Processor (#208)',
+                'name_bn'          => 'Video Frame Batch Processor (#208)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'Cpu',
@@ -4104,8 +4127,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-generate-templates-for-209'] = array(
             'id' => 'vid-generate-templates-for-209',
-            'name' => 'Video Frame Template & Snippet Tool (#209)',
-            'name_bn' => 'ভিডিও ফ্রেম টেমপ্লেট ও স্নিপেট টুল (#209)',
+            'name'             => 'Video Frame Template & Snippet Tool (#209)',
+                'name_bn'          => 'Video Frame Template & Snippet Tool (#209)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'FileText',
@@ -4117,8 +4140,8 @@ final class UniversalToolRegistry {
         );
         $tools['vid-audit-health-and-diagnostics-for-210'] = array(
             'id' => 'vid-audit-health-and-diagnostics-for-210',
-            'name' => 'Video Frame Diagnostic Auditor (#210)',
-            'name_bn' => 'ভিডিও ফ্রেম ডায়াগনস্টিক অডিটর (#210)',
+            'name'             => 'Video Frame Diagnostic Auditor (#210)',
+                'name_bn'          => 'Video Frame Diagnostic Auditor (#210)',
             'center' => 'video',
             'category' => 'Video Utilities',
             'icon' => 'ShieldCheck',
@@ -4130,8 +4153,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-format-and-clean-211'] = array(
             'id' => 'eng-format-and-clean-211',
-            'name' => 'Engineering Math Formatter & Beautifier (#211)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ ফরম্যাটার ও বিউটিফায়ার (#211)',
+            'name'             => 'Engineering Math Formatter & Beautifier (#211)',
+                'name_bn'          => 'Engineering Math Formatter & Beautifier (#211)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Code',
@@ -4143,8 +4166,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-minify-and-compress-212'] = array(
             'id' => 'eng-minify-and-compress-212',
-            'name' => 'Engineering Math Minifier & Stripper (#212)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ মিনিফায়ার ও স্ট্রিপার (#212)',
+            'name'             => 'Engineering Math Minifier & Stripper (#212)',
+                'name_bn'          => 'Engineering Math Minifier & Stripper (#212)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Minimize2',
@@ -4156,8 +4179,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-validate-syntax-for-213'] = array(
             'id' => 'eng-validate-syntax-for-213',
-            'name' => 'Engineering Math Validator & Syntax Checker (#213)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ ভ্যালিডেটর ও চেকার (#213)',
+            'name'             => 'Engineering Math Validator & Syntax Checker (#213)',
+                'name_bn'          => 'Engineering Math Validator & Syntax Checker (#213)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'CheckSquare',
@@ -4169,8 +4192,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-convert-and-transform-214'] = array(
             'id' => 'eng-convert-and-transform-214',
-            'name' => 'Engineering Math Converter & Exporter (#214)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ কনভার্টার ও এক্সপোর্টার (#214)',
+            'name'             => 'Engineering Math Converter & Exporter (#214)',
+                'name_bn'          => 'Engineering Math Converter & Exporter (#214)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'RefreshCw',
@@ -4182,8 +4205,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-analyze-metrics-for-215'] = array(
             'id' => 'eng-analyze-metrics-for-215',
-            'name' => 'Engineering Math Analyzer & Inspector (#215)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ অ্যানালাইজার ও ইন্সপেক্টর (#215)',
+            'name'             => 'Engineering Math Analyzer & Inspector (#215)',
+                'name_bn'          => 'Engineering Math Analyzer & Inspector (#215)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Search',
@@ -4195,8 +4218,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-generate-code-and-data-for-216'] = array(
             'id' => 'eng-generate-code-and-data-for-216',
-            'name' => 'Engineering Math Generator & Builder (#216)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ জেনারেটর ও বিল্ডার (#216)',
+            'name'             => 'Engineering Math Generator & Builder (#216)',
+                'name_bn'          => 'Engineering Math Generator & Builder (#216)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Sparkles',
@@ -4208,8 +4231,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-calculate-values-for-217'] = array(
             'id' => 'eng-calculate-values-for-217',
-            'name' => 'Engineering Math Calculator & Solver (#217)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ ক্যালকুলেটর ও সলভার (#217)',
+            'name'             => 'Engineering Math Calculator & Solver (#217)',
+                'name_bn'          => 'Engineering Math Calculator & Solver (#217)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Calculator',
@@ -4221,8 +4244,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-encode-and-decode-218'] = array(
             'id' => 'eng-encode-and-decode-218',
-            'name' => 'Engineering Math Encoder & Decoder (#218)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ এনকোডার ও ডিকোডার (#218)',
+            'name'             => 'Engineering Math Encoder & Decoder (#218)',
+                'name_bn'          => 'Engineering Math Encoder & Decoder (#218)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Binary',
@@ -4234,8 +4257,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-inspect-real-time-telemetry-for-219'] = array(
             'id' => 'eng-inspect-real-time-telemetry-for-219',
-            'name' => 'Engineering Math Telemetry Inspector (#219)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ টেলিমেট্রি ইন্সপেক্টর (#219)',
+            'name'             => 'Engineering Math Telemetry Inspector (#219)',
+                'name_bn'          => 'Engineering Math Telemetry Inspector (#219)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Activity',
@@ -4247,8 +4270,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-compare-differences-for-220'] = array(
             'id' => 'eng-compare-differences-for-220',
-            'name' => 'Engineering Math Diff & Comparison Tool (#220)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ ডিফ ও তুলনা টুল (#220)',
+            'name'             => 'Engineering Math Diff & Comparison Tool (#220)',
+                'name_bn'          => 'Engineering Math Diff & Comparison Tool (#220)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'GitCompare',
@@ -4260,8 +4283,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-sanitize-and-escape-221'] = array(
             'id' => 'eng-sanitize-and-escape-221',
-            'name' => 'Engineering Math Escaper & Sanitizer (#221)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ স্যানিটাইজার ও এসকেপার (#221)',
+            'name'             => 'Engineering Math Escaper & Sanitizer (#221)',
+                'name_bn'          => 'Engineering Math Escaper & Sanitizer (#221)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Shield',
@@ -4273,8 +4296,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-build-schemas-for-222'] = array(
             'id' => 'eng-build-schemas-for-222',
-            'name' => 'Engineering Math Schema & Model Builder (#222)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ স্কিমা ও মডেল বিল্ডার (#222)',
+            'name'             => 'Engineering Math Schema & Model Builder (#222)',
+                'name_bn'          => 'Engineering Math Schema & Model Builder (#222)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Layers',
@@ -4286,8 +4309,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-batch-process-223'] = array(
             'id' => 'eng-batch-process-223',
-            'name' => 'Engineering Math Batch Processor (#223)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ ব্যাচ প্রসেসর (#223)',
+            'name'             => 'Engineering Math Batch Processor (#223)',
+                'name_bn'          => 'Engineering Math Batch Processor (#223)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'Cpu',
@@ -4299,8 +4322,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-generate-templates-for-224'] = array(
             'id' => 'eng-generate-templates-for-224',
-            'name' => 'Engineering Math Template & Snippet Tool (#224)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ টেমপ্লেট ও স্নিপেট টুল (#224)',
+            'name'             => 'Engineering Math Template & Snippet Tool (#224)',
+                'name_bn'          => 'Engineering Math Template & Snippet Tool (#224)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'FileText',
@@ -4312,8 +4335,8 @@ final class UniversalToolRegistry {
         );
         $tools['eng-audit-health-and-diagnostics-for-225'] = array(
             'id' => 'eng-audit-health-and-diagnostics-for-225',
-            'name' => 'Engineering Math Diagnostic Auditor (#225)',
-            'name_bn' => 'ইঞ্জিনিয়ারিং ম্যাথ ডায়াগনস্টিক অডিটর (#225)',
+            'name'             => 'Engineering Math Diagnostic Auditor (#225)',
+                'name_bn'          => 'Engineering Math Diagnostic Auditor (#225)',
             'center' => 'engineering',
             'category' => 'Electrical Engineering',
             'icon' => 'ShieldCheck',
@@ -4325,8 +4348,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-format-and-clean-226'] = array(
             'id' => 'elec-format-and-clean-226',
-            'name' => 'Electronics Circuit Formatter & Beautifier (#226)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট ফরম্যাটার ও বিউটিফায়ার (#226)',
+            'name'             => 'Electronics Circuit Formatter & Beautifier (#226)',
+                'name_bn'          => 'Electronics Circuit Formatter & Beautifier (#226)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Code',
@@ -4338,8 +4361,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-minify-and-compress-227'] = array(
             'id' => 'elec-minify-and-compress-227',
-            'name' => 'Electronics Circuit Minifier & Stripper (#227)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট মিনিফায়ার ও স্ট্রিপার (#227)',
+            'name'             => 'Electronics Circuit Minifier & Stripper (#227)',
+                'name_bn'          => 'Electronics Circuit Minifier & Stripper (#227)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Minimize2',
@@ -4351,8 +4374,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-validate-syntax-for-228'] = array(
             'id' => 'elec-validate-syntax-for-228',
-            'name' => 'Electronics Circuit Validator & Syntax Checker (#228)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট ভ্যালিডেটর ও চেকার (#228)',
+            'name'             => 'Electronics Circuit Validator & Syntax Checker (#228)',
+                'name_bn'          => 'Electronics Circuit Validator & Syntax Checker (#228)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'CheckSquare',
@@ -4364,8 +4387,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-convert-and-transform-229'] = array(
             'id' => 'elec-convert-and-transform-229',
-            'name' => 'Electronics Circuit Converter & Exporter (#229)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট কনভার্টার ও এক্সপোর্টার (#229)',
+            'name'             => 'Electronics Circuit Converter & Exporter (#229)',
+                'name_bn'          => 'Electronics Circuit Converter & Exporter (#229)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'RefreshCw',
@@ -4377,8 +4400,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-analyze-metrics-for-230'] = array(
             'id' => 'elec-analyze-metrics-for-230',
-            'name' => 'Electronics Circuit Analyzer & Inspector (#230)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট অ্যানালাইজার ও ইন্সপেক্টর (#230)',
+            'name'             => 'Electronics Circuit Analyzer & Inspector (#230)',
+                'name_bn'          => 'Electronics Circuit Analyzer & Inspector (#230)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Search',
@@ -4390,8 +4413,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-generate-code-and-data-for-231'] = array(
             'id' => 'elec-generate-code-and-data-for-231',
-            'name' => 'Electronics Circuit Generator & Builder (#231)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট জেনারেটর ও বিল্ডার (#231)',
+            'name'             => 'Electronics Circuit Generator & Builder (#231)',
+                'name_bn'          => 'Electronics Circuit Generator & Builder (#231)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Sparkles',
@@ -4403,8 +4426,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-calculate-values-for-232'] = array(
             'id' => 'elec-calculate-values-for-232',
-            'name' => 'Electronics Circuit Calculator & Solver (#232)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট ক্যালকুলেটর ও সলভার (#232)',
+            'name'             => 'Electronics Circuit Calculator & Solver (#232)',
+                'name_bn'          => 'Electronics Circuit Calculator & Solver (#232)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Calculator',
@@ -4416,8 +4439,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-encode-and-decode-233'] = array(
             'id' => 'elec-encode-and-decode-233',
-            'name' => 'Electronics Circuit Encoder & Decoder (#233)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট এনকোডার ও ডিকোডার (#233)',
+            'name'             => 'Electronics Circuit Encoder & Decoder (#233)',
+                'name_bn'          => 'Electronics Circuit Encoder & Decoder (#233)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Binary',
@@ -4429,8 +4452,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-inspect-real-time-telemetry-for-234'] = array(
             'id' => 'elec-inspect-real-time-telemetry-for-234',
-            'name' => 'Electronics Circuit Telemetry Inspector (#234)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট টেলিমেট্রি ইন্সপেক্টর (#234)',
+            'name'             => 'Electronics Circuit Telemetry Inspector (#234)',
+                'name_bn'          => 'Electronics Circuit Telemetry Inspector (#234)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Activity',
@@ -4442,8 +4465,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-compare-differences-for-235'] = array(
             'id' => 'elec-compare-differences-for-235',
-            'name' => 'Electronics Circuit Diff & Comparison Tool (#235)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট ডিফ ও তুলনা টুল (#235)',
+            'name'             => 'Electronics Circuit Diff & Comparison Tool (#235)',
+                'name_bn'          => 'Electronics Circuit Diff & Comparison Tool (#235)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'GitCompare',
@@ -4455,8 +4478,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-sanitize-and-escape-236'] = array(
             'id' => 'elec-sanitize-and-escape-236',
-            'name' => 'Electronics Circuit Escaper & Sanitizer (#236)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট স্যানিটাইজার ও এসকেপার (#236)',
+            'name'             => 'Electronics Circuit Escaper & Sanitizer (#236)',
+                'name_bn'          => 'Electronics Circuit Escaper & Sanitizer (#236)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Shield',
@@ -4468,8 +4491,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-build-schemas-for-237'] = array(
             'id' => 'elec-build-schemas-for-237',
-            'name' => 'Electronics Circuit Schema & Model Builder (#237)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট স্কিমা ও মডেল বিল্ডার (#237)',
+            'name'             => 'Electronics Circuit Schema & Model Builder (#237)',
+                'name_bn'          => 'Electronics Circuit Schema & Model Builder (#237)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Layers',
@@ -4481,8 +4504,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-batch-process-238'] = array(
             'id' => 'elec-batch-process-238',
-            'name' => 'Electronics Circuit Batch Processor (#238)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট ব্যাচ প্রসেসর (#238)',
+            'name'             => 'Electronics Circuit Batch Processor (#238)',
+                'name_bn'          => 'Electronics Circuit Batch Processor (#238)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'Cpu',
@@ -4494,8 +4517,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-generate-templates-for-239'] = array(
             'id' => 'elec-generate-templates-for-239',
-            'name' => 'Electronics Circuit Template & Snippet Tool (#239)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট টেমপ্লেট ও স্নিপেট টুল (#239)',
+            'name'             => 'Electronics Circuit Template & Snippet Tool (#239)',
+                'name_bn'          => 'Electronics Circuit Template & Snippet Tool (#239)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'FileText',
@@ -4507,8 +4530,8 @@ final class UniversalToolRegistry {
         );
         $tools['elec-audit-health-and-diagnostics-for-240'] = array(
             'id' => 'elec-audit-health-and-diagnostics-for-240',
-            'name' => 'Electronics Circuit Diagnostic Auditor (#240)',
-            'name_bn' => 'ইলেকট্রনিক্স সার্কিট ডায়াগনস্টিক অডিটর (#240)',
+            'name'             => 'Electronics Circuit Diagnostic Auditor (#240)',
+                'name_bn'          => 'Electronics Circuit Diagnostic Auditor (#240)',
             'center' => 'electronics',
             'category' => 'Component Lab',
             'icon' => 'ShieldCheck',
@@ -4520,8 +4543,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-format-and-clean-241'] = array(
             'id' => 'cnc-format-and-clean-241',
-            'name' => 'CNC Fabrication Formatter & Beautifier (#241)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল ফরম্যাটার ও বিউটিফায়ার (#241)',
+            'name'             => 'CNC Fabrication Formatter & Beautifier (#241)',
+                'name_bn'          => 'CNC Fabrication Formatter & Beautifier (#241)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Code',
@@ -4533,8 +4556,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-minify-and-compress-242'] = array(
             'id' => 'cnc-minify-and-compress-242',
-            'name' => 'CNC Fabrication Minifier & Stripper (#242)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল মিনিফায়ার ও স্ট্রিপার (#242)',
+            'name'             => 'CNC Fabrication Minifier & Stripper (#242)',
+                'name_bn'          => 'CNC Fabrication Minifier & Stripper (#242)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Minimize2',
@@ -4546,8 +4569,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-validate-syntax-for-243'] = array(
             'id' => 'cnc-validate-syntax-for-243',
-            'name' => 'CNC Fabrication Validator & Syntax Checker (#243)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল ভ্যালিডেটর ও চেকার (#243)',
+            'name'             => 'CNC Fabrication Validator & Syntax Checker (#243)',
+                'name_bn'          => 'CNC Fabrication Validator & Syntax Checker (#243)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'CheckSquare',
@@ -4559,8 +4582,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-convert-and-transform-244'] = array(
             'id' => 'cnc-convert-and-transform-244',
-            'name' => 'CNC Fabrication Converter & Exporter (#244)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল কনভার্টার ও এক্সপোর্টার (#244)',
+            'name'             => 'CNC Fabrication Converter & Exporter (#244)',
+                'name_bn'          => 'CNC Fabrication Converter & Exporter (#244)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'RefreshCw',
@@ -4572,8 +4595,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-analyze-metrics-for-245'] = array(
             'id' => 'cnc-analyze-metrics-for-245',
-            'name' => 'CNC Fabrication Analyzer & Inspector (#245)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল অ্যানালাইজার ও ইন্সপেক্টর (#245)',
+            'name'             => 'CNC Fabrication Analyzer & Inspector (#245)',
+                'name_bn'          => 'CNC Fabrication Analyzer & Inspector (#245)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Search',
@@ -4585,8 +4608,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-generate-code-and-data-for-246'] = array(
             'id' => 'cnc-generate-code-and-data-for-246',
-            'name' => 'CNC Fabrication Generator & Builder (#246)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল জেনারেটর ও বিল্ডার (#246)',
+            'name'             => 'CNC Fabrication Generator & Builder (#246)',
+                'name_bn'          => 'CNC Fabrication Generator & Builder (#246)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Sparkles',
@@ -4598,8 +4621,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-calculate-values-for-247'] = array(
             'id' => 'cnc-calculate-values-for-247',
-            'name' => 'CNC Fabrication Calculator & Solver (#247)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল ক্যালকুলেটর ও সলভার (#247)',
+            'name'             => 'CNC Fabrication Calculator & Solver (#247)',
+                'name_bn'          => 'CNC Fabrication Calculator & Solver (#247)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Calculator',
@@ -4611,8 +4634,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-encode-and-decode-248'] = array(
             'id' => 'cnc-encode-and-decode-248',
-            'name' => 'CNC Fabrication Encoder & Decoder (#248)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল এনকোডার ও ডিকোডার (#248)',
+            'name'             => 'CNC Fabrication Encoder & Decoder (#248)',
+                'name_bn'          => 'CNC Fabrication Encoder & Decoder (#248)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Binary',
@@ -4624,8 +4647,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-inspect-real-time-telemetry-for-249'] = array(
             'id' => 'cnc-inspect-real-time-telemetry-for-249',
-            'name' => 'CNC Fabrication Telemetry Inspector (#249)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল টেলিমেট্রি ইন্সপেক্টর (#249)',
+            'name'             => 'CNC Fabrication Telemetry Inspector (#249)',
+                'name_bn'          => 'CNC Fabrication Telemetry Inspector (#249)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Activity',
@@ -4637,8 +4660,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-compare-differences-for-250'] = array(
             'id' => 'cnc-compare-differences-for-250',
-            'name' => 'CNC Fabrication Diff & Comparison Tool (#250)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল ডিফ ও তুলনা টুল (#250)',
+            'name'             => 'CNC Fabrication Diff & Comparison Tool (#250)',
+                'name_bn'          => 'CNC Fabrication Diff & Comparison Tool (#250)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'GitCompare',
@@ -4650,8 +4673,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-sanitize-and-escape-251'] = array(
             'id' => 'cnc-sanitize-and-escape-251',
-            'name' => 'CNC Fabrication Escaper & Sanitizer (#251)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল স্যানিটাইজার ও এসকেপার (#251)',
+            'name'             => 'CNC Fabrication Escaper & Sanitizer (#251)',
+                'name_bn'          => 'CNC Fabrication Escaper & Sanitizer (#251)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Shield',
@@ -4663,8 +4686,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-build-schemas-for-252'] = array(
             'id' => 'cnc-build-schemas-for-252',
-            'name' => 'CNC Fabrication Schema & Model Builder (#252)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল স্কিমা ও মডেল বিল্ডার (#252)',
+            'name'             => 'CNC Fabrication Schema & Model Builder (#252)',
+                'name_bn'          => 'CNC Fabrication Schema & Model Builder (#252)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Layers',
@@ -4676,8 +4699,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-batch-process-253'] = array(
             'id' => 'cnc-batch-process-253',
-            'name' => 'CNC Fabrication Batch Processor (#253)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল ব্যাচ প্রসেসর (#253)',
+            'name'             => 'CNC Fabrication Batch Processor (#253)',
+                'name_bn'          => 'CNC Fabrication Batch Processor (#253)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'Cpu',
@@ -4689,8 +4712,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-generate-templates-for-254'] = array(
             'id' => 'cnc-generate-templates-for-254',
-            'name' => 'CNC Fabrication Template & Snippet Tool (#254)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল টেমপ্লেট ও স্নিপেট টুল (#254)',
+            'name'             => 'CNC Fabrication Template & Snippet Tool (#254)',
+                'name_bn'          => 'CNC Fabrication Template & Snippet Tool (#254)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'FileText',
@@ -4702,8 +4725,8 @@ final class UniversalToolRegistry {
         );
         $tools['cnc-audit-health-and-diagnostics-for-255'] = array(
             'id' => 'cnc-audit-health-and-diagnostics-for-255',
-            'name' => 'CNC Fabrication Diagnostic Auditor (#255)',
-            'name_bn' => 'সিএনসি মেকানিক্যাল ডায়াগনস্টিক অডিটর (#255)',
+            'name'             => 'CNC Fabrication Diagnostic Auditor (#255)',
+                'name_bn'          => 'CNC Fabrication Diagnostic Auditor (#255)',
             'center' => 'cnc-fabrication',
             'category' => 'CNC & G-Code',
             'icon' => 'ShieldCheck',
@@ -4715,8 +4738,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-format-and-clean-256'] = array(
             'id' => 'iot-format-and-clean-256',
-            'name' => 'Hardware IoT Formatter & Beautifier (#256)',
-            'name_bn' => 'আইওটি ও সেন্সর ফরম্যাটার ও বিউটিফায়ার (#256)',
+            'name'             => 'Hardware IoT Formatter & Beautifier (#256)',
+                'name_bn'          => 'Hardware IoT Formatter & Beautifier (#256)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Code',
@@ -4728,8 +4751,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-minify-and-compress-257'] = array(
             'id' => 'iot-minify-and-compress-257',
-            'name' => 'Hardware IoT Minifier & Stripper (#257)',
-            'name_bn' => 'আইওটি ও সেন্সর মিনিফায়ার ও স্ট্রিপার (#257)',
+            'name'             => 'Hardware IoT Minifier & Stripper (#257)',
+                'name_bn'          => 'Hardware IoT Minifier & Stripper (#257)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Minimize2',
@@ -4741,8 +4764,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-validate-syntax-for-258'] = array(
             'id' => 'iot-validate-syntax-for-258',
-            'name' => 'Hardware IoT Validator & Syntax Checker (#258)',
-            'name_bn' => 'আইওটি ও সেন্সর ভ্যালিডেটর ও চেকার (#258)',
+            'name'             => 'Hardware IoT Validator & Syntax Checker (#258)',
+                'name_bn'          => 'Hardware IoT Validator & Syntax Checker (#258)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'CheckSquare',
@@ -4754,8 +4777,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-convert-and-transform-259'] = array(
             'id' => 'iot-convert-and-transform-259',
-            'name' => 'Hardware IoT Converter & Exporter (#259)',
-            'name_bn' => 'আইওটি ও সেন্সর কনভার্টার ও এক্সপোর্টার (#259)',
+            'name'             => 'Hardware IoT Converter & Exporter (#259)',
+                'name_bn'          => 'Hardware IoT Converter & Exporter (#259)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'RefreshCw',
@@ -4767,8 +4790,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-analyze-metrics-for-260'] = array(
             'id' => 'iot-analyze-metrics-for-260',
-            'name' => 'Hardware IoT Analyzer & Inspector (#260)',
-            'name_bn' => 'আইওটি ও সেন্সর অ্যানালাইজার ও ইন্সপেক্টর (#260)',
+            'name'             => 'Hardware IoT Analyzer & Inspector (#260)',
+                'name_bn'          => 'Hardware IoT Analyzer & Inspector (#260)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Search',
@@ -4780,8 +4803,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-generate-code-and-data-for-261'] = array(
             'id' => 'iot-generate-code-and-data-for-261',
-            'name' => 'Hardware IoT Generator & Builder (#261)',
-            'name_bn' => 'আইওটি ও সেন্সর জেনারেটর ও বিল্ডার (#261)',
+            'name'             => 'Hardware IoT Generator & Builder (#261)',
+                'name_bn'          => 'Hardware IoT Generator & Builder (#261)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Sparkles',
@@ -4793,8 +4816,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-calculate-values-for-262'] = array(
             'id' => 'iot-calculate-values-for-262',
-            'name' => 'Hardware IoT Calculator & Solver (#262)',
-            'name_bn' => 'আইওটি ও সেন্সর ক্যালকুলেটর ও সলভার (#262)',
+            'name'             => 'Hardware IoT Calculator & Solver (#262)',
+                'name_bn'          => 'Hardware IoT Calculator & Solver (#262)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Calculator',
@@ -4806,8 +4829,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-encode-and-decode-263'] = array(
             'id' => 'iot-encode-and-decode-263',
-            'name' => 'Hardware IoT Encoder & Decoder (#263)',
-            'name_bn' => 'আইওটি ও সেন্সর এনকোডার ও ডিকোডার (#263)',
+            'name'             => 'Hardware IoT Encoder & Decoder (#263)',
+                'name_bn'          => 'Hardware IoT Encoder & Decoder (#263)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Binary',
@@ -4819,8 +4842,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-inspect-real-time-telemetry-for-264'] = array(
             'id' => 'iot-inspect-real-time-telemetry-for-264',
-            'name' => 'Hardware IoT Telemetry Inspector (#264)',
-            'name_bn' => 'আইওটি ও সেন্সর টেলিমেট্রি ইন্সপেক্টর (#264)',
+            'name'             => 'Hardware IoT Telemetry Inspector (#264)',
+                'name_bn'          => 'Hardware IoT Telemetry Inspector (#264)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Activity',
@@ -4832,8 +4855,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-compare-differences-for-265'] = array(
             'id' => 'iot-compare-differences-for-265',
-            'name' => 'Hardware IoT Diff & Comparison Tool (#265)',
-            'name_bn' => 'আইওটি ও সেন্সর ডিফ ও তুলনা টুল (#265)',
+            'name'             => 'Hardware IoT Diff & Comparison Tool (#265)',
+                'name_bn'          => 'Hardware IoT Diff & Comparison Tool (#265)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'GitCompare',
@@ -4845,8 +4868,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-sanitize-and-escape-266'] = array(
             'id' => 'iot-sanitize-and-escape-266',
-            'name' => 'Hardware IoT Escaper & Sanitizer (#266)',
-            'name_bn' => 'আইওটি ও সেন্সর স্যানিটাইজার ও এসকেপার (#266)',
+            'name'             => 'Hardware IoT Escaper & Sanitizer (#266)',
+                'name_bn'          => 'Hardware IoT Escaper & Sanitizer (#266)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Shield',
@@ -4858,8 +4881,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-build-schemas-for-267'] = array(
             'id' => 'iot-build-schemas-for-267',
-            'name' => 'Hardware IoT Schema & Model Builder (#267)',
-            'name_bn' => 'আইওটি ও সেন্সর স্কিমা ও মডেল বিল্ডার (#267)',
+            'name'             => 'Hardware IoT Schema & Model Builder (#267)',
+                'name_bn'          => 'Hardware IoT Schema & Model Builder (#267)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Layers',
@@ -4871,8 +4894,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-batch-process-268'] = array(
             'id' => 'iot-batch-process-268',
-            'name' => 'Hardware IoT Batch Processor (#268)',
-            'name_bn' => 'আইওটি ও সেন্সর ব্যাচ প্রসেসর (#268)',
+            'name'             => 'Hardware IoT Batch Processor (#268)',
+                'name_bn'          => 'Hardware IoT Batch Processor (#268)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'Cpu',
@@ -4884,8 +4907,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-generate-templates-for-269'] = array(
             'id' => 'iot-generate-templates-for-269',
-            'name' => 'Hardware IoT Template & Snippet Tool (#269)',
-            'name_bn' => 'আইওটি ও সেন্সর টেমপ্লেট ও স্নিপেট টুল (#269)',
+            'name'             => 'Hardware IoT Template & Snippet Tool (#269)',
+                'name_bn'          => 'Hardware IoT Template & Snippet Tool (#269)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'FileText',
@@ -4897,8 +4920,8 @@ final class UniversalToolRegistry {
         );
         $tools['iot-audit-health-and-diagnostics-for-270'] = array(
             'id' => 'iot-audit-health-and-diagnostics-for-270',
-            'name' => 'Hardware IoT Diagnostic Auditor (#270)',
-            'name_bn' => 'আইওটি ও সেন্সর ডায়াগনস্টিক অডিটর (#270)',
+            'name'             => 'Hardware IoT Diagnostic Auditor (#270)',
+                'name_bn'          => 'Hardware IoT Diagnostic Auditor (#270)',
             'center' => 'hardware-iot',
             'category' => 'IoT & Sensors',
             'icon' => 'ShieldCheck',
@@ -4910,8 +4933,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-format-and-clean-271'] = array(
             'id' => 'fin-format-and-clean-271',
-            'name' => 'Financial Calculator Formatter & Beautifier (#271)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব ফরম্যাটার ও বিউটিফায়ার (#271)',
+            'name'             => 'Financial Calculator Formatter & Beautifier (#271)',
+                'name_bn'          => 'Financial Calculator Formatter & Beautifier (#271)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Code',
@@ -4923,8 +4946,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-minify-and-compress-272'] = array(
             'id' => 'fin-minify-and-compress-272',
-            'name' => 'Financial Calculator Minifier & Stripper (#272)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব মিনিফায়ার ও স্ট্রিপার (#272)',
+            'name'             => 'Financial Calculator Minifier & Stripper (#272)',
+                'name_bn'          => 'Financial Calculator Minifier & Stripper (#272)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Minimize2',
@@ -4936,8 +4959,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-validate-syntax-for-273'] = array(
             'id' => 'fin-validate-syntax-for-273',
-            'name' => 'Financial Calculator Validator & Syntax Checker (#273)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব ভ্যালিডেটর ও চেকার (#273)',
+            'name'             => 'Financial Calculator Validator & Syntax Checker (#273)',
+                'name_bn'          => 'Financial Calculator Validator & Syntax Checker (#273)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'CheckSquare',
@@ -4949,8 +4972,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-convert-and-transform-274'] = array(
             'id' => 'fin-convert-and-transform-274',
-            'name' => 'Financial Calculator Converter & Exporter (#274)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব কনভার্টার ও এক্সপোর্টার (#274)',
+            'name'             => 'Financial Calculator Converter & Exporter (#274)',
+                'name_bn'          => 'Financial Calculator Converter & Exporter (#274)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'RefreshCw',
@@ -4962,8 +4985,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-analyze-metrics-for-275'] = array(
             'id' => 'fin-analyze-metrics-for-275',
-            'name' => 'Financial Calculator Analyzer & Inspector (#275)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব অ্যানালাইজার ও ইন্সপেক্টর (#275)',
+            'name'             => 'Financial Calculator Analyzer & Inspector (#275)',
+                'name_bn'          => 'Financial Calculator Analyzer & Inspector (#275)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Search',
@@ -4975,8 +4998,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-generate-code-and-data-for-276'] = array(
             'id' => 'fin-generate-code-and-data-for-276',
-            'name' => 'Financial Calculator Generator & Builder (#276)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব জেনারেটর ও বিল্ডার (#276)',
+            'name'             => 'Financial Calculator Generator & Builder (#276)',
+                'name_bn'          => 'Financial Calculator Generator & Builder (#276)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Sparkles',
@@ -4988,8 +5011,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-calculate-values-for-277'] = array(
             'id' => 'fin-calculate-values-for-277',
-            'name' => 'Financial Calculator Calculator & Solver (#277)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব ক্যালকুলেটর ও সলভার (#277)',
+            'name'             => 'Financial Calculator Calculator & Solver (#277)',
+                'name_bn'          => 'Financial Calculator Calculator & Solver (#277)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Calculator',
@@ -5001,8 +5024,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-encode-and-decode-278'] = array(
             'id' => 'fin-encode-and-decode-278',
-            'name' => 'Financial Calculator Encoder & Decoder (#278)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব এনকোডার ও ডিকোডার (#278)',
+            'name'             => 'Financial Calculator Encoder & Decoder (#278)',
+                'name_bn'          => 'Financial Calculator Encoder & Decoder (#278)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Binary',
@@ -5014,8 +5037,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-inspect-real-time-telemetry-for-279'] = array(
             'id' => 'fin-inspect-real-time-telemetry-for-279',
-            'name' => 'Financial Calculator Telemetry Inspector (#279)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব টেলিমেট্রি ইন্সপেক্টর (#279)',
+            'name'             => 'Financial Calculator Telemetry Inspector (#279)',
+                'name_bn'          => 'Financial Calculator Telemetry Inspector (#279)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Activity',
@@ -5027,8 +5050,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-compare-differences-for-280'] = array(
             'id' => 'fin-compare-differences-for-280',
-            'name' => 'Financial Calculator Diff & Comparison Tool (#280)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব ডিফ ও তুলনা টুল (#280)',
+            'name'             => 'Financial Calculator Diff & Comparison Tool (#280)',
+                'name_bn'          => 'Financial Calculator Diff & Comparison Tool (#280)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'GitCompare',
@@ -5040,8 +5063,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-sanitize-and-escape-281'] = array(
             'id' => 'fin-sanitize-and-escape-281',
-            'name' => 'Financial Calculator Escaper & Sanitizer (#281)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব স্যানিটাইজার ও এসকেপার (#281)',
+            'name'             => 'Financial Calculator Escaper & Sanitizer (#281)',
+                'name_bn'          => 'Financial Calculator Escaper & Sanitizer (#281)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Shield',
@@ -5053,8 +5076,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-build-schemas-for-282'] = array(
             'id' => 'fin-build-schemas-for-282',
-            'name' => 'Financial Calculator Schema & Model Builder (#282)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব স্কিমা ও মডেল বিল্ডার (#282)',
+            'name'             => 'Financial Calculator Schema & Model Builder (#282)',
+                'name_bn'          => 'Financial Calculator Schema & Model Builder (#282)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Layers',
@@ -5066,8 +5089,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-batch-process-283'] = array(
             'id' => 'fin-batch-process-283',
-            'name' => 'Financial Calculator Batch Processor (#283)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব ব্যাচ প্রসেসর (#283)',
+            'name'             => 'Financial Calculator Batch Processor (#283)',
+                'name_bn'          => 'Financial Calculator Batch Processor (#283)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'Cpu',
@@ -5079,8 +5102,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-generate-templates-for-284'] = array(
             'id' => 'fin-generate-templates-for-284',
-            'name' => 'Financial Calculator Template & Snippet Tool (#284)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব টেমপ্লেট ও স্নিপেট টুল (#284)',
+            'name'             => 'Financial Calculator Template & Snippet Tool (#284)',
+                'name_bn'          => 'Financial Calculator Template & Snippet Tool (#284)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'FileText',
@@ -5092,8 +5115,8 @@ final class UniversalToolRegistry {
         );
         $tools['fin-audit-health-and-diagnostics-for-285'] = array(
             'id' => 'fin-audit-health-and-diagnostics-for-285',
-            'name' => 'Financial Calculator Diagnostic Auditor (#285)',
-            'name_bn' => 'ফিন্যান্সিয়াল হিসাব ডায়াগনস্টিক অডিটর (#285)',
+            'name'             => 'Financial Calculator Diagnostic Auditor (#285)',
+                'name_bn'          => 'Financial Calculator Diagnostic Auditor (#285)',
             'center' => 'calculator',
             'category' => 'Financial Math',
             'icon' => 'ShieldCheck',
@@ -5105,8 +5128,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-format-and-clean-286'] = array(
             'id' => 'math-format-and-clean-286',
-            'name' => 'Mathematics Formatter & Beautifier (#286)',
-            'name_bn' => 'গণিত ও জ্যামিতি ফরম্যাটার ও বিউটিফায়ার (#286)',
+            'name'             => 'Mathematics Formatter & Beautifier (#286)',
+                'name_bn'          => 'Mathematics Formatter & Beautifier (#286)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Code',
@@ -5118,8 +5141,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-minify-and-compress-287'] = array(
             'id' => 'math-minify-and-compress-287',
-            'name' => 'Mathematics Minifier & Stripper (#287)',
-            'name_bn' => 'গণিত ও জ্যামিতি মিনিফায়ার ও স্ট্রিপার (#287)',
+            'name'             => 'Mathematics Minifier & Stripper (#287)',
+                'name_bn'          => 'Mathematics Minifier & Stripper (#287)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Minimize2',
@@ -5131,8 +5154,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-validate-syntax-for-288'] = array(
             'id' => 'math-validate-syntax-for-288',
-            'name' => 'Mathematics Validator & Syntax Checker (#288)',
-            'name_bn' => 'গণিত ও জ্যামিতি ভ্যালিডেটর ও চেকার (#288)',
+            'name'             => 'Mathematics Validator & Syntax Checker (#288)',
+                'name_bn'          => 'Mathematics Validator & Syntax Checker (#288)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'CheckSquare',
@@ -5144,8 +5167,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-convert-and-transform-289'] = array(
             'id' => 'math-convert-and-transform-289',
-            'name' => 'Mathematics Converter & Exporter (#289)',
-            'name_bn' => 'গণিত ও জ্যামিতি কনভার্টার ও এক্সপোর্টার (#289)',
+            'name'             => 'Mathematics Converter & Exporter (#289)',
+                'name_bn'          => 'Mathematics Converter & Exporter (#289)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'RefreshCw',
@@ -5157,8 +5180,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-analyze-metrics-for-290'] = array(
             'id' => 'math-analyze-metrics-for-290',
-            'name' => 'Mathematics Analyzer & Inspector (#290)',
-            'name_bn' => 'গণিত ও জ্যামিতি অ্যানালাইজার ও ইন্সপেক্টর (#290)',
+            'name'             => 'Mathematics Analyzer & Inspector (#290)',
+                'name_bn'          => 'Mathematics Analyzer & Inspector (#290)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Search',
@@ -5170,8 +5193,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-generate-code-and-data-for-291'] = array(
             'id' => 'math-generate-code-and-data-for-291',
-            'name' => 'Mathematics Generator & Builder (#291)',
-            'name_bn' => 'গণিত ও জ্যামিতি জেনারেটর ও বিল্ডার (#291)',
+            'name'             => 'Mathematics Generator & Builder (#291)',
+                'name_bn'          => 'Mathematics Generator & Builder (#291)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Sparkles',
@@ -5183,8 +5206,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-calculate-values-for-292'] = array(
             'id' => 'math-calculate-values-for-292',
-            'name' => 'Mathematics Calculator & Solver (#292)',
-            'name_bn' => 'গণিত ও জ্যামিতি ক্যালকুলেটর ও সলভার (#292)',
+            'name'             => 'Mathematics Calculator & Solver (#292)',
+                'name_bn'          => 'Mathematics Calculator & Solver (#292)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Calculator',
@@ -5196,8 +5219,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-encode-and-decode-293'] = array(
             'id' => 'math-encode-and-decode-293',
-            'name' => 'Mathematics Encoder & Decoder (#293)',
-            'name_bn' => 'গণিত ও জ্যামিতি এনকোডার ও ডিকোডার (#293)',
+            'name'             => 'Mathematics Encoder & Decoder (#293)',
+                'name_bn'          => 'Mathematics Encoder & Decoder (#293)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Binary',
@@ -5209,8 +5232,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-inspect-real-time-telemetry-for-294'] = array(
             'id' => 'math-inspect-real-time-telemetry-for-294',
-            'name' => 'Mathematics Telemetry Inspector (#294)',
-            'name_bn' => 'গণিত ও জ্যামিতি টেলিমেট্রি ইন্সপেক্টর (#294)',
+            'name'             => 'Mathematics Telemetry Inspector (#294)',
+                'name_bn'          => 'Mathematics Telemetry Inspector (#294)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Activity',
@@ -5222,8 +5245,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-compare-differences-for-295'] = array(
             'id' => 'math-compare-differences-for-295',
-            'name' => 'Mathematics Diff & Comparison Tool (#295)',
-            'name_bn' => 'গণিত ও জ্যামিতি ডিফ ও তুলনা টুল (#295)',
+            'name'             => 'Mathematics Diff & Comparison Tool (#295)',
+                'name_bn'          => 'Mathematics Diff & Comparison Tool (#295)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'GitCompare',
@@ -5235,8 +5258,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-sanitize-and-escape-296'] = array(
             'id' => 'math-sanitize-and-escape-296',
-            'name' => 'Mathematics Escaper & Sanitizer (#296)',
-            'name_bn' => 'গণিত ও জ্যামিতি স্যানিটাইজার ও এসকেপার (#296)',
+            'name'             => 'Mathematics Escaper & Sanitizer (#296)',
+                'name_bn'          => 'Mathematics Escaper & Sanitizer (#296)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Shield',
@@ -5248,8 +5271,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-build-schemas-for-297'] = array(
             'id' => 'math-build-schemas-for-297',
-            'name' => 'Mathematics Schema & Model Builder (#297)',
-            'name_bn' => 'গণিত ও জ্যামিতি স্কিমা ও মডেল বিল্ডার (#297)',
+            'name'             => 'Mathematics Schema & Model Builder (#297)',
+                'name_bn'          => 'Mathematics Schema & Model Builder (#297)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Layers',
@@ -5261,8 +5284,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-batch-process-298'] = array(
             'id' => 'math-batch-process-298',
-            'name' => 'Mathematics Batch Processor (#298)',
-            'name_bn' => 'গণিত ও জ্যামিতি ব্যাচ প্রসেসর (#298)',
+            'name'             => 'Mathematics Batch Processor (#298)',
+                'name_bn'          => 'Mathematics Batch Processor (#298)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'Cpu',
@@ -5274,8 +5297,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-generate-templates-for-299'] = array(
             'id' => 'math-generate-templates-for-299',
-            'name' => 'Mathematics Template & Snippet Tool (#299)',
-            'name_bn' => 'গণিত ও জ্যামিতি টেমপ্লেট ও স্নিপেট টুল (#299)',
+            'name'             => 'Mathematics Template & Snippet Tool (#299)',
+                'name_bn'          => 'Mathematics Template & Snippet Tool (#299)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'FileText',
@@ -5287,8 +5310,8 @@ final class UniversalToolRegistry {
         );
         $tools['math-audit-health-and-diagnostics-for-300'] = array(
             'id' => 'math-audit-health-and-diagnostics-for-300',
-            'name' => 'Mathematics Diagnostic Auditor (#300)',
-            'name_bn' => 'গণিত ও জ্যামিতি ডায়াগনস্টিক অডিটর (#300)',
+            'name'             => 'Mathematics Diagnostic Auditor (#300)',
+                'name_bn'          => 'Mathematics Diagnostic Auditor (#300)',
             'center' => 'calculator',
             'category' => 'General Mathematics',
             'icon' => 'ShieldCheck',
@@ -5300,8 +5323,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-format-and-clean-301'] = array(
             'id' => 'clr-format-and-clean-301',
-            'name' => 'Color & Palette Formatter & Beautifier (#301)',
-            'name_bn' => 'কালার ও সোয়াচ ফরম্যাটার ও বিউটিফায়ার (#301)',
+            'name'             => 'Color & Palette Formatter & Beautifier (#301)',
+                'name_bn'          => 'Color & Palette Formatter & Beautifier (#301)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Code',
@@ -5313,8 +5336,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-minify-and-compress-302'] = array(
             'id' => 'clr-minify-and-compress-302',
-            'name' => 'Color & Palette Minifier & Stripper (#302)',
-            'name_bn' => 'কালার ও সোয়াচ মিনিফায়ার ও স্ট্রিপার (#302)',
+            'name'             => 'Color & Palette Minifier & Stripper (#302)',
+                'name_bn'          => 'Color & Palette Minifier & Stripper (#302)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Minimize2',
@@ -5326,8 +5349,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-validate-syntax-for-303'] = array(
             'id' => 'clr-validate-syntax-for-303',
-            'name' => 'Color & Palette Validator & Syntax Checker (#303)',
-            'name_bn' => 'কালার ও সোয়াচ ভ্যালিডেটর ও চেকার (#303)',
+            'name'             => 'Color & Palette Validator & Syntax Checker (#303)',
+                'name_bn'          => 'Color & Palette Validator & Syntax Checker (#303)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'CheckSquare',
@@ -5339,8 +5362,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-convert-and-transform-304'] = array(
             'id' => 'clr-convert-and-transform-304',
-            'name' => 'Color & Palette Converter & Exporter (#304)',
-            'name_bn' => 'কালার ও সোয়াচ কনভার্টার ও এক্সপোর্টার (#304)',
+            'name'             => 'Color & Palette Converter & Exporter (#304)',
+                'name_bn'          => 'Color & Palette Converter & Exporter (#304)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'RefreshCw',
@@ -5352,8 +5375,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-analyze-metrics-for-305'] = array(
             'id' => 'clr-analyze-metrics-for-305',
-            'name' => 'Color & Palette Analyzer & Inspector (#305)',
-            'name_bn' => 'কালার ও সোয়াচ অ্যানালাইজার ও ইন্সপেক্টর (#305)',
+            'name'             => 'Color & Palette Analyzer & Inspector (#305)',
+                'name_bn'          => 'Color & Palette Analyzer & Inspector (#305)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Search',
@@ -5365,8 +5388,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-generate-code-and-data-for-306'] = array(
             'id' => 'clr-generate-code-and-data-for-306',
-            'name' => 'Color & Palette Generator & Builder (#306)',
-            'name_bn' => 'কালার ও সোয়াচ জেনারেটর ও বিল্ডার (#306)',
+            'name'             => 'Color & Palette Generator & Builder (#306)',
+                'name_bn'          => 'Color & Palette Generator & Builder (#306)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Sparkles',
@@ -5378,8 +5401,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-calculate-values-for-307'] = array(
             'id' => 'clr-calculate-values-for-307',
-            'name' => 'Color & Palette Calculator & Solver (#307)',
-            'name_bn' => 'কালার ও সোয়াচ ক্যালকুলেটর ও সলভার (#307)',
+            'name'             => 'Color & Palette Calculator & Solver (#307)',
+                'name_bn'          => 'Color & Palette Calculator & Solver (#307)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Calculator',
@@ -5391,8 +5414,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-encode-and-decode-308'] = array(
             'id' => 'clr-encode-and-decode-308',
-            'name' => 'Color & Palette Encoder & Decoder (#308)',
-            'name_bn' => 'কালার ও সোয়াচ এনকোডার ও ডিকোডার (#308)',
+            'name'             => 'Color & Palette Encoder & Decoder (#308)',
+                'name_bn'          => 'Color & Palette Encoder & Decoder (#308)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Binary',
@@ -5404,8 +5427,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-inspect-real-time-telemetry-for-309'] = array(
             'id' => 'clr-inspect-real-time-telemetry-for-309',
-            'name' => 'Color & Palette Telemetry Inspector (#309)',
-            'name_bn' => 'কালার ও সোয়াচ টেলিমেট্রি ইন্সপেক্টর (#309)',
+            'name'             => 'Color & Palette Telemetry Inspector (#309)',
+                'name_bn'          => 'Color & Palette Telemetry Inspector (#309)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Activity',
@@ -5417,8 +5440,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-compare-differences-for-310'] = array(
             'id' => 'clr-compare-differences-for-310',
-            'name' => 'Color & Palette Diff & Comparison Tool (#310)',
-            'name_bn' => 'কালার ও সোয়াচ ডিফ ও তুলনা টুল (#310)',
+            'name'             => 'Color & Palette Diff & Comparison Tool (#310)',
+                'name_bn'          => 'Color & Palette Diff & Comparison Tool (#310)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'GitCompare',
@@ -5430,8 +5453,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-sanitize-and-escape-311'] = array(
             'id' => 'clr-sanitize-and-escape-311',
-            'name' => 'Color & Palette Escaper & Sanitizer (#311)',
-            'name_bn' => 'কালার ও সোয়াচ স্যানিটাইজার ও এসকেপার (#311)',
+            'name'             => 'Color & Palette Escaper & Sanitizer (#311)',
+                'name_bn'          => 'Color & Palette Escaper & Sanitizer (#311)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Shield',
@@ -5443,8 +5466,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-build-schemas-for-312'] = array(
             'id' => 'clr-build-schemas-for-312',
-            'name' => 'Color & Palette Schema & Model Builder (#312)',
-            'name_bn' => 'কালার ও সোয়াচ স্কিমা ও মডেল বিল্ডার (#312)',
+            'name'             => 'Color & Palette Schema & Model Builder (#312)',
+                'name_bn'          => 'Color & Palette Schema & Model Builder (#312)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Layers',
@@ -5456,8 +5479,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-batch-process-313'] = array(
             'id' => 'clr-batch-process-313',
-            'name' => 'Color & Palette Batch Processor (#313)',
-            'name_bn' => 'কালার ও সোয়াচ ব্যাচ প্রসেসর (#313)',
+            'name'             => 'Color & Palette Batch Processor (#313)',
+                'name_bn'          => 'Color & Palette Batch Processor (#313)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'Cpu',
@@ -5469,8 +5492,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-generate-templates-for-314'] = array(
             'id' => 'clr-generate-templates-for-314',
-            'name' => 'Color & Palette Template & Snippet Tool (#314)',
-            'name_bn' => 'কালার ও সোয়াচ টেমপ্লেট ও স্নিপেট টুল (#314)',
+            'name'             => 'Color & Palette Template & Snippet Tool (#314)',
+                'name_bn'          => 'Color & Palette Template & Snippet Tool (#314)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'FileText',
@@ -5482,8 +5505,8 @@ final class UniversalToolRegistry {
         );
         $tools['clr-audit-health-and-diagnostics-for-315'] = array(
             'id' => 'clr-audit-health-and-diagnostics-for-315',
-            'name' => 'Color & Palette Diagnostic Auditor (#315)',
-            'name_bn' => 'কালার ও সোয়াচ ডায়াগনস্টিক অডিটর (#315)',
+            'name'             => 'Color & Palette Diagnostic Auditor (#315)',
+                'name_bn'          => 'Color & Palette Diagnostic Auditor (#315)',
             'center' => 'color-design',
             'category' => 'Color & Swatches',
             'icon' => 'ShieldCheck',
@@ -5495,8 +5518,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-format-and-clean-316'] = array(
             'id' => 'qr-format-and-clean-316',
-            'name' => 'QR Barcode Formatter & Beautifier (#316)',
-            'name_bn' => 'কিউআর ও বারকোড ফরম্যাটার ও বিউটিফায়ার (#316)',
+            'name'             => 'QR Barcode Formatter & Beautifier (#316)',
+                'name_bn'          => 'QR Barcode Formatter & Beautifier (#316)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Code',
@@ -5508,8 +5531,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-minify-and-compress-317'] = array(
             'id' => 'qr-minify-and-compress-317',
-            'name' => 'QR Barcode Minifier & Stripper (#317)',
-            'name_bn' => 'কিউআর ও বারকোড মিনিফায়ার ও স্ট্রিপার (#317)',
+            'name'             => 'QR Barcode Minifier & Stripper (#317)',
+                'name_bn'          => 'QR Barcode Minifier & Stripper (#317)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Minimize2',
@@ -5521,8 +5544,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-validate-syntax-for-318'] = array(
             'id' => 'qr-validate-syntax-for-318',
-            'name' => 'QR Barcode Validator & Syntax Checker (#318)',
-            'name_bn' => 'কিউআর ও বারকোড ভ্যালিডেটর ও চেকার (#318)',
+            'name'             => 'QR Barcode Validator & Syntax Checker (#318)',
+                'name_bn'          => 'QR Barcode Validator & Syntax Checker (#318)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'CheckSquare',
@@ -5534,8 +5557,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-convert-and-transform-319'] = array(
             'id' => 'qr-convert-and-transform-319',
-            'name' => 'QR Barcode Converter & Exporter (#319)',
-            'name_bn' => 'কিউআর ও বারকোড কনভার্টার ও এক্সপোর্টার (#319)',
+            'name'             => 'QR Barcode Converter & Exporter (#319)',
+                'name_bn'          => 'QR Barcode Converter & Exporter (#319)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'RefreshCw',
@@ -5547,8 +5570,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-analyze-metrics-for-320'] = array(
             'id' => 'qr-analyze-metrics-for-320',
-            'name' => 'QR Barcode Analyzer & Inspector (#320)',
-            'name_bn' => 'কিউআর ও বারকোড অ্যানালাইজার ও ইন্সপেক্টর (#320)',
+            'name'             => 'QR Barcode Analyzer & Inspector (#320)',
+                'name_bn'          => 'QR Barcode Analyzer & Inspector (#320)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Search',
@@ -5560,8 +5583,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-generate-code-and-data-for-321'] = array(
             'id' => 'qr-generate-code-and-data-for-321',
-            'name' => 'QR Barcode Generator & Builder (#321)',
-            'name_bn' => 'কিউআর ও বারকোড জেনারেটর ও বিল্ডার (#321)',
+            'name'             => 'QR Barcode Generator & Builder (#321)',
+                'name_bn'          => 'QR Barcode Generator & Builder (#321)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Sparkles',
@@ -5573,8 +5596,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-calculate-values-for-322'] = array(
             'id' => 'qr-calculate-values-for-322',
-            'name' => 'QR Barcode Calculator & Solver (#322)',
-            'name_bn' => 'কিউআর ও বারকোড ক্যালকুলেটর ও সলভার (#322)',
+            'name'             => 'QR Barcode Calculator & Solver (#322)',
+                'name_bn'          => 'QR Barcode Calculator & Solver (#322)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Calculator',
@@ -5586,8 +5609,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-encode-and-decode-323'] = array(
             'id' => 'qr-encode-and-decode-323',
-            'name' => 'QR Barcode Encoder & Decoder (#323)',
-            'name_bn' => 'কিউআর ও বারকোড এনকোডার ও ডিকোডার (#323)',
+            'name'             => 'QR Barcode Encoder & Decoder (#323)',
+                'name_bn'          => 'QR Barcode Encoder & Decoder (#323)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Binary',
@@ -5599,8 +5622,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-inspect-real-time-telemetry-for-324'] = array(
             'id' => 'qr-inspect-real-time-telemetry-for-324',
-            'name' => 'QR Barcode Telemetry Inspector (#324)',
-            'name_bn' => 'কিউআর ও বারকোড টেলিমেট্রি ইন্সপেক্টর (#324)',
+            'name'             => 'QR Barcode Telemetry Inspector (#324)',
+                'name_bn'          => 'QR Barcode Telemetry Inspector (#324)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Activity',
@@ -5612,8 +5635,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-compare-differences-for-325'] = array(
             'id' => 'qr-compare-differences-for-325',
-            'name' => 'QR Barcode Diff & Comparison Tool (#325)',
-            'name_bn' => 'কিউআর ও বারকোড ডিফ ও তুলনা টুল (#325)',
+            'name'             => 'QR Barcode Diff & Comparison Tool (#325)',
+                'name_bn'          => 'QR Barcode Diff & Comparison Tool (#325)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'GitCompare',
@@ -5625,8 +5648,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-sanitize-and-escape-326'] = array(
             'id' => 'qr-sanitize-and-escape-326',
-            'name' => 'QR Barcode Escaper & Sanitizer (#326)',
-            'name_bn' => 'কিউআর ও বারকোড স্যানিটাইজার ও এসকেপার (#326)',
+            'name'             => 'QR Barcode Escaper & Sanitizer (#326)',
+                'name_bn'          => 'QR Barcode Escaper & Sanitizer (#326)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Shield',
@@ -5638,8 +5661,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-build-schemas-for-327'] = array(
             'id' => 'qr-build-schemas-for-327',
-            'name' => 'QR Barcode Schema & Model Builder (#327)',
-            'name_bn' => 'কিউআর ও বারকোড স্কিমা ও মডেল বিল্ডার (#327)',
+            'name'             => 'QR Barcode Schema & Model Builder (#327)',
+                'name_bn'          => 'QR Barcode Schema & Model Builder (#327)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Layers',
@@ -5651,8 +5674,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-batch-process-328'] = array(
             'id' => 'qr-batch-process-328',
-            'name' => 'QR Barcode Batch Processor (#328)',
-            'name_bn' => 'কিউআর ও বারকোড ব্যাচ প্রসেসর (#328)',
+            'name'             => 'QR Barcode Batch Processor (#328)',
+                'name_bn'          => 'QR Barcode Batch Processor (#328)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'Cpu',
@@ -5664,8 +5687,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-generate-templates-for-329'] = array(
             'id' => 'qr-generate-templates-for-329',
-            'name' => 'QR Barcode Template & Snippet Tool (#329)',
-            'name_bn' => 'কিউআর ও বারকোড টেমপ্লেট ও স্নিপেট টুল (#329)',
+            'name'             => 'QR Barcode Template & Snippet Tool (#329)',
+                'name_bn'          => 'QR Barcode Template & Snippet Tool (#329)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'FileText',
@@ -5677,8 +5700,8 @@ final class UniversalToolRegistry {
         );
         $tools['qr-audit-health-and-diagnostics-for-330'] = array(
             'id' => 'qr-audit-health-and-diagnostics-for-330',
-            'name' => 'QR Barcode Diagnostic Auditor (#330)',
-            'name_bn' => 'কিউআর ও বারকোড ডায়াগনস্টিক অডিটর (#330)',
+            'name'             => 'QR Barcode Diagnostic Auditor (#330)',
+                'name_bn'          => 'QR Barcode Diagnostic Auditor (#330)',
             'center' => 'qr-barcode',
             'category' => 'QR & Barcode',
             'icon' => 'ShieldCheck',
@@ -5690,8 +5713,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-format-and-clean-331'] = array(
             'id' => 'dev-format-and-clean-331',
-            'name' => 'Device Inspector Formatter & Beautifier (#331)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক ফরম্যাটার ও বিউটিফায়ার (#331)',
+            'name'             => 'Device Inspector Formatter & Beautifier (#331)',
+                'name_bn'          => 'Device Inspector Formatter & Beautifier (#331)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Code',
@@ -5703,8 +5726,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-minify-and-compress-332'] = array(
             'id' => 'dev-minify-and-compress-332',
-            'name' => 'Device Inspector Minifier & Stripper (#332)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক মিনিফায়ার ও স্ট্রিপার (#332)',
+            'name'             => 'Device Inspector Minifier & Stripper (#332)',
+                'name_bn'          => 'Device Inspector Minifier & Stripper (#332)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Minimize2',
@@ -5716,8 +5739,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-validate-syntax-for-333'] = array(
             'id' => 'dev-validate-syntax-for-333',
-            'name' => 'Device Inspector Validator & Syntax Checker (#333)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক ভ্যালিডেটর ও চেকার (#333)',
+            'name'             => 'Device Inspector Validator & Syntax Checker (#333)',
+                'name_bn'          => 'Device Inspector Validator & Syntax Checker (#333)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'CheckSquare',
@@ -5729,8 +5752,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-convert-and-transform-334'] = array(
             'id' => 'dev-convert-and-transform-334',
-            'name' => 'Device Inspector Converter & Exporter (#334)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক কনভার্টার ও এক্সপোর্টার (#334)',
+            'name'             => 'Device Inspector Converter & Exporter (#334)',
+                'name_bn'          => 'Device Inspector Converter & Exporter (#334)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'RefreshCw',
@@ -5742,8 +5765,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-analyze-metrics-for-335'] = array(
             'id' => 'dev-analyze-metrics-for-335',
-            'name' => 'Device Inspector Analyzer & Inspector (#335)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক অ্যানালাইজার ও ইন্সপেক্টর (#335)',
+            'name'             => 'Device Inspector Analyzer & Inspector (#335)',
+                'name_bn'          => 'Device Inspector Analyzer & Inspector (#335)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Search',
@@ -5755,8 +5778,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-generate-code-and-data-for-336'] = array(
             'id' => 'dev-generate-code-and-data-for-336',
-            'name' => 'Device Inspector Generator & Builder (#336)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক জেনারেটর ও বিল্ডার (#336)',
+            'name'             => 'Device Inspector Generator & Builder (#336)',
+                'name_bn'          => 'Device Inspector Generator & Builder (#336)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Sparkles',
@@ -5768,8 +5791,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-calculate-values-for-337'] = array(
             'id' => 'dev-calculate-values-for-337',
-            'name' => 'Device Inspector Calculator & Solver (#337)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক ক্যালকুলেটর ও সলভার (#337)',
+            'name'             => 'Device Inspector Calculator & Solver (#337)',
+                'name_bn'          => 'Device Inspector Calculator & Solver (#337)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Calculator',
@@ -5781,8 +5804,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-encode-and-decode-338'] = array(
             'id' => 'dev-encode-and-decode-338',
-            'name' => 'Device Inspector Encoder & Decoder (#338)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক এনকোডার ও ডিকোডার (#338)',
+            'name'             => 'Device Inspector Encoder & Decoder (#338)',
+                'name_bn'          => 'Device Inspector Encoder & Decoder (#338)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Binary',
@@ -5794,8 +5817,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-inspect-real-time-telemetry-for-339'] = array(
             'id' => 'dev-inspect-real-time-telemetry-for-339',
-            'name' => 'Device Inspector Telemetry Inspector (#339)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক টেলিমেট্রি ইন্সপেক্টর (#339)',
+            'name'             => 'Device Inspector Telemetry Inspector (#339)',
+                'name_bn'          => 'Device Inspector Telemetry Inspector (#339)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Activity',
@@ -5807,8 +5830,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-compare-differences-for-340'] = array(
             'id' => 'dev-compare-differences-for-340',
-            'name' => 'Device Inspector Diff & Comparison Tool (#340)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক ডিফ ও তুলনা টুল (#340)',
+            'name'             => 'Device Inspector Diff & Comparison Tool (#340)',
+                'name_bn'          => 'Device Inspector Diff & Comparison Tool (#340)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'GitCompare',
@@ -5820,8 +5843,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-sanitize-and-escape-341'] = array(
             'id' => 'dev-sanitize-and-escape-341',
-            'name' => 'Device Inspector Escaper & Sanitizer (#341)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক স্যানিটাইজার ও এসকেপার (#341)',
+            'name'             => 'Device Inspector Escaper & Sanitizer (#341)',
+                'name_bn'          => 'Device Inspector Escaper & Sanitizer (#341)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Shield',
@@ -5833,8 +5856,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-build-schemas-for-342'] = array(
             'id' => 'dev-build-schemas-for-342',
-            'name' => 'Device Inspector Schema & Model Builder (#342)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক স্কিমা ও মডেল বিল্ডার (#342)',
+            'name'             => 'Device Inspector Schema & Model Builder (#342)',
+                'name_bn'          => 'Device Inspector Schema & Model Builder (#342)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Layers',
@@ -5846,8 +5869,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-batch-process-343'] = array(
             'id' => 'dev-batch-process-343',
-            'name' => 'Device Inspector Batch Processor (#343)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক ব্যাচ প্রসেসর (#343)',
+            'name'             => 'Device Inspector Batch Processor (#343)',
+                'name_bn'          => 'Device Inspector Batch Processor (#343)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'Cpu',
@@ -5859,8 +5882,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-generate-templates-for-344'] = array(
             'id' => 'dev-generate-templates-for-344',
-            'name' => 'Device Inspector Template & Snippet Tool (#344)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক টেমপ্লেট ও স্নিপেট টুল (#344)',
+            'name'             => 'Device Inspector Template & Snippet Tool (#344)',
+                'name_bn'          => 'Device Inspector Template & Snippet Tool (#344)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'FileText',
@@ -5872,8 +5895,8 @@ final class UniversalToolRegistry {
         );
         $tools['dev-audit-health-and-diagnostics-for-345'] = array(
             'id' => 'dev-audit-health-and-diagnostics-for-345',
-            'name' => 'Device Inspector Diagnostic Auditor (#345)',
-            'name_bn' => 'ডিভাইস ডায়াগনস্টিক ডায়াগনস্টিক অডিটর (#345)',
+            'name'             => 'Device Inspector Diagnostic Auditor (#345)',
+                'name_bn'          => 'Device Inspector Diagnostic Auditor (#345)',
             'center' => 'device-lab',
             'category' => 'Hardware Inspector',
             'icon' => 'ShieldCheck',
@@ -5885,8 +5908,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-format-and-clean-346'] = array(
             'id' => 'seo-format-and-clean-346',
-            'name' => 'SEO Optimizer Formatter & Beautifier (#346)',
-            'name_bn' => 'এসইও অপ্টিমাইজার ফরম্যাটার ও বিউটিফায়ার (#346)',
+            'name'             => 'SEO Optimizer Formatter & Beautifier (#346)',
+                'name_bn'          => 'SEO Optimizer Formatter & Beautifier (#346)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Code',
@@ -5898,8 +5921,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-minify-and-compress-347'] = array(
             'id' => 'seo-minify-and-compress-347',
-            'name' => 'SEO Optimizer Minifier & Stripper (#347)',
-            'name_bn' => 'এসইও অপ্টিমাইজার মিনিফায়ার ও স্ট্রিপার (#347)',
+            'name'             => 'SEO Optimizer Minifier & Stripper (#347)',
+                'name_bn'          => 'SEO Optimizer Minifier & Stripper (#347)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Minimize2',
@@ -5911,8 +5934,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-validate-syntax-for-348'] = array(
             'id' => 'seo-validate-syntax-for-348',
-            'name' => 'SEO Optimizer Validator & Syntax Checker (#348)',
-            'name_bn' => 'এসইও অপ্টিমাইজার ভ্যালিডেটর ও চেকার (#348)',
+            'name'             => 'SEO Optimizer Validator & Syntax Checker (#348)',
+                'name_bn'          => 'SEO Optimizer Validator & Syntax Checker (#348)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'CheckSquare',
@@ -5924,8 +5947,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-convert-and-transform-349'] = array(
             'id' => 'seo-convert-and-transform-349',
-            'name' => 'SEO Optimizer Converter & Exporter (#349)',
-            'name_bn' => 'এসইও অপ্টিমাইজার কনভার্টার ও এক্সপোর্টার (#349)',
+            'name'             => 'SEO Optimizer Converter & Exporter (#349)',
+                'name_bn'          => 'SEO Optimizer Converter & Exporter (#349)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'RefreshCw',
@@ -5937,8 +5960,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-analyze-metrics-for-350'] = array(
             'id' => 'seo-analyze-metrics-for-350',
-            'name' => 'SEO Optimizer Analyzer & Inspector (#350)',
-            'name_bn' => 'এসইও অপ্টিমাইজার অ্যানালাইজার ও ইন্সপেক্টর (#350)',
+            'name'             => 'SEO Optimizer Analyzer & Inspector (#350)',
+                'name_bn'          => 'SEO Optimizer Analyzer & Inspector (#350)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Search',
@@ -5950,8 +5973,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-generate-code-and-data-for-351'] = array(
             'id' => 'seo-generate-code-and-data-for-351',
-            'name' => 'SEO Optimizer Generator & Builder (#351)',
-            'name_bn' => 'এসইও অপ্টিমাইজার জেনারেটর ও বিল্ডার (#351)',
+            'name'             => 'SEO Optimizer Generator & Builder (#351)',
+                'name_bn'          => 'SEO Optimizer Generator & Builder (#351)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Sparkles',
@@ -5963,8 +5986,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-calculate-values-for-352'] = array(
             'id' => 'seo-calculate-values-for-352',
-            'name' => 'SEO Optimizer Calculator & Solver (#352)',
-            'name_bn' => 'এসইও অপ্টিমাইজার ক্যালকুলেটর ও সলভার (#352)',
+            'name'             => 'SEO Optimizer Calculator & Solver (#352)',
+                'name_bn'          => 'SEO Optimizer Calculator & Solver (#352)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Calculator',
@@ -5976,8 +5999,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-encode-and-decode-353'] = array(
             'id' => 'seo-encode-and-decode-353',
-            'name' => 'SEO Optimizer Encoder & Decoder (#353)',
-            'name_bn' => 'এসইও অপ্টিমাইজার এনকোডার ও ডিকোডার (#353)',
+            'name'             => 'SEO Optimizer Encoder & Decoder (#353)',
+                'name_bn'          => 'SEO Optimizer Encoder & Decoder (#353)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Binary',
@@ -5989,8 +6012,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-inspect-real-time-telemetry-for-354'] = array(
             'id' => 'seo-inspect-real-time-telemetry-for-354',
-            'name' => 'SEO Optimizer Telemetry Inspector (#354)',
-            'name_bn' => 'এসইও অপ্টিমাইজার টেলিমেট্রি ইন্সপেক্টর (#354)',
+            'name'             => 'SEO Optimizer Telemetry Inspector (#354)',
+                'name_bn'          => 'SEO Optimizer Telemetry Inspector (#354)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Activity',
@@ -6002,8 +6025,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-compare-differences-for-355'] = array(
             'id' => 'seo-compare-differences-for-355',
-            'name' => 'SEO Optimizer Diff & Comparison Tool (#355)',
-            'name_bn' => 'এসইও অপ্টিমাইজার ডিফ ও তুলনা টুল (#355)',
+            'name'             => 'SEO Optimizer Diff & Comparison Tool (#355)',
+                'name_bn'          => 'SEO Optimizer Diff & Comparison Tool (#355)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'GitCompare',
@@ -6015,8 +6038,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-sanitize-and-escape-356'] = array(
             'id' => 'seo-sanitize-and-escape-356',
-            'name' => 'SEO Optimizer Escaper & Sanitizer (#356)',
-            'name_bn' => 'এসইও অপ্টিমাইজার স্যানিটাইজার ও এসকেপার (#356)',
+            'name'             => 'SEO Optimizer Escaper & Sanitizer (#356)',
+                'name_bn'          => 'SEO Optimizer Escaper & Sanitizer (#356)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Shield',
@@ -6028,8 +6051,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-build-schemas-for-357'] = array(
             'id' => 'seo-build-schemas-for-357',
-            'name' => 'SEO Optimizer Schema & Model Builder (#357)',
-            'name_bn' => 'এসইও অপ্টিমাইজার স্কিমা ও মডেল বিল্ডার (#357)',
+            'name'             => 'SEO Optimizer Schema & Model Builder (#357)',
+                'name_bn'          => 'SEO Optimizer Schema & Model Builder (#357)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Layers',
@@ -6041,8 +6064,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-batch-process-358'] = array(
             'id' => 'seo-batch-process-358',
-            'name' => 'SEO Optimizer Batch Processor (#358)',
-            'name_bn' => 'এসইও অপ্টিমাইজার ব্যাচ প্রসেসর (#358)',
+            'name'             => 'SEO Optimizer Batch Processor (#358)',
+                'name_bn'          => 'SEO Optimizer Batch Processor (#358)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'Cpu',
@@ -6054,8 +6077,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-generate-templates-for-359'] = array(
             'id' => 'seo-generate-templates-for-359',
-            'name' => 'SEO Optimizer Template & Snippet Tool (#359)',
-            'name_bn' => 'এসইও অপ্টিমাইজার টেমপ্লেট ও স্নিপেট টুল (#359)',
+            'name'             => 'SEO Optimizer Template & Snippet Tool (#359)',
+                'name_bn'          => 'SEO Optimizer Template & Snippet Tool (#359)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'FileText',
@@ -6067,8 +6090,8 @@ final class UniversalToolRegistry {
         );
         $tools['seo-audit-health-and-diagnostics-for-360'] = array(
             'id' => 'seo-audit-health-and-diagnostics-for-360',
-            'name' => 'SEO Optimizer Diagnostic Auditor (#360)',
-            'name_bn' => 'এসইও অপ্টিমাইজার ডায়াগনস্টিক অডিটর (#360)',
+            'name'             => 'SEO Optimizer Diagnostic Auditor (#360)',
+                'name_bn'          => 'SEO Optimizer Diagnostic Auditor (#360)',
             'center' => 'seo',
             'category' => 'Search Optimization',
             'icon' => 'ShieldCheck',
@@ -6080,8 +6103,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-format-and-clean-361'] = array(
             'id' => 'yt-format-and-clean-361',
-            'name' => 'YouTube Creator Formatter & Beautifier (#361)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর ফরম্যাটার ও বিউটিফায়ার (#361)',
+            'name'             => 'YouTube Creator Formatter & Beautifier (#361)',
+                'name_bn'          => 'YouTube Creator Formatter & Beautifier (#361)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Code',
@@ -6093,8 +6116,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-minify-and-compress-362'] = array(
             'id' => 'yt-minify-and-compress-362',
-            'name' => 'YouTube Creator Minifier & Stripper (#362)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর মিনিফায়ার ও স্ট্রিপার (#362)',
+            'name'             => 'YouTube Creator Minifier & Stripper (#362)',
+                'name_bn'          => 'YouTube Creator Minifier & Stripper (#362)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Minimize2',
@@ -6106,8 +6129,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-validate-syntax-for-363'] = array(
             'id' => 'yt-validate-syntax-for-363',
-            'name' => 'YouTube Creator Validator & Syntax Checker (#363)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর ভ্যালিডেটর ও চেকার (#363)',
+            'name'             => 'YouTube Creator Validator & Syntax Checker (#363)',
+                'name_bn'          => 'YouTube Creator Validator & Syntax Checker (#363)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'CheckSquare',
@@ -6119,8 +6142,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-convert-and-transform-364'] = array(
             'id' => 'yt-convert-and-transform-364',
-            'name' => 'YouTube Creator Converter & Exporter (#364)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর কনভার্টার ও এক্সপোর্টার (#364)',
+            'name'             => 'YouTube Creator Converter & Exporter (#364)',
+                'name_bn'          => 'YouTube Creator Converter & Exporter (#364)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'RefreshCw',
@@ -6132,8 +6155,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-analyze-metrics-for-365'] = array(
             'id' => 'yt-analyze-metrics-for-365',
-            'name' => 'YouTube Creator Analyzer & Inspector (#365)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর অ্যানালাইজার ও ইন্সপেক্টর (#365)',
+            'name'             => 'YouTube Creator Analyzer & Inspector (#365)',
+                'name_bn'          => 'YouTube Creator Analyzer & Inspector (#365)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Search',
@@ -6145,8 +6168,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-generate-code-and-data-for-366'] = array(
             'id' => 'yt-generate-code-and-data-for-366',
-            'name' => 'YouTube Creator Generator & Builder (#366)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর জেনারেটর ও বিল্ডার (#366)',
+            'name'             => 'YouTube Creator Generator & Builder (#366)',
+                'name_bn'          => 'YouTube Creator Generator & Builder (#366)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Sparkles',
@@ -6158,8 +6181,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-calculate-values-for-367'] = array(
             'id' => 'yt-calculate-values-for-367',
-            'name' => 'YouTube Creator Calculator & Solver (#367)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর ক্যালকুলেটর ও সলভার (#367)',
+            'name'             => 'YouTube Creator Calculator & Solver (#367)',
+                'name_bn'          => 'YouTube Creator Calculator & Solver (#367)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Calculator',
@@ -6171,8 +6194,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-encode-and-decode-368'] = array(
             'id' => 'yt-encode-and-decode-368',
-            'name' => 'YouTube Creator Encoder & Decoder (#368)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর এনকোডার ও ডিকোডার (#368)',
+            'name'             => 'YouTube Creator Encoder & Decoder (#368)',
+                'name_bn'          => 'YouTube Creator Encoder & Decoder (#368)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Binary',
@@ -6184,8 +6207,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-inspect-real-time-telemetry-for-369'] = array(
             'id' => 'yt-inspect-real-time-telemetry-for-369',
-            'name' => 'YouTube Creator Telemetry Inspector (#369)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর টেলিমেট্রি ইন্সপেক্টর (#369)',
+            'name'             => 'YouTube Creator Telemetry Inspector (#369)',
+                'name_bn'          => 'YouTube Creator Telemetry Inspector (#369)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Activity',
@@ -6197,8 +6220,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-compare-differences-for-370'] = array(
             'id' => 'yt-compare-differences-for-370',
-            'name' => 'YouTube Creator Diff & Comparison Tool (#370)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর ডিফ ও তুলনা টুল (#370)',
+            'name'             => 'YouTube Creator Diff & Comparison Tool (#370)',
+                'name_bn'          => 'YouTube Creator Diff & Comparison Tool (#370)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'GitCompare',
@@ -6210,8 +6233,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-sanitize-and-escape-371'] = array(
             'id' => 'yt-sanitize-and-escape-371',
-            'name' => 'YouTube Creator Escaper & Sanitizer (#371)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর স্যানিটাইজার ও এসকেপার (#371)',
+            'name'             => 'YouTube Creator Escaper & Sanitizer (#371)',
+                'name_bn'          => 'YouTube Creator Escaper & Sanitizer (#371)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Shield',
@@ -6223,8 +6246,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-build-schemas-for-372'] = array(
             'id' => 'yt-build-schemas-for-372',
-            'name' => 'YouTube Creator Schema & Model Builder (#372)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর স্কিমা ও মডেল বিল্ডার (#372)',
+            'name'             => 'YouTube Creator Schema & Model Builder (#372)',
+                'name_bn'          => 'YouTube Creator Schema & Model Builder (#372)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Layers',
@@ -6236,8 +6259,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-batch-process-373'] = array(
             'id' => 'yt-batch-process-373',
-            'name' => 'YouTube Creator Batch Processor (#373)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর ব্যাচ প্রসেসর (#373)',
+            'name'             => 'YouTube Creator Batch Processor (#373)',
+                'name_bn'          => 'YouTube Creator Batch Processor (#373)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'Cpu',
@@ -6249,8 +6272,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-generate-templates-for-374'] = array(
             'id' => 'yt-generate-templates-for-374',
-            'name' => 'YouTube Creator Template & Snippet Tool (#374)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর টেমপ্লেট ও স্নিপেট টুল (#374)',
+            'name'             => 'YouTube Creator Template & Snippet Tool (#374)',
+                'name_bn'          => 'YouTube Creator Template & Snippet Tool (#374)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'FileText',
@@ -6262,8 +6285,8 @@ final class UniversalToolRegistry {
         );
         $tools['yt-audit-health-and-diagnostics-for-375'] = array(
             'id' => 'yt-audit-health-and-diagnostics-for-375',
-            'name' => 'YouTube Creator Diagnostic Auditor (#375)',
-            'name_bn' => 'ইউটিউব ক্রিয়েটর ডায়াগনস্টিক অডিটর (#375)',
+            'name'             => 'YouTube Creator Diagnostic Auditor (#375)',
+                'name_bn'          => 'YouTube Creator Diagnostic Auditor (#375)',
             'center' => 'youtube',
             'category' => 'YouTube Creator',
             'icon' => 'ShieldCheck',
@@ -6275,8 +6298,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-format-and-clean-376'] = array(
             'id' => 'soc-format-and-clean-376',
-            'name' => 'Social Media Formatter & Beautifier (#376)',
-            'name_bn' => 'সোশ্যাল মিডিয়া ফরম্যাটার ও বিউটিফায়ার (#376)',
+            'name'             => 'Social Media Formatter & Beautifier (#376)',
+                'name_bn'          => 'Social Media Formatter & Beautifier (#376)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Code',
@@ -6288,8 +6311,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-minify-and-compress-377'] = array(
             'id' => 'soc-minify-and-compress-377',
-            'name' => 'Social Media Minifier & Stripper (#377)',
-            'name_bn' => 'সোশ্যাল মিডিয়া মিনিফায়ার ও স্ট্রিপার (#377)',
+            'name'             => 'Social Media Minifier & Stripper (#377)',
+                'name_bn'          => 'Social Media Minifier & Stripper (#377)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Minimize2',
@@ -6301,8 +6324,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-validate-syntax-for-378'] = array(
             'id' => 'soc-validate-syntax-for-378',
-            'name' => 'Social Media Validator & Syntax Checker (#378)',
-            'name_bn' => 'সোশ্যাল মিডিয়া ভ্যালিডেটর ও চেকার (#378)',
+            'name'             => 'Social Media Validator & Syntax Checker (#378)',
+                'name_bn'          => 'Social Media Validator & Syntax Checker (#378)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'CheckSquare',
@@ -6314,8 +6337,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-convert-and-transform-379'] = array(
             'id' => 'soc-convert-and-transform-379',
-            'name' => 'Social Media Converter & Exporter (#379)',
-            'name_bn' => 'সোশ্যাল মিডিয়া কনভার্টার ও এক্সপোর্টার (#379)',
+            'name'             => 'Social Media Converter & Exporter (#379)',
+                'name_bn'          => 'Social Media Converter & Exporter (#379)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'RefreshCw',
@@ -6327,8 +6350,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-analyze-metrics-for-380'] = array(
             'id' => 'soc-analyze-metrics-for-380',
-            'name' => 'Social Media Analyzer & Inspector (#380)',
-            'name_bn' => 'সোশ্যাল মিডিয়া অ্যানালাইজার ও ইন্সপেক্টর (#380)',
+            'name'             => 'Social Media Analyzer & Inspector (#380)',
+                'name_bn'          => 'Social Media Analyzer & Inspector (#380)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Search',
@@ -6340,8 +6363,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-generate-code-and-data-for-381'] = array(
             'id' => 'soc-generate-code-and-data-for-381',
-            'name' => 'Social Media Generator & Builder (#381)',
-            'name_bn' => 'সোশ্যাল মিডিয়া জেনারেটর ও বিল্ডার (#381)',
+            'name'             => 'Social Media Generator & Builder (#381)',
+                'name_bn'          => 'Social Media Generator & Builder (#381)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Sparkles',
@@ -6353,8 +6376,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-calculate-values-for-382'] = array(
             'id' => 'soc-calculate-values-for-382',
-            'name' => 'Social Media Calculator & Solver (#382)',
-            'name_bn' => 'সোশ্যাল মিডিয়া ক্যালকুলেটর ও সলভার (#382)',
+            'name'             => 'Social Media Calculator & Solver (#382)',
+                'name_bn'          => 'Social Media Calculator & Solver (#382)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Calculator',
@@ -6366,8 +6389,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-encode-and-decode-383'] = array(
             'id' => 'soc-encode-and-decode-383',
-            'name' => 'Social Media Encoder & Decoder (#383)',
-            'name_bn' => 'সোশ্যাল মিডিয়া এনকোডার ও ডিকোডার (#383)',
+            'name'             => 'Social Media Encoder & Decoder (#383)',
+                'name_bn'          => 'Social Media Encoder & Decoder (#383)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Binary',
@@ -6379,8 +6402,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-inspect-real-time-telemetry-for-384'] = array(
             'id' => 'soc-inspect-real-time-telemetry-for-384',
-            'name' => 'Social Media Telemetry Inspector (#384)',
-            'name_bn' => 'সোশ্যাল মিডিয়া টেলিমেট্রি ইন্সপেক্টর (#384)',
+            'name'             => 'Social Media Telemetry Inspector (#384)',
+                'name_bn'          => 'Social Media Telemetry Inspector (#384)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Activity',
@@ -6392,8 +6415,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-compare-differences-for-385'] = array(
             'id' => 'soc-compare-differences-for-385',
-            'name' => 'Social Media Diff & Comparison Tool (#385)',
-            'name_bn' => 'সোশ্যাল মিডিয়া ডিফ ও তুলনা টুল (#385)',
+            'name'             => 'Social Media Diff & Comparison Tool (#385)',
+                'name_bn'          => 'Social Media Diff & Comparison Tool (#385)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'GitCompare',
@@ -6405,8 +6428,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-sanitize-and-escape-386'] = array(
             'id' => 'soc-sanitize-and-escape-386',
-            'name' => 'Social Media Escaper & Sanitizer (#386)',
-            'name_bn' => 'সোশ্যাল মিডিয়া স্যানিটাইজার ও এসকেপার (#386)',
+            'name'             => 'Social Media Escaper & Sanitizer (#386)',
+                'name_bn'          => 'Social Media Escaper & Sanitizer (#386)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Shield',
@@ -6418,8 +6441,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-build-schemas-for-387'] = array(
             'id' => 'soc-build-schemas-for-387',
-            'name' => 'Social Media Schema & Model Builder (#387)',
-            'name_bn' => 'সোশ্যাল মিডিয়া স্কিমা ও মডেল বিল্ডার (#387)',
+            'name'             => 'Social Media Schema & Model Builder (#387)',
+                'name_bn'          => 'Social Media Schema & Model Builder (#387)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Layers',
@@ -6431,8 +6454,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-batch-process-388'] = array(
             'id' => 'soc-batch-process-388',
-            'name' => 'Social Media Batch Processor (#388)',
-            'name_bn' => 'সোশ্যাল মিডিয়া ব্যাচ প্রসেসর (#388)',
+            'name'             => 'Social Media Batch Processor (#388)',
+                'name_bn'          => 'Social Media Batch Processor (#388)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'Cpu',
@@ -6444,8 +6467,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-generate-templates-for-389'] = array(
             'id' => 'soc-generate-templates-for-389',
-            'name' => 'Social Media Template & Snippet Tool (#389)',
-            'name_bn' => 'সোশ্যাল মিডিয়া টেমপ্লেট ও স্নিপেট টুল (#389)',
+            'name'             => 'Social Media Template & Snippet Tool (#389)',
+                'name_bn'          => 'Social Media Template & Snippet Tool (#389)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'FileText',
@@ -6457,8 +6480,8 @@ final class UniversalToolRegistry {
         );
         $tools['soc-audit-health-and-diagnostics-for-390'] = array(
             'id' => 'soc-audit-health-and-diagnostics-for-390',
-            'name' => 'Social Media Diagnostic Auditor (#390)',
-            'name_bn' => 'সোশ্যাল মিডিয়া ডায়াগনস্টিক অডিটর (#390)',
+            'name'             => 'Social Media Diagnostic Auditor (#390)',
+                'name_bn'          => 'Social Media Diagnostic Auditor (#390)',
             'center' => 'social-media',
             'category' => 'Social Media',
             'icon' => 'ShieldCheck',
@@ -6470,8 +6493,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-format-and-clean-391'] = array(
             'id' => 'ai-format-and-clean-391',
-            'name' => 'AI Workflow Formatter & Beautifier (#391)',
-            'name_bn' => 'এআই প্রম্পট ফরম্যাটার ও বিউটিফায়ার (#391)',
+            'name'             => 'AI Workflow Formatter & Beautifier (#391)',
+                'name_bn'          => 'AI Workflow Formatter & Beautifier (#391)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Code',
@@ -6483,8 +6506,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-minify-and-compress-392'] = array(
             'id' => 'ai-minify-and-compress-392',
-            'name' => 'AI Workflow Minifier & Stripper (#392)',
-            'name_bn' => 'এআই প্রম্পট মিনিফায়ার ও স্ট্রিপার (#392)',
+            'name'             => 'AI Workflow Minifier & Stripper (#392)',
+                'name_bn'          => 'AI Workflow Minifier & Stripper (#392)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Minimize2',
@@ -6496,8 +6519,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-validate-syntax-for-393'] = array(
             'id' => 'ai-validate-syntax-for-393',
-            'name' => 'AI Workflow Validator & Syntax Checker (#393)',
-            'name_bn' => 'এআই প্রম্পট ভ্যালিডেটর ও চেকার (#393)',
+            'name'             => 'AI Workflow Validator & Syntax Checker (#393)',
+                'name_bn'          => 'AI Workflow Validator & Syntax Checker (#393)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'CheckSquare',
@@ -6509,8 +6532,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-convert-and-transform-394'] = array(
             'id' => 'ai-convert-and-transform-394',
-            'name' => 'AI Workflow Converter & Exporter (#394)',
-            'name_bn' => 'এআই প্রম্পট কনভার্টার ও এক্সপোর্টার (#394)',
+            'name'             => 'AI Workflow Converter & Exporter (#394)',
+                'name_bn'          => 'AI Workflow Converter & Exporter (#394)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'RefreshCw',
@@ -6522,8 +6545,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-analyze-metrics-for-395'] = array(
             'id' => 'ai-analyze-metrics-for-395',
-            'name' => 'AI Workflow Analyzer & Inspector (#395)',
-            'name_bn' => 'এআই প্রম্পট অ্যানালাইজার ও ইন্সপেক্টর (#395)',
+            'name'             => 'AI Workflow Analyzer & Inspector (#395)',
+                'name_bn'          => 'AI Workflow Analyzer & Inspector (#395)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Search',
@@ -6535,8 +6558,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-generate-code-and-data-for-396'] = array(
             'id' => 'ai-generate-code-and-data-for-396',
-            'name' => 'AI Workflow Generator & Builder (#396)',
-            'name_bn' => 'এআই প্রম্পট জেনারেটর ও বিল্ডার (#396)',
+            'name'             => 'AI Workflow Generator & Builder (#396)',
+                'name_bn'          => 'AI Workflow Generator & Builder (#396)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Sparkles',
@@ -6548,8 +6571,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-calculate-values-for-397'] = array(
             'id' => 'ai-calculate-values-for-397',
-            'name' => 'AI Workflow Calculator & Solver (#397)',
-            'name_bn' => 'এআই প্রম্পট ক্যালকুলেটর ও সলভার (#397)',
+            'name'             => 'AI Workflow Calculator & Solver (#397)',
+                'name_bn'          => 'AI Workflow Calculator & Solver (#397)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Calculator',
@@ -6561,8 +6584,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-encode-and-decode-398'] = array(
             'id' => 'ai-encode-and-decode-398',
-            'name' => 'AI Workflow Encoder & Decoder (#398)',
-            'name_bn' => 'এআই প্রম্পট এনকোডার ও ডিকোডার (#398)',
+            'name'             => 'AI Workflow Encoder & Decoder (#398)',
+                'name_bn'          => 'AI Workflow Encoder & Decoder (#398)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Binary',
@@ -6574,8 +6597,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-inspect-real-time-telemetry-for-399'] = array(
             'id' => 'ai-inspect-real-time-telemetry-for-399',
-            'name' => 'AI Workflow Telemetry Inspector (#399)',
-            'name_bn' => 'এআই প্রম্পট টেলিমেট্রি ইন্সপেক্টর (#399)',
+            'name'             => 'AI Workflow Telemetry Inspector (#399)',
+                'name_bn'          => 'AI Workflow Telemetry Inspector (#399)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Activity',
@@ -6587,8 +6610,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-compare-differences-for-400'] = array(
             'id' => 'ai-compare-differences-for-400',
-            'name' => 'AI Workflow Diff & Comparison Tool (#400)',
-            'name_bn' => 'এআই প্রম্পট ডিফ ও তুলনা টুল (#400)',
+            'name'             => 'AI Workflow Diff & Comparison Tool (#400)',
+                'name_bn'          => 'AI Workflow Diff & Comparison Tool (#400)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'GitCompare',
@@ -6600,8 +6623,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-sanitize-and-escape-401'] = array(
             'id' => 'ai-sanitize-and-escape-401',
-            'name' => 'AI Workflow Escaper & Sanitizer (#401)',
-            'name_bn' => 'এআই প্রম্পট স্যানিটাইজার ও এসকেপার (#401)',
+            'name'             => 'AI Workflow Escaper & Sanitizer (#401)',
+                'name_bn'          => 'AI Workflow Escaper & Sanitizer (#401)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Shield',
@@ -6613,8 +6636,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-build-schemas-for-402'] = array(
             'id' => 'ai-build-schemas-for-402',
-            'name' => 'AI Workflow Schema & Model Builder (#402)',
-            'name_bn' => 'এআই প্রম্পট স্কিমা ও মডেল বিল্ডার (#402)',
+            'name'             => 'AI Workflow Schema & Model Builder (#402)',
+                'name_bn'          => 'AI Workflow Schema & Model Builder (#402)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Layers',
@@ -6626,8 +6649,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-batch-process-403'] = array(
             'id' => 'ai-batch-process-403',
-            'name' => 'AI Workflow Batch Processor (#403)',
-            'name_bn' => 'এআই প্রম্পট ব্যাচ প্রসেসর (#403)',
+            'name'             => 'AI Workflow Batch Processor (#403)',
+                'name_bn'          => 'AI Workflow Batch Processor (#403)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'Cpu',
@@ -6639,8 +6662,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-generate-templates-for-404'] = array(
             'id' => 'ai-generate-templates-for-404',
-            'name' => 'AI Workflow Template & Snippet Tool (#404)',
-            'name_bn' => 'এআই প্রম্পট টেমপ্লেট ও স্নিপেট টুল (#404)',
+            'name'             => 'AI Workflow Template & Snippet Tool (#404)',
+                'name_bn'          => 'AI Workflow Template & Snippet Tool (#404)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'FileText',
@@ -6652,8 +6675,8 @@ final class UniversalToolRegistry {
         );
         $tools['ai-audit-health-and-diagnostics-for-405'] = array(
             'id' => 'ai-audit-health-and-diagnostics-for-405',
-            'name' => 'AI Workflow Diagnostic Auditor (#405)',
-            'name_bn' => 'এআই প্রম্পট ডায়াগনস্টিক অডিটর (#405)',
+            'name'             => 'AI Workflow Diagnostic Auditor (#405)',
+                'name_bn'          => 'AI Workflow Diagnostic Auditor (#405)',
             'center' => 'ai',
             'category' => 'AI Workflows',
             'icon' => 'ShieldCheck',
@@ -6665,8 +6688,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-format-and-clean-406'] = array(
             'id' => 'prod-format-and-clean-406',
-            'name' => 'Productivity Clock Formatter & Beautifier (#406)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি ফরম্যাটার ও বিউটিফায়ার (#406)',
+            'name'             => 'Productivity Clock Formatter & Beautifier (#406)',
+                'name_bn'          => 'Productivity Clock Formatter & Beautifier (#406)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Code',
@@ -6678,8 +6701,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-minify-and-compress-407'] = array(
             'id' => 'prod-minify-and-compress-407',
-            'name' => 'Productivity Clock Minifier & Stripper (#407)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি মিনিফায়ার ও স্ট্রিপার (#407)',
+            'name'             => 'Productivity Clock Minifier & Stripper (#407)',
+                'name_bn'          => 'Productivity Clock Minifier & Stripper (#407)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Minimize2',
@@ -6691,8 +6714,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-validate-syntax-for-408'] = array(
             'id' => 'prod-validate-syntax-for-408',
-            'name' => 'Productivity Clock Validator & Syntax Checker (#408)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি ভ্যালিডেটর ও চেকার (#408)',
+            'name'             => 'Productivity Clock Validator & Syntax Checker (#408)',
+                'name_bn'          => 'Productivity Clock Validator & Syntax Checker (#408)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'CheckSquare',
@@ -6704,8 +6727,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-convert-and-transform-409'] = array(
             'id' => 'prod-convert-and-transform-409',
-            'name' => 'Productivity Clock Converter & Exporter (#409)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি কনভার্টার ও এক্সপোর্টার (#409)',
+            'name'             => 'Productivity Clock Converter & Exporter (#409)',
+                'name_bn'          => 'Productivity Clock Converter & Exporter (#409)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'RefreshCw',
@@ -6717,8 +6740,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-analyze-metrics-for-410'] = array(
             'id' => 'prod-analyze-metrics-for-410',
-            'name' => 'Productivity Clock Analyzer & Inspector (#410)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি অ্যানালাইজার ও ইন্সপেক্টর (#410)',
+            'name'             => 'Productivity Clock Analyzer & Inspector (#410)',
+                'name_bn'          => 'Productivity Clock Analyzer & Inspector (#410)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Search',
@@ -6730,8 +6753,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-generate-code-and-data-for-411'] = array(
             'id' => 'prod-generate-code-and-data-for-411',
-            'name' => 'Productivity Clock Generator & Builder (#411)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি জেনারেটর ও বিল্ডার (#411)',
+            'name'             => 'Productivity Clock Generator & Builder (#411)',
+                'name_bn'          => 'Productivity Clock Generator & Builder (#411)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Sparkles',
@@ -6743,8 +6766,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-calculate-values-for-412'] = array(
             'id' => 'prod-calculate-values-for-412',
-            'name' => 'Productivity Clock Calculator & Solver (#412)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি ক্যালকুলেটর ও সলভার (#412)',
+            'name'             => 'Productivity Clock Calculator & Solver (#412)',
+                'name_bn'          => 'Productivity Clock Calculator & Solver (#412)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Calculator',
@@ -6756,8 +6779,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-encode-and-decode-413'] = array(
             'id' => 'prod-encode-and-decode-413',
-            'name' => 'Productivity Clock Encoder & Decoder (#413)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি এনকোডার ও ডিকোডার (#413)',
+            'name'             => 'Productivity Clock Encoder & Decoder (#413)',
+                'name_bn'          => 'Productivity Clock Encoder & Decoder (#413)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Binary',
@@ -6769,8 +6792,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-inspect-real-time-telemetry-for-414'] = array(
             'id' => 'prod-inspect-real-time-telemetry-for-414',
-            'name' => 'Productivity Clock Telemetry Inspector (#414)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি টেলিমেট্রি ইন্সপেক্টর (#414)',
+            'name'             => 'Productivity Clock Telemetry Inspector (#414)',
+                'name_bn'          => 'Productivity Clock Telemetry Inspector (#414)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Activity',
@@ -6782,8 +6805,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-compare-differences-for-415'] = array(
             'id' => 'prod-compare-differences-for-415',
-            'name' => 'Productivity Clock Diff & Comparison Tool (#415)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি ডিফ ও তুলনা টুল (#415)',
+            'name'             => 'Productivity Clock Diff & Comparison Tool (#415)',
+                'name_bn'          => 'Productivity Clock Diff & Comparison Tool (#415)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'GitCompare',
@@ -6795,8 +6818,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-sanitize-and-escape-416'] = array(
             'id' => 'prod-sanitize-and-escape-416',
-            'name' => 'Productivity Clock Escaper & Sanitizer (#416)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি স্যানিটাইজার ও এসকেপার (#416)',
+            'name'             => 'Productivity Clock Escaper & Sanitizer (#416)',
+                'name_bn'          => 'Productivity Clock Escaper & Sanitizer (#416)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Shield',
@@ -6808,8 +6831,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-build-schemas-for-417'] = array(
             'id' => 'prod-build-schemas-for-417',
-            'name' => 'Productivity Clock Schema & Model Builder (#417)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি স্কিমা ও মডেল বিল্ডার (#417)',
+            'name'             => 'Productivity Clock Schema & Model Builder (#417)',
+                'name_bn'          => 'Productivity Clock Schema & Model Builder (#417)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Layers',
@@ -6821,8 +6844,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-batch-process-418'] = array(
             'id' => 'prod-batch-process-418',
-            'name' => 'Productivity Clock Batch Processor (#418)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি ব্যাচ প্রসেসর (#418)',
+            'name'             => 'Productivity Clock Batch Processor (#418)',
+                'name_bn'          => 'Productivity Clock Batch Processor (#418)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'Cpu',
@@ -6834,8 +6857,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-generate-templates-for-419'] = array(
             'id' => 'prod-generate-templates-for-419',
-            'name' => 'Productivity Clock Template & Snippet Tool (#419)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি টেমপ্লেট ও স্নিপেট টুল (#419)',
+            'name'             => 'Productivity Clock Template & Snippet Tool (#419)',
+                'name_bn'          => 'Productivity Clock Template & Snippet Tool (#419)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'FileText',
@@ -6847,8 +6870,8 @@ final class UniversalToolRegistry {
         );
         $tools['prod-audit-health-and-diagnostics-for-420'] = array(
             'id' => 'prod-audit-health-and-diagnostics-for-420',
-            'name' => 'Productivity Clock Diagnostic Auditor (#420)',
-            'name_bn' => 'প্রোডাক্টিভিটি ঘড়ি ডায়াগনস্টিক অডিটর (#420)',
+            'name'             => 'Productivity Clock Diagnostic Auditor (#420)',
+                'name_bn'          => 'Productivity Clock Diagnostic Auditor (#420)',
             'center' => 'productivity',
             'category' => 'Time & Utility',
             'icon' => 'ShieldCheck',
@@ -7029,7 +7052,7 @@ final class UniversalToolRegistry {
             ),
             'author' => array(
                 '@type' => 'Organization',
-                'name' => 'Hackers শিক্ষক',
+                'name' => 'HackersShikkhok',
                 'url' => 'https://hackersshikkhok.com'
             )
         );
@@ -7064,9 +7087,24 @@ final class UniversalToolRegistry {
         if ( ! $wpdb ) {
             return array();
         }
-        $table = $wpdb->prefix . 'custom_tools';
+        $suppress = $wpdb->suppress_errors( true );
+        $table = $wpdb->prefix . 'hs_custom_tools';
+        $exists = $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table ) );
+        if ( ! $exists ) {
+            $table = $wpdb->prefix . 'custom_tools';
+            $exists = $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table ) );
+        }
+        if ( ! $exists ) {
+            if ( class_exists( '\HackersShikkhok\Core\Core\Database' ) ) {
+                \HackersShikkhok\Core\Core\Database::install_tables();
+            }
+            $wpdb->suppress_errors( $suppress );
+            return array();
+        }
+
         $query = "SELECT * FROM {$table} WHERE status = 'published' ORDER BY id DESC LIMIT 500";
         $rows = $wpdb->get_results( $query, ARRAY_A );
+        $wpdb->suppress_errors( $suppress );
         if ( empty( $rows ) ) {
             return array();
         }

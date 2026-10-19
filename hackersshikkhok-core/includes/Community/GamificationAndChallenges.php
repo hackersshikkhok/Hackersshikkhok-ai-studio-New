@@ -14,7 +14,7 @@ use HackersShikkhok\Core\Users\UserEcosystem;
 /**
  * Gamification, Achievements & Daily Challenge Engine
  * Manages learning streaks, daily missions, and badge awards with authoritative XP tracking.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class GamificationAndChallenges {
 

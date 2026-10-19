@@ -13,7 +13,7 @@ use WP_REST_Response;
 /**
  * Hardware Lab & IoT Secure Device Telemetry Hub
  * Supports Arduino, ESP32, Raspberry Pi projects, device registration, and encrypted telemetry ingest.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class HardwareAndIotEngine {
 

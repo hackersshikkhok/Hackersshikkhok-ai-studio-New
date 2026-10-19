@@ -100,13 +100,13 @@
         '    <span style="font-size:12px;color:var(--hs-primary);font-weight:700;">⚡ CLIENT-SIDE RUNNER: ' + (toolId || 'Active Tool') + '</span>',
         '    <span style="font-size:12px;color:#94a3b8;">🔒 100% Client-Side Private</span>',
         '  </div>',
-        '  <textarea id="hs-tool-input-field" class="hs-tool-input" placeholder="এখানে আপনার ইনপুট টেক্সট বা কোড পেস্ট করুন..."></textarea>',
+        '  <textarea id="hs-tool-input-field" class="hs-tool-input" placeholder="Paste your input text or code payload here..."></textarea>',
         '  <div class="hs-tool-actions">',
-        '    <button type="button" id="hs-tool-run-btn" class="hs-btn-primary" style="border:none;cursor:pointer;">▶ রান করুন</button>',
-        '    <button type="button" id="hs-tool-copy-btn" class="hs-btn-secondary" style="cursor:pointer;">📋 কপি আউটপুট</button>',
-        '    <button type="button" id="hs-tool-clear-btn" class="hs-btn-secondary" style="cursor:pointer;">🗑️ ক্লিয়ার</button>',
+        '    <button type="button" id="hs-tool-run-btn" class="hs-btn-primary" style="border:none;cursor:pointer;">▶ Execute</button>',
+        '    <button type="button" id="hs-tool-copy-btn" class="hs-btn-secondary" style="cursor:pointer;">📋 Copy Output</button>',
+        '    <button type="button" id="hs-tool-clear-btn" class="hs-btn-secondary" style="cursor:pointer;">🗑️ Clear</button>',
         '  </div>',
-        '  <textarea id="hs-tool-output-field" class="hs-tool-output" readonly placeholder="প্রসেসড রেজাল্ট এখানে প্রদর্শিত হবে..."></textarea>',
+        '  <textarea id="hs-tool-output-field" class="hs-tool-output" readonly placeholder="Processed output will appear here in real-time..."></textarea>',
         '</div>'
       ].join('\n');
 
@@ -127,8 +127,8 @@
         copyBtn.addEventListener('click', function () {
           if (outputEl.value && navigator.clipboard) {
             navigator.clipboard.writeText(outputEl.value);
-            copyBtn.textContent = 'কপি হয়েছে!';
-            setTimeout(function () { copyBtn.textContent = '📋 কপি আউটপুট'; }, 2000);
+            copyBtn.textContent = 'Copied!';
+            setTimeout(function () { copyBtn.textContent = '📋 Copy Output'; }, 2000);
           }
         });
       }

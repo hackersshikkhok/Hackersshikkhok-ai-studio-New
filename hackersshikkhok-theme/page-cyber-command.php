@@ -29,7 +29,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
         <div class="hs-hud-container">
             <div class="hs-hud-brand">
                 <span class="hs-hud-pulse"></span>
-                <span class="hs-hud-logo">🛡️ HACKERS শিক্ষক // CYBER COMMAND</span>
+                <span class="hs-hud-logo">🛡️ HACKERSSHIKKHOK // CYBER COMMAND</span>
                 <span class="hs-hud-badge">ENTERPRISE SECURITY SAAS v2.0</span>
             </div>
             <div class="hs-hud-metrics">
@@ -39,7 +39,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
                 </div>
                 <div class="hs-hud-metric">
                     <span class="hs-metric-label">WALLET</span>
-                    <span class="hs-metric-val hs-cyan">৳<?php echo number_format( (float) ( $wallet_summary['balance_bdt'] ?? 0.0 ), 2 ); ?></span>
+                    <span class="hs-metric-val hs-cyan">BDT <?php echo number_format( (float) ( $wallet_summary['balance_bdt'] ?? 0.0 ), 2 ); ?> BDT</span>
                 </div>
                 <div class="hs-hud-metric">
                     <span class="hs-metric-label">OPERATIVE</span>
@@ -79,7 +79,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content active" id="tab-overview">
                 <div class="hs-stage-header">
                     <h2>Enterprise Security Posture &amp; Threat Radar</h2>
-                    <p>রিয়েল-টাইম ভালনারেবিলিটি সারফেস, ক্লাউড সিকিউরিটি স্কোর এবং আক্রমণ প্রতিরোধ সক্ষমতা পর্যবেক্ষণ।</p>
+                    <p>Real-time vulnerability surface visualization, cloud hardening score, and automated perimeter defenses.</p>
                 </div>
 
                 <div class="hs-overview-grid">
@@ -87,7 +87,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
                         <div class="hs-health-title">Overall Security Health Index</div>
                         <div class="hs-health-score" id="overviewHealthScore">88<span>/100</span></div>
                         <div class="hs-health-grade" id="overviewHealthGrade">GRADE: A- (HARDENED)</div>
-                        <p class="hs-health-desc">প্যাসিভ স্ক্যানিং ও হেডার কনফিগারেশন নিরীক্ষা সম্পন্ন। ৩টি মাঝারি ঝুঁকি পাওয়া গেছে।</p>
+                        <p class="hs-health-desc">Passive scanning and security headers analysis complete. 3 medium-severity exposures detected.</p>
                     </div>
 
                     <div class="hs-card hs-stat-card">
@@ -116,7 +116,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
                 <!-- Quick Scan Launcher -->
                 <div class="hs-card hs-quick-scan">
                     <h3>⚡ Instant Zero-Impact Security Audit</h3>
-                    <p>ক্লাউড সার্ভারের কোনো পারফরম্যান্স ক্ষতি না করে নন-ইনট্রুসিভ সেফ ওয়েব অডিট রান করুন।</p>
+                    <p>Execute non-intrusive, zero-impact perimeter security evaluation against your web asset.</p>
                     <div class="hs-input-row">
                         <input type="url" id="quickTargetInput" placeholder="https://yourcompany.com" value="https://hackersshikkhok.com" class="hs-cyber-input">
                         <button class="hs-cyber-btn" id="btnRunQuickAudit">LAUNCH INSTANT AUDIT</button>
@@ -128,7 +128,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-targets">
                 <div class="hs-stage-header">
                     <h2>Target Scope &amp; Asset Ownership Verification</h2>
-                    <p>অননুমোদিত স্ক্যানিং প্রতিরোধে ডোমেন বা ওয়েব অ্যাপের মালিকানা যাচাইকরণ (DNS TXT / HTML Meta Tag)।</p>
+                    <p>Cryptographically verify domain and web application ownership before conducting assessments (DNS TXT / HTML Meta Tag).</p>
                 </div>
                 <div class="hs-card">
                     <h3>Add New Corporate Asset to Scope</h3>
@@ -169,7 +169,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
                         <tbody id="targetTableBody">
                             <tr>
                                 <td><strong>https://hackersshikkhok.com</strong></td>
-                                <td>Hackers শিক্ষক Core</td>
+                                <td>HackersShikkhok Core</td>
                                 <td><span class="hs-badge hs-green">VERIFIED</span></td>
                                 <td><span class="hs-badge hs-cyan">88/100</span></td>
                                 <td>Today</td>
@@ -184,7 +184,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-scanner">
                 <div class="hs-stage-header">
                     <h2>Automated Passive Web Auditor</h2>
-                    <p>SSL/TLS, HTTP সিকিউরিটি হেডার্স, এক্সপোজড সেনসিটিভ ফাইল, DNS স্পুফিং এবং CMS ফিঙ্গারপ্রিন্ট স্ক্যানার।</p>
+                    <p>SSL/TLS cipher suite analysis, HTTP security headers, sensitive exposed configurations, and CMS vulnerability checks.</p>
                 </div>
 
                 <div class="hs-card">
@@ -218,7 +218,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
 
                     <!-- Terminal Log View -->
                     <div class="hs-terminal-screen" id="scannerTerminalLog">
-                        <div class="hs-term-line hs-term-cyan">[SYSTEM] Hackers শিক্ষক Passive Security Engine Initialized. Ready for dispatch.</div>
+                        <div class="hs-term-line hs-term-cyan">[SYSTEM] HackersShikkhok Passive Security Engine Initialized. Ready for dispatch.</div>
                     </div>
                 </div>
             </div>
@@ -227,7 +227,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-findings">
                 <div class="hs-stage-header">
                     <h2>Vulnerability Lifecycle &amp; Findings Ledger</h2>
-                    <p>শনাক্তকৃত দুর্বলতা, CVSS v3.1 রিস্ক স্কোরিং, প্রমাণ এবং স্ট্যাটাস ট্র্যাকিং।</p>
+                    <p>Track identified exposures, CVSS v3.1 impact ratings, proof-of-concept evidence, and patch status.</p>
                 </div>
 
                 <div class="hs-filter-bar">
@@ -247,7 +247,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-remediation">
                 <div class="hs-stage-header">
                     <h2>AI Code Remediation &amp; Patch Generator</h2>
-                    <p>শনাক্ত দুর্বলতার জন্য Nginx, Apache (.htaccess), Cloudflare WAF ও PHP এর কপি-পেস্ট উপযোগী কোড প্যাচ।</p>
+                    <p>Automated copy-paste mitigation snippets for Nginx, Apache (.htaccess), Cloudflare WAF, and PHP native headers.</p>
                 </div>
 
                 <div class="hs-card">
@@ -279,19 +279,19 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-executive">
                 <div class="hs-stage-header">
                     <h2>Executive Business Impact &amp; Financial Exposure</h2>
-                    <p>নন-টেকনিক্যাল সিইও, সিটিও ও ম্যানেজমেন্টের জন্য আর্থিক ঝুঁকি ও ব্র্যান্ড লস অ্যানালাইসিস।</p>
+                    <p>Quantitative cyber risk modeling, estimated financial exposure, and C-Suite breach liability analysis.</p>
                 </div>
 
                 <div class="hs-overview-grid">
                     <div class="hs-card">
                         <h3>Estimated Financial Breach Liability</h3>
-                        <div style="font-size:32px; font-weight:900; color:#ff3366; margin:10px 0;">৳৫,৫০,০০০ - ৳২০,০০,০০০</div>
-                        <p>ডাটাবেস লিক বা সেশন হাইজ্যাকিংয়ের ক্ষেত্রে গ্রাহকের ক্ষতিপূরণ ও জিডিপিআর/সাইবার অ্যাক্ট রেগুলেটরি পেনাল্টি ঝুঁকি।</p>
+                        <div style="font-size:32px; font-weight:900; color:#ff3366; margin:10px 0;">$50,000 - $250,000 USD</div>
+                        <p>Projected liabilities including incident response, regulatory compliance penalties (GDPR/CCPA), and customer notification costs.</p>
                     </div>
                     <div class="hs-card">
                         <h3>Brand &amp; Customer Trust Degradation</h3>
                         <div style="font-size:32px; font-weight:900; color:#f59e0b; margin:10px 0;">HIGH VULNERABILITY</div>
-                        <p>ইমেইল স্পুফিং ও আন-এনক্রিপ্টেড ট্রাফিকের কারণে স্প্যাম ফিল্টারিং ও গ্রাহক প্রতারণার সম্ভাবনা।</p>
+                        <p>Potential reputational damage resulting from unauthenticated email spoofing, phishing mimicry, and session hijacking risks.</p>
                     </div>
                 </div>
             </div>
@@ -300,14 +300,14 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-pdf">
                 <div class="hs-stage-header">
                     <h2>Download Executive PDF Security Audit Report</h2>
-                    <p>ক্লায়েন্ট প্রেজেন্টেশন ও বোর্ড মিটিংয়ের জন্য এক্সিকিউটিভ সামারি ও পূর্ণাঙ্গ টেকনিক্যাল প্রুফ রিপোর্ট।</p>
+                    <p>Comprehensive technical and C-suite audit summaries ready for stakeholder review and board presentations.</p>
                 </div>
 
                 <div class="hs-card" style="text-align:center; padding:40px 20px;">
                     <div style="font-size:48px; margin-bottom:12px;">📄</div>
                     <h3>Executive Cyber Audit Report Ready</h3>
                     <p style="max-width:550px; margin:0 auto 20px; color:#94a3b8;">
-                        রিপোর্টে অন্তর্ভুক্ত রয়েছে: সিকিউরিটি গ্রেড কার্ড, সিভেই র্যাঙ্কিং, স্ক্রিনশট এভিডেন্স, এবং সি-লেভেল এক্সিকিউটিভ সামারি।
+                        Includes overall security index, CVSS v3.1 ranking breakdown, screenshot evidence, and step-by-step remediation plan.
                     </p>
                     <button class="hs-cyber-btn" id="btnDownloadPdf">PRINT / SAVE AS PDF REPORT</button>
                 </div>
@@ -317,7 +317,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-csm">
                 <div class="hs-stage-header">
                     <h2>Continuous Security Monitoring (CSM)</h2>
-                    <p>সার্বক্ষণিক নজরদারি: নতুন CVE রিলিজ হলে বা কনফিগারেশন চেঞ্জ হলে স্বয়ংক্রিয় স্ক্যান ও নোটিফিকেশন।</p>
+                    <p>Continuous perimeter scanning: trigger automated audits and instant alerts whenever new CVEs or configuration drifts occur.</p>
                 </div>
 
                 <div class="hs-card">
@@ -336,7 +336,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
                             <input type="email" class="hs-cyber-input" value="<?php echo esc_attr( wp_get_current_user()->user_email ?: 'security@hackersshikkhok.com' ); ?>">
                         </div>
                     </div>
-                    <button class="hs-cyber-btn" style="margin-top:15px;" onclick="alert('স্বয়ংক্রিয় মনিটরিং সিডিউল আপডেট হয়েছে।')">Save Monitoring Schedule</button>
+                    <button class="hs-cyber-btn" style="margin-top:15px;" id="btnSaveSchedule">Save Monitoring Schedule</button>
                 </div>
             </div>
 
@@ -344,7 +344,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-redteam">
                 <div class="hs-stage-header">
                     <h2>Custom Red Team &amp; Manual Penetration Testing</h2>
-                    <p>অনুমোদিত ম্যানুয়াল হ্যাকিং পরীক্ষা: ক্রেডেনশিয়াল টেস্ট, বিজনেস লজিক ফ্ল অডিট ও এক্সিকিউটিভ ওয়ার্কশপ।</p>
+                    <p>Authorized manual penetration testing: credential stuffing resilience, business logic flaw exploitation, and executive debriefs.</p>
                 </div>
 
                 <div class="hs-card">
@@ -364,7 +364,10 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
                         <textarea id="rtScopeText" rows="4" class="hs-cyber-input" style="width:100%;" placeholder="1. https://api.company.com/v1/*&#10;2. Android APK Package com.company.app&#10;3. Core Payment Gateway Workflow"></textarea>
                     </div>
                     <div style="margin-top:10px; color:#94a3b8; font-size:12px;">
-                        <input type="checkbox" id="rtNdaCheck" checked> আমি নিশ্চিত করছি আমি এই সম্পদের আইনি মালিক এবং Hackers শিক্ষক-এর সাথে দ্বিপাক্ষিক নন-ডিসক্লোজার চুক্তি (NDA) মেনে টেস্ট অনুমোদন করছি।
+                        <label style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+                            <input type="checkbox" id="rtNdaCheck" checked> 
+                            <span>I confirm legal ownership or authorized agency of target assets and consent to mutual NDA &amp; Rules of Engagement.</span>
+                        </label>
                     </div>
                     <button class="hs-cyber-btn" style="margin-top:15px;" id="btnSubmitRedTeam">Submit Official Red Team Proposal</button>
                 </div>
@@ -374,7 +377,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-compliance">
                 <div class="hs-stage-header">
                     <h2>Global Security Compliance Matrix</h2>
-                    <p>ওওয়াস্প টপ ১০, আইএসও ২৭০০১ এবং বাংলাদেশ সাইবার নিরাপত্তা আইন ২০২৩ এর সাথে কমপ্লায়েন্স ট্র্যাকিং।</p>
+                    <p>Automated compliance benchmarks against OWASP Top 10, ISO 27001, NIST CSF, and national cybersecurity standards.</p>
                 </div>
 
                 <div class="hs-card">
@@ -393,13 +396,13 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
 
                     <div class="hs-compliance-row" style="margin-top:20px;">
                         <div class="hs-comp-header">
-                            <strong>Bangladesh Cyber Security Act 2023 Guidelines</strong>
+                            <strong>ISO/IEC 27001:2022 Technical Controls</strong>
                             <span class="hs-badge hs-green">90% COMPLIANT</span>
                         </div>
                         <div class="hs-comp-items">
-                            <div>✓ Section 17: Critical Information Infrastructure Defense</div>
-                            <div>✓ Section 19: Unauthorized Access Prevention</div>
-                            <div>⚠️ Section 23: Email Anti-Spoofing &amp; DMARC Policy Active</div>
+                            <div>✓ Control 8.8: Management of Technical Vulnerabilities</div>
+                            <div>✓ Control 8.20: Network Security Hardening</div>
+                            <div>⚠️ Control 8.24: Use of Cryptography &amp; Transport Policies</div>
                         </div>
                     </div>
                 </div>
@@ -409,7 +412,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-webhooks">
                 <div class="hs-stage-header">
                     <h2>Security Webhooks &amp; Instant Incident Dispatcher</h2>
-                    <p>ক্রিটিক্যাল দুর্বলতা ধরা পড়ার সাথে সাথে স্ল্যাক (Slack), ডিসকর্ড বা ইন্টারনাল সিআই/সিডি পাইপলাইনে অ্যালার্ট পাঠান।</p>
+                    <p>Broadcast high-severity security notifications to Slack, Discord, Microsoft Teams, or custom SIEM pipelines.</p>
                 </div>
 
                 <div class="hs-card">
@@ -448,19 +451,19 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <!-- TAB 12: B2B SUBSCRIPTION -->
             <div class="hs-tab-content" id="tab-billing">
                 <div class="hs-stage-header">
-                    <h2>B2B Security Subscription &amp; Wallet Billing</h2>
-                    <p>আপনার কোম্পানির প্রয়োজন অনুসারে অপটিমাইজড সিকিউরিটি প্যাকেজ বেছে নিন।</p>
+                    <h2>B2B Security Subscription &amp; Tier Management</h2>
+                    <p>Select tailored defense auditing plans designed for modern tech companies and digital agencies.</p>
                 </div>
 
                 <div class="hs-pricing-grid">
                     <div class="hs-card hs-price-card">
                         <h3>Starter Security</h3>
-                        <div class="hs-price-amt">৳১,৫০০<span>/মাস</span></div>
+                        <div class="hs-price-amt">BDT 1,500<span> BDT/mo</span></div>
                         <ul class="hs-price-features">
-                            <li>৩টি ডোমেন বা ওয়েব অ্যাপ</li>
-                            <li>সাপ্তাহিক অটোমেটেড অডিট</li>
-                            <li>SSL/TLS ও হেডার বিশ্লেষণ</li>
-                            <li>পিডিএফ রিপোর্ট ডাউনলোড</li>
+                            <li>3 Domains or Web Apps</li>
+                            <li>Weekly Automated Audits</li>
+                            <li>SSL/TLS &amp; Header Diagnostics</li>
+                            <li>PDF Audit Report Downloads</li>
                         </ul>
                         <button class="hs-cyber-btn" onclick="upgradePlan('starter')">Select Starter</button>
                     </div>
@@ -468,26 +471,26 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
                     <div class="hs-card hs-price-card hs-featured-price">
                         <div class="hs-badge hs-cyan" style="margin-bottom:8px;">POPULAR FOR BUSINESS</div>
                         <h3>Business Continuous</h3>
-                        <div class="hs-price-amt">৳৪,৫০০<span>/মাস</span></div>
+                        <div class="hs-price-amt">BDT 4,500<span> BDT/mo</span></div>
                         <ul class="hs-price-features">
-                            <li>১০টি ডোমেন ও এপিআই স্কোপ</li>
-                            <li>দৈনিক কন্টিনিউয়াস মনিটরিং</li>
-                            <li>CVE ও সংবেদনশীল ফাইল ডিটেকশন</li>
-                            <li>AI কোড প্যাচিং গাইড</li>
-                            <li>১টি কোয়ার্টারলি রেড টিম অডিট</li>
+                            <li>10 Domains &amp; API Scopes</li>
+                            <li>Daily Continuous Surface Probes</li>
+                            <li>CVE &amp; Sensitive File Detection</li>
+                            <li>AI Remediation Patch Snippets</li>
+                            <li>1 Quarterly Red Team Penetration Test</li>
                         </ul>
                         <button class="hs-cyber-btn hs-btn-pulse" onclick="upgradePlan('business')">Select Business</button>
                     </div>
 
                     <div class="hs-card hs-price-card">
                         <h3>Enterprise Managed</h3>
-                        <div class="hs-price-amt">৳১৫,০০০<span>/মাস</span></div>
+                        <div class="hs-price-amt">BDT 15,000<span> BDT/mo</span></div>
                         <ul class="hs-price-features">
-                            <li>আনলিমিটেড টার্গেট স্কোপ</li>
-                            <li>রিয়েল-টাইম কন্টিনিউয়াস স্ক্যান</li>
-                            <li>ডেডিকেটেড ম্যানুয়াল পেন্টেস্টিং</li>
-                            <li>SLA গ্যারান্টি ও সাপোর্ট</li>
-                            <li>এক্সিকিউটিভ ওয়ার্কশপ</li>
+                            <li>Unlimited Target Scopes</li>
+                            <li>Real-Time Continuous Surface Scans</li>
+                            <li>Dedicated Manual Penetration Testing</li>
+                            <li>Guaranteed SLA &amp; Emergency Triage</li>
+                            <li>Quarterly Executive Board Briefings</li>
                         </ul>
                         <button class="hs-cyber-btn" onclick="upgradePlan('enterprise')">Select Enterprise</button>
                     </div>
@@ -498,7 +501,7 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-terminal">
                 <div class="hs-stage-header">
                     <h2>Live Security Operations Terminal Logs</h2>
-                    <p>সার্ভার প্রোব ও ডায়াগনস্টিকসের রিয়েল-টাইম স্ট্রিম।</p>
+                    <p>Real-time audit telemetry, network probes, and background diagnostic stream.</p>
                 </div>
                 <div class="hs-terminal-screen" style="height:350px;">
                     <div class="hs-term-line hs-term-cyan">[INFO] C2 Daemon Online · Listening on socket /var/run/hs_c2.sock</div>
@@ -514,20 +517,18 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
             <div class="hs-tab-content" id="tab-guidelines">
                 <div class="hs-stage-header">
                     <h2>Rules of Engagement (RoE) &amp; Ethical Standard</h2>
-                    <p>ইথিক্যাল হ্যাকিং, আইনগত দ্বিপাক্ষিক অনুমোদন ও ৯৯.৯% জিরো-ডিসরাপশন এসএলএ চুক্তি।</p>
+                    <p>Responsible disclosure policy, bilateral legal consent, and 99.9% zero-disruption SLA guarantee.</p>
                 </div>
                 <div class="hs-card">
                     <h3>100% Responsible &amp; Lawful Security Testing Standard</h3>
                     <p>
-                        Hackers শিক্ষক শুধুমাত্র অনুমোদিত ক্লায়েন্ট সম্পদের ওপর পরীক্ষা পরিচালনা করে। 
-                        আমরা কোনো আন-অথরাইজড নেটওয়ার্কে ডস (DDoS) বা ধ্বংসাত্মক শোষণ চালাই না। সকল মূল্যায়ন 
-                        <strong>বাংলাদেশ সাইবার নিরাপত্তা আইন ২০২৩</strong> এবং আন্তর্জাতিক <strong>OWASP WSTG v4.2</strong> স্ট্যান্ডার্ড মেনে পরিচালিত হয়।
+                        HackersShikkhok conducts security testing strictly against authorized client assets. We never perform denial-of-service (DDoS) or destructive exploits. All evaluations adhere strictly to the <strong>OWASP Web Security Testing Guide (WSTG v4.2)</strong> and applicable cyber legislation.
                     </p>
 
                     <div style="margin-top:24px; padding-top:20px; border-top:1px solid #1e293b;">
                         <h3>Execute Bilateral Non-Disclosure Agreement (M-NDA) &amp; Legal Authorization</h3>
                         <p style="color:#94a3b8; font-size:12px; margin-bottom:16px;">
-                            আপনার কোম্পানির সিকিউরিটি টিমের জন্য আইনগত বৈধতা ও কর্পোরেট অনুমোদন ফ্রেমওয়ার্ক জেনারেট করুন:
+                            Generate official corporate authorization credentials for your security team:
                         </p>
                         <div class="hs-form-grid">
                             <div>
@@ -563,6 +564,25 @@ $nonce = wp_create_nonce( 'hs_cyber_command_nonce' );
         nonce: '<?php echo esc_js( $nonce ); ?>',
         siteUrl: '<?php echo esc_url( home_url() ); ?>'
     };
+    // Non-blocking toast helper
+    window.hsShowToast = function(msg) {
+        let t = document.getElementById('hs-global-toast');
+        if (!t) {
+            t = document.createElement('div');
+            t.id = 'hs-global-toast';
+            t.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#0f172a;border:1px solid #00f5d4;color:#00f5d4;padding:12px 20px;border-radius:10px;font-family:monospace;font-size:13px;z-index:99999;box-shadow:0 10px 30px rgba(0,0,0,0.8);transition:opacity 0.3s;';
+            document.body.appendChild(t);
+        }
+        t.textContent = msg;
+        t.style.opacity = '1';
+        setTimeout(() => { if (t) t.style.opacity = '0'; }, 3500);
+    };
+    const btnSave = document.getElementById('btnSaveSchedule');
+    if (btnSave) {
+        btnSave.addEventListener('click', function() {
+            window.hsShowToast('Automated monitoring schedule updated successfully.');
+        });
+    }
 </script>
 <script src="<?php echo esc_url( get_template_directory_uri() . '/assets/js/cyber-command.js' ); ?>"></script>
 

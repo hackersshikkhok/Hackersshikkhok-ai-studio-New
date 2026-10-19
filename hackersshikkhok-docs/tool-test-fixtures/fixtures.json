@@ -1,7 +1,7 @@
 {
   "web_dev": {
-    "valid_html": "<div class=\"hero\"><h1>Hackers শিক্ষক</h1><p>Cybersecurity & Code</p></div>",
-    "invalid_html": "<div class=\"hero\"><h1>Hackers শিক্ষক",
+    "valid_html": "<div class=\"hero\"><h1>HackersShikkhok</h1><p>Cybersecurity & Code</p></div>",
+    "invalid_html": "<div class=\"hero\"><h1>HackersShikkhok",
     "valid_css": "body { background: #06080d; color: #00ff66; margin: 0; padding: 0; }",
     "invalid_css": "body { background: #06080d; color: ",
     "valid_js": "function greet(name) { return 'Hello ' + name; }",
@@ -9,15 +9,15 @@
   },
   "programming": {
     "python_code": "def calculate_entropy(length, charset):\n    import math\n    return length * math.log2(charset)\n",
-    "php_code": "<?php echo json_encode(['brand' => 'Hackers শিক্ষক']); ?>",
+    "php_code": "<?php echo json_encode(['brand' => 'HackersShikkhok']); ?>",
     "sql_query": "SELECT id, name, category FROM wp_hs_custom_tools WHERE status = 'active';",
-    "bash_script": "#!/usr/bin/env bash\necho 'Hackers শিক্ষক Platform Online'"
+    "bash_script": "#!/usr/bin/env bash\necho 'HackersShikkhok Platform Online'"
   },
   "data_json": {
-    "valid_json": "{\"brand\": \"Hackers শিক্ষক\", \"url\": \"https://hackersshikkhok.com\", \"tools_count\": 520, \"status\": \"active\"}",
-    "invalid_json": "{\"brand\": \"Hackers শিক্ষক\", \"url\": \"https://hackersshikkhok.com\", \"tools_count\": ",
+    "valid_json": "{\"brand\": \"HackersShikkhok\", \"url\": \"https://hackersshikkhok.com\", \"tools_count\": 520, \"status\": \"active\"}",
+    "invalid_json": "{\"brand\": \"HackersShikkhok\", \"url\": \"https://hackersshikkhok.com\", \"tools_count\": ",
     "valid_csv": "id,name,category,status\n1,HTML Beautifier,Web Dev,active\n2,Ohm Calculator,Engineering,active\n",
-    "valid_yaml": "brand: Hackers শিক্ষক\nurl: https://hackersshikkhok.com\ntools_count: 520\n"
+    "valid_yaml": "brand: HackersShikkhok\nurl: https://hackersshikkhok.com\ntools_count: 520\n"
   },
   "security": {
     "sample_text": "HackersShikkhokCyberSecurityPlatform2026!",

@@ -10,6 +10,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Database {
     public const DB_VERSION = '4.1.0';
 
+    public static function register(): void {
+        add_action( 'init', array( self::class, 'auto_check_schema' ), 5 );
+    }
+
+    public static function auto_check_schema(): void {
+        $installed = get_option( 'hs_core_db_version' );
+        if ( $installed !== self::DB_VERSION ) {
+            self::install_tables();
+        }
+    }
+
     public static function install_tables(): void {
         global $wpdb;
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
@@ -203,6 +214,28 @@ final class Database {
                 KEY idx_center_cat (center_slug, category_slug),
                 KEY idx_status (status)
             ) $charset_collate;",
+            "CREATE TABLE {$wpdb->prefix}custom_tools (
+                id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+                tool_slug VARCHAR(64) NOT NULL,
+                tool_name VARCHAR(128) NOT NULL,
+                center_slug VARCHAR(64) NOT NULL,
+                category_slug VARCHAR(64) NOT NULL,
+                icon VARCHAR(64) NOT NULL DEFAULT 'Terminal',
+                description TEXT NOT NULL,
+                input_schema LONGTEXT NULL,
+                output_type VARCHAR(48) NOT NULL DEFAULT 'text',
+                processor_type VARCHAR(48) NOT NULL DEFAULT 'client',
+                status VARCHAR(24) NOT NULL DEFAULT 'published',
+                version VARCHAR(16) NOT NULL DEFAULT '1.0.0',
+                seo_title VARCHAR(191) NULL,
+                seo_description TEXT NULL,
+                created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY  (id),
+                UNIQUE KEY uq_tool_slug (tool_slug),
+                KEY idx_center_cat (center_slug, category_slug),
+                KEY idx_status (status)
+            ) $charset_collate;",
             "CREATE TABLE {$p}courses (
                 id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
                 slug VARCHAR(128) NOT NULL,
@@ -291,8 +324,8 @@ final class Database {
             "CREATE TABLE {$p}user_wallet (
                 id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
                 user_id BIGINT UNSIGNED NOT NULL,
-                balance_bdt DECIMAL(12,2) NOT NULL DEFAULT 0.00,
-                xp_points INT UNSIGNED NOT NULL DEFAULT 0,
+                balance_bdt DECIMAL(12,2) NOT NULL DEFAULT 50.00,
+                xp_points INT UNSIGNED NOT NULL DEFAULT 200,
                 level INT UNSIGNED NOT NULL DEFAULT 1,
                 rank_title VARCHAR(64) NOT NULL DEFAULT 'Cyber Cadet',
                 power_level VARCHAR(32) NOT NULL DEFAULT 'low',
@@ -300,6 +333,32 @@ final class Database {
                 updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                 PRIMARY KEY  (id),
                 UNIQUE KEY uq_wallet_user (user_id)
+            ) $charset_collate;",
+            "CREATE TABLE {$wpdb->prefix}user_wallet (
+                id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+                user_id BIGINT UNSIGNED NOT NULL,
+                balance_bdt DECIMAL(12,2) NOT NULL DEFAULT 50.00,
+                xp_points INT UNSIGNED NOT NULL DEFAULT 200,
+                level INT UNSIGNED NOT NULL DEFAULT 1,
+                rank_title VARCHAR(64) NOT NULL DEFAULT 'Cyber Cadet',
+                power_level VARCHAR(32) NOT NULL DEFAULT 'low',
+                pending_payout DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+                updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                PRIMARY KEY  (id),
+                UNIQUE KEY uq_uw_user (user_id)
+            ) $charset_collate;",
+            "CREATE TABLE {$wpdb->prefix}cyber_user_wallet (
+                id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+                user_id BIGINT UNSIGNED NOT NULL,
+                balance_bdt DECIMAL(12,2) NOT NULL DEFAULT 50.00,
+                xp_points INT UNSIGNED NOT NULL DEFAULT 200,
+                level INT UNSIGNED NOT NULL DEFAULT 1,
+                rank_title VARCHAR(64) NOT NULL DEFAULT 'Cyber Cadet',
+                power_level VARCHAR(32) NOT NULL DEFAULT 'low',
+                pending_payout DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+                updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                PRIMARY KEY  (id),
+                UNIQUE KEY uq_cuw_user (user_id)
             ) $charset_collate;",
             "CREATE TABLE {$p}cyber_certificates (
                 id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,

@@ -1,8 +1,8 @@
 <?php
 /**
  * BotEcosystem - Enterprise Autonomous Bot System (8 Master Autonomous Bots)
- * Part of Hackers শিক্ষক Core Engine (v4.0.0)
- * Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Part of HackersShikkhok Core Engine (v4.0.0)
+ * Developed by HackersShikkhok (https://hackersshikkhok.com)
  *
  * Provides 8 fully decoupled, autonomous background bots designed to eliminate
  * manual admin labor, protect security, maximize Google search trending,
@@ -29,12 +29,12 @@ final class BotEcosystem {
         'bot-01' => array(
             'id'          => 'bot-01',
             'slug'        => 'cyber-sentinel',
-            'nameBn'      => 'CyberSentinel-Bot (নিরাপত্তা ও থ্রেট ডিফেন্ডার)',
+            'nameBn'      => 'CyberSentinel-Bot (   )',
             'nameEn'      => 'CyberSentinel Autonomous Security Daemon',
             'category'    => 'Security & Defense',
             'icon'        => 'ShieldAlert',
             'frequency'   => 'Every 5 Minutes (Real-Time)',
-            'role'        => '24/7 ব্রুটফোর্স, SQLi, XSS অ্যাটাক সিগনেচার ডিটেকশন, ক্ষতিকর আইপি অটো-ব্যান এবং ডিনায়াল অফ সার্ভিস প্রতিরোধ।',
+            'role'        => '24/7 , SQLi, XSS   ,   -     ।',
             'action'      => 'run_cyber_sentinel',
             'status'      => 'Active',
             'lastRun'     => 'Just now',
@@ -44,12 +44,12 @@ final class BotEcosystem {
         'bot-02' => array(
             'id'          => 'bot-02',
             'slug'        => 'content-crafter',
-            'nameBn'      => 'ContentCrafter-Bot (অটোনমাস কনটেন্ট পাবলিশার)',
+            'nameBn'      => 'ContentCrafter-Bot (  )',
             'nameEn'      => 'ContentCrafter Trend & Technical Publisher',
             'category'    => 'Content & Editorial',
             'icon'        => 'Cpu',
             'frequency'   => 'Hourly Cron',
-            'role'        => 'গুগলের ট্রেন্ডিং টেক ও সাইবার কোয়েরি মনিটর করে Quality Gate ≥ 85 সহ স্বয়ংক্রিয় টিউটোরিয়াল, কোড ও গাইড জেনারেট।',
+            'role'        => '        Quality Gate ≥ 85   ,    ।',
             'action'      => 'run_content_crafter',
             'status'      => 'Active',
             'lastRun'     => '14 mins ago',
@@ -59,12 +59,12 @@ final class BotEcosystem {
         'bot-03' => array(
             'id'          => 'bot-03',
             'slug'        => 'google-ranker',
-            'nameBn'      => 'GoogleRanker-Bot (এসইও ও সার্চ কনসোল বট)',
+            'nameBn'      => 'GoogleRanker-Bot (    )',
             'nameEn'      => 'GoogleRanker SEO & Indexing Crawler',
             'category'    => 'SEO & Ranking',
             'icon'        => 'Search',
             'frequency'   => 'Every 3 Hours',
-            'role'        => 'XML সাইটম্যাপ ইনডেক্সিং পিং, FAQ/Breadcrumb/SoftwareApplication স্কিমা ভ্যালিডেশন ও ইন্টারনাল লিংক গ্রাফ অটো-ফিক্স।',
+            'role'        => 'XML   , FAQ/Breadcrumb/SoftwareApplication       -।',
             'action'      => 'run_google_ranker',
             'status'      => 'Active',
             'lastRun'     => '32 mins ago',
@@ -74,12 +74,12 @@ final class BotEcosystem {
         'bot-04' => array(
             'id'          => 'bot-04',
             'slug'        => 'adsense-shield',
-            'nameBn'      => 'AdSenseShield-Bot (অ্যাডসেন্স রেভিনিউ গার্ড বট)',
+            'nameBn'      => 'AdSenseShield-Bot (   )',
             'nameEn'      => 'AdSenseShield Compliance & Revenue Guardian',
             'category'    => 'Monetization & AdSense',
             'icon'        => 'Award',
             'frequency'   => 'Twice Daily',
-            'role'        => 'অ্যাডসেন্স পলিসি চেকলিস্ট অডিট: থিন কনটেন্ট শনাক্তকরণ, টেক্সট-টু-অ্যাড রেশিও অপ্টিমাইজেশন ও ইনভ্যালিড ক্লিক ফিল্টার।',
+            'role'        => '   :   , --      ।',
             'action'      => 'run_adsense_shield',
             'status'      => 'Active',
             'lastRun'     => '1 hour ago',
@@ -89,12 +89,12 @@ final class BotEcosystem {
         'bot-05' => array(
             'id'          => 'bot-05',
             'slug'        => 'app-builder',
-            'nameBn'      => 'AppBuilder-Bot (অ্যাপ কম্পাইলার ও ভ্যালিডেটর বট)',
+            'nameBn'      => 'AppBuilder-Bot (    )',
             'nameEn'      => 'AppBuilder Studio Packaging Daemon',
             'category'    => 'Platform Centers & Mobile',
             'icon'        => 'Smartphone',
             'frequency'   => 'On Submission & Daily Audit',
-            'role'        => 'ব্যবহারকারীদের সাবমিট করা সাইট লিংক টেস্ট করা, রেসপন্সিভ ভিউপোর্ট ভ্যালিডেশন, ম্যানিফেস্ট ও অ্যান্ড্রয়েড কোড অটো-কম্পাইল।',
+            'role'        => '      ,   ,     -।',
             'action'      => 'run_app_builder',
             'status'      => 'Active',
             'lastRun'     => '22 mins ago',
@@ -104,12 +104,12 @@ final class BotEcosystem {
         'bot-06' => array(
             'id'          => 'bot-06',
             'slug'        => 'commu-guard',
-            'nameBn'      => 'CommuGuard-Bot (ফোরাম ও সোশ্যাল মডারেটর বট)',
+            'nameBn'      => 'CommuGuard-Bot (    )',
             'nameEn'      => 'CommuGuard Community & Sentiment Sentinel',
             'category'    => 'Community & Moderation',
             'icon'        => 'Users',
             'frequency'   => 'Every 10 Minutes',
-            'role'        => 'ফোরামের ক্ষতিকর লিংক ও স্প্যাম কমেন্ট অটোমেটিক ট্র্যাশ করা, ডুপ্লিকেট থ্রেড মার্জ ও গ্যামিফিকেশন ব্যাজ ডিস্ট্রিবিউট।',
+            'role'        => '        ,       ।',
             'action'      => 'run_commu_guard',
             'status'      => 'Active',
             'lastRun'     => '6 mins ago',
@@ -119,12 +119,12 @@ final class BotEcosystem {
         'bot-07' => array(
             'id'          => 'bot-07',
             'slug'        => 'social-push',
-            'nameBn'      => 'SocialPush-Bot (ব্রডকাস্ট ও ওয়েব পুশ বট)',
+            'nameBn'      => 'SocialPush-Bot (    )',
             'nameEn'      => 'SocialPush Multi-Channel Dispatcher',
             'category'    => 'Marketing & Distribution',
             'icon'        => 'Send',
             'frequency'   => 'On Publish / Daily Digest',
-            'role'        => 'নতুন কোর্স, অ্যাপ বা টুলস রিলিজ হলে সাবস্ক্রাইবারদের কাছে স্বয়ংক্রিয় ওয়েব পুশ নোটিফিকেশন ও ওপেনগ্রাফ কার্ড ডেসপ্যাচ।',
+            'role'        => ' ,               ।',
             'action'      => 'run_social_push',
             'status'      => 'Active',
             'lastRun'     => '45 mins ago',
@@ -134,12 +134,12 @@ final class BotEcosystem {
         'bot-08' => array(
             'id'          => 'bot-08',
             'slug'        => 'health-repair',
-            'nameBn'      => 'HealthRepair-Bot (ডাটাবেস ও সেলফ-হিলিং বট)',
+            'nameBn'      => 'HealthRepair-Bot (  - )',
             'nameEn'      => 'HealthRepair Self-Healing & DB Optimizer',
             'category'    => 'System & Infrastructure',
             'icon'        => 'RefreshCw',
             'frequency'   => 'Every 6 Hours',
-            'role'        => 'ডাটাবেস টেবিল অপ্টিমাইজেশন, এক্সপায়ারড ট্রানসিয়েন্ট ক্লিনআপ, ক্রন হার্টবিট টেস্ট ও ৩-রিট্রাই স্বয়ংক্রিয় সেলফ-হিলিং।',
+            'role'        => '  ,   ,     -  -।',
             'action'      => 'run_health_repair',
             'status'      => 'Active',
             'lastRun'     => 'Just now',

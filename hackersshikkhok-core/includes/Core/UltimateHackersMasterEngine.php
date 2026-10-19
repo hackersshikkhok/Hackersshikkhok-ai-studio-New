@@ -64,7 +64,7 @@ final class UltimateHackersMasterEngine {
     }
 
     public static function render_admin_dashboard(): void {
-        echo '<div class="wrap"><h1>Hackers শিক্ষক — Ultimate Master Control Center</h1>';
+        echo '<div class="wrap"><h1>HackersShikkhok — Ultimate Master Control Center</h1>';
         echo '<p class="description">Enterprise AI Autopilot, 2000-5000 Word Deep Generator, Web-Bash Labs & SEO Ranking Engine Active.</p>';
         echo '<div style="background:#1e1e2f; color:#00ffcc; padding:20px; border-radius:8px; margin-top:20px;">';
         echo '<h2>🔥 System Status: 100% Operational</h2>';

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * System Health & Diagnostics Engine
  * Performs active, live verification of database tables, filesystem permissions, AI API configuration, and WP Cron.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class SystemHealth {
 

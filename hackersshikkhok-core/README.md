@@ -107,8 +107,8 @@ hackersshikkhok-core/
   3. `network_dmz_defense`: DMZ isolation, reverse proxy, and internal DB firewall rules.
   4. `xss_defense`: Context-aware encoding and CSP policy shield.
 - **Immediate Real Data Seeder (`Autopilot::seed_default_courses()`)**: Automatically seeds 2 complete, production-ready cybersecurity courses in Bengali & English upon activation:
-  1. *ওয়েব অ্যাপ্লিকেশন সিকিউরিটি ও ডিফেন্সিভ কোডিং মাস্টারক্লাস* (Free Starter Access, 3 lessons, 3 CTF flags).
-  2. *এন্টারপ্রাইজ নেটওয়ার্ক পেনিট্রেশন টেস্টিং ও ডিফেন্স আর্কিটেকচার* (Premium Tier, 100 BDT, DMZ segregation).
+  1. *      * (Free Starter Access, 3 lessons, 3 CTF flags).
+  2. *      * (Premium Tier, 100 BDT, DMZ segregation).
 - **Theme LMS Player (`page-academy.php`, `cyber-lms.css`, `terminal-engine.js`)**: 3-column cyberpunk layout (Col 1: Curriculum tree | Col 2: Stage with Video, Red Arrow SVG diagrams & xterm-style Web Terminal | Col 3: LocalStorage Scratchpad, Quiz Console & Text-To-Speech Player with Male/Female toggle).
 
 ---

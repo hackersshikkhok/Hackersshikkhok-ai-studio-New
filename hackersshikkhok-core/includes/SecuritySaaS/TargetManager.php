@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Target & Asset Scope Management
+ * HackersShikkhok — Target & Asset Scope Management
  *
  * Handles client target scope registration, ownership verification (DNS TXT, File, Meta),
  * and security health grade computation.

@@ -161,7 +161,7 @@ final class Theming_Engine {
         if ( ! isset( self::POWER_LEVELS[ $target_level ] ) ) {
             return new WP_REST_Response( array(
                 'success' => false,
-                'message' => 'ইনভ্যালিড পাওয়ার লেভেল।',
+                'message' => 'Invalid power level.',
             ), 400 );
         }
 
@@ -172,7 +172,7 @@ final class Theming_Engine {
             'success'     => true,
             'power_level' => $target_level,
             'config'      => self::POWER_LEVELS[ $target_level ],
-            'message'     => "সফলভাবে {$target_level} পাওয়ার লেভেলে স্যুইচ করা হয়েছে!",
+            'message'     => " {$target_level}     !",
         ), 200 );
     }
 

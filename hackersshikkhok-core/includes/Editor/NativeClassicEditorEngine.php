@@ -1,12 +1,14 @@
 <?php
 /**
  * Native Classic Editor & SEO/Schema/Code Metabox Engine (Without Third-Party Classic Editor Plugin)
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 
 declare(strict_types=1);
 
 namespace HackersShikkhok\Core\Editor;
+
+use WP_Post;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -27,7 +29,7 @@ final class NativeClassicEditorEngine {
         foreach ( $post_types as $pt ) {
             add_meta_box(
                 'hs_native_seo_schema_box',
-                'Hackers শিক্ষক — Native SEO, Schema, Code & Related Binding',
+                'HackersShikkhok — Native SEO, Schema, Code & Related Binding',
                 array( self::class, 'render_metabox' ),
                 $pt,
                 'normal',
@@ -36,7 +38,10 @@ final class NativeClassicEditorEngine {
         }
     }
 
-    public static function render_metabox( \WP_Post $post ): void {
+    public static function render_metabox( ?\WP_Post $post = null ): void {
+        if ( ! $post || ! isset( $post->ID ) ) {
+            return;
+        }
         wp_nonce_field( 'hs_save_native_metabox', 'hs_native_metabox_nonce' );
         $seo_title = (string) get_post_meta( $post->ID, '_hs_seo_title', true );
         $seo_desc  = (string) get_post_meta( $post->ID, '_hs_seo_desc', true );
@@ -59,7 +64,7 @@ final class NativeClassicEditorEngine {
         <?php
     }
 
-    public static function save_native_metabox( int $post_id, WP_Post $post ): void {
+    public static function save_native_metabox( int $post_id, ?\WP_Post $post = null ): void {
         if ( ! isset( $_POST['hs_native_metabox_nonce'] ) || ! wp_verify_nonce( (string) $_POST['hs_native_metabox_nonce'], 'hs_save_native_metabox' ) ) {
             return;
         }

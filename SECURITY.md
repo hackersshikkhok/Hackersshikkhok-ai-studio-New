@@ -1,4 +1,4 @@
-# Security Policy & Hardening — Hackers শিক্ষক
+# Security Policy & Hardening — HackersShikkhok
 
 ## Core Security Mechanisms
 1. **Server-Side Verification:** Client submissions are untrusted. Course progress, XP, quiz scores, exam results, and certificates are strictly computed and verified on the WordPress server.

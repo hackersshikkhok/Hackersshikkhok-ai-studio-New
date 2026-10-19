@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Multilingual XML Sitemap Index & Child Engine
+ * HackersShikkhok — Multilingual XML Sitemap Index & Child Engine
  *
  * Implements Google Search Console compliant sitemap structure with Google Image Sitemap protocol:
  * - /sitemap_index.xml (Master index)
@@ -177,7 +177,7 @@ final class MultilingualSitemapEngine {
                 echo "    <priority>0.9</priority>\n";
                 echo "    <image:image>\n";
                 echo '      <image:loc>' . esc_url( $svg_banner ) . "</image:loc>\n";
-                echo '      <image:title>' . esc_html( $tool_title ) . " — Hackers শিক্ষক Free Cyber Security Tool</image:title>\n";
+                echo '      <image:title>' . esc_html( $tool_title ) . " — HackersShikkhok Free Cyber Security Tool</image:title>\n";
                 echo "      <image:caption>Interactive Vector Architecture Diagram &amp; 100% Client-Side Privacy</image:caption>\n";
                 echo "    </image:image>\n";
                 echo "  </url>\n";

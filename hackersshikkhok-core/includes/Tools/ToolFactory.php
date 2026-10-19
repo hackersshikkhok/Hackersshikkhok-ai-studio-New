@@ -53,7 +53,11 @@ final class ToolFactory {
         }
 
         global $wpdb;
-        $table = $wpdb->prefix . 'custom_tools';
+        $table = $wpdb->prefix . 'hs_custom_tools';
+        $exists = $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table ) );
+        if ( ! $exists ) {
+            $table = $wpdb->prefix . 'custom_tools';
+        }
 
         // Check if slug already exists
         $existing = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$table} WHERE tool_slug = %s", $tool_slug ) );
@@ -80,7 +84,7 @@ final class ToolFactory {
                 'processor_type' => $processor_type,
                 'status' => $status,
                 'version' => $version,
-                'seo_title' => "{$tool_name} | Online Free Tool - Hackers শিক্ষক",
+                'seo_title' => "{$tool_name} | Online Free Tool - HackersShikkhok",
                 'seo_description' => $description,
                 'created_at' => current_time( 'mysql', true ),
                 'updated_at' => current_time( 'mysql', true ),
@@ -101,7 +105,7 @@ final class ToolFactory {
         return new WP_REST_Response(
             array(
                 'success' => true,
-                'message' => "Tool '{$tool_name}' (#{$wpdb->insert_id}) successfully registered in Hackers শিক্ষক Tool Catalog!",
+                'message' => "Tool '{$tool_name}' (#{$wpdb->insert_id}) successfully registered in HackersShikkhok Tool Catalog!",
                 'tool_id' => $tool_slug,
             ),
             201

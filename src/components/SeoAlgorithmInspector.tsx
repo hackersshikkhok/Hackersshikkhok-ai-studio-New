@@ -62,18 +62,18 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
         },
         'author': {
           '@type': 'Organization',
-          'name': 'Hackers শিক্ষক',
+          'name': 'HackersShikkhok',
           'url': 'https://hackersshikkhok.com'
         }
       },
       {
         '@type': 'HowTo',
         '@id': `${pageUrl}#howto`,
-        'name': `কীভাবে ${tool.nameBn} ব্যবহার করবেন?`,
+        'name': ` ${tool.nameBn}  ?`,
         'step': (enriched?.howTo || [
-          '১. ইনপুট প্যানেলে ডাটা প্রদান করুন।',
-          '২. এক্সিকিউট বাটনে চাপুন।',
-          '৩. ফলাফল কপি বা ডাউনলোড করুন।'
+          '.     ।',
+          '. Execute  ।',
+          '.    Download ।'
         ]).map((step, idx) => ({
           '@type': 'HowToStep',
           'position': idx + 1,
@@ -85,8 +85,8 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
         '@id': `${pageUrl}#faq`,
         'mainEntity': (enriched?.faqs || [
           {
-            q: `এই ${tool.name} টুলটি কি সম্পূর্ণ বিনামূল্যে?`,
-            a: 'হ্যাঁ, এটি সম্পূর্ণ বিনামূল্যে ও অফলাইন-ফার্স্ট।'
+            q: ` ${tool.name} Tool   ?`,
+            a: ',     -।'
           }
         ]).map((faq) => ({
           '@type': 'Question',
@@ -112,8 +112,7 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
     }
   };
 
-  return (
-    <div className="space-y-6">
+  return (<div className="space-y-6">
       {/* Top Header */}
       <div className="p-4 rounded-xl bg-[#0b1120] border border-[#00f5d4]/20 flex flex-wrap items-center justify-between gap-3">
         <div>
@@ -121,45 +120,35 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
             <Sparkles className="w-3.5 h-3.5" />
             <span>GOOGLE SEARCH ALGORITHM &amp; 1ST PAGE RANKING ARCHITECTURE</span>
           </div>
-          <h3 className="text-base font-bold text-white mt-1">
-            সার্চ ইঞ্জিন অ্যালগরিদম মেকানিক্স ও ২,০২৪ টি টুলের গুগল টপ র‍্যাঙ্কিং স্ট্র্যাটেজি
-          </h3>
-          <p className="text-xs text-slate-400 mt-0.5">
-            কেন সাধারণ টুলস সাইটগুলো হেরে যায় এবং Hackers শিক্ষক কীভাবে প্রতিদ্বন্দীদের পেছনে ফেলে ১ম পেজে স্থান করে নেয়?
-          </p>
+          <h3 className="text-base font-bold text-white mt-1">Engine    ,  Tool   ‍</h3>
+          <p className="text-xs text-slate-400 mt-0.5">Tool     HackersShikkhok         ?</p>
         </div>
 
         <div className="flex items-center gap-2">
           <button
-            onClick={() => setActiveStrategyTab('ranking-factors')}
+            onClick={() =>setActiveStrategyTab('ranking-factors')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-colors ${
               activeStrategyTab === 'ranking-factors'
                 ? 'bg-[#00f5d4] text-[#050811]'
                 : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800'
             }`}
-          >
-            অ্যালগরিদম ফ্যাক্টর
-          </button>
+          ></button>
           <button
-            onClick={() => setActiveStrategyTab('visual-impact')}
+            onClick={() =>setActiveStrategyTab('visual-impact')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-colors ${
               activeStrategyTab === 'visual-impact'
                 ? 'bg-[#ff3366] text-white'
                 : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800'
             }`}
-          >
-            আইকন ও থাম্বনেইলের গুরুত্ব
-          </button>
+          ></button>
           <button
-            onClick={() => setActiveStrategyTab('competitor-matrix')}
+            onClick={() =>setActiveStrategyTab('competitor-matrix')}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-colors ${
               activeStrategyTab === 'competitor-matrix'
                 ? 'bg-purple-600 text-white'
                 : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800'
             }`}
-          >
-            প্রতিদ্বন্দী বিটিং ম্যাট্রিক্স
-          </button>
+          ></button>
         </div>
       </div>
 
@@ -169,12 +158,10 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
           <div className="p-4 rounded-xl bg-[#0b1120] border border-slate-800 space-y-3">
             <div className="flex items-center gap-2 text-xs font-bold text-emerald-400">
               <Zap className="w-4 h-4" />
-              <span>১. Core Web Vitals ও ক্লায়েন্ট-সাইড স্পিড (INP &lt; 50ms)</span>
+              <span>. Core Web Vitals  -  (INP &lt; 50ms)</span>
             </div>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              গুগলের পেজ এক্সপেরিয়েন্স আপডেটে <strong>INP (Interaction to Next Paint)</strong> এবং <strong>LCP (Largest Contentful Paint)</strong> সবচেয়ে বড় র‍্যাঙ্কিং ফ্যাক্টর।
-              যেসব সাইট বাটনে ক্লিক করলে সার্ভার লোডিং স্পিনার দেখায়, গুগল তাদের ডাউন-র‍্যাঙ্ক করে। আমাদের ২,০২৪ টি টুল সম্পূর্ণ <strong>Client-Side WebWorker / ES6</strong>-এ চলে, ফলে স্পিড স্কোর <strong>100/100</strong> এবং রেসপন্স টাইম ০-১৫ মিলিসেকেন্ড!
-            </p>
+            <p className="text-xs text-slate-300 leading-relaxed">Cyber Defense Hub<strong>INP (Interaction to Next Paint)</strong>Cyber Defense Hub<strong>LCP (Largest Contentful Paint)</strong>‍ ।
+                      ,   -‍ ।  ,  Tool<strong>Client-Side WebWorker / ES6</strong>- ,<strong>100/100</strong>- !</p>
             <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-300 bg-emerald-500/10 p-2 rounded border border-emerald-500/20">
               <CheckCircle className="w-3.5 h-3.5" />
               <span>INP: 12ms · LCP: 0.6s · CLS: 0.00 (Perfect Google CWV Passed)</span>
@@ -184,11 +171,9 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
           <div className="p-4 rounded-xl bg-[#0b1120] border border-slate-800 space-y-3">
             <div className="flex items-center gap-2 text-xs font-bold text-[#00f5d4]">
               <Search className="w-4 h-4" />
-              <span>২. সার্চ ইনটেন্ট ও জিরো পাউন্সিং (Dwell Time Boost)</span>
+              <span>.      (Dwell Time Boost)</span>
             </div>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              গুগল <strong>RankBrain</strong> ও <strong>Helpful Content System</strong> দিয়ে লক্ষ্য করে ইউজার সার্চ রেজাল্ট থেকে সাইটে আসার পর কতক্ষণ সাইটে অবস্থান করছে। যদি ইউজার টুলটি ইনস্ট্যান্ট ব্যবহার করতে পারে, কপি করে এবং ডায়াগ্রাম দেখে সন্তুষ্ট থাকে, সে আবার সার্চে ফিরে যায় না (Zero Pogo-Sticking)। গুগল এটিকে ১ নম্বর অথরিটি সংকেত হিসেবে গ্রহণ করে।
-            </p>
+            <p className="text-xs text-slate-300 leading-relaxed">Cyber Defense Hub<strong>RankBrain</strong>Cyber Defense Hub<strong>Helpful Content System</strong>।   Tool    ,       ,       (Zero Pogo-Sticking)।         ।</p>
             <div className="flex items-center gap-2 text-[11px] font-mono text-[#00f5d4] bg-[#00f5d4]/10 p-2 rounded border border-[#00f5d4]/20">
               <CheckCircle className="w-3.5 h-3.5" />
               <span>Dwell Time: Avg 4.2 mins · Bounce Back to SERP: &lt; 2%</span>
@@ -198,11 +183,9 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
           <div className="p-4 rounded-xl bg-[#0b1120] border border-slate-800 space-y-3">
             <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
               <Star className="w-4 h-4 fill-current" />
-              <span>৩. রিচ স্নsnippet ও গোল্ডেন স্টার রেটিং (Schema.org)</span>
+              <span>.  snippet     (Schema.org)</span>
             </div>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              গুগল সার্চ পেজে সাধারণ টেক্সট লিঙ্কের তুলনায় যেসব টুলে <strong>SoftwareApplication</strong>, <strong>HowTo</strong>, <strong>FAQPage</strong> এবং <strong>গোল্ডেন স্টার রেটিং (৪.৯ ★)</strong> প্রদর্শিত হয়, সেগুলোতে মানুষ ২.৮ গুণ বেশি ক্লিক করে (CTR 18.4% vs 4.2%)। বেশি CTR পাওয়ার ফলে গুগল স্বয়ংক্রিয়ভাবে টুলটিকে ১ নম্বরে তুলে আনে।
-            </p>
+            <p className="text-xs text-slate-300 leading-relaxed">Tool<strong>SoftwareApplication</strong>, <strong>HowTo</strong>, <strong>FAQPage</strong>Cyber Defense Hub<strong>(. ★)</strong>,   .     (CTR 18.4% vs 4.2%)।  CTR     Tool    ।</p>
             <div className="flex items-center gap-2 text-[11px] font-mono text-amber-300 bg-amber-500/10 p-2 rounded border border-amber-500/20">
               <CheckCircle className="w-3.5 h-3.5" />
               <span>Structured Data: SoftwareApplication + FAQ + HowTo + AggregateRating</span>
@@ -212,11 +195,9 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
           <div className="p-4 rounded-xl bg-[#0b1120] border border-slate-800 space-y-3">
             <div className="flex items-center gap-2 text-xs font-bold text-purple-400">
               <Globe className="w-4 h-4" />
-              <span>৪. দ্বৈত ভাষা ও লং-টেইল কিওয়ার্ড ডমিন্যান্স (Bangla + English)</span>
+              <span>.    -   (Bangla + English)</span>
             </div>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              আন্তর্জাতিক সাইটগুলো শুধুমাত্র ইংরেজিতে অপ্টিমাইজড। কিন্তু বাংলাদেশ, ভারত ও প্রবাসী বাংলাভাষী কমিউনিটি যখন সার্চ করে <em>"অনলাইন হ্যাশ জেনারেটর"</em> বা <em>"সিএসএস আরজিবি কনভার্টার"</em>, তখন আমাদের বাইলিঙ্গুয়াল কিওয়ার্ড আর্কিটেকচার প্রতিটি কিওয়ার্ডে টপ পজিশন দখল করে। একই সাথে ইংরেজি গ্লোবাল কোয়েরিও ইনডেক্স হয়।
-            </p>
+            <p className="text-xs text-slate-300 leading-relaxed">English ।  English,    English<em>"  Generator"</em>Cyber Defense Hub<em>"  "</em>,           ।   English    ।</p>
             <div className="flex items-center gap-2 text-[11px] font-mono text-purple-300 bg-purple-500/10 p-2 rounded border border-purple-500/20">
               <CheckCircle className="w-3.5 h-3.5" />
               <span>Bilingual H1/H2, Meta Tags, How-To, FAQs and Slugs in Sync</span>
@@ -230,12 +211,9 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
         <div className="space-y-4">
           <div className="p-4 rounded-xl bg-gradient-to-r from-[#ff3366]/10 via-[#00f5d4]/10 to-transparent border border-[#ff3366]/30">
             <h4 className="text-sm font-bold text-white flex items-center gap-2">
-              <Flame className="w-4 h-4 text-[#ff3366]" />
-              প্রত্যেকটি টুলের জন্য আলাদা নিজস্ব আইকন ও ফিচার্ড ইমেজ থাকা কেন অত্যন্ত জরুরি?
-            </h4>
+              <Flame className="w-4 h-4 text-[#ff3366]" />Tool           ?</h4>
             <p className="text-xs text-slate-300 mt-2 leading-relaxed">
-              <strong>উত্তর: হ্যা, ১০০% অত্যন্ত জরুরি এবং এটি আধুনিক গুগলের অন্যতম প্রধান র‍্যাঙ্কিং অস্ত্র!</strong> নিচে এর বৈজ্ঞানিক ও টেকনিক্যাল কারণগুলো দেওয়া হলো:
-            </p>
+              <strong>: , %         ‍ !</strong>:</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -244,29 +222,23 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
                 1
               </div>
               <h5 className="text-xs font-bold text-white">Google Image Search &amp; Discover</h5>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
-                গুগল ইমেজ সার্চ এবং গুগল ডিসকভার (Android Chrome ফিড) শুধুমাত্র হাই-রেজোলিউশন ভেক্টর/ওয়েবপি ইমেজ থাকা পেজগুলোকে প্রমোট করে। ইমেজ সাইটম্যাপ ইনডেক্সিংয়ের মাধ্যমে অতিরিক্ত ৩৫% অর্গানিক ভিজিটর আসে।
-              </p>
+              <p className="text-[11px] text-slate-400 leading-relaxed">(Android Chrome )  - /     ।      %   ।</p>
             </div>
 
             <div className="p-4 rounded-xl bg-[#0b1120] border border-slate-800 space-y-2">
               <div className="w-8 h-8 rounded-lg bg-[#00f5d4]/10 text-[#00f5d4] flex items-center justify-center font-bold text-sm border border-[#00f5d4]/30">
                 2
               </div>
-              <h5 className="text-xs font-bold text-white">Google AI Overviews (SGE) কোটেশন</h5>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
-                গুগলের নতুন এআই সার্চ (AI Overviews) সেইসব টুলকেই কার্ড আকারে প্রদর্শন করে যাদের <code className="text-[#00f5d4]">schema.org/screenshot</code> ও আর্কিটেকচার ডায়াগ্রাম বিদ্যমান। এটি সরাসরি রেফারেন্স হিসেবে নির্বাচিত করে।
-              </p>
+              <h5 className="text-xs font-bold text-white">Google AI Overviews (SGE)</h5>
+              <p className="text-[11px] text-slate-400 leading-relaxed">(AI Overviews)  Tool<code className="text-[#00f5d4]">schema.org/screenshot</code>।      ।</p>
             </div>
 
             <div className="p-4 rounded-xl bg-[#0b1120] border border-slate-800 space-y-2">
               <div className="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-sm border border-purple-500/30">
                 3
               </div>
-              <h5 className="text-xs font-bold text-white">সোশ্যাল শেয়ার ও ব্যাকলিংক ড্রাইভ (CTR 2.8x)</h5>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
-                সোশ্যাল মিডিয়া (Facebook, Reddit, Discord, Twitter) এবং ফোরামে লিংক পেস্ট করলে যখন আমাদের ডায়নামিক এসভিজি আর্কিটেকচার ব্যানার ভেসে ওঠে, ব্যবহারকারীরা মুগ্ধ হয়ে রি-শেয়ার করে, যার ফলে কোয়ালিটি ব্যাকলিংক তৈরি হয়।
-              </p>
+              <h5 className="text-xs font-bold text-white">(CTR 2.8x)</h5>
+              <p className="text-[11px] text-slate-400 leading-relaxed">(Facebook, Reddit, Discord, Twitter)             ,    - ,      ।</p>
             </div>
           </div>
         </div>
@@ -278,48 +250,48 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
           <table className="w-full text-left text-xs border border-slate-800 rounded-xl overflow-hidden bg-[#0b1120]">
             <thead>
               <tr className="bg-[#050811] border-b border-slate-800 text-slate-400 font-mono text-[11px]">
-                <th className="p-3">বৈশিষ্ট্য ও র‍্যাঙ্কিং প্যারামিটার</th>
-                <th className="p-3 text-[#00f5d4] font-bold">Hackers শিক্ষক (আমাদের প্ল্যাটফর্ম)</th>
+                <th className="p-3">‍</th>
+                <th className="p-3 text-[#00f5d4] font-bold">HackersShikkhok ( Platform)</th>
                 <th className="p-3 text-slate-400">CyberChef / 10015.io</th>
                 <th className="p-3 text-slate-400">SmallSEOTools / RapidTables</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/80">
               <tr>
-                <td className="p-3 font-semibold text-white">টুল সংখ্যা ও ক্যাটালগ গভীরতা</td>
-                <td className="p-3 text-emerald-400 font-mono font-bold">২,০২৪ টি আল্ট্রা-প্রো ইউটিলিটি</td>
-                <td className="p-3 text-slate-400">১০০-৩০০ টি</td>
-                <td className="p-3 text-slate-400">১০০-২০০ টি</td>
+                <td className="p-3 font-semibold text-white">Tool</td>
+                <td className="p-3 text-emerald-400 font-mono font-bold">,  -</td>
+                <td className="p-3 text-slate-400">-</td>
+                <td className="p-3 text-slate-400">-</td>
               </tr>
               <tr>
-                <td className="p-3 font-semibold text-white">এক্সিকিউশন আর্কিটেকচার ও স্পিড</td>
-                <td className="p-3 text-emerald-400 font-bold">১০০% ক্লায়েন্ট-সাইড (০-১৫ মিলিসেকেন্ড)</td>
-                <td className="p-3 text-amber-400">ক্লায়েন্ট-সাইড তবে ভারী বান্ডেল</td>
-                <td className="p-3 text-red-400">সার্ভার রাউন্ডট্রিপ (৩-৫ সেকেন্ড দেরি)</td>
+                <td className="p-3 font-semibold text-white">Cyber Defense Hub</td>
+                <td className="p-3 text-emerald-400 font-bold">% - (- )</td>
+                <td className="p-3 text-amber-400">-</td>
+                <td className="p-3 text-red-400">(-  )</td>
               </tr>
               <tr>
-                <td className="p-3 font-semibold text-white">ইউজার প্রাইভেসি ও ডাটা লিক</td>
-                <td className="p-3 text-emerald-400 font-bold">জিরো সার্ভার লগ (এনক্লেভ স্যান্ডবক্স)</td>
-                <td className="p-3 text-emerald-400">ক্লায়েন্ট মেমোরি</td>
-                <td className="p-3 text-red-400">সার্ভার ডাটাবেজে স্টোর ও বিক্রি ঝুঁকি</td>
+                <td className="p-3 font-semibold text-white">Cyber Defense Hub</td>
+                <td className="p-3 text-emerald-400 font-bold">( )</td>
+                <td className="p-3 text-emerald-400">Cyber Defense Hub</td>
+                <td className="p-3 text-red-400">Cyber Defense Hub</td>
               </tr>
               <tr>
-                <td className="p-3 font-semibold text-white">ভিজ্যুয়াল ডায়াগ্রাম ও রেড কলআউট অ্যারো</td>
-                <td className="p-3 text-emerald-400 font-bold">ডায়নামিক ভেক্টর এসভিজি (#ff3366 অ্যারো)</td>
-                <td className="p-3 text-slate-500">নেই (শুধু ইনপুট বক্স)</td>
-                <td className="p-3 text-slate-500">নেই</td>
+                <td className="p-3 font-semibold text-white">Cyber Defense Hub</td>
+                <td className="p-3 text-emerald-400 font-bold">(#ff3366 )</td>
+                <td className="p-3 text-slate-500">(  )</td>
+                <td className="p-3 text-slate-500">Cyber Defense Hub</td>
               </tr>
               <tr>
-                <td className="p-3 font-semibold text-white">ভাষা ও এসইও অপ্টিমাইজেশন</td>
-                <td className="p-3 text-emerald-400 font-bold">বাংলা + ইংরেজি ডুয়াল ইনডেক্সিং</td>
-                <td className="p-3 text-slate-400">শুধুমাত্র ইংরেজি</td>
-                <td className="p-3 text-slate-400">ভাঙা মেশিন ট্রান্সলেশন</td>
+                <td className="p-3 font-semibold text-white">Cyber Defense Hub</td>
+                <td className="p-3 text-emerald-400 font-bold">English + English</td>
+                <td className="p-3 text-slate-400">English</td>
+                <td className="p-3 text-slate-400">Cyber Defense Hub</td>
               </tr>
               <tr>
-                <td className="p-3 font-semibold text-white">বিজ্ঞাপন বিরক্তি ও ইউজার এক্সপেরিয়েন্স</td>
-                <td className="p-3 text-emerald-400 font-bold">জিরো পপআপ, সাইবারপাঙ্ক ডার্ক মোড</td>
-                <td className="p-3 text-amber-400">সাধারণ</td>
-                <td className="p-3 text-red-400">১৫+ আগ্রাসী পপআপ ও ক্যাপচা ওয়াল</td>
+                <td className="p-3 font-semibold text-white">Cyber Defense Hub</td>
+                <td className="p-3 text-emerald-400 font-bold">, Cyber</td>
+                <td className="p-3 text-amber-400">Cyber Defense Hub</td>
+                <td className="p-3 text-red-400">+</td>
               </tr>
             </tbody>
           </table>
@@ -331,9 +303,7 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
         <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
           <div className="flex items-center gap-2">
             <Search className="w-4 h-4 text-[#00f5d4]" />
-            <h4 className="text-xs font-bold text-white">
-              লাইভ গুগল সার্চ ফলাফল সিমুলেটর (Live Google SERP Snippet Preview)
-            </h4>
+            <h4 className="text-xs font-bold text-white">(Live Google SERP Snippet Preview)</h4>
           </div>
 
           <div className="flex items-center gap-1.5 p-1 bg-[#050811] rounded-lg border border-slate-800">
@@ -368,7 +338,7 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
               H
             </div>
             <div className="flex items-center gap-1">
-              <span>Hackers শিক্ষক</span>
+              <span>HackersShikkhok</span>
               <span>›</span>
               <span>Tools</span>
               <span>›</span>
@@ -378,7 +348,7 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
 
           {/* Title Link */}
           <h5 className="text-lg text-[#8ab4f8] hover:underline cursor-pointer font-medium leading-snug">
-            {tool.nameBn} ({tool.name}) — 100% Free Online Tool | Hackers শিক্ষক
+            {tool.nameBn} ({tool.name}) — 100% Free Online Tool | HackersShikkhok
           </h5>
 
           {/* Rating Snippet */}
@@ -392,16 +362,14 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
           </div>
 
           {/* Snippet Description */}
-          <p className="text-xs text-[#bdc1c6] leading-relaxed mt-1">
-            {tool.description} সম্পূর্ণ ক্লায়েন্ট-সাইড এক্সিকিউশন ও জিরো সার্ভার লগ। ইনস্ট্যান্ট কপি, ডাউনলোড ও স্টেপ-বাই-স্টেপ হাউ-টু গাইড সহ উপলব্ধ।
-          </p>
+          <p className="text-xs text-[#bdc1c6] leading-relaxed mt-1">{tool.description}  -     ।  , Download  -- -   ।</p>
 
           {/* Sitelinks / Rich Features */}
           <div className="grid grid-cols-2 gap-2 mt-3 pt-2 border-t border-slate-700/60 text-[11px] text-[#8ab4f8]">
-            <span className="hover:underline cursor-pointer">▶ কীভাবে {tool.nameBn} ব্যবহার করবেন</span>
-            <span className="hover:underline cursor-pointer">▶ প্রায়শই জিজ্ঞাসিত প্রশ্নোত্তর (FAQ)</span>
-            <span className="hover:underline cursor-pointer">▶ ফ্রি ডাউনলোড ও কোড লাইব্রেরি</span>
-            <span className="hover:underline cursor-pointer">▶ সম্পর্কিত সাইবার সিকিউরিটি কোর্স</span>
+            <span className="hover:underline cursor-pointer">▶  {tool.nameBn}</span>
+            <span className="hover:underline cursor-pointer">▶    (FAQ)</span>
+            <span className="hover:underline cursor-pointer">▶  Download</span>
+            <span className="hover:underline cursor-pointer">▶  Cyber Security Course</span>
           </div>
         </div>
       </div>
@@ -421,7 +389,7 @@ export const SeoAlgorithmInspector: React.FC<SeoAlgorithmInspectorProps> = ({ to
             className="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             {copiedSchema ? <Check className="w-3.5 h-3.5 text-[#00f5d4]" /> : <Copy className="w-3.5 h-3.5" />}
-            {copiedSchema ? 'Schema কপি হয়েছে!' : 'Copy Schema Code'}
+            {copiedSchema ? 'Schema Copied!' : 'Copy Schema Code'}
           </button>
         </div>
 

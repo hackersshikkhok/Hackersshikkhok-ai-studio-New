@@ -1,4 +1,4 @@
-# Installation Guide for Hackers শিক্ষক (HackersShikkhok.com)
+# Installation Guide for HackersShikkhok (HackersShikkhok.com)
 
 ## Requirements
 - PHP 8.2 or higher
@@ -16,5 +16,5 @@
    - Click **Activate**.
 
 3. **Verification:**
-   - Navigate to **WordPress Admin > Hackers শিক্ষক Control Center**.
+   - Navigate to **WordPress Admin > HackersShikkhok Control Center**.
    - Verify System Health, API endpoints, and Database diagnostics.

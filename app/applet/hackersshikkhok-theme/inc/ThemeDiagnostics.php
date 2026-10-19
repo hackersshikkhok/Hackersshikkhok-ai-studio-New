@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক Theme — Diagnostics, Error Handler & Core Dependency Monitor
+ * HackersShikkhok Theme — Diagnostics, Error Handler & Core Dependency Monitor
  *
  * Ensures the theme NEVER produces a blank screen or unexplained critical error,
  * and provides clear visual on-screen feedback if dependencies or assets are missing.
@@ -43,12 +43,12 @@ final class ThemeDiagnostics {
             <div style="display:flex; align-items:center; gap:12px;">
                 <span style="font-size:24px;">⚠️</span>
                 <div>
-                    <strong style="color:#f59e0b; font-size:14px;">Hackers শিক্ষক থিম অ্যাক্টিভেশন নোটিশ</strong>
+                    <strong style="color:#f59e0b; font-size:14px;">HackersShikkhok   </strong>
                     <p style="margin:4px 0; color:#cbd5e1; font-size:12px;">
-                        Hackers শিক্ষক থিমটি সফলভাবে সক্রিয় হয়েছে। তবে সম্পূর্ণ সাইবার একাডেমি (LMS), CTF টার্মিনাল, ২,০২৪টি অনলাইন টুল এবং ক্রিয়েটর স্টুডিওর সম্পূর্ণ সুবিধা পেতে অনুগ্রহ করে <strong>Hackers শিক্ষক Core Engine</strong> প্লাগইনটি সক্রিয় করুন।
+                        HackersShikkhok    ।     (LMS), CTF , ,           <strong>HackersShikkhok Core Engine</strong>   ।
                     </p>
                     <a href="<?php echo $plugins_url; ?>" class="button button-primary" style="background:#00f5d4; color:#050811; border:none; font-weight:bold; margin-top:4px;">
-                        🔌 প্লাগইন তালিকায় যান ও সক্রিয় করুন
+                        🔌      
                     </a>
                 </div>
             </div>
@@ -89,17 +89,17 @@ final class ThemeDiagnostics {
             <div style="display:flex; align-items:center; gap:12px; border-bottom:1px solid #1e293b; padding-bottom:12px; margin-bottom:14px;">
                 <span style="font-size:28px;">🛡️</span>
                 <div>
-                    <h3 style="margin:0; color:#ff3366; font-size:16px;">Hackers শিক্ষক লাইভ ডায়াগনস্টিক ট্র্যাপ (Error Intercepted)</h3>
-                    <small style="color:#94a3b8;">একটি পিএইচপি ত্রুটি শনাক্ত করা হয়েছে। নিচে বিস্তারিত ও সমাধানের উপায় দেওয়া হলো:</small>
+                    <h3 style="margin:0; color:#ff3366; font-size:16px;">HackersShikkhok    (Error Intercepted)</h3>
+                    <small style="color:#94a3b8;">     ।       :</small>
                 </div>
             </div>
             <div style="background:#020617; padding:12px; border-radius:6px; font-size:13px; color:#cbd5e1; border:1px solid #1e293b; overflow-x:auto;">
-                <strong>মেসেজ:</strong> <?php echo esc_html( $msg ); ?><br/>
-                <strong>ফাইল:</strong> <?php echo esc_html( $file ); ?><br/>
-                <strong>লাইন নম্বর:</strong> <?php echo (int) $line; ?>
+                <strong>:</strong> <?php echo esc_html( $msg ); ?><br/>
+                <strong>:</strong> <?php echo esc_html( $file ); ?><br/>
+                <strong> :</strong> <?php echo (int) $line; ?>
             </div>
             <div style="margin-top:14px; font-size:12px; color:#38bdf8;">
-                💡 <strong>পরামর্শ:</strong> এটি কোনো ফ্যাটাল ক্র্যাশ নয়, আমাদের সেলফ-হিলিং ডায়াগনস্টিক ইঞ্জিন এটি সফলভাবে ট্র্যাক করেছে। প্লাগইন এবং থিমের সর্বশেষ ভেরিফায়েড জিপ প্যাকেজ ইনস্টল থাকলে এই সমস্যা স্বয়ংক্রিয়ভাবে সমাধান হয়ে যায়।
+                💡 <strong>:</strong>     ,  -      ।               ।
             </div>
         </div>
         <?php

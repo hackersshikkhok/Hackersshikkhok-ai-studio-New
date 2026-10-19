@@ -76,7 +76,7 @@ export const ToolVisualBanner: React.FC<ToolVisualBannerProps> = ({ tool }) => {
   <!-- Top Brand Bar -->
   <g transform="translate(60, 65)">
     <rect x="0" y="0" width="160" height="28" rx="6" fill="#00f5d4" fill-opacity="0.12" stroke="#00f5d4" stroke-width="1" />
-    <text x="80" y="18" fill="#00f5d4" font-size="12" font-weight="bold" text-anchor="middle">HACKERS শিক্ষক LAB</text>
+    <text x="80" y="18" fill="#00f5d4" font-size="12" font-weight="bold" text-anchor="middle">HackersShikkhok LAB</text>
 
     <rect x="175" y="0" width="190" height="28" rx="6" fill="#ff3366" fill-opacity="0.12" stroke="#ff3366" stroke-width="1" />
     <text x="270" y="18" fill="#ff3366" font-size="12" font-weight="bold" text-anchor="middle">OFFLINE-FIRST ENCLAVE</text>
@@ -201,12 +201,8 @@ export const ToolVisualBanner: React.FC<ToolVisualBannerProps> = ({ tool }) => {
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-white">
-              ডায়নামিক ভেক্টর আর্কিটেকচার ডায়াগ্রাম ও ফিচার্ড থাম্বনেইল
-            </h4>
-            <p className="text-[11px] text-slate-400">
-              লাল কলআউট অ্যারো (<code className="text-[#ff3366]">#ff3366</code>), ৩-স্টেপ পাইপলাইন ও গুগল ইমেজ/ডিসকভার এসইও অপ্টিমাইজড
-            </p>
+            <h4 className="text-xs font-bold text-white">Cyber Defense Hub</h4>
+            <p className="text-[11px] text-slate-400">(<code className="text-[#ff3366]">#ff3366</code>), -    /</p>
           </div>
         </div>
 
@@ -216,8 +212,7 @@ export const ToolVisualBanner: React.FC<ToolVisualBannerProps> = ({ tool }) => {
             className="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs flex items-center gap-1.5 cursor-pointer transition-colors"
           >
             {copiedSvg ? <Check className="w-3.5 h-3.5 text-[#00f5d4]" /> : <Copy className="w-3.5 h-3.5" />}
-            {copiedSvg ? 'SVG কোড কপি হয়েছে' : 'Copy SVG'}
-          </button>
+            {copiedSvg ? 'SVG  Copied' : 'Copy SVG'}</button>
           <button
             onClick={handleDownloadSvg}
             className="px-3 py-1.5 rounded-lg bg-[#ff3366] hover:bg-[#ff3366]/90 text-white font-bold text-xs flex items-center gap-1.5 cursor-pointer transition-colors"
@@ -250,32 +245,20 @@ export const ToolVisualBanner: React.FC<ToolVisualBannerProps> = ({ tool }) => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
         <div className="p-3 rounded-lg bg-[#0b1120] border border-slate-800">
           <div className="font-bold text-[#00f5d4] flex items-center gap-1.5 mb-1">
-            <Eye className="w-3.5 h-3.5" />
-            গুগল ইমেজ ও ডিসকভার বুস্ট
-          </div>
-          <p className="text-[11px] text-slate-400 leading-relaxed">
-            এই ডায়নামিক ভেক্টর এসভিজি ইমেজটি গুগলবট সরাসরি ক্রল করে <code className="text-[#00f5d4]">schema.org/image</code> ও ইমেজ সাইটম্যাপে ইনডেক্স করায়, যা অর্গানিক ট্রাফিক ৩৫-৪০% বৃদ্ধি করে।
-          </p>
+            <Eye className="w-3.5 h-3.5" />Cyber Defense Hub</div>
+          <p className="text-[11px] text-slate-400 leading-relaxed">Cyber Defense Hub<code className="text-[#00f5d4]">schema.org/image</code>,    -%  ।</p>
         </div>
 
         <div className="p-3 rounded-lg bg-[#0b1120] border border-slate-800">
           <div className="font-bold text-[#ff3366] flex items-center gap-1.5 mb-1">
-            <ArrowRight className="w-3.5 h-3.5" />
-            রেড কলআউট অ্যারো (#ff3366)
-          </div>
-          <p className="text-[11px] text-slate-400 leading-relaxed">
-            শিক্ষার্থী ও ভিজিটররা ৩ সেকেন্ডের মধ্যে টুলের ইনপুট, প্রসেসিং ও আউটপুট প্রবাহ বুঝতে পারে। ফলে সাইটের Dwell Time বৃদ্ধি পায় এবং Bounce Rate শূন্যে নেমে আসে।
-          </p>
+            <ArrowRight className="w-3.5 h-3.5" />(#ff3366)</div>
+          <p className="text-[11px] text-slate-400 leading-relaxed">Tool ,      ।   Dwell Time    Bounce Rate   ।</p>
         </div>
 
         <div className="p-3 rounded-lg bg-[#0b1120] border border-slate-800">
           <div className="font-bold text-purple-400 flex items-center gap-1.5 mb-1">
-            <Shield className="w-3.5 h-3.5" />
-            সোশ্যাল শেয়ারিং কার্ডস (CTR 2.8x)
-          </div>
-          <p className="text-[11px] text-slate-400 leading-relaxed">
-            ফেসবুক, টুইটার/X ও লিঙ্কডইনে টুল লিঙ্ক শেয়ার করলে এই চমৎকার ভিজ্যুয়াল ব্যানারটি প্রদর্শিত হয়, যার ফলে সাধারণ টেক্সট লিঙ্কের তুলনায় ২.৮ গুণ বেশি ক্লিক আসে।
-          </p>
+            <Shield className="w-3.5 h-3.5" />(CTR 2.8x)</div>
+          <p className="text-[11px] text-slate-400 leading-relaxed">, /X   Tool         ,       .    ।</p>
         </div>
       </div>
     </div>

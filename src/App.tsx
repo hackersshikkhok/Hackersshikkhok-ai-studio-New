@@ -54,21 +54,21 @@ export default function App() {
   const [isNotifOpen, setIsNotifOpen] = useState(false);
   const [chatInput, setChatInput] = useState('');
   const [notifications, setNotifications] = useState<string[]>([
-    '১. `hackersshikkhok-core.zip` এবং `hackersshikkhok-theme.zip` (প্রিমিয়াম ইমেজ ও v4.0 ইকোসিস্টেম ফাইলসহ) ডাউনলোডের জন্য প্রস্তুত।',
-    '২. Universal Social, Follow, Deep-Linked Comment (#comment-1042), Private Message ও Report ইঞ্জিন সক্রিয়।',
-    '৩. বাংলাদেশ ৮টি বিভাগ ও ৬৪টি জেলা প্রোফাইল জিওগ্রাফি এবং আলাদা Monetary Wallet বনাম Points লেজার যুক্ত হয়েছে।',
-    '৪. স্যান্ডবক্সড লাইভ ডেমো ইঞ্জিন CSP, Zip-Slip এবং কুকি আইসোলেশন পরীক্ষায় উত্তীর্ণ।'
+    '1.  and  (with screenshot and icon assets) ready for download.',
+    '2. Universal Social, Follow, Deep-Linked Comments, Private Messaging and Report systems active.',
+    '3. Geographic profile mapping and strict separation of Monetary Wallet (BDT) vs Non-monetary Points online.',
+    '4. Sandboxed live demo engine passed CSP, Zip-Slip, and cookie isolation integrity verification.'
   ]);
 
   const [chatMessages, setChatMessages] = useState<Array<{ sender: 'user' | 'maya'; text: string; time: string }>>([
     {
       sender: 'maya',
-      text: 'স্বাগতম Hackers শিক্ষক (HackersShikkhok.com) v4.0 Complete Ecosystem-এ! আমি মায়া (✨)। আপনি উপরের 🛡️ Theme বা ⚙️ Plugin বাটনে ক্লিক করে যেকোনো মুহূর্তে সর্বশেষ ইমেজ ও কোডসহ .zip ফাইল ডাউনলোড করতে পারেন।',
+      text: 'Welcome to HackersShikkhok (HackersShikkhok.com) v4.0 Complete Ecosystem! I am Maya (✨). Click the Theme or Plugin download buttons above to download verified production packages anytime.',
       time: 'Just now'
     },
     {
       sender: 'maya',
-      text: 'আমাদের ২৮টি প্ল্যাটফর্ম সেন্টার, ১৮টি AI অটো-পাইলট, ১৫টি CSS/RGB নিয়ন জেনারেটর, ৬০+ ডেভেলপার/মিডিয়া/PDF টুলস, ক্রিয়েটর স্টুডিও, ডিভাইস ল্যাব এবং গেমস সেন্টার এখন সম্পূর্ণ সচল।',
+      text: 'Our 28 Platform Centers, 18 AI Autopilots, 15 CSS/RGB Neon Generators, and 2,024+ Developer & Security Tools are 100% operational in your browser.',
       time: 'Just now'
     }
   ]);
@@ -102,7 +102,7 @@ export default function App() {
       }
       return [...prev, newFile];
     });
-    showToastAndNotify(`নতুন ফাইল যুক্ত হয়েছে: ${newFile.path}`);
+    showToastAndNotify(`New file added: ${newFile.path}`);
   };
 
   const handleDownloadZip = async (pkg: 'theme' | 'core' | 'docs' | 'all') => {
@@ -122,7 +122,7 @@ export default function App() {
           URL.revokeObjectURL(url);
           const sizeKb = (blob.size / 1024).toFixed(1);
           showToastAndNotify(
-            `ডাউনলোড সফল: ${fileName} (${sizeKb} KB — ভেরিফায়েড প্রোডাকশন প্যাকেজ, cPanel ও WordPress রেডি)`
+            `Download started: ${fileName} (${sizeKb} KB —   , cPanel  WordPress )`
           );
           return;
         }
@@ -134,7 +134,7 @@ export default function App() {
     const info = await generateAndDownloadZip(virtualFiles, pkg);
     const sizeKb = (info.sizeBytes / 1024).toFixed(1);
     showToastAndNotify(
-      `ডাউনলোড সফল: ${info.fileName} (${info.fileCount}টি ফাইল · ${sizeKb} KB — Dynamic Auto-Rezip)`
+      `Download started: ${info.fileName} (${info.fileCount}  · ${sizeKb} KB — Dynamic Auto-Rezip)`
     );
   };
 
@@ -147,7 +147,7 @@ export default function App() {
       { sender: 'user', text: userMsg, time: new Date().toLocaleTimeString() },
       {
         sender: 'maya',
-        text: `"${userMsg}" বিষয়ে Hackers শিক্ষক Core Engine-এ টিউটোরিয়াল, কোড স্নিপেট, ক্রিয়েটর টুল ও লাইভ ডেমো প্রস্তুত আছে। আপনি চাইলে সরাসরি WP Studio থেকে কোড আপডেট ও ZIP ডাউনলোড করতে পারেন!`,
+        text: `"${userMsg}"  HackersShikkhok Core Engine- ,  ,       ।    WP Studio     ZIP   !`,
         time: new Date().toLocaleTimeString()
       }
     ]);
@@ -175,16 +175,16 @@ export default function App() {
   return (
     <div className="min-h-screen w-full bg-[#050811] text-[#e2e8f0] flex flex-col pb-24 selection:bg-[#00f5d4]/30 selection:text-[#00f5d4]">
       {/* =====================================================================
-          1. TOP LIVE NOTICE BAR (🔴 লাইভ নোটিশ)
+          1. TOP LIVE NOTICE BAR (🔴  )
       ====================================================================== */}
       <div className="w-full bg-gradient-to-r from-[#0b1120] via-[#111827] to-[#0b1120] border-b border-[#00f5d4]/25 px-3 sm:px-6 py-2">
         <div className="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-2 text-xs">
           <div className="flex items-center gap-2.5 overflow-hidden">
             <span className="px-2.5 py-0.5 rounded bg-rose-500/20 border border-rose-500/50 text-rose-300 font-bold whitespace-nowrap shrink-0">
-              🔴 লাইভ নোটিশ
+              🔴  
             </span>
             <p className="text-slate-200 truncate">
-              <strong>Hackers শিক্ষক</strong> (HackersShikkhok.com) v4.0 Complete Ecosystem — ২৮টি সেন্টার, ১৮টি AI অটো-পাইলট, ২,০২৪টি প্রো টুলস, ক্রিয়েটর স্টুডিও এবং প্রিমিয়াম ইমেজসহ Auto-Rezip ডাউনলোড এখন লাইভ!
+              <strong>HackersShikkhok</strong> (HackersShikkhok.com) v4.0 Complete Ecosystem —  ,  AI -, ,  ,      Auto-Rezip   !
             </p>
           </div>
 
@@ -194,7 +194,7 @@ export default function App() {
               className="text-[#00f5d4] hover:underline font-mono text-xs flex items-center gap-1 cursor-pointer"
             >
               <FolderGit2 className="w-3.5 h-3.5" />
-              <span>WP ফাইল এডিটর ও ZIP স্টুডিও ({virtualFiles.length} Files)</span>
+              <span>WP    ZIP  ({virtualFiles.length} Files)</span>
             </button>
             <span className="text-slate-600 hidden sm:inline">|</span>
             <button
@@ -209,15 +209,15 @@ export default function App() {
 
       {/* =====================================================================
           2. MAIN HEADER BAR
-             - Left: Logo & Hackers শিক্ষক (hackersshikkhok.com)
+             - Left: Logo & HackersShikkhok (hackersshikkhok.com)
              - Center: Wide Navigation Menu + Stacked Download Buttons:
                * 🛡️ Theme (Theme Zip) 📥
                * ⚙️ Plugin (Engine Zip) 🔌
-             - Right: রেজিস্ট্রেশন & লগইন Buttons
+             - Right: Register & Login Buttons
       ====================================================================== */}
       <header className="sticky top-0 z-40 w-full bg-[#050811]/95 backdrop-blur-md border-b border-[#00f5d4]/20 px-3 sm:px-6 py-3">
         <div className="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4">
-          {/* Left: Official Brand Logo & Hackers শিক্ষক */}
+          {/* Left: Official Brand Logo & HackersShikkhok */}
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={() => {
@@ -233,7 +233,7 @@ export default function App() {
               </div>
               <div>
                 <span className="block text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-[#00f5d4] transition-colors">
-                  Hackers শিক্ষক <span className="text-xs font-mono text-slate-400 font-normal">· hackersshikkhok.com</span>
+                  HackersShikkhok <span className="text-xs font-mono text-slate-400 font-normal">· hackersshikkhok.com</span>
                 </span>
                 <span className="block text-[11px] font-mono text-[#00f5d4]">
                   @HackersShikkhok · v4.0 Cyber &amp; Coding Ecosystem
@@ -254,7 +254,7 @@ export default function App() {
                   activeBottomTab === 'home' ? 'text-[#00f5d4]' : ''
                 }`}
               >
-                হোম (28 Centers)
+                Home (28 Centers)
               </button>
               <button
                 onClick={() => {
@@ -263,7 +263,7 @@ export default function App() {
                 }}
                 className="hover:text-[#00f5d4] transition-colors cursor-pointer whitespace-nowrap"
               >
-                সাইবার একাডেমি
+                Cyber Academy
               </button>
               <button
                 onClick={() => setActiveBottomTab('tools-lab')}
@@ -271,7 +271,7 @@ export default function App() {
                   activeBottomTab === 'tools-lab' ? 'text-[#00f5d4]' : ''
                 }`}
               >
-                ২,০২৪+ প্রো টুলস ল্যাব
+                2,024+ Pro Tools Lab
               </button>
               <button
                 onClick={() => setActiveBottomTab('profile')}
@@ -279,7 +279,7 @@ export default function App() {
                   activeBottomTab === 'profile' ? 'text-[#00f5d4]' : ''
                 }`}
               >
-                সোশ্যাল ও প্রোফাইল হাব
+                Social & Profile Hub
               </button>
               <button
                 onClick={() => {
@@ -288,7 +288,7 @@ export default function App() {
                 }}
                 className="px-2.5 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-[#050811] font-bold transition-all cursor-pointer whitespace-nowrap"
               >
-                🚀 প্ল্যাটফর্ম ও অ্যাপ মেকার
+                🚀 Platform & App Maker
               </button>
               <button
                 onClick={() => {
@@ -298,23 +298,23 @@ export default function App() {
                 }}
                 className="px-2.5 py-1 rounded-lg bg-[#00f5d4]/15 border border-[#00f5d4]/40 text-[#00f5d4] hover:bg-[#00f5d4] hover:text-[#050811] font-bold transition-all cursor-pointer whitespace-nowrap"
               >
-                🛡️ সাইবার কমান্ড B2B
+                🛡️ Cyber Command B2B
               </button>
               <button
                 onClick={() => setAuthorityModalPage('services')}
                 className="px-2.5 py-1 rounded-lg bg-purple-500/15 border border-purple-500/40 text-purple-300 hover:bg-purple-500 hover:text-white font-bold transition-all cursor-pointer whitespace-nowrap"
               >
-                ⚖️ সার্ভিস, লিগ্যাল ও এআই হাব
+                ⚖️ Services, Legal & AI Hub
               </button>
               <button
                 onClick={() => setIsStudioModalOpen(true)}
                 className="hover:text-[#00f5d4] transition-colors cursor-pointer whitespace-nowrap"
               >
-                WP কোড স্টুডিও
+                WP Code Studio
               </button>
             </nav>
 
-            {/* Vertically Stacked Download Buttons (উপর-নিচে সাজানো ডাউনলোড বাটনসমূহ) */}
+            {/* Vertically Stacked Download Buttons (-   ) */}
             <div className="flex flex-col gap-1.5 min-w-[245px] sm:min-w-[270px]">
               <button
                 onClick={() => handleDownloadZip('theme')}
@@ -351,42 +351,42 @@ export default function App() {
             </div>
           </div>
 
-          {/* Right: রেজিস্ট্রেশন ও লগইন বাটন */}
+          {/* Right: Register  Login  */}
           <div className="flex items-center gap-2.5 shrink-0">
             <button
               onClick={() => setAuthModalMode('register')}
               className="px-3.5 py-2 rounded-lg bg-[#0b1120] hover:bg-slate-800 text-[#00f5d4] border border-[#00f5d4]/40 text-xs font-bold transition-colors cursor-pointer whitespace-nowrap"
             >
-              রেজিস্ট্রেশন
+              Register
             </button>
             <button
               onClick={() => setAuthModalMode('login')}
               className="px-4 py-2 rounded-lg bg-[#00f5d4] hover:bg-[#00f5d4]/90 text-[#050811] text-xs font-extrabold transition-colors cursor-pointer whitespace-nowrap"
             >
-              লগইন
+              Login
             </button>
           </div>
         </div>
       </header>
 
       {/* =====================================================================
-          3. SUB-HEADER WALLET BAR (👛 ব্যালেন্স: 35.5 ৳ | 420 Points), NOTIFICATION (🔔) & THEME PRESET
+          3. SUB-HEADER WALLET BAR (👛 Balance: 35.5  | 420 Points), NOTIFICATION (🔔) & THEME PRESET
       ====================================================================== */}
       <div className="w-full bg-[#0b1120]/90 border-b border-slate-800/90 px-3 sm:px-6 py-2.5">
         <div className="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-3">
           {/* Wallet Bar & Notification Icon */}
           <div className="flex flex-wrap items-center gap-2.5">
             <div className="px-3.5 py-1.5 rounded-xl bg-[#050811] border border-[#00f5d4]/30 flex items-center gap-2 text-xs font-mono">
-              <span>👛 ব্যালেন্স:</span>
-              <strong className="text-[#00f5d4]" title="Monetary Balance (BDT)">{walletBalance.toFixed(1)} ৳</strong>
+              <span>👛 Balance:</span>
+              <strong className="text-[#00f5d4]" title="Monetary Balance (BDT)">{walletBalance.toFixed(1)} </strong>
               <span className="text-slate-600">|</span>
               <strong className="text-amber-400" title="Non-Monetary Learning & Engagement Points">{walletPoints} Points</strong>
               <button
                 onClick={() => {
-                  handleEarnPoints(10, 'লার্নিং চেকপয়েন্ট বোনাস +10 Points যুক্ত হয়েছে!');
+                  handleEarnPoints(10, 'Learning checkpoint bonus +10 Points awarded!');
                 }}
                 className="ml-1 px-2 py-0.5 rounded bg-[#00f5d4]/15 hover:bg-[#00f5d4]/25 text-[#00f5d4] text-[11px] font-sans font-bold cursor-pointer"
-                title="লার্নিং চেকপয়েন্ট পয়েন্ট বোনাস যোগ করুন"
+                title="Add learning checkpoint bonus points"
               >
                 +Points
               </button>
@@ -406,7 +406,7 @@ export default function App() {
               className="px-3 py-1.5 rounded-xl bg-[#7c3aed]/20 hover:bg-[#7c3aed]/30 border border-[#7c3aed]/50 text-purple-200 text-xs font-semibold flex items-center gap-1.5 cursor-pointer"
             >
               <FolderGit2 className="w-3.5 h-3.5 text-[#00f5d4]" />
-              <span>থিম ও প্লাগইন ফাইল কাস্টমাইজ করুন (Auto-Rezip)</span>
+              <span>Customize Theme & Plugin Files (Auto-Rezip)</span>
             </button>
 
             {/* 10 Theme Presets Selector */}
@@ -420,7 +420,7 @@ export default function App() {
                   if (found) {
                     document.documentElement.style.setProperty('--hs-primary', found.primary);
                     document.documentElement.style.setProperty('--hs-secondary', found.secondary);
-                    showToastAndNotify(`থিম কালার প্রিসেট পরিবর্তন করা হয়েছে: ${found.name}`);
+                    showToastAndNotify(`Theme color preset updated: ${found.name}`);
                   }
                 }}
                 aria-label="Theme Color Preset"
@@ -442,7 +442,7 @@ export default function App() {
               type="text"
               value={globalSearch}
               onChange={(e) => setGlobalSearch(e.target.value)}
-              placeholder="২৮টি সেন্টার, কোড, টুল, কোর্স বা ইউজার খুঁজুন..."
+              placeholder="Search 28 Centers, Code, Tools, Courses or Users..."
               className="w-full pl-9 pr-3 py-1.5 rounded-xl bg-[#050811] border border-slate-800 text-xs text-white focus:outline-none focus:border-[#00f5d4]"
             />
           </div>
@@ -462,16 +462,16 @@ export default function App() {
         <div className="max-w-[1600px] mx-auto w-full px-3 sm:px-6 mt-2">
           <div className="bg-[#0b1120] border border-[#00f5d4]/30 rounded-xl p-4 flex flex-col gap-2 text-xs">
             <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-              <strong className="text-[#00f5d4]">🔔 ইউনিভার্সাল নোটিফিকেশন সেন্টার (Deduplicated &amp; Deep-Linked)</strong>
+              <strong className="text-[#00f5d4]">🔔 Universal Notification Center (Deduplicated & Deep-Linked)</strong>
               <div className="flex items-center gap-3">
                 <button
-                  onClick={() => setNotifications(['• সব নোটিফিকেশন পঠিত হিসেবে চিহ্নিত করা হয়েছে।'])}
+                  onClick={() => setNotifications(['• All notifications marked as read.'])}
                   className="text-xs text-[#00f5d4] hover:underline cursor-pointer"
                 >
                   Mark All Read
                 </button>
                 <button onClick={() => setIsNotifOpen(false)} className="text-slate-400 hover:text-white cursor-pointer">
-                  বন্ধ করুন ✕
+                  Close ✕
                 </button>
               </div>
             </div>
@@ -493,7 +493,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-2 text-xs font-mono text-[#00f5d4] bg-[#00f5d4]/10 border border-[#00f5d4]/30 px-3 py-1 rounded-md">
-                <span>OFFICIAL BRAND: HACKERS শিক্ষক</span>
+                <span>OFFICIAL BRAND: HACKERSSHIKKHOK</span>
                 <span>·</span>
                 <span>HACKERSSHIKKHOK.COM</span>
                 <span>·</span>
@@ -501,11 +501,11 @@ export default function App() {
               </div>
 
               <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                Hackers শিক্ষক — সাইবার সিকিউরিটি, ইথিক্যাল হ্যাকিং, লাইভ কোড ল্যাব ও ওয়ার্ডপ্রেস ইকোসিস্টেম (v4.0)
+                HackersShikkhok — Cyber Defense Academy, Ethical Hacking, Live Code Lab & WordPress Ecosystem (v4.0)
               </h1>
 
               <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
-                আমাদের কাস্টম ওয়ার্ডপ্রেস থিম (<code className="text-[#00f5d4]">hackersshikkhok-theme.zip</code>) এবং কোর প্লাগইন (<code className="text-[#00f5d4]">hackersshikkhok-core.zip</code>)-এ প্রিমিয়াম ইমেজ (<code className="text-[#00f5d4]">screenshot.png</code>, <code className="text-[#00f5d4]">icon-256x256.png</code>, <code className="text-[#00f5d4]">banner-772x250.png</code>), ডেসক্রিপশন এবং সম্পূর্ণ v4.0 ইকোসিস্টেম সংযুক্ত করা হয়েছে।
+                Our custom WordPress theme (hackersshikkhok-theme.zip) and core engine (hackersshikkhok-core.zip) include high-resolution assets (screenshot.png, icon-256x256.png, banner-772x250.png), complete documentation, and the full production-ready v4.0 ecosystem.
               </p>
 
               {/* Hero Action Buttons */}
@@ -527,19 +527,19 @@ export default function App() {
                   className="px-4 py-2.5 rounded-xl bg-[#050811] hover:bg-slate-900 text-slate-200 border border-slate-700 font-semibold text-xs sm:text-sm flex items-center gap-2 cursor-pointer"
                 >
                   <FolderGit2 className="w-4 h-4 text-[#00f5d4]" />
-                  <span>ফাইল আপডেট ও কাস্টমাইজ স্টুডিও</span>
+                  <span>File Update & Customizer Studio</span>
                 </button>
                 <a
                   href="#cyber-academy-lms-hub"
                   className="px-4 py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-extrabold text-xs sm:text-sm flex items-center gap-2 cursor-pointer"
                 >
-                  🎓 সাইবার একাডেমি ও সার্টিফিকেশন (LMS)
+                  🎓 Cyber Academy   (LMS)
                 </a>
                 <a
                   href="#engineering-hardening-hub"
                   className="px-4 py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 font-extrabold text-xs sm:text-sm flex items-center gap-2 cursor-pointer"
                 >
-                  🛡️ ইঞ্জিনিয়ারিং হার্ডেনিং ও গ্যাপ অডিট
+                  🛡️ Engineering Hardening & Gap Audit
                 </a>
               </div>
             </div>
@@ -549,7 +549,7 @@ export default function App() {
               <div className="p-4 rounded-xl bg-[#050811]/90 border border-slate-800">
                 <div className="text-2xl font-extrabold font-mono text-[#00f5d4]">28</div>
                 <div className="text-xs text-slate-300 font-semibold mt-0.5">Ecosystem Centers</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">সেন্টারভিত্তিক আলাদা UI</div>
+                <div className="text-[11px] text-slate-400 mt-0.5">Dedicated Center UIs</div>
               </div>
               <div className="p-4 rounded-xl bg-[#050811]/90 border border-slate-800">
                 <div className="text-2xl font-extrabold font-mono text-purple-400">18</div>
@@ -600,9 +600,9 @@ export default function App() {
           <section className="bg-[#0b1120] border border-[#00f5d4]/30 rounded-2xl p-6 space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
               <div>
-                <div className="text-xs font-mono text-[#00f5d4]">USER &amp; ADMIN WORKSPACE DASHBOARD · HACKERS শিক্ষক</div>
+                <div className="text-xs font-mono text-[#00f5d4]">USER &amp; ADMIN WORKSPACE DASHBOARD · HACKERSSHIKKHOK</div>
                 <h2 className="text-2xl font-bold text-white mt-1">
-                  ইউজার ড্যাশবোর্ড, ওয়ালেট লেজার, পয়েন্ট র‍্যাংক ও প্রজেক্ট কন্ট্রোল
+                  User Dashboard, Wallet Ledger, Rank & Project Control
                 </h2>
               </div>
               <div className="flex items-center gap-2">
@@ -617,22 +617,22 @@ export default function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="p-4 rounded-xl bg-[#050811] border border-slate-800">
-                <span className="text-xs text-slate-400">মানিটারি ওয়ালেট ব্যালেন্স (BDT)</span>
-                <div className="text-2xl font-bold font-mono text-[#00f5d4] mt-1">{walletBalance.toFixed(1)} ৳</div>
+                <span className="text-xs text-slate-400">Monetary Wallet Balance (BDT)</span>
+                <div className="text-2xl font-bold font-mono text-[#00f5d4] mt-1">{walletBalance.toFixed(1)} </div>
                 <span className="text-[11px] text-slate-400">Separate from Points Ledger</span>
               </div>
               <div className="p-4 rounded-xl bg-[#050811] border border-slate-800">
-                <span className="text-xs text-slate-400">লার্নিং ও অ্যাক্টিভিটি পয়েন্ট</span>
+                <span className="text-xs text-slate-400">Learning & Activity Points</span>
                 <div className="text-2xl font-bold font-mono text-amber-400 mt-1">{walletPoints} Points</div>
                 <span className="text-[11px] text-slate-400">Rank: Cyber Defender Lvl {Math.floor(walletPoints / 100) + 1}</span>
               </div>
               <div className="p-4 rounded-xl bg-[#050811] border border-slate-800">
-                <span className="text-xs text-slate-400">থিম ফাইল (`hackersshikkhok-theme`)</span>
+                <span className="text-xs text-slate-400">  (`hackersshikkhok-theme`)</span>
                 <div className="text-2xl font-bold font-mono text-emerald-400 mt-1">{themeFileCount + 2} Files</div>
                 <span className="text-[11px] text-slate-400">Includes screenshot.png</span>
               </div>
               <div className="p-4 rounded-xl bg-[#050811] border border-slate-800">
-                <span className="text-xs text-slate-400">কোর প্লাগইন (`hackersshikkhok-core`)</span>
+                <span className="text-xs text-slate-400">  (`hackersshikkhok-core`)</span>
                 <div className="text-2xl font-bold font-mono text-purple-400 mt-1">{coreFileCount + 2} Files</div>
                 <span className="text-[11px] text-slate-400">Includes Icon &amp; Banner PNG</span>
               </div>
@@ -647,10 +647,10 @@ export default function App() {
           <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-800">
             <div>
               <div className="text-xs font-mono text-[#00f5d4]">
-                28 SPECIALIZED PLATFORM CENTERS · MODULAR ARCHITECTURE · HACKERS শিক্ষক
+                28 SPECIALIZED PLATFORM CENTERS · MODULAR ARCHITECTURE · HACKERSSHIKKHOK
               </div>
               <h2 className="text-xl md:text-2xl font-bold text-white mt-1">
-                ২৮টি প্ল্যাটফর্ম সেন্টার (Click Any Center to Inspect &amp; Launch)
+                28 Platform Centers (Click Any Center to Inspect & Launch)
               </h2>
             </div>
 
@@ -745,7 +745,7 @@ export default function App() {
                 ★ 14-MODULE ENTERPRISE B2B CYBER DEFENSE OPERATIONS &amp; SAAS PORTAL ★
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-white mt-0.5">
-                সাইবার কমান্ড ও সিকিউরিটি অডিট সার্ভিস প্ল্যাটফর্ম
+                Cyber Command & Security Audit Service Operations
               </h2>
             </div>
             <div className="flex items-center gap-2">
@@ -818,15 +818,15 @@ export default function App() {
                   HS
                 </div>
                 <div>
-                  <div className="text-lg font-extrabold text-white">Hackers শিক্ষক</div>
+                  <div className="text-lg font-extrabold text-white">HackersShikkhok</div>
                   <div className="text-xs font-mono text-[#00f5d4]">
                     https://hackersshikkhok.com · @HackersShikkhok
                   </div>
                 </div>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                সাইবার সিকিউরিটি শিক্ষা, ইথিক্যাল হ্যাকিং, কোডিং টিউটোরিয়াল, স্যান্ডবক্সড লাইভ ডেমো,
-                ২,০২৪টি ডেভেলপার ও মিডিয়া টুলস, ক্রিয়েটর স্টুডিও এবং নেটিভ ওয়ার্ডপ্রেস ইকোসিস্টেম।
+                Cyber defense academy, ethical hacking, coding tutorials, sandboxed live demos,
+                2,024+ developer & media tools, creator studio, and native WordPress ecosystem.
               </p>
               <div className="flex flex-wrap gap-2 text-[11px] font-mono">
                 <span className="rounded-lg border border-slate-800 bg-slate-950 px-2.5 py-1 text-[#00f5d4]">
@@ -841,7 +841,7 @@ export default function App() {
             <div className="space-y-2 text-xs">
               <div className="font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-[#00f5d4]"></span>
-                কোর প্ল্যাটফর্ম ও একাডেমি
+                Core Platform & Academy
               </div>
               <ul className="space-y-1.5 text-slate-400">
                 <li>
@@ -852,7 +852,7 @@ export default function App() {
                     }}
                     className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
                   >
-                    • হোম ও ২৮টি সেন্টার হাব
+                    • Home & 28 Centers Hub
                   </button>
                 </li>
                 <li>
@@ -863,7 +863,7 @@ export default function App() {
                     }}
                     className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
                   >
-                    • সাইবার একাডেমি ও সিটিএফ ল্যাব
+                    • Cyber Academy   
                   </button>
                 </li>
                 <li>
@@ -874,7 +874,7 @@ export default function App() {
                     }}
                     className="text-[#00f5d4] hover:underline cursor-pointer text-left font-bold"
                   >
-                    • 📱 ওয়েবসাইট টু অ্যান্ড্রয়েড অ্যাপ মেকার
+                    • 📱 Website to Android App Maker
                   </button>
                 </li>
                 <li>
@@ -882,7 +882,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('sitemap')}
                     className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
                   >
-                    • 🗺️ মাস্টার সাইটম্যাপ ও ক্রল ইনডেক্স
+                    • 🗺️ Master Sitemap & Crawl Index
                   </button>
                 </li>
                 <li>
@@ -890,7 +890,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('llms-txt')}
                     className="text-emerald-400 hover:underline cursor-pointer text-left font-mono font-bold"
                   >
-                    • 🤖 llms.txt (ChatGPT/Perplexity নলেজ)
+                    • 🤖 llms.txt (ChatGPT/Perplexity Knowledge)
                   </button>
                 </li>
               </ul>
@@ -899,7 +899,7 @@ export default function App() {
             <div className="space-y-2 text-xs">
               <div className="font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-[#a78bfa]"></span>
-                সার্ভিস ও পরামর্শ (B2B/B2C)
+                Services & Advisory (B2B/B2C)
               </div>
               <ul className="space-y-1.5 text-slate-400">
                 <li>
@@ -907,7 +907,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('services')}
                     className="hover:text-[#a78bfa] cursor-pointer text-left transition-colors text-white font-bold"
                   >
-                    • 🛡️ VAPT ও পেনিট্রেশন টেস্টিং অডিট
+                    • 🛡️ VAPT & Penetration Testing Audit
                   </button>
                 </li>
                 <li>
@@ -915,7 +915,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('services')}
                     className="hover:text-[#a78bfa] cursor-pointer text-left transition-colors"
                   >
-                    • 🧹 ওয়ার্ডপ্রেস ম্যালওয়্যার ক্লিন সার্ভিস
+                    • 🧹 WordPress Malware Clean Service
                   </button>
                 </li>
                 <li>
@@ -923,7 +923,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('services')}
                     className="hover:text-[#a78bfa] cursor-pointer text-left transition-colors"
                   >
-                    • ☁️ ক্লাউড সার্ভার হার্ডেনিং সলিউশন
+                    • ☁️ Cloud Server Hardening Solution
                   </button>
                 </li>
                 <li>
@@ -931,7 +931,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('advisory')}
                     className="hover:text-blue-400 cursor-pointer text-left transition-colors text-blue-300 font-bold"
                   >
-                    • 💡 ওয়ান-অন-ওয়ান মেন্টরশিপ ও পরামর্শ
+                    • 💡 1-on-1 Mentorship & Advisory
                   </button>
                 </li>
                 <li>
@@ -939,7 +939,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('advisory')}
                     className="hover:text-[#a78bfa] cursor-pointer text-left transition-colors"
                   >
-                    • 🤝 অ্যাডভাইজর বোর্ডে যোগদান
+                    • 🤝 Join Advisory Board
                   </button>
                 </li>
               </ul>
@@ -948,7 +948,7 @@ export default function App() {
             <div className="space-y-2 text-xs">
               <div className="font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-pink-500"></span>
-                টুলস স্কেলাবিলিটি ও ল্যাব
+                Tools Scalability & Labs
               </div>
               <ul className="space-y-1.5 text-slate-400">
                 <li>
@@ -956,7 +956,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('tools-expansion-plan')}
                     className="text-pink-400 hover:underline cursor-pointer text-left font-bold"
                   >
-                    • 🚀 ১০,০০০+ টুলস আর্কিটেকচার রোডম্যাপ
+                    • 🚀 10,000+ Tools Architecture Roadmap
                   </button>
                 </li>
                 <li>
@@ -964,7 +964,7 @@ export default function App() {
                     onClick={() => setActiveBottomTab('tools-lab')}
                     className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
                   >
-                    • ১৫টি CSS / RGB / Neon জেনারেটর
+                    • 15 CSS / RGB / Neon Generators
                   </button>
                 </li>
                 <li>
@@ -972,7 +972,7 @@ export default function App() {
                     onClick={() => setActiveBottomTab('tools-lab')}
                     className="hover:text-[#00f5d4] cursor-pointer text-left transition-colors"
                   >
-                    • ২,০২৪টি অফলাইন-ফার্স্ট ডেভেলপার ও সাইবার টুলস
+                    • 2,024 Offline-First Developer & Cyber Tools
                   </button>
                 </li>
                 <li>
@@ -983,7 +983,7 @@ export default function App() {
                     }}
                     className="hover:text-amber-400 cursor-pointer text-left transition-colors"
                   >
-                    • ডিজিটাল কার্ড, গিফট ও মিনি-গেম স্টুডিও
+                    • Digital Card, Gift & Mini-Game Studio
                   </button>
                 </li>
               </ul>
@@ -992,7 +992,7 @@ export default function App() {
             <div className="space-y-2 text-xs">
               <div className="font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-[#ff3366]"></span>
-                লিগ্যাল, AdSense ও পলিসি
+                Legal, AdSense & Policy
               </div>
               <ul className="space-y-1.5 text-slate-400">
                 <li>
@@ -1016,7 +1016,7 @@ export default function App() {
                     onClick={() => setAuthorityModalPage('disclaimer')}
                     className="hover:text-rose-400 cursor-pointer text-left transition-colors"
                   >
-                    • ⚠️ Legal Disclaimer (আইনি দায়মুক্তি)
+                    • ⚠️ Legal Disclaimer & Fair Use
                   </button>
                 </li>
                 <li>
@@ -1049,8 +1049,8 @@ export default function App() {
 
           <div className="border-t border-slate-800/90 pt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
             <div>
-              © {new Date().getFullYear()} <strong className="text-white">Hackers শিক্ষক</strong>{' '}
-              (HackersShikkhok.com). Developed by Hackers শিক্ষক. All rights reserved.
+              © {new Date().getFullYear()} <strong className="text-white">HackersShikkhok</strong>{' '}
+              (HackersShikkhok.com). Developed by HackersShikkhok. All rights reserved.
             </div>
             <div className="font-mono text-[11px] text-emerald-300">
               Native Core v4.0.0 · Zero Third-Party Plugin Dependency · PHP 8.2+ Ready
@@ -1060,20 +1060,20 @@ export default function App() {
       </main>
 
       {/* =====================================================================
-          13. FLOATING CHAT BUTTON (💬 ৩) & SCROLL-TO-TOP BUTTON (↑)
+          13. FLOATING CHAT BUTTON (💬 ) & SCROLL-TO-TOP BUTTON (↑)
       ====================================================================== */}
       <div className="fixed bottom-20 right-4 z-40 flex flex-col items-end gap-2.5">
         <button
           onClick={() => setIsChatOpen((o) => !o)}
           className="px-4 py-2.5 rounded-full bg-gradient-to-r from-[#00f5d4] to-[#7c3aed] text-[#050811] font-extrabold text-xs shadow-[0_0_25px_rgba(0,245,212,0.45)] flex items-center gap-1.5 cursor-pointer hover:scale-105 transition-transform"
         >
-          <span>💬 ৩</span>
-          <span className="hidden sm:inline">লাইভ চ্যাট</span>
+          <span>💬 </span>
+          <span className="hidden sm:inline">Live Chat</span>
         </button>
 
         <button
           onClick={scrollToTop}
-          title="উপরে যান (Scroll to Top)"
+          title="Scroll to Top"
           className="w-10 h-10 rounded-full bg-[#0b1120] hover:bg-slate-800 text-[#00f5d4] border border-[#00f5d4]/40 flex items-center justify-center font-bold shadow-lg cursor-pointer"
         >
           ↑
@@ -1087,8 +1087,8 @@ export default function App() {
             <div className="flex items-center gap-2">
               <span className="text-base">✨</span>
               <div>
-                <div className="text-xs font-bold text-white">মায়া (Hackers শিক্ষক Companion)</div>
-                <div className="text-[10px] font-mono text-[#00f5d4]">💬 ৩টি নতুন মেসেজ · Online</div>
+                <div className="text-xs font-bold text-white">Maya (HackersShikkhok Companion)</div>
+                <div className="text-[10px] font-mono text-[#00f5d4]">💬 3 New Messages · Online</div>
               </div>
             </div>
             <button
@@ -1120,7 +1120,7 @@ export default function App() {
               type="text"
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
-              placeholder="আপনার প্রশ্ন বা কোড সহায়তা লিখুন..."
+              placeholder="Type your question or code assistance request..."
               className="flex-1 px-3 py-1.5 rounded-lg bg-[#050811] border border-slate-800 text-xs text-white focus:outline-none focus:border-[#00f5d4]"
             />
             <button
@@ -1135,7 +1135,7 @@ export default function App() {
 
       {/* =====================================================================
           14. BOTTOM 5-TAB NAVIGATION BAR
-              (হোম, ড্যাশবোর্ড, মাঝখানে গ্লোয়িং ✨ মায়া বাটন, টুলস ল্যাব, প্রোফাইল)
+              (, ,   ✨ Maya ,  , )
       ====================================================================== */}
       <nav
         aria-label="Bottom 5-Tab Navigation"
@@ -1153,7 +1153,7 @@ export default function App() {
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            🏠 হোম
+            🏠 Home
           </button>
 
           <button
@@ -1167,10 +1167,10 @@ export default function App() {
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            📊 ড্যাশবোর্ড
+            📊 Dashboard
           </button>
 
-          {/* Center Glowing ✨ মায়া Button */}
+          {/* Center Glowing ✨ Maya Button */}
           <div className="flex justify-center">
             <button
               onClick={() => {
@@ -1179,7 +1179,7 @@ export default function App() {
               }}
               className="hs-glow-btn px-4 py-2 rounded-full bg-gradient-to-r from-[#00f5d4] via-[#7c3aed] to-[#f43f5e] text-[#050811] font-extrabold text-xs sm:text-sm tracking-wide cursor-pointer whitespace-nowrap"
             >
-              ✨ মায়া
+              ✨ Maya
             </button>
           </div>
 
@@ -1193,7 +1193,7 @@ export default function App() {
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            🧪 টুলস ল্যাব
+            🧪 Tools Lab
           </button>
 
           <button
@@ -1207,7 +1207,7 @@ export default function App() {
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            👤 প্রোফাইল
+            👤 Profile
           </button>
         </div>
       </nav>
@@ -1231,8 +1231,8 @@ export default function App() {
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <h3 className="text-lg font-bold text-white">
                 {authModalMode === 'login'
-                  ? 'Hackers শিক্ষক — মেম্বার লগইন (Passkey / 2FA Ready)'
-                  : 'Hackers শিক্ষক — নতুন অ্যাকাউন্ট রেজিস্ট্রেশন'}
+                  ? 'HackersShikkhok —  Login (Passkey / 2FA Ready)'
+                  : 'HackersShikkhok —   Register'}
               </h3>
               <button
                 onClick={() => setAuthModalMode(null)}
@@ -1243,7 +1243,7 @@ export default function App() {
             </div>
             <div className="space-y-3 text-xs">
               <div>
-                <label className="block text-slate-300 mb-1">ইউজারনেম বা ইমেইল</label>
+                <label className="block text-slate-300 mb-1">Username or Email</label>
                 <input
                   type="text"
                   defaultValue="developer@hackersshikkhok.com"
@@ -1251,7 +1251,7 @@ export default function App() {
                 />
               </div>
               <div>
-                <label className="block text-slate-300 mb-1">পাসওয়ার্ড</label>
+                <label className="block text-slate-300 mb-1">Password</label>
                 <input
                   type="password"
                   defaultValue="••••••••••••"
@@ -1261,11 +1261,11 @@ export default function App() {
               <button
                 onClick={() => {
                   setAuthModalMode(null);
-                  showToastAndNotify('স্বাগতম Hackers শিক্ষক মেম্বার! আপনার সেশন ও ওয়ালেট সক্রিয় রয়েছে।');
+                  showToastAndNotify(' HackersShikkhok !      ।');
                 }}
                 className="w-full py-2.5 rounded-lg bg-[#00f5d4] text-[#050811] font-extrabold cursor-pointer"
               >
-                {authModalMode === 'login' ? 'লগইন সম্পন্ন করুন' : 'রেজিস্ট্রেশন সম্পন্ন করুন'}
+                {authModalMode === 'login' ? 'Login  ' : 'Register  '}
               </button>
             </div>
           </div>

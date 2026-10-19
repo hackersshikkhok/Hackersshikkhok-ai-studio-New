@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — B2B Security Subscription & Billing Manager
+ * HackersShikkhok — B2B Security Subscription & Billing Manager
  *
  * Enforces asset target quotas, continuous scanning frequency,
  * and BDT wallet billing entitlements.
@@ -25,30 +25,30 @@ final class SubscriptionAndBillingManager {
     public const PLANS = array(
         'starter' => array(
             'title'       => 'Starter Security Tier',
-            'title_bn'    => 'স্টার্টার ওয়েবসাইট সিকিউরিটি',
+            'title_bn'    => '  ',
             'price_bdt'   => 1500.00,
             'max_targets' => 3,
             'scan_freq'   => 'weekly',
             'redteam_cred'=> 0,
-            'features'    => array( '৩টি ডোমেন বা অ্যাপ স্কোপ', 'সাপ্তাহিক অটো-স্ক্যান', 'SSL & হেডার অডিট', 'পিডিএফ রিপোর্ট ডাউনলোড' ),
+            'features'    => array( '    ', ' -', 'SSL &  ', '  ' ),
         ),
         'business' => array(
             'title'       => 'Business Continuous Defense',
-            'title_bn'    => 'বিজনেস কন্টিনিউয়াস ডিফেন্স',
+            'title_bn'    => '  ',
             'price_bdt'   => 4500.00,
             'max_targets' => 10,
             'scan_freq'   => 'daily',
             'redteam_cred'=> 1,
-            'features'    => array( '১০টি ডোমেন ও এপিআই স্কোপ', 'দৈনিক অটো-স্ক্যান', 'CVE ও সংবেদনশীল ফাইল ডিটেকশন', 'AI কোড প্যাচিং গাইড', '১টি কোয়ার্টারলি রেড টিম অডিট' ),
+            'features'    => array( '    ', ' -', 'CVE    ', 'AI   ', '    ' ),
         ),
         'enterprise' => array(
             'title'       => 'Enterprise Managed Red Team',
-            'title_bn'    => 'এন্টারপ্রাইজ ম্যানেজড রেড টিম',
+            'title_bn'    => '   ',
             'price_bdt'   => 15000.00,
             'max_targets' => 999,
             'scan_freq'   => 'continuous',
             'redteam_cred'=> 5,
-            'features'    => array( 'আনলিমিটেড টার্গেট ও সাবডোমেন', 'রিয়েল-টাইম কন্টিনিউয়াস মনিটরিং', 'ডেডিকেটেড ম্যানুয়াল পেনিট্রেশন টেস্টিং', 'SLA গ্যারান্টি ও এক্সিকিউটিভ ওয়ার্কশপ', 'সরাসরি বিশেষজ্ঞ সাপোর্ট' ),
+            'features'    => array( '   ', '-  ', '   ', 'SLA    ', '  ' ),
         ),
     );
 
@@ -72,7 +72,7 @@ final class SubscriptionAndBillingManager {
 
     public static function upgrade_plan( int $user_id, string $plan_key ): array {
         if ( ! isset( self::PLANS[$plan_key] ) ) {
-            return array( 'success' => false, 'message' => 'অবৈধ প্ল্যান নির্বাচন।' );
+            return array( 'success' => false, 'message' => '  ।' );
         }
 
         $plan = self::PLANS[$plan_key];
@@ -81,7 +81,7 @@ final class SubscriptionAndBillingManager {
         if ( (float) $wallet['balance_bdt'] < $plan['price_bdt'] ) {
             return array(
                 'success' => false,
-                'message' => "অপর্যাপ্ত ওয়ালেট ব্যালেন্স। প্ল্যান অ্যাক্টিভ করতে ৳{$plan['price_bdt']} ব্যালেন্স প্রয়োজন।",
+                'message' => "  ।    {$plan['price_bdt']}  ।",
             );
         }
 
@@ -111,7 +111,7 @@ final class SubscriptionAndBillingManager {
 
         return array(
             'success' => true,
-            'message' => "অভিনন্দন! আপনার {$plan['title_bn']} সফলভাবে সক্রিয় হয়েছে। মেয়াদ: ৩০ দিন।",
+            'message' => "!  {$plan['title_bn']}   । :  ।",
         );
     }
 }

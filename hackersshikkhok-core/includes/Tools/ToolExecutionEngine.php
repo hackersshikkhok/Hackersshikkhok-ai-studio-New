@@ -13,7 +13,7 @@ use WP_REST_Response;
 /**
  * Universal Tool Execution Engine & Sandbox Processor (520 Production Tools)
  * 
- * Brand: Hackers শিক্ষক (HackersShikkhok.com)
+ * Brand: HackersShikkhok (HackersShikkhok.com)
  * Handles secure server-side tool execution, algorithm routing, input validation,
  * rate limiting, and usage analytics logging into wp_hs_tool_usage.
  * 

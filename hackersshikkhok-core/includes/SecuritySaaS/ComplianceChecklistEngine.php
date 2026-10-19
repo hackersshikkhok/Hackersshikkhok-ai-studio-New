@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Compliance Readiness Checklist Engine
+ * HackersShikkhok — Compliance Readiness Checklist Engine
  *
  * Maps findings to OWASP Top 10, ISO 27001, GDPR, and Bangladesh Cyber Security Act 2023.
  *
@@ -39,8 +39,8 @@ final class ComplianceChecklistEngine {
 
         $standards = array(
             'owasp_top_10' => array(
-                'name'      => 'OWASP Top 10 Web Application Security',
-                'name_bn'   => 'ওওয়াস্প টপ ১০ ওয়েব সিকিউরিটি স্ট্যান্ডার্ড',
+                'name'             => 'OWASP Top 10 Web Application Security',
+                'name_bn'          => 'OWASP Top 10 Web Application Security',
                 'items'     => array(
                     array( 'id' => 'A01:2021', 'title' => 'Broken Access Control', 'passed' => ! in_array( 'wp_user_enumeration', $detected_keys, true ) ),
                     array( 'id' => 'A02:2021', 'title' => 'Cryptographic Failures', 'passed' => ! in_array( 'ssl_disabled', $detected_keys, true ) && ! in_array( 'ssl_expiring_soon', $detected_keys, true ) ),
@@ -49,8 +49,8 @@ final class ComplianceChecklistEngine {
                 ),
             ),
             'iso_27001' => array(
-                'name'      => 'ISO/IEC 27001 Annex A Security Controls',
-                'name_bn'   => 'আইএসও ২৭০০১ তথ্য নিরাপত্তা স্ট্যান্ডার্ড',
+                'name'             => 'ISO/IEC 27001 Annex A Security Controls',
+                'name_bn'          => 'ISO/IEC 27001 Annex A Security Controls',
                 'items'     => array(
                     array( 'id' => 'A.8.20', 'title' => 'Network Security Controls', 'passed' => ! in_array( 'ssl_disabled', $detected_keys, true ) ),
                     array( 'id' => 'A.8.24', 'title' => 'Use of Cryptography', 'passed' => ! in_array( 'missing_hsts', $detected_keys, true ) ),
@@ -58,8 +58,8 @@ final class ComplianceChecklistEngine {
                 ),
             ),
             'bd_cyber_act' => array(
-                'name'      => 'Bangladesh Cyber Security Act 2023 Guidelines',
-                'name_bn'   => 'বাংলাদেশ সাইবার নিরাপত্তা আইন ২০২৩ নির্দেশিকা',
+                'name'             => 'Bangladesh Cyber Security Act 2023 Guidelines',
+                'name_bn'          => 'Bangladesh Cyber Security Act 2023 Guidelines',
                 'items'     => array(
                     array( 'id' => 'Sec. 17', 'title' => 'Critical Information Infrastructure Protection', 'passed' => ! in_array( 'exposed_wp_config_bak', $detected_keys, true ) ),
                     array( 'id' => 'Sec. 19', 'title' => 'Unauthorized Access & System Tampering Prevention', 'passed' => ! in_array( 'exposed_dot_env', $detected_keys, true ) ),

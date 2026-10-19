@@ -12,7 +12,7 @@ final class Activator {
         try {
             if ( version_compare( PHP_VERSION, '8.0.0', '<' ) ) {
                 deactivate_plugins( HS_CORE_BASENAME );
-                wp_die( esc_html__( 'Hackers শিক্ষক Core requires PHP 8.0 or higher. Your server is running PHP ' . PHP_VERSION, 'hackersshikkhok-core' ) );
+                wp_die( esc_html__( 'HackersShikkhok Core requires PHP 8.0 or higher. Your server is running PHP ' . PHP_VERSION, 'hackersshikkhok-core' ) );
             }
 
             DiagnosticInspector::log( 'Plugin activation initiated.', 'INFO' );

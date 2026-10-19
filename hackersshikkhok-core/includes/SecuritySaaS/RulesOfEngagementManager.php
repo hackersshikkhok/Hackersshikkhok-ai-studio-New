@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Rules of Engagement & Legal Authorization Manager
+ * HackersShikkhok — Rules of Engagement & Legal Authorization Manager
  *
  * Manages authorized penetration testing scopes, bilateral Non-Disclosure Agreements (NDA),
  * and compliance with Bangladesh Cyber Security Act 2023 & International Ethical Standards.

@@ -166,7 +166,7 @@ final class Certificate_Engine {
         if ( ! $row ) {
             return new WP_REST_Response( array(
                 'valid'   => false,
-                'message' => '❌ এই ভেরিফিকেশন হ্যাশের অধীনে কোনো বৈধ সার্টিফিকেট পাওয়া যায়নি।',
+                'message' => '❌ No valid certificate found under this verification hash.',
             ), 404 );
         }
 

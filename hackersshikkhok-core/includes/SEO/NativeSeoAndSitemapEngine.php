@@ -1,7 +1,7 @@
 <?php
 /**
  * Native Zero-Dependency SEO, XML Sitemap, Robots.txt, Indexation & Image SEO Engine
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 
 declare(strict_types=1);
@@ -57,7 +57,7 @@ final class NativeSeoAndSitemapEngine {
 
     public static function enforce_image_seo_and_cls_dimensions( array $attr, \WP_Post $attachment ): array {
         if ( empty( $attr['alt'] ) ) {
-            $attr['alt'] = sanitize_text_field( get_the_title( $attachment->ID ) . ' — Hackers শিক্ষক' );
+            $attr['alt'] = sanitize_text_field( get_the_title( $attachment->ID ) . ' — HackersShikkhok' );
         }
         $attr['loading']  = $attr['loading'] ?? 'lazy';
         $attr['decoding'] = 'async';

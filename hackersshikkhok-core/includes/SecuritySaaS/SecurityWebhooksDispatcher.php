@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Security Webhooks Dispatcher
+ * HackersShikkhok — Security Webhooks Dispatcher
  *
  * Real-time event notifications to Slack, Discord, Microsoft Teams,
  * and Custom SIEM/SOAR webhooks with HMAC-SHA256 payload signing.
@@ -98,7 +98,7 @@ final class SecurityWebhooksDispatcher {
     }
 
     private static function format_payload_for_platform( string $platform, string $event_type, array $payload ): array {
-        $title    = '🛡️ Hackers শিক্ষক Security Alert: ' . strtoupper( str_replace( '_', ' ', $event_type ) );
+        $title    = '🛡️ HackersShikkhok Security Alert: ' . strtoupper( str_replace( '_', ' ', $event_type ) );
         $target   = $payload['target_url'] ?? 'https://hackersshikkhok.com';
         $score    = $payload['health_score'] ?? 88;
         $summary  = $payload['summary'] ?? 'Security posture update for target ' . $target;
@@ -124,7 +124,7 @@ final class SecurityWebhooksDispatcher {
 
         if ( 'discord' === $platform ) {
             return array(
-                'username'   => 'Hackers শিক্ষক Security C2',
+                'username'   => 'HackersShikkhok Security C2',
                 'avatar_url' => 'https://hackersshikkhok.com/wp-content/themes/hackersshikkhok-theme/assets/images/logo.png',
                 'embeds'     => array(
                     array(
@@ -174,7 +174,7 @@ final class SecurityWebhooksDispatcher {
         $result  = self::dispatch_event( $user_id, 'test_ping', array(
             'target_url'   => 'https://hackersshikkhok.com',
             'health_score' => 92,
-            'summary'      => 'Test ping dispatch from Hackers শিক্ষক Cyber Command Webhook Dispatcher.',
+            'summary'      => 'Test ping dispatch from HackersShikkhok Cyber Command Webhook Dispatcher.',
         ) );
 
         return new WP_REST_Response( $result, $result['success'] ? 200 : 400 );

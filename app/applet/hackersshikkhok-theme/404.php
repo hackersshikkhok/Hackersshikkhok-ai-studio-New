@@ -1,6 +1,6 @@
 <?php
 /**
- * 404 Error Page Template - Hackers শিক্ষক
+ * 404 Error Page Template - HackersShikkhok
  */
 
 declare(strict_types=1);
@@ -17,10 +17,10 @@ get_header();
             404
         </h1>
         <h2 style="color:#f8fafc;font-size:1.5rem;font-weight:700;margin:12px 0 8px;">
-            অনুরোধকৃত রিসোর্সটি খুঁজে পাওয়া যায়নি
+                
         </h2>
         <p style="color:var(--hs-text-muted);font-size:14px;max-width:540px;margin:0 auto 28px;line-height:1.6;">
-            লিংকটি পরিবর্তিত বা স্থানান্তরিত হতে পারে। Hackers শিক্ষক একাডেমি, প্ল্যাটফর্ম সেন্টার অথবা ৫২০লাইট ডেভেলপার টুলস এক্সপ্লোর করুন।
+                 । HackersShikkhok ,        ।
         </p>
 
         <div style="margin-bottom:32px;">
@@ -29,13 +29,13 @@ get_header();
 
         <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hs-btn-primary">
-                🏠 হোমপেজে ফিরে যান
+                🏠   
             </a>
             <a href="<?php echo esc_url( home_url( '/academy/' ) ); ?>" class="hs-btn-secondary">
-                🎓 একাডেমি কোর্স
+                🎓  
             </a>
             <a href="<?php echo esc_url( home_url( '/tools/' ) ); ?>" class="hs-btn-secondary">
-                ⚡ ৫২০+ টুলস
+                ⚡ + 
             </a>
         </div>
     </div>

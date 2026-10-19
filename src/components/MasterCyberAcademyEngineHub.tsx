@@ -324,7 +324,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
       setTermLines((prev) => [
         ...prev,
         { text: `$ ${raw}`, type: 'info' },
-        { text: `Wallet Status: ৳ ${balanceBdt.toFixed(2)} BDT | XP: ${xpPoints} | Rank: ${userRank}`, type: 'success' },
+        { text: `Wallet Status: BDT  ${balanceBdt.toFixed(2)} BDT | XP: ${xpPoints} | Rank: ${userRank}`, type: 'success' },
       ]);
       return;
     }
@@ -360,7 +360,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
     } else {
       setCertVerifyResult({
         valid: false,
-        message: 'ইনভ্যালিড অথবা অচেনা সার্টিফিকেট হ্যাশ। দয়া করে পূর্ণাঙ্গ হ্যাশ দিন।',
+        message: '   Certificate ।     ।',
       });
     }
   };
@@ -371,12 +371,11 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
     setBalanceBdt((b) => b + webhookAmount);
     setXpPoints((x) => x + webhookAmount * 2);
 
-    const logEntry = `[${new Date().toLocaleTimeString()}] IPN Verified (HMAC Match) via ${webhookSimGateway.toUpperCase()}: Credited ৳ ${webhookAmount.toFixed(2)} BDT to Cadet Wallet (TRX: ${trx})`;
+    const logEntry = `[${new Date().toLocaleTimeString()}] IPN Verified (HMAC Match) via ${webhookSimGateway.toUpperCase()}: Credited BDT  ${webhookAmount.toFixed(2)} BDT to Cadet Wallet (TRX: ${trx})`;
     setWebhookLogs((prev) => [logEntry, ...prev]);
   };
 
-  return (
-    <section className="mx-auto max-w-[1440px] px-4 py-8 sm:px-6 space-y-6">
+  return (<section className="mx-auto max-w-[1440px] px-4 py-8 sm:px-6 space-y-6">
       {/* Header Banner */}
       <div className="relative rounded-2xl border-2 border-[var(--cyber-primary)] bg-gradient-to-br from-[#060c1d] via-[#091122] to-[#0e172a] p-6 shadow-[0_0_35px_var(--cyber-glow)] overflow-hidden">
         {/* Category visual effect badges */}
@@ -401,7 +400,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
               <div className="text-[11px] text-slate-400">80+ Catalog Track</div>
             </div>
             <div className="rounded-xl border border-slate-800 bg-[#050811] px-3.5 py-2.5">
-              <div className="text-lg font-extrabold font-mono text-amber-400">৳ {balanceBdt.toFixed(1)}</div>
+              <div className="text-lg font-extrabold font-mono text-amber-400">BDT  {balanceBdt.toFixed(1)}</div>
               <div className="text-[11px] text-slate-400">BDT Wallet Balance</div>
             </div>
             <div className="rounded-xl border border-slate-800 bg-[#050811] px-3.5 py-2.5">
@@ -456,8 +455,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
               <span className="text-xs font-mono text-[var(--cyber-primary)]">MODULE 1: ENTERPRISE BULK SEEDER</span>
               <h3 className="text-xl font-bold text-white mt-0.5">80+ Cyber Security Courses Master Catalog Pipeline</h3>
               <p className="text-xs text-slate-400 mt-1">
-                WP-CLI: <code className="text-[var(--cyber-primary)] bg-black px-1.5 py-0.5 rounded font-mono">wp cyber-lms import-courses --file=courses_80.json</code> অথবা এক-ক্লিকে সিংক্রোনাইজ করুন।
-              </p>
+                WP-CLI: <code className="text-[var(--cyber-primary)] bg-black px-1.5 py-0.5 rounded font-mono">wp cyber-lms import-courses --file=courses_80.json</code>-  ।</p>
             </div>
 
             <div className="flex items-center gap-2">
@@ -478,7 +476,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
               <input
                 type="text"
-                placeholder="কোর্স টাইটেল বা স্লাগ খুঁজুন..."
+                placeholder="Course    ..."
                 value={searchCatalog}
                 onChange={(e) => setSearchCatalog(e.target.value)}
                 className="w-full pl-9 pr-3 py-2 bg-[#050811] border border-slate-800 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-[var(--cyber-primary)]"
@@ -490,7 +488,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
               onChange={(e) => setSelectedCatFilter(e.target.value)}
               className="bg-[#050811] border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[var(--cyber-primary)]"
             >
-              <option value="all">সকল ক্যাটাগরি (৫টি স্পেশালাইজেশন)</option>
+              <option value="all">( )</option>
               <option value="Web Hacking / OWASP">Web Hacking / OWASP (18)</option>
               <option value="Social Engineering & Defense">Social Engineering &amp; Defense (14)</option>
               <option value="Network & Red Teaming">Network &amp; Red Teaming (18)</option>
@@ -503,7 +501,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
               onChange={(e) => setSelectedDiffFilter(e.target.value)}
               className="bg-[#050811] border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-[var(--cyber-primary)]"
             >
-              <option value="all">সকল ডিফিকাল্টি টিয়ার</option>
+              <option value="all">Cyber Defense Hub</option>
               <option value="Script Kiddie">Script Kiddie (Beginner)</option>
               <option value="Cyber Operative">Cyber Operative (Intermediate)</option>
               <option value="Red Team Specialist">Red Team Specialist (Advanced)</option>
@@ -542,7 +540,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
                 <div className="border-t border-slate-900 pt-2.5 mt-2.5 flex items-center justify-between text-[11px] font-mono">
                   <span className="text-slate-400">⏱ {course.estimatedLabHours} hrs</span>
                   <span className="text-purple-400">⚡ +{course.xpReward} XP</span>
-                  <span className="text-emerald-400">{course.priceBdt > 0 ? `৳ ${course.priceBdt}` : 'FREE'}</span>
+                  <span className="text-emerald-400">{course.priceBdt > 0 ? `BDT  ${course.priceBdt}` : 'FREE'}</span>
                 </div>
               </div>
             ))}
@@ -556,9 +554,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
           <div className="border-b border-slate-800 pb-4">
             <span className="text-xs font-mono text-[var(--cyber-primary)]">MODULE 2: LIVE THEMING &amp; OVERCLOCK</span>
             <h3 className="text-xl font-bold text-white mt-0.5">Category-Based Dynamic Neon Aesthetics &amp; Power Levels</h3>
-            <p className="text-xs text-slate-400 mt-1">
-              ক্যাটাগরি স্যুইচ করলে সাথে সাথে লাইভ CSS ভেরিয়েবল (<code className="text-[var(--cyber-primary)] font-mono">:root --cyber-primary</code>) এবং অ্যানিমেশন ওভারলে পরিবর্তিত হয়।
-            </p>
+            <p className="text-xs text-slate-400 mt-1">CSS  (<code className="text-[var(--cyber-primary)] font-mono">:root --cyber-primary</code>)     ।</p>
           </div>
 
           {/* Category Aesthetics Buttons */}
@@ -715,7 +711,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
                 <span className="font-mono text-xs text-[var(--cyber-primary)] pl-2">cadet$</span>
                 <input
                   type="text"
-                  placeholder="submit-flag HS{OWASP_TOP10_SECURE_2026} বা scan..."
+                  placeholder="submit-flag HS{OWASP_TOP10_SECURE_2026}  scan..."
                   value={cmdInput}
                   onChange={(e) => setCmdInput(e.target.value)}
                   className="flex-1 bg-transparent text-xs font-mono text-white focus:outline-none"
@@ -733,9 +729,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
                   <Lock className="h-4 w-4 text-[var(--cyber-primary)]" />
                   Anti-Scraping Lock &amp; DRM Shield
                 </h4>
-                <p className="text-[11px] text-slate-400 leading-relaxed mb-3">
-                  বট স্ক্র্যাপার ব্লকিং, রাইট-ক্লিক ও টেক্সট সিলেকশন লক এবং ক্রিপ্টোগ্রাফিক ওয়াটারমার্ক DOM-এ স্বয়ংক্রিয়ভাবে ইনজেক্ট করা হয়।
-                </p>
+                <p className="text-[11px] text-slate-400 leading-relaxed mb-3">, -        DOM-    ।</p>
 
                 <div className="space-y-1.5">
                   <div className="text-[11px] font-mono text-slate-400">Blocked AI Bots:</div>
@@ -765,9 +759,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
           <div className="border-b border-slate-800 pb-4">
             <span className="text-xs font-mono text-[var(--cyber-primary)]">MODULE 4: CRYPTOGRAPHIC CERTIFICATES</span>
             <h3 className="text-xl font-bold text-white mt-0.5">Dynamic PDF Certificate Generator &amp; Public Verification</h3>
-            <p className="text-xs text-slate-400 mt-1">
-              ১০০% কোর্স সম্পন্ন হলে স্বয়ংক্রিয়ভাবে ইউনিক SHA-256 হ্যাশ সহ PDF সার্টিফিকেট প্রস্তুত হয় যা <code className="text-[var(--cyber-primary)] font-mono">/verify-certificate/{'{hash}'}</code> লিংকে সর্বজনীনভাবে যাচাইযোগ্য।
-            </p>
+            <p className="text-xs text-slate-400 mt-1">% Course     SHA-256   PDF Certificate<code className="text-[var(--cyber-primary)] font-mono">/verify-certificate/{'{hash}'}</code>।</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -775,7 +767,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
             <div className="rounded-xl border border-slate-800 bg-[#050811] p-4 space-y-3">
               <h4 className="text-xs font-mono font-bold text-white">Generate Cryptographic Certificate</h4>
               <div>
-                <label className="text-[11px] font-mono text-slate-400 block mb-1">শিক্ষার্থীর নাম:</label>
+                <label className="text-[11px] font-mono text-slate-400 block mb-1">:</label>
                 <input
                   type="text"
                   value={studentName}
@@ -785,7 +777,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
               </div>
 
               <div>
-                <label className="text-[11px] font-mono text-slate-400 block mb-1">কোর্স নির্বাচন করুন:</label>
+                <label className="text-[11px] font-mono text-slate-400 block mb-1">Course  :</label>
                 <select
                   value={selectedCourseCert}
                   onChange={(e) => setSelectedCourseCert(e.target.value)}
@@ -820,14 +812,12 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
                   <QrCode className="h-4 w-4 text-[var(--cyber-primary)]" />
                   Public Verification Portal Simulator
                 </h4>
-                <p className="text-[11px] text-slate-400 mt-1 mb-3">
-                  যেকোনো সার্টিফিকেট হ্যাশ ইনপুট দিয়ে সরাসরি অন-চেইন স্ট্যাটাস ও জেনুইনিটি টেস্ট করুন:
-                </p>
+                <p className="text-[11px] text-slate-400 mt-1 mb-3">Certificate     -     :</p>
 
                 <div className="flex gap-2">
                   <input
                     type="text"
-                    placeholder="SHA-256 হ্যাশ পেস্ট করুন..."
+                    placeholder="SHA-256   ..."
                     value={certVerifyInput}
                     onChange={(e) => setCertVerifyInput(e.target.value)}
                     className="flex-1 px-3 py-2 bg-[#090e1a] border border-slate-800 rounded-lg text-xs text-slate-200 font-mono focus:border-[var(--cyber-primary)]"
@@ -870,9 +860,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
           <div className="border-b border-slate-800 pb-4">
             <span className="text-xs font-mono text-[var(--cyber-primary)]">MODULE 5: BDT WALLET &amp; IPN WEBHOOKS</span>
             <h3 className="text-xl font-bold text-white mt-0.5">Gamified Economy &amp; Real Payment Gateway Webhooks</h3>
-            <p className="text-xs text-slate-400 mt-1">
-              bKash, Nagad এবং SSLCommerz থেকে <code className="text-[var(--cyber-primary)] font-mono">/wp-json/lms/v1/payment/webhook</code> এন্ডপয়েন্টে HMAC সিগনেচার যাচাইপূর্বক তাৎক্ষণিক ব্যালেন্স জমা।
-            </p>
+            <p className="text-xs text-slate-400 mt-1">bKash, Nagad  SSLCommerz<code className="text-[var(--cyber-primary)] font-mono">/wp-json/lms/v1/payment/webhook</code>HMAC    Balance ।</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -916,7 +904,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
 
               <div className="p-3 rounded-lg bg-black/60 border border-slate-800 flex items-center justify-between text-xs font-mono">
                 <span className="text-slate-400">Current Balance:</span>
-                <span className="text-emerald-400 font-bold text-sm">৳ {balanceBdt.toFixed(2)} BDT</span>
+                <span className="text-emerald-400 font-bold text-sm">BDT  {balanceBdt.toFixed(2)} BDT</span>
               </div>
             </div>
 
@@ -971,9 +959,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
           <div className="border-b border-slate-800 pb-4">
             <span className="text-xs font-mono text-[var(--cyber-primary)]">MODULE 6: DRM MEDIA SECURITY</span>
             <h3 className="text-xl font-bold text-white mt-0.5">Domain-Locked Bunny.net Stream &amp; Encrypted Blob Masking</h3>
-            <p className="text-xs text-slate-400 mt-1">
-              সরাসরি কাঁচা MP4 লিঙ্ক সম্পূর্ণ নিষিদ্ধ। সাইনড ১৫-মিনিট টোকেন এবং ডোমেন লকিং (<code className="text-[var(--cyber-primary)] font-mono">hackersshikkhok.com</code>) এর মাধ্যমে HLS স্ট্রিম পরিচালিত হয়।
-            </p>
+            <p className="text-xs text-slate-400 mt-1">MP4   ।  -     (<code className="text-[var(--cyber-primary)] font-mono">hackersshikkhok.com</code>)   HLS   ।</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1033,9 +1019,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
           <div className="border-b border-slate-800 pb-4">
             <span className="text-xs font-mono text-[var(--cyber-primary)]">MODULE 7: AI MEMORY &amp; BEHAVIORAL PROFILING</span>
             <h3 className="text-xl font-bold text-white mt-0.5">Behavioral Analytics Engine &amp; Dynamic Course Recommendations</h3>
-            <p className="text-xs text-slate-400 mt-1">
-              ব্যবহারকারীর সার্চ হিস্ট্রি, স্পেশালাইজেশন ক্যাটাগরি এবং ল্যাব সময় ট্র্যাক করে অটোমেটিক রিকমেন্ডেশন ও টার্মিনাল প্রম্পট অ্যাডাপ্ট করা হয়।
-            </p>
+            <p className="text-xs text-slate-400 mt-1">,    Lab       Terminal    ।</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1057,9 +1041,7 @@ export const MasterCyberAcademyEngineHub: React.FC = () => {
                 <h4 className="text-xs font-mono font-bold text-white">Dynamic AI Recommendation</h4>
                 <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono mt-2 space-y-1.5">
                   <div className="font-bold">🎯 Personalized Track: Web Hacking &amp; OWASP Mastery</div>
-                  <p className="text-[11px] text-slate-300">
-                    ব্যবহারকারীর সাম্প্রতিক অনুসন্ধান (SQLi, JWT) অনুযায়ী এই মুহূর্তে "Advanced SQL Injection &amp; Defense" কোর্সটি সাজেস্ট করা হয়েছে।
-                  </p>
+                  <p className="text-[11px] text-slate-300">Search (SQLi, JWT)    "Advanced SQL Injection &amp; Defense" Course   ।</p>
                   <div className="text-[10px] text-slate-400">
                     Adaptive Terminal Prompt: <code className="text-white">cadet@hackersshikkhok:~ [focus: web-hacking]$ </code>
                   </div>

@@ -114,13 +114,13 @@
         appendTerminalLine(`[+] Exploit mitigated via PDO Prepared Statements! Flag: HS{PRePARED_STaTEMENTS_PrOTECT_ALL_2026}`, 'success');
       } else if (bin === 'submit-flag' || bin === 'flag') {
         if (arg.includes('PRePARED_STaTEMENTS_PrOTECT_ALL_2026') || arg.includes('HS{')) {
-          appendTerminalLine('🎯 FLAG ACCEPTED! +150 XP & ৳25.00 BDT awarded to wallet.', 'success');
-          triggerConfettiNotification('🎯 ফ্ল্যাগ সঠিক! রিওয়ার্ড যুক্ত হয়েছে!');
+          appendTerminalLine('🎯 FLAG ACCEPTED! +150 XP & BDT 25.00 BDT awarded to wallet.', 'success');
+          triggerConfettiNotification('🎯 Valid Flag Verified! +150 XP and bounty credited.');
         } else {
           appendTerminalLine('❌ Invalid flag token. Try again or check the diagram.', 'error');
         }
       } else if (bin === 'status') {
-        appendTerminalLine('👤 CADET: Level 1 (Cyber Cadet) | XP: 420 | Wallet: ৳35.50', 'info');
+        appendTerminalLine('👤 CADET: Level 1 (Cyber Cadet) | XP: 420 | Wallet: BDT 35.50 BDT', 'info');
       } else {
         appendTerminalLine(`command not found: ${bin}. Type "help" for options.`, 'error');
       }
@@ -171,14 +171,16 @@
 
     ttsBtn.addEventListener('click', function () {
       if (!('speechSynthesis' in window)) {
-        alert('আপনার ব্রাউজার Text-to-Speech সাপোর্ট করে না।');
+        if (typeof window.hsShowToast === 'function') {
+          window.hsShowToast('Your browser does not support Web Speech Text-to-Speech.');
+        }
         return;
       }
 
       if (isPlaying) {
         window.speechSynthesis.cancel();
         isPlaying = false;
-        ttsBtn.textContent = '🔊 লেকচার শুনুন (TTS)';
+        ttsBtn.textContent = '🔊 Listen Lecture (TTS)';
         return;
       }
 
@@ -201,11 +203,11 @@
 
       utterance.onend = function () {
         isPlaying = false;
-        ttsBtn.textContent = '🔊 লেকচার শুনুন (TTS)';
+        ttsBtn.textContent = '🔊 Listen Lecture (TTS)';
       };
 
       isPlaying = true;
-      ttsBtn.textContent = '⏹️ প্লে থামান (Stop)';
+      ttsBtn.textContent = '⏹️ Stop Playback';
       window.speechSynthesis.speak(utterance);
     });
   }
@@ -222,7 +224,7 @@
       if (!lessonId) return;
 
       completeBtn.disabled = true;
-      completeBtn.textContent = '⏳ প্রসেসিং...';
+      completeBtn.textContent = '⏳ Processing...';
 
       try {
         const res = await fetch('/wp-json/hackersshikkhok/v1/lms/progress/complete', {
@@ -232,12 +234,12 @@
         });
         const data = await res.json();
         if (data.success) {
-          completeBtn.textContent = '✅ লেসন সম্পন্ন হয়েছে (+XP)';
+          completeBtn.textContent = '✅ Lesson Completed (+XP)';
           completeBtn.style.background = '#10b981';
           completeBtn.style.color = '#050811';
         }
       } catch (e) {
-        completeBtn.textContent = '✅ সম্পন্ন চিহ্নিত (লোকাল)';
+        completeBtn.textContent = '✅ Marked Complete (Local)';
       }
     });
   }

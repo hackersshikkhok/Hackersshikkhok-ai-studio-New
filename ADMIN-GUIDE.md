@@ -1,4 +1,4 @@
-# Administrator Guide — Hackers শিক্ষক Control Center
+# Administrator Guide — HackersShikkhok Control Center
 
 ## Control Center Sections
 1. **System Health & Diagnostics:** Live PHP, WordPress, Database, and REST health indicators.

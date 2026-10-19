@@ -151,7 +151,7 @@ final class Course_Manager {
                 'title'      => $lesson['title'],
                 'slug'       => $lesson['slug'],
                 'is_locked'  => true,
-                'message'    => 'প্রিমিয়াম লেসন। আনলক করতে কোর্সটিতে রেজিস্টার বা পারচেজ করুন।',
+                'message'    => 'Premium lesson. Please register or purchase the course to unlock.',
                 'course'     => $course,
             );
         }

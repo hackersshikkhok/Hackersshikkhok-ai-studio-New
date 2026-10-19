@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Findings Lifecycle & Vulnerability Ledger
+ * HackersShikkhok — Findings Lifecycle & Vulnerability Ledger
  *
  * Manages vulnerability status transitions, CVSS scoring aggregation,
  * and bilingual remediation guides.

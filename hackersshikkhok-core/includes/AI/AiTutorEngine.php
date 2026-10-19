@@ -13,7 +13,7 @@ use WP_REST_Response;
 /**
  * AI Tutor & Contextual Academy Assistant Engine
  * Provides interactive educational assistance, code debugging, and step hints without revealing exam keys.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class AiTutorEngine {
 

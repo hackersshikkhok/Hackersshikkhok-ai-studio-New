@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Security Intelligence & CVE/CWE Ingestion Engine
+ * HackersShikkhok — Security Intelligence & CVE/CWE Ingestion Engine
  *
  * Implements authoritative vulnerability intelligence ingestion, verification,
  * and programmatic SEO publishing with quality-gate filtering (rejects thin/unverified CVEs).
@@ -125,7 +125,7 @@ final class SecurityIntelligenceEngine {
         <head>
             <meta charset="<?php bloginfo( 'charset' ); ?>">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title><?php echo esc_html( $record['cve_id'] . ': ' . $record['title_en'] ); ?> — Hackers শিক্ষক Threat Intel</title>
+            <title><?php echo esc_html( $record['cve_id'] . ': ' . $record['title_en'] ); ?> — HackersShikkhok Threat Intel</title>
             <meta name="description" content="<?php echo esc_attr( substr( $record['technical_analysis'], 0, 155 ) ); ?>" />
             <link rel="canonical" href="<?php echo esc_url( home_url( '/cve/' . $record['cve_id'] . '/' ) ); ?>" />
             <script type="application/ld+json">
@@ -137,7 +137,7 @@ final class SecurityIntelligenceEngine {
                 "dependencies": "<?php echo esc_js( $record['affected_systems'] ); ?>",
                 "publisher": {
                     "@type": "Organization",
-                    "name": "Hackers শিক্ষক",
+                    "name": "HackersShikkhok",
                     "url": "https://hackersshikkhok.com"
                 }
             }
@@ -155,14 +155,14 @@ final class SecurityIntelligenceEngine {
         </head>
         <body>
             <div class="container">
-                <p><a href="<?php echo esc_url( home_url( '/' ) ); ?>">← Back to Hackers শিক্ষক Hub</a></p>
+                <p><a href="<?php echo esc_url( home_url( '/' ) ); ?>">← Back to HackersShikkhok Hub</a></p>
                 <h1>🛡️ <?php echo esc_html( $record['cve_id'] ); ?>: <?php echo esc_html( $record['title_en'] ); ?></h1>
                 <p>
                     <span class="badge badge-<?php echo esc_attr( $record['severity'] ); ?>">CVSS <?php echo esc_html( (string) $record['cvss_score'] ); ?> · <?php echo esc_html( strtoupper( $record['severity'] ) ); ?></span>
                     <span style="margin-left: 1rem; color: #94a3b8;">Affected: <strong><?php echo esc_html( $record['affected_systems'] ); ?></strong></span>
                 </p>
                 
-                <h3>বাংলা বিবরণ ও ঝুঁকি পর্যালোচনা:</h3>
+                <h3>English    :</h3>
                 <p><?php echo esc_html( $record['title_bn'] ); ?></p>
 
                 <h3>Technical Analysis & Attack Vector:</h3>
@@ -193,7 +193,7 @@ final class SecurityIntelligenceEngine {
             array(
                 'cve_id'             => 'CVE-2024-27956',
                 'title_en'           => 'WP-Automatic SQL Injection & Remote Privilege Escalation',
-                'title_bn'           => 'WP-Automatic প্লাগইনে মারাত্মক SQL ইনজেকশন ও অ্যাডমিন অ্যাকাউন্ট টেকওভার ঝুঁকি',
+                'title_bn'           => 'WP-Automatic   SQL      ',
                 'severity'           => 'critical',
                 'cvss_score'         => 9.8,
                 'affected_systems'   => 'WP-Automatic Plugin < 3.92.1',
@@ -204,7 +204,7 @@ final class SecurityIntelligenceEngine {
             array(
                 'cve_id'             => 'CVE-2024-4439',
                 'title_en'           => 'WordPress Core Avatar Block Stored Cross-Site Scripting (XSS)',
-                'title_bn'           => 'ওয়ার্ডপ্রেস কোর অবতার ব্লকে স্টোরড ক্রস-সাইট স্ক্রিপ্টিং দুর্বলতা',
+                'title_bn'           => '     -  ',
                 'severity'           => 'high',
                 'cvss_score'         => 7.5,
                 'affected_systems'   => 'WordPress Core 6.5.0 - 6.5.2',

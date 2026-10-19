@@ -152,7 +152,7 @@ final class Behavioral_Analytics_Engine {
         return array(
             'preferred_category' => $preferred_cat,
             'recommendations'    => $recommended ?: array(),
-            'ai_reasoning'       => "ব্যবহারকারীর সাম্প্রতিক অনুসন্ধান ও ল্যাব সেশন অনুযায়ী '{$preferred_cat}' স্পেশালাইজেশন ট্র্যাকটি সাজেস্ট করা হয়েছে।",
+            'ai_reasoning'       => "       '{$preferred_cat}'     ।",
             'suggested_terminal_prompt' => "cadet@hackersshikkhok:~ [focus: " . strtolower( str_replace( array( ' ', '/', '&' ), '-', $preferred_cat ) ) . "]$ ",
         );
     }

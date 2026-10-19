@@ -5,7 +5,7 @@ namespace HackersShikkhok\Core\Community;
 
 /**
  * Universal Interaction, Follow, Like, Save, Share, Comment Deep-Link, Private Messaging,
- * Block/Mute, Report Queue, and Deduplicated Notification Engine for Hackers শিক্ষক.
+ * Block/Mute, Report Queue, and Deduplicated Notification Engine for HackersShikkhok.
  */
 final class UniversalInteractionEngine {
     public static function register(): void {
@@ -98,7 +98,7 @@ final class UniversalInteractionEngine {
 
         return new \WP_REST_Response( array(
             'status'       => 'success',
-            'brand'        => 'Hackers শিক্ষক',
+            'brand'        => 'HackersShikkhok',
             'action_type'  => $action,
             'object_id'    => $object_id,
             'user_id'      => $user_id,

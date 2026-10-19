@@ -37,113 +37,113 @@ interface EmailTemplateSpec {
 const BRANDED_EMAIL_TEMPLATES: EmailTemplateSpec[] = [
   {
     id: 'welcome',
-    nameBn: '১. ওয়েলকাম ইমেইল (Welcome Email)',
-    subject: 'স্বাগতম Hackers শিক্ষক (HackersShikkhok.com)-এ! আপনার অ্যাকাউন্ট প্রস্তুত',
+    nameBn: '.   (Welcome Email)',
+    subject: 'HackersShikkhok (HackersShikkhok.com)-!',
     recipientRole: 'New Member',
     triggerHook: 'user_register',
-    ctaLabel: 'ড্যাশবোর্ডে প্রবেশ করুন',
+    ctaLabel: 'Dashboard',
     ctaUrl: 'https://hackersshikkhok.com/dashboard/',
     bodyHtml:
-      'আসসালামু আলাইকুম! <strong>Hackers শিক্ষক (HackersShikkhok.com)</strong> সাইবার সিকিউরিটি, কোডিং, ৬০+ ডেভেলপার টুলস এবং লাইভ কোড ল্যাবে আপনাকে স্বাগতম। আপনার প্রোফাইল, ওয়ালেট পয়েন্টস এবং লার্নিং পাথ এখন সক্রিয়।'
+      '! <strong>HackersShikkhok (HackersShikkhok.com)</strong>Cyber Security, , +  Tool    Lab  ।  Profile, Wallet Points     ।'
   },
   {
     id: 'verify_email',
-    nameBn: '২. ইমেইল ভেরিফিকেশন (Email Verification)',
-    subject: '[Hackers শিক্ষক] আপনার ইমেইল ঠিকানা যাচাই করুন',
+    nameBn: '.   (Email Verification)',
+    subject: '[HackersShikkhok]     ',
     recipientRole: 'Unverified User',
     triggerHook: 'hs_core_send_email_verification',
-    ctaLabel: 'ইমেইল ভেরিফাই করুন',
+    ctaLabel: '  ',
     ctaUrl: 'https://hackersshikkhok.com/auth/verify-email/?token=hs_live_token_99481',
     bodyHtml:
-      'আপনার Hackers শিক্ষক অ্যাকাউন্টের পূর্ণাঙ্গ ফিচার (কমেন্ট, মেসেজিং, কোড সাবমিশন ও ওয়ালেট) আনলক করতে নিচের বাটনে ক্লিক করে ইমেইল যাচাই সম্পন্ন করুন। এই লিংকটি ৩০ মিনিটের জন্য কার্যকর থাকবে।'
+      ' HackersShikkhok    (, ,    Wallet)          ।       ।'
   },
   {
     id: 'password_reset',
-    nameBn: '৩. পাসওয়ার্ড রিসেট (Forgot / Reset Password)',
-    subject: '[Hackers শিক্ষক] পাসওয়ার্ড রিসেট রিকোয়েস্ট',
+    nameBn: '.   (Forgot / Reset Password)',
+    subject: '[HackersShikkhok]   ',
     recipientRole: 'Account Owner',
     triggerHook: 'retrieve_password_message',
-    ctaLabel: 'নতুন পাসওয়ার্ড সেট করুন',
+    ctaLabel: '   ',
     ctaUrl: 'https://hackersshikkhok.com/auth/reset-password/?key=hs_rst_8821',
     bodyHtml:
-      'আপনার অ্যাকাউন্টের জন্য একটি পাসওয়ার্ড রিসেট অনুরোধ পাওয়া গেছে। আপনি যদি এই অনুরোধ করে থাকেন, তবে নিচের নিরাপদ লিংকে ক্লিক করে নতুন পাসওয়ার্ড নির্ধারণ করুন।'
+      '        ।      ,          ।'
   },
   {
     id: 'security_alert',
-    nameBn: '৪. সিকিউরিটি ও নতুন ডিভাইস লগইন অ্যালার্ট (Security Alert)',
-    subject: '⚠️ [Security Alert] আপনার অ্যাকাউন্টে নতুন ডিভাইস থেকে লগইন শনাক্ত হয়েছে',
+    nameBn: '. Security    Login  (Security Alert)',
+    subject: '⚠️ [Security Alert]      Login  ',
     recipientRole: 'Account Owner',
     triggerHook: 'wp_login',
-    ctaLabel: 'অ্যাক্টিভ সেশন যাচাই করুন',
+    ctaLabel: '   ',
     ctaUrl: 'https://hackersshikkhok.com/dashboard/security/',
     bodyHtml:
-      'ঢাকা, বাংলাদেশ (Chrome 132 / Windows 11) থেকে আপনার Hackers শিক্ষক অ্যাকাউন্টে লগইন করা হয়েছে। এটি আপনি না হলে অবিলম্বে সেশন রিভোক করুন এবং Passkey / 2FA সক্রিয় করুন।'
+      ', English (Chrome 132 / Windows 11)   HackersShikkhok  Login  ।          Passkey / 2FA  ।'
   },
   {
     id: 'new_follower',
-    nameBn: '৫. নতুন ফলোয়ার নোটিফিকেশন (New Follower)',
-    subject: '🎉 সাইবার রিসার্চার @ तानভীর আপনাকে Hackers শিক্ষক-এ ফলো করেছেন!',
+    nameBn: '.    (New Follower)',
+    subject: '🎉 Cyber  @ तान  HackersShikkhok-  !',
     recipientRole: 'Creator / Member',
     triggerHook: 'hs_core_user_followed',
-    ctaLabel: 'প্রোফাইল দেখুন',
+    ctaLabel: 'Profile View',
     ctaUrl: 'https://hackersshikkhok.com/members/tanvir/',
     bodyHtml:
-      'অভিনন্দন! আপনার প্রকাশিত কোড স্নিপেট ও সাইবার গাইডগুলো কমিউনিটিতে সাড়া ফেলেছে। নতুন একজন সদস্য আপনাকে অনুসরণ করা শুরু করেছেন।'
+      '!      Cyber    ।        ।'
   },
   {
     id: 'comment_reply',
-    nameBn: '৬. কমেন্ট ও রিপ্লাই নোটিফিকেশন (Comment / Reply)',
-    subject: '💬 আপনার টিউটোরিয়ালে নতুন মন্তব্য ও প্রশ্ন যুক্ত হয়েছে',
+    nameBn: '.     (Comment / Reply)',
+    subject: '💬        ',
     recipientRole: 'Post Author / Commenter',
     triggerHook: 'comment_post',
-    ctaLabel: 'মন্তব্যের উত্তর দিন',
+    ctaLabel: '  ',
     ctaUrl: 'https://hackersshikkhok.com/tutorials/owasp-xss-defense/#comment-402',
     bodyHtml:
-      'আপনার <strong>"OWASP Top 10 & WordPress Nonce Security"</strong> পোস্টে একজন শিক্ষার্থী নতুন প্রশ্ন করেছেন। সরাসরি ডিপ-লিংকে গিয়ে উত্তর দিন।'
+      '<strong>"OWASP Top 10 & WordPress Nonce Security"</strong>।  -   ।'
   },
   {
     id: 'private_message',
-    nameBn: '৭. প্রাইভেট মেসেজ নোটিফিকেশন (Direct Message)',
-    subject: '✉️ আপনার ইনবক্সে একটি নতুন প্রাইভেট মেসেজ এসেছে',
+    nameBn: '.    (Direct Message)',
+    subject: '✉️       ',
     recipientRole: 'Member',
     triggerHook: 'hs_core_private_message_sent',
-    ctaLabel: 'ইনবক্স ওপেন করুন',
+    ctaLabel: '  ',
     ctaUrl: 'https://hackersshikkhok.com/messages/',
     bodyHtml:
-      'আপনার Hackers শিক্ষক প্রাইভেট মেসেজিং ইনবক্সে একটি নতুন বার্তা অপেক্ষা করছে। স্প্যাম ও নিরাপত্তা সুরক্ষিত রাখতে ফাইল অ্যাটাচমেন্ট ফিল্টার সক্রিয় রয়েছে।'
+      ' HackersShikkhok        ।          ।'
   },
   {
     id: 'course_certificate',
-    nameBn: '৮. কোর্স এনরোলমেন্ট ও সার্টিফিকেট (Course & Certificate)',
-    subject: '🎓 অভিনন্দন! আপনার সাইবার ডিফেন্স কোর্স সার্টিফিকেট প্রস্তুত',
+    nameBn: '. Course   Certificate (Course & Certificate)',
+    subject: '🎓 !  Cyber Defense Course Certificate ',
     recipientRole: 'Student',
     triggerHook: 'hs_core_course_completed',
-    ctaLabel: 'সার্টিফিকেট ডাউনলোড করুন',
+    ctaLabel: 'Certificate Download ',
     ctaUrl: 'https://hackersshikkhok.com/academy/certificates/HS-2026-9941/',
     bodyHtml:
-      'আপনি সফলভাবে <strong>"Ethical Hacking & Defensive Security Lab"</strong> কোর্সের সকল মডিউল ও কুইজ সম্পন্ন করেছেন। আপনার ভেরিফায়েড সার্টিফিকেট আইডি: <code>HS-2026-9941</code>।'
+      ' Success<strong>"Ethical Hacking & Defensive Security Lab"</strong>Course  Module    ।   Certificate :<code>HS-2026-9941</code>।'
   },
   {
     id: 'wallet_receipt',
-    nameBn: '৯. ওয়ালেট, পয়েন্টস ও অর্ডার রিসিপ্ট (Wallet / Order Receipt)',
-    subject: '💳 [Receipt] আপনার ওয়ালেট লেজার ও প্রিমিয়াম রিসোর্স ট্রানজেকশন আপডেট',
+    nameBn: '. Wallet, Points    (Wallet / Order Receipt)',
+    subject: '💳 [Receipt]  Wallet      ',
     recipientRole: 'Customer / Creator',
     triggerHook: 'hs_core_wallet_ledger_entry',
-    ctaLabel: 'ওয়ালেট লেজার দেখুন',
+    ctaLabel: 'Wallet  View',
     ctaUrl: 'https://hackersshikkhok.com/dashboard/wallet/',
     bodyHtml:
-      'আপনার Hackers শিক্ষক ওয়ালেটে <strong>+250 XP Points</strong> এবং অ্যাটমিক লেজার এন্ট্রি (Ref: <code>#TXN-88412</code>) সফলভাবে রেকর্ড করা হয়েছে।'
+      ' HackersShikkhok Wallet<strong>+250 XP Points</strong>(Ref:<code>#TXN-88412</code>) Success   ।'
   },
   {
     id: 'admin_autopilot',
-    nameBn: '১০. অ্যাডমিন সিস্টেম ও অটোপাইলট অ্যালার্ট (Admin & Autopilot Alert)',
+    nameBn: '.      (Admin & Autopilot Alert)',
     subject: '🛡️ [Admin Digest] AI Autopilot Quality Gate & Security Health Report',
     recipientRole: 'Administrator',
     triggerHook: 'hs_core_autopilot_admin_digest',
-    ctaLabel: 'কন্ট্রোল সেন্টার খুলুন',
+    ctaLabel: ' Center ',
     ctaUrl: 'https://hackersshikkhok.com/wp-admin/admin.php?page=hs-control-center',
     bodyHtml:
-      'আজকের অটোপাইলট পাইপলাইন রিপোর্ট: ৩টি ড্রাফট কোয়ালিটি গেট (Score ≥ 88/100) পাস করেছে, ১টি আইটেম রিভিউয়ের জন্য অপেক্ষমাণ। কোনো সিকিউরিটি অ্যানোমালি পাওয়া যায়নি।'
+      '   Report:     (Score ≥ 88/100)  ,     ।  Security   ।'
   }
 ];
 
@@ -163,18 +163,18 @@ export const NativeMasterSpecHub: React.FC = () => {
 
   // Tab 1: Native Classic Editor + SEO + Schema + Sitemap state
   const [postTitle, setPostTitle] = useState(
-    'WordPress Nonce, Capability Check ও Prepared SQL দিয়ে প্লাগইন সিকিউরিটি হার্ডেনিং'
+    'WordPress Nonce, Capability Check  Prepared SQL   Security '
   );
   const [postSlug, setPostSlug] = useState('wordpress-nonce-capability-prepared-sql-security');
   const [classicMode, setClassicMode] = useState<'visual' | 'text'>('visual');
   const [postContent, setPostContent] = useState(
-    `<h2>১. কেন নেটিভ ওয়ার্ডপ্রেস সিকিউরিটি অপরিহার্য?</h2>\n<p>যেকোনো কাস্টম প্লাগইন বা থিম তৈরি করার সময় <code>wp_verify_nonce()</code>, <code>current_user_can()</code> এবং <code>$wpdb->prepare()</code> ব্যবহার করা বাধ্যতামূলক।</p>\n<h3>কীভাবে ইমপ্লিমেন্ট করবেন?</h3>\n<pre><code>if ( ! current_user_can( 'manage_options' ) ) {\n    wp_die( 'Unauthorized' );\n}</code></pre>`
+    `<h2>.    Security ?</h2>\n<p>Cyber Defense Hub<code>wp_verify_nonce()</code>, <code>current_user_can()</code>Cyber Defense Hub<code>$wpdb->prepare()</code>।</p>\n<h3>?</h3>\n<pre><code>if ( ! current_user_can( 'manage_options' ) ) {\n    wp_die( 'Unauthorized' );\n}</code></pre>`
   );
   const [seoTitle, setSeoTitle] = useState(
-    'WordPress Nonce ও Prepared SQL গাইড — Hackers শিক্ষক'
+    'WordPress Nonce  Prepared SQL  — HackersShikkhok'
   );
   const [seoDesc, setSeoDesc] = useState(
-    'জেনে নিন কীভাবে PHP 8.2+ এবং নেটিভ ওয়ার্ডপ্রেস এপিআই ব্যবহার করে XSS, CSRF ও SQL Injection থেকে আপনার ওয়েবসাইট সুরক্ষিত রাখবেন।'
+    '   PHP 8.2+       XSS, CSRF  SQL Injection     ।'
   );
   const [canonicalUrl, setCanonicalUrl] = useState(
     'https://hackersshikkhok.com/tutorials/wordpress-nonce-capability-prepared-sql-security/'
@@ -202,7 +202,7 @@ export const NativeMasterSpecHub: React.FC = () => {
   const [adSlots, setAdSlots] = useState<AdSlotConfig[]>([
     {
       id: 'header_leaderboard',
-      nameBn: 'হেডার লিডারবোর্ড স্লট (Header Banner)',
+      nameBn: '   (Header Banner)',
       location: 'Below Top Nav (Public Pages Only)',
       reservedHeightPx: 90,
       deviceTarget: 'both',
@@ -210,7 +210,7 @@ export const NativeMasterSpecHub: React.FC = () => {
     },
     {
       id: 'before_article',
-      nameBn: 'আর্টিকেলের শুরুতে (Before Content)',
+      nameBn: '  (Before Content)',
       location: 'Before Single Post Body',
       reservedHeightPx: 250,
       deviceTarget: 'both',
@@ -218,15 +218,15 @@ export const NativeMasterSpecHub: React.FC = () => {
     },
     {
       id: 'in_article_p3',
-      nameBn: 'আর্টিকেলের ভেতরে (After Paragraph 3)',
-      location: 'Auto-injected after 3rd </p> (Never inside <pre>/<code>)',
+      nameBn: '  (After Paragraph 3)',
+      location: 'Auto-injected after 3rd</p> (Never inside <pre>/<code>)',
       reservedHeightPx: 250,
       deviceTarget: 'both',
       enabled: true
     },
     {
       id: 'after_code_demo',
-      nameBn: 'কোড ও ডেমো বক্সের নিচে (24px Safe Margin)',
+      nameBn: '     (24px Safe Margin)',
       location: 'Below Sandbox / Code Editor (Copy-button safe)',
       reservedHeightPx: 250,
       deviceTarget: 'desktop',
@@ -234,7 +234,7 @@ export const NativeMasterSpecHub: React.FC = () => {
     },
     {
       id: 'sidebar_sticky',
-      nameBn: 'ডান পাশের স্টিকি সাইডবার (Sidebar Slot)',
+      nameBn: '    (Sidebar Slot)',
       location: 'Right Sidebar Contextual Slot',
       reservedHeightPx: 280,
       deviceTarget: 'desktop',
@@ -242,7 +242,7 @@ export const NativeMasterSpecHub: React.FC = () => {
     },
     {
       id: 'footer_banner',
-      nameBn: 'ফুটারের উপরে ব্যানার (Above Footer)',
+      nameBn: '   (Above Footer)',
       location: 'Above Global Footer',
       reservedHeightPx: 90,
       deviceTarget: 'both',
@@ -294,15 +294,9 @@ export const NativeMasterSpecHub: React.FC = () => {
               <Sparkles className="h-3.5 w-3.5" />
               FINAL MASTER SPECIFICATION · ZERO THIRD-PARTY PLUGIN DEPENDENCY
             </div>
-            <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
-              🛡️ নেটিভ কোর ইঞ্জিন, প্রিমিয়াম UI/UX, SEO, AdSense, GA4 ও ব্র্যান্ডেড ইমেইল স্যুট
-            </h2>
-            <p className="mt-1 text-sm text-slate-300">
-              Rank Math, Yoast, Site Kit বা Classic Editor প্লাগইন ছাড়াই ১০০% নিজস্ব{' '}
-              <code className="text-[#00f5d4] font-mono">hackersshikkhok-core</code> ও{' '}
-              <code className="text-[#a855f7] font-mono">hackersshikkhok-theme</code>-এর ভেতরে বিল্ট-ইন
-              নেটিভ সিস্টেম।
-            </p>
+            <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">🛡️   Engine,  UI/UX, SEO, AdSense, GA4</h2>
+            <p className="mt-1 text-sm text-slate-300">Rank Math, Yoast, Site Kit  Classic Editor   % {' '}<code className="text-[#00f5d4] font-mono">hackersshikkhok-core</code>{' '}<code className="text-[#a855f7] font-mono">hackersshikkhok-theme</code>-  -
+               ।</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-xs">
@@ -325,9 +319,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                 : 'border border-slate-700 bg-slate-900/90 text-slate-300 hover:border-[#00f5d4]/40'
             }`}
           >
-            <FileEdit className="h-4 w-4" />
-            ১. নেটিভ ক্লাসিক এডিটর, SEO, Schema ও Sitemap
-          </button>
+            <FileEdit className="h-4 w-4" />.   , SEO, Schema  Sitemap</button>
 
           <button
             onClick={() => setActiveTab('google_adsense_ga4')}
@@ -337,9 +329,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                 : 'border border-slate-700 bg-slate-900/90 text-slate-300 hover:border-[#00f5d4]/40'
             }`}
           >
-            <BarChart3 className="h-4 w-4" />
-            ২. নেটিভ Google Search Console, GA4 ও AdSense ইঞ্জিন
-          </button>
+            <BarChart3 className="h-4 w-4" />.  Google Search Console, GA4  AdSense Engine</button>
 
           <button
             onClick={() => setActiveTab('branded_email')}
@@ -349,9 +339,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                 : 'border border-slate-700 bg-slate-900/90 text-slate-300 hover:border-[#00f5d4]/40'
             }`}
           >
-            <Mail className="h-4 w-4" />
-            ৩. ব্র্যান্ডেড ইমেইল ইঞ্জিন (admin@hackersshikkhok.com)
-          </button>
+            <Mail className="h-4 w-4" />.   Engine (admin@hackersshikkhok.com)</button>
 
           <button
             onClick={() => setActiveTab('auth_cards_reader')}
@@ -361,9 +349,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                 : 'border border-slate-700 bg-slate-900/90 text-slate-300 hover:border-[#00f5d4]/40'
             }`}
           >
-            <LayoutGrid className="h-4 w-4" />
-            ৪. ব্র্যান্ডেড Auth পোর্টাল, ৫টি কার্ড ভ্যারিয়েন্ট ও সিঙ্গেল রিডার UX
-          </button>
+            <LayoutGrid className="h-4 w-4" />.  Auth ,       UX</button>
         </div>
       </div>
 
@@ -377,9 +363,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                 <span className="text-xs font-mono uppercase text-[#00f5d4]">
                   NativeClassicEditorEngine.php · Zero Gutenberg Bloat
                 </span>
-                <h3 className="text-lg font-bold text-white">
-                  নেটিভ ক্লাসিক পাবলিশিং ও কাস্টম SEO/Schema মেটাবক্স
-                </h3>
+                <h3 className="text-lg font-bold text-white">SEO/Schema</h3>
               </div>
               <div className="flex items-center gap-1 rounded-lg border border-slate-700 bg-slate-900 p-1 text-xs">
                 <button
@@ -407,9 +391,7 @@ export const NativeMasterSpecHub: React.FC = () => {
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1">
-                  পোস্ট টাইটেল (Post Title — H1)
-                </label>
+                <label className="block text-xs font-bold text-slate-300 mb-1">(Post Title — H1)</label>
                 <input
                   type="text"
                   value={postTitle}
@@ -419,9 +401,7 @@ export const NativeMasterSpecHub: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-300 mb-1">
-                  পার্মালিংক স্লাগ (Clean SEO Slug)
-                </label>
+                <label className="block text-xs font-bold text-slate-300 mb-1">(Clean SEO Slug)</label>
                 <div className="flex items-center rounded-xl border border-slate-700 bg-slate-950 px-3 py-1.5 text-xs font-mono text-slate-400">
                   <span>https://hackersshikkhok.com/tutorials/</span>
                   <input
@@ -461,7 +441,7 @@ export const NativeMasterSpecHub: React.FC = () => {
               <div className="rounded-xl border border-[#00f5d4]/30 bg-slate-950/90 p-4 space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-extrabold text-[#00f5d4]">
-                    ⚙️ Hackers শিক্ষক — Native SEO, Schema & Related Resource Metabox
+                    ⚙️ HackersShikkhok — Native SEO, Schema & Related Resource Metabox
                   </span>
                   <span className="rounded bg-emerald-500/15 px-2 py-0.5 text-[11px] font-bold text-emerald-300">
                     SEO Score: 96 / 100
@@ -489,11 +469,11 @@ export const NativeMasterSpecHub: React.FC = () => {
                       onChange={(e) => setSchemaType(e.target.value as typeof schemaType)}
                       className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs text-[#00f5d4] font-bold"
                     >
-                      <option value="TechArticle">TechArticle (টিউটোরিয়াল/সাইবার গাইড)</option>
-                      <option value="SoftwareApplication">SoftwareApplication (টুলস)</option>
-                      <option value="Course">Course (একাডেমি কোর্স)</option>
-                      <option value="FAQPage">FAQPage (প্রশ্নোত্তর)</option>
-                      <option value="HowTo">HowTo (স্টেপ-বাই-স্টেপ গাইড)</option>
+                      <option value="TechArticle">TechArticle (/Cyber )</option>
+                      <option value="SoftwareApplication">SoftwareApplication (Tool)</option>
+                      <option value="Course">Course ( Course)</option>
+                      <option value="FAQPage">FAQPage ()</option>
+                      <option value="HowTo">HowTo (-- )</option>
                     </select>
                   </div>
                 </div>
@@ -574,16 +554,12 @@ export const NativeMasterSpecHub: React.FC = () => {
                     }}
                     className="inline-flex items-center gap-1.5 rounded-lg bg-[#00f5d4] px-4 py-1.5 text-xs font-extrabold text-slate-950 hover:bg-[#00f5d4]/90"
                   >
-                    <CheckCircle2 className="h-3.5 w-3.5" />
-                    মেটাবক্স ও পোস্ট আপডেট করুন
-                  </button>
+                    <CheckCircle2 className="h-3.5 w-3.5" />Cyber Defense Hub</button>
                 </div>
 
                 {metaboxSavedToast && (
-                  <div className="rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-xs font-bold text-emerald-300">
-                    ✓ Native Classic Post, Single-Emit JSON-LD Schema ({schemaType}) এবং Related
-                    Bindings সংরক্ষিত হয়েছে!
-                  </div>
+                  <div className="rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-xs font-bold text-emerald-300">✓ Native Classic Post, Single-Emit JSON-LD Schema ({schemaType})  Related
+                    Bindings  !</div>
                 )}
               </div>
             </div>
@@ -594,9 +570,7 @@ export const NativeMasterSpecHub: React.FC = () => {
             {/* Live Google SERP Preview */}
             <div className="rounded-2xl border border-slate-800 bg-[#0b1120] p-5">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#00f5d4]">
-                  🔍 লাইভ গুগল সার্চ ও সোশ্যাল প্রিভিউ (SERP & OG Card)
-                </span>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#00f5d4]">🔍       (SERP & OG Card)</span>
                 <span className="text-[11px] font-mono text-slate-400">Single-Emit Verified</span>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-950 p-4 space-y-1.5">
@@ -628,15 +602,13 @@ export const NativeMasterSpecHub: React.FC = () => {
             {/* Native XML Sitemap & Indexation Control Inspector */}
             <div className="rounded-2xl border border-slate-800 bg-[#0b1120] p-5 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-white">
-                  🗺️ নেটিভ XML Sitemap (`/sitemap_index.xml`) ও Indexation Control
-                </span>
+                <span className="text-xs font-bold text-white">🗺️  XML Sitemap (`/sitemap_index.xml`)  Indexation Control</span>
                 <span className="rounded bg-[#00f5d4]/15 px-2 py-0.5 text-[11px] font-mono text-[#00f5d4]">
                   Auto-Updated
                 </span>
               </div>
               <pre className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 p-3 text-[11px] font-mono text-cyan-300 leading-relaxed">
-{`<!-- Generated natively by Hackers শিক্ষক Core (NativeSeoAndSitemapEngine.php) -->
+{`<!-- Generated natively by HackersShikkhok Core (NativeSeoAndSitemapEngine.php) -->
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap><loc>https://hackersshikkhok.com/post-sitemap.xml</loc></sitemap>
   <sitemap><loc>https://hackersshikkhok.com/tutorials-sitemap.xml</loc></sitemap>
@@ -647,9 +619,7 @@ export const NativeMasterSpecHub: React.FC = () => {
 </sitemapindex>`}
               </pre>
               <div className="rounded-xl border border-slate-800 bg-slate-950 p-3 text-xs space-y-1">
-                <div className="font-bold text-slate-200">
-                  স্বয়ংক্রিয় প্রাইভেট পেজ ইনডেক্স সুরক্ষা (Auto `noindex, nofollow`):
-                </div>
+                <div className="font-bold text-slate-200">(Auto `noindex, nofollow`):</div>
                 <p className="text-slate-400 font-mono text-[11px]">
                   ✓ /wp-admin/ · ✓ /dashboard/ · ✓ /messages/ · ✓ /notifications/ · ✓ /auth/* · ✓
                   /?s=* (Empty Search)
@@ -669,15 +639,11 @@ export const NativeMasterSpecHub: React.FC = () => {
               <span className="text-xs font-mono text-[#00f5d4]">
                 NativeGoogleAndAdsEngine.php · Zero Site-Kit Bloat
               </span>
-              <h3 className="text-lg font-bold text-white mt-0.5">
-                গুগল সার্চ কনসোল ও GA4 অ্যানালিটিক্স ইঞ্জিন
-              </h3>
+              <h3 className="text-lg font-bold text-white mt-0.5">GA4  Engine</h3>
             </div>
 
             <div className="space-y-3 rounded-xl border border-slate-800 bg-slate-950 p-4">
-              <label className="block text-xs font-bold text-slate-200">
-                ১. Google Search Console Verification Token
-              </label>
+              <label className="block text-xs font-bold text-slate-200">. Google Search Console Verification Token</label>
               <input
                 type="text"
                 value={gscToken}
@@ -691,9 +657,7 @@ export const NativeMasterSpecHub: React.FC = () => {
 
             <div className="space-y-3 rounded-xl border border-slate-800 bg-slate-950 p-4">
               <div className="flex items-center justify-between">
-                <label className="text-xs font-bold text-slate-200">
-                  ২. Native Google Analytics 4 (GA4 Measurement ID)
-                </label>
+                <label className="text-xs font-bold text-slate-200">. Native Google Analytics 4 (GA4 Measurement ID)</label>
                 <span className="rounded bg-emerald-500/15 px-2 py-0.5 text-[10px] font-mono font-bold text-emerald-300">
                   Single-Script Lock
                 </span>
@@ -708,18 +672,15 @@ export const NativeMasterSpecHub: React.FC = () => {
                 <input
                   type="checkbox"
                   checked={excludeAdminGa4}
-                  onChange={(e) => setExcludeAdminGa4(e.target.checked)}
+                  onChange={(e) =>setExcludeAdminGa4(e.target.checked)}
                   className="rounded border-slate-600"
                 />
-                অ্যাডমিন ও এডিটর ভিজিট ট্র্যাকিং থেকে স্বয়ংক্রিয়ভাবে বাদ দিন (Clean Analytics Data)
-              </label>
+                         (Clean Analytics Data)</label>
             </div>
 
             <div className="space-y-2 rounded-xl border border-slate-800 bg-slate-950 p-4">
               <div className="flex items-center justify-between">
-                <label className="text-xs font-bold text-slate-200">
-                  ৩. Native `/ads.txt` Publisher Verification
-                </label>
+                <label className="text-xs font-bold text-slate-200">. Native `/ads.txt` Publisher Verification</label>
                 <span className="text-[11px] font-mono text-[#00f5d4]">Valid Syntax</span>
               </div>
               <textarea
@@ -735,13 +696,9 @@ export const NativeMasterSpecHub: React.FC = () => {
           <div className="lg:col-span-7 space-y-4 rounded-2xl border border-slate-800 bg-[#0b1120] p-5">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
               <div>
-                <h3 className="text-lg font-bold text-white">
-                  নেটিভ AdSense ও CLS-Safe বিজ্ঞাপন প্লেসমেন্ট কন্ট্রোলার
-                </h3>
-                <p className="text-xs text-slate-400">
-                  লগইন, রেজিস্ট্রেশন, 404, ইনবক্স ও কোড কপি বাটনের ভেতরে বিজ্ঞাপন স্বয়ংক্রিয়ভাবে ব্লক
-                  করা হয়েছে।
-                </p>
+                <h3 className="text-lg font-bold text-white">AdSense  CLS-Safe</h3>
+                <p className="text-xs text-slate-400">Login, Register, 404,         
+                   ।</p>
               </div>
               <button
                 onClick={() => setAdsMasterEnabled(!adsMasterEnabled)}
@@ -797,9 +754,7 @@ export const NativeMasterSpecHub: React.FC = () => {
               <span className="text-xs font-mono text-[#00f5d4]">
                 NativeBrandedEmailEngine.php · Sender: admin@hackersshikkhok.com
               </span>
-              <h3 className="text-lg font-bold text-white mt-0.5">
-                ১০টি ব্র্যান্ডেড HTML ইমেইল টেমপ্লেট
-              </h3>
+              <h3 className="text-lg font-bold text-white mt-0.5">HTML</h3>
             </div>
 
             <div className="space-y-1.5 max-h-[430px] overflow-y-auto pr-1">
@@ -821,9 +776,7 @@ export const NativeMasterSpecHub: React.FC = () => {
 
             {/* Test Dispatch Bar */}
             <div className="pt-2 border-t border-slate-800 space-y-2">
-              <label className="block text-xs font-bold text-slate-300">
-                টেস্ট ইমেইল প্রেরণ (Test Dispatch Simulation):
-              </label>
+              <label className="block text-xs font-bold text-slate-300">(Test Dispatch Simulation):</label>
               <div className="flex gap-2">
                 <input
                   type="email"
@@ -856,7 +809,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                 <div className="text-slate-400">
                   From:{' '}
                   <strong className="text-[#00f5d4]">
-                    Hackers শিক্ষক &lt;admin@hackersshikkhok.com&gt;
+                    HackersShikkhok &lt;admin@hackersshikkhok.com&gt;
                   </strong>
                 </div>
                 <div className="text-white font-bold mt-0.5">Subject: {selectedEmail.subject}</div>
@@ -874,7 +827,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                     HS
                   </span>
                   <div>
-                    <div className="text-base font-extrabold text-[#00f5d4]">Hackers শিক্ষক</div>
+                    <div className="text-base font-extrabold text-[#00f5d4]">HackersShikkhok</div>
                     <div className="text-[11px] text-slate-400">
                       HackersShikkhok.com · YouTube: @HackersShikkhok
                     </div>
@@ -906,7 +859,7 @@ export const NativeMasterSpecHub: React.FC = () => {
               </div>
 
               <div className="border-t border-slate-800 bg-[#0b1120] px-6 py-3 text-[11px] text-slate-400 flex flex-wrap items-center justify-between gap-2">
-                <span>© 2026 Hackers শিক্ষক (https://hackersshikkhok.com)</span>
+                <span>© 2026 HackersShikkhok (https://hackersshikkhok.com)</span>
                 <span>Official Sender: admin@hackersshikkhok.com · Privacy & Security</span>
               </div>
             </div>
@@ -923,25 +876,18 @@ export const NativeMasterSpecHub: React.FC = () => {
               <span className="text-xs font-mono text-[#00f5d4]">
                 NativeBrandedAuthEngine.php · Replaces Default wp-login.php
               </span>
-              <h3 className="text-xl font-extrabold text-white">
-                🔐 নেটিভ ব্র্যান্ডেড অথেনটিকেশন পোর্টাল
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                সাধারণ ইউজারদের কখনোই ওয়ার্ডপ্রেসের ডিফল্ট সাদা <code>wp-login.php</code> পেজে পাঠানো
-                হয় না। লগইন, রেজিস্ট্রেশন, ফরগট পাসওয়ার্ড, ইমেইল ভেরিফিকেশন ও Passkey/2FA আমাদের নিজস্ব
-                সাইবার-নিয়ন পোর্টালে পরিচালিত হয়।
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {(
+              <h3 className="text-xl font-extrabold text-white">🔐</h3>
+              <p className="text-xs text-slate-300 leading-relaxed">Cyber Defense Hub<code>wp-login.php</code>। Login, Register,  ,    Passkey/2FA  
+                Cyber-   ।</p>
+              <div className="flex flex-wrap gap-2">{(
                   [
-                    { id: 'login', label: '১. লগইন (/auth/login)' },
-                    { id: 'register', label: '২. রেজিস্ট্রেশন (/auth/register)' },
-                    { id: 'forgot', label: '৩. পাসওয়ার্ড রিসেট' },
-                    { id: 'verify', label: '৪. ইমেইল ভেরিফিকেশন' },
-                    { id: 'passkey', label: '৫. Passkey / 2FA' }
+                    { id: 'login', label: '. Login (/auth/login)' },
+                    { id: 'register', label: '. Register (/auth/register)' },
+                    { id: 'forgot', label: '.  ' },
+                    { id: 'verify', label: '.  ' },
+                    { id: 'passkey', label: '. Passkey / 2FA' }
                   ] as const
-                ).map((tab) => (
-                  <button
+                ).map((tab) => (<button
                     key={tab.id}
                     onClick={() => {
                       setAuthView(tab.id);
@@ -964,18 +910,16 @@ export const NativeMasterSpecHub: React.FC = () => {
                 <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                   <div className="flex items-center gap-2">
                     <Lock className="h-4 w-4 text-[#00f5d4]" />
-                    <span className="text-sm font-extrabold text-white">
-                      Hackers শিক্ষক —{' '}
+                    <span className="text-sm font-extrabold text-white">HackersShikkhok —{' '}
                       {authView === 'login'
-                        ? 'সদস্য লগইন পোর্টাল'
+                        ? ' Login '
                         : authView === 'register'
-                        ? 'নতুন সদস্য রেজিস্ট্রেশন'
+                        ? '  Register'
                         : authView === 'forgot'
-                        ? 'পাসওয়ার্ড রিকভারি (admin@hackersshikkhok.com)'
+                        ? '  (admin@hackersshikkhok.com)'
                         : authView === 'verify'
-                        ? 'ইমেইল ওটিপি/লিংক ভেরিফিকেশন'
-                        : 'WebAuthn Passkey ও 2FA সিকিউরিটি'}
-                    </span>
+                        ? ' / '
+                        : 'WebAuthn Passkey  2FA Security'}</span>
                   </div>
                   <span className="text-[11px] font-mono text-emerald-300">
                     CSRF Nonce + Rate Limit Active
@@ -984,9 +928,7 @@ export const NativeMasterSpecHub: React.FC = () => {
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs text-slate-400 mb-1">
-                      ইমেইল বা ইউজারনেম
-                    </label>
+                    <label className="block text-xs text-slate-400 mb-1">Cyber Defense Hub</label>
                     <input
                       type="text"
                       defaultValue="member@hackersshikkhok.com"
@@ -995,9 +937,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                   </div>
                   {authView !== 'forgot' && authView !== 'verify' && (
                     <div>
-                      <label className="block text-xs text-slate-400 mb-1">
-                        পাসওয়ার্ড / সিকিউরিটি কী
-                      </label>
+                      <label className="block text-xs text-slate-400 mb-1">/ Security</label>
                       <input
                         type="password"
                         defaultValue="••••••••••••"
@@ -1009,27 +949,21 @@ export const NativeMasterSpecHub: React.FC = () => {
 
                 <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
                   <button
-                    onClick={() =>
-                      setAuthFeedback(
-                        `✓ [${authView.toUpperCase()}] সফলভাবে যাচাই হয়েছে — Nonce ও Rate-Limit সুরক্ষিত!`
+                    onClick={() =>setAuthFeedback(
+                        `✓ [${authView.toUpperCase()}] Success   — Nonce  Rate-Limit !`
                       )
                     }
                     className="inline-flex items-center gap-1.5 rounded-xl bg-[#00f5d4] px-4 py-2 text-xs font-extrabold text-slate-950"
-                  >
-                    <KeyRound className="h-3.5 w-3.5" />
-                    {authView === 'login'
-                      ? 'নিরাপদ লগইন করুন'
+                  ><KeyRound className="h-3.5 w-3.5" />{authView === 'login'
+                      ? ' Login '
                       : authView === 'register'
-                      ? 'অ্যাকাউন্ট তৈরি করুন'
+                      ? '  '
                       : authView === 'forgot'
-                      ? 'রিসেট লিংক পাঠান'
+                      ? '  '
                       : authView === 'verify'
-                      ? 'ইমেইল ভেরিফাই করুন'
-                      : 'Passkey যাচাই করুন'}
-                  </button>
-                  <span className="text-[11px] text-slate-400">
-                    কোনো ক্লেইম বা ডামি রিডাইরেক্ট ছাড়াই ব্র্যান্ডেড ইউজার ফ্লো
-                  </span>
+                      ? '  '
+                      : 'Passkey  '}</button>
+                  <span className="text-[11px] text-slate-400">Cyber Defense Hub</span>
                 </div>
 
                 {authFeedback && (
@@ -1047,9 +981,7 @@ export const NativeMasterSpecHub: React.FC = () => {
               <span className="text-xs font-mono text-[#00f5d4]">
                 SECTION 9 · 5 DISTINCT CARD VARIANTS ARCHITECTURE
               </span>
-              <h3 className="text-xl font-extrabold text-white mt-0.5">
-                🎴 ৫ ধরনের প্রিমিয়াম কনটেন্ট কার্ড সিস্টেম (Standard, Featured, Tool, Video ও Compact)
-              </h3>
+              <h3 className="text-xl font-extrabold text-white mt-0.5">🎴       (Standard, Featured, Tool, Video  Compact)</h3>
             </div>
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
@@ -1059,16 +991,12 @@ export const NativeMasterSpecHub: React.FC = () => {
                   <span className="inline-block rounded bg-cyan-500/15 px-2 py-0.5 text-[10px] font-bold text-cyan-300">
                     1. Standard Post Card
                   </span>
-                  <h4 className="mt-2 text-sm font-bold text-white line-clamp-2">
-                    Linux UFW Firewall ও SSH Hardening গাইড
-                  </h4>
-                  <p className="mt-1 text-xs text-slate-400 line-clamp-2">
-                    সার্ভারের পোর্ট সুরক্ষা এবং ব্রুট-ফোর্স প্রতিরোধের কার্যকর নিয়ম।
-                  </p>
+                  <h4 className="mt-2 text-sm font-bold text-white line-clamp-2">Linux UFW Firewall  SSH Hardening</h4>
+                  <p className="mt-1 text-xs text-slate-400 line-clamp-2">-   ।</p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
-                  <span>⏱️ ৭ মিনিট</span>
-                  <span className="text-[#00f5d4] font-bold">পড়ুন →</span>
+                  <span>⏱️</span>
+                  <span className="text-[#00f5d4] font-bold">→</span>
                 </div>
               </div>
 
@@ -1078,16 +1006,12 @@ export const NativeMasterSpecHub: React.FC = () => {
                   <span className="inline-block rounded bg-[#00f5d4] px-2 py-0.5 text-[10px] font-extrabold text-slate-950">
                     2. Featured Hero Card
                   </span>
-                  <h4 className="mt-2 text-sm font-extrabold text-white">
-                    OWASP Top 10 (2026) — সম্পূর্ণ বাংলা ডিফেন্সিভ হ্যান্ডবুক
-                  </h4>
-                  <p className="mt-1 text-xs text-slate-300">
-                    ল্যাব প্র্যাকটিস, সিকিউর কোড রিভিউ ও রিয়েল-ওয়ার্ল্ড প্যাচিং।
-                  </p>
+                  <h4 className="mt-2 text-sm font-extrabold text-white">OWASP Top 10 (2026) —  English Defense</h4>
+                  <p className="mt-1 text-xs text-slate-300">Lab ,     - ।</p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-[#00f5d4] font-bold">
                   <span>★ Editor’s Choice</span>
-                  <span>ল্যাব খুলুন →</span>
+                  <span>Lab  →</span>
                 </div>
               </div>
 
@@ -1097,12 +1021,8 @@ export const NativeMasterSpecHub: React.FC = () => {
                   <span className="inline-flex items-center gap-1 rounded bg-purple-500/20 px-2 py-0.5 text-[10px] font-bold text-purple-300">
                     <Wrench className="h-3 w-3" /> 3. Tool Card
                   </span>
-                  <h4 className="mt-2 text-sm font-bold text-white">
-                    SHA-256 / JWT & Base64 সিকিউরিটি এনকোডার
-                  </h4>
-                  <p className="mt-1 text-xs text-slate-400">
-                    ১০০% ব্রাউজার-সাইড ইনস্ট্যান্ট ক্রিপ্টো ও টোকেন ডিবাগার।
-                  </p>
+                  <h4 className="mt-2 text-sm font-bold text-white">SHA-256 / JWT & Base64 Security</h4>
+                  <p className="mt-1 text-xs text-slate-400">% -     ।</p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-purple-300 font-bold">
                   <span>⚡ Client-Side</span>
@@ -1116,15 +1036,11 @@ export const NativeMasterSpecHub: React.FC = () => {
                   <span className="inline-flex items-center gap-1 rounded bg-rose-500/20 px-2 py-0.5 text-[10px] font-bold text-rose-300">
                     <Play className="h-3 w-3" /> 4. Video Card
                   </span>
-                  <h4 className="mt-2 text-sm font-bold text-white">
-                    @HackersShikkhok — লাইভ বাগ বাউন্টি ও রিকন ক্লাস
-                  </h4>
-                  <p className="mt-1 text-xs text-slate-400">
-                    ভিডিও টিউটোরিয়াল + সোর্স কোড + প্র্যাকটিস চেকলিস্ট।
-                  </p>
+                  <h4 className="mt-2 text-sm font-bold text-white">@HackersShikkhok —</h4>
+                  <p className="mt-1 text-xs text-slate-400">+   +  ।</p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-rose-300 font-bold">
-                  <span>▶️ २४:১৫ মিনিট</span>
+                  <span>▶️ २४:</span>
                   <span>Watch Now →</span>
                 </div>
               </div>
@@ -1136,20 +1052,14 @@ export const NativeMasterSpecHub: React.FC = () => {
                     5. Compact Trending List
                   </span>
                   <ul className="mt-2 space-y-1.5 text-xs text-slate-300">
+                    <li className="truncate hover:text-[#00f5d4]">#1 wp-config.php Security</li>
+                    <li className="truncate hover:text-[#00f5d4]">#2 Python   Defense Lab</li>
                     <li className="truncate hover:text-[#00f5d4]">
-                      #1 wp-config.php সিকিউরিটি স্নিপেট
-                    </li>
-                    <li className="truncate hover:text-[#00f5d4]">
-                      #2 Python পোর্ট স্ক্যানার ডিফেন্স ল্যাব
-                    </li>
-                    <li className="truncate hover:text-[#00f5d4]">
-                      #3 CSS Neon Glassmorphism জেনারেটর
+                      #3 CSS Neon Glassmorphism Generator
                     </li>
                   </ul>
                 </div>
-                <div className="mt-3 pt-2 border-t border-slate-800 text-[11px] text-amber-300 font-bold">
-                  ট্রেন্ডিং রিসোর্স তালিকা →
-                </div>
+                <div className="mt-3 pt-2 border-t border-slate-800 text-[11px] text-amber-300 font-bold">→</div>
               </div>
             </div>
           </div>
@@ -1158,53 +1068,37 @@ export const NativeMasterSpecHub: React.FC = () => {
           <div className="rounded-2xl border border-slate-800 bg-[#0b1120] p-5 sm:p-6 space-y-5">
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400 border-b border-slate-800 pb-3">
               <div className="font-mono">
-                হোম › <span className="text-[#00f5d4]">সাইবার সিকিউরিটি</span> › ওয়ার্ডপ্রেস হার্ডেনিং গাইড
-              </div>
+                Home › <span className="text-[#00f5d4]">Cyber Security</span>›</div>
               <div className="flex items-center gap-3">
-                <span>প্রকাশিত: ৩০ সেপ্টেম্বর ২০২৬</span>
+                <span>:</span>
                 <span>•</span>
-                <span className="text-[#00f5d4] font-bold">⏱️ পঠন সময়: ৬ মিনিট</span>
+                <span className="text-[#00f5d4] font-bold">⏱️  :</span>
               </div>
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug">
-              WordPress Core Plugin ও REST API হার্ডেনিং: Nonce, Capability Check ও Prepared SQL গাইড
-            </h3>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug">WordPress Core Plugin  REST API : Nonce, Capability Check  Prepared SQL</h3>
 
             {/* Key Takeaways + Auto Table of Contents */}
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
               <div className="lg:col-span-7 rounded-xl border border-[#00f5d4]/30 bg-slate-950 p-4 space-y-2">
-                <div className="text-xs font-extrabold text-[#00f5d4] uppercase">
-                  📌 মূল সারসংক্ষেপ (Key Takeaways)
-                </div>
+                <div className="text-xs font-extrabold text-[#00f5d4] uppercase">📌   (Key Takeaways)</div>
                 <ul className="list-disc pl-5 text-xs text-slate-300 space-y-1.5">
-                  <li>
-                    কখনোই ইউজার ইনপুট সরাসরি SQL কুয়েরিতে যোগ করবেন না; সর্বদা{' '}
-                    <code className="text-[#00f5d4]">$wpdb-&gt;prepare()</code> ব্যবহার করুন।
-                  </li>
-                  <li>
-                    প্রতিটি REST API রুটে <code className="text-[#00f5d4]">permission_callback</code>{' '}
-                    এবং AJAX অ্যাকশনে <code className="text-[#00f5d4]">check_ajax_referer()</code>{' '}
-                    বাধ্যতামূলক।
-                  </li>
-                  <li>
-                    আউটপুট রেন্ডারিংয়ের সময় প্রেক্ষাপট অনুযায়ী{' '}
-                    <code className="text-[#00f5d4]">esc_html()</code>,{' '}
-                    <code className="text-[#00f5d4]">esc_attr()</code> এবং{' '}
-                    <code className="text-[#00f5d4]">esc_url()</code> নিশ্চিত করুন।
-                  </li>
+                  <li>SQL    ; {' '}<code className="text-[#00f5d4]">$wpdb-&gt;prepare()</code>।</li>
+                  <li>REST API<code className="text-[#00f5d4]">permission_callback</code>{' '}
+                     AJAX<code className="text-[#00f5d4]">check_ajax_referer()</code>{' '}
+                    ।</li>
+                  <li>{' '}<code className="text-[#00f5d4]">esc_html()</code>,{' '}
+                    <code className="text-[#00f5d4]">esc_attr()</code>{' '}<code className="text-[#00f5d4]">esc_url()</code>।</li>
                 </ul>
               </div>
 
               <div className="lg:col-span-5 rounded-xl border border-slate-800 bg-slate-950 p-4 space-y-2">
-                <div className="text-xs font-extrabold text-white">
-                  📑 অটো টেবিল অব কনটেন্টস (Auto TOC)
-                </div>
+                <div className="text-xs font-extrabold text-white">📑     (Auto TOC)</div>
                 <ol className="text-xs text-slate-300 space-y-1 font-mono">
-                  <li className="text-[#00f5d4]">১. কেন REST API ও Nonce ভেরিফিকেশন জরুরি?</li>
-                  <li>২. টার্মিনাল ও WP-CLI সিকিউরিটি অডিট কমান্ড</li>
-                  <li>৩. ওয়ার্নিং ও সিকিউরিটি কলআউট বক্স</li>
-                  <li>৪. লেখক পরিচিতি ও কমিউনিটি প্রশ্নোত্তর</li>
+                  <li className="text-[#00f5d4]">.  REST API  Nonce  ?</li>
+                  <li>. Terminal  WP-CLI Security Audit</li>
+                  <li>.   Security</li>
+                  <li>.</li>
                 </ol>
               </div>
             </div>
@@ -1238,14 +1132,9 @@ export const NativeMasterSpecHub: React.FC = () => {
               <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 flex items-start gap-3">
                 <AlertTriangle className="h-5 w-5 text-amber-400 shrink-0 mt-0.5" />
                 <div className="text-xs text-amber-100 space-y-1">
-                  <div className="font-extrabold text-amber-300">
-                    ⚠️ সিকিউরিটি কলআউট (Defensive Security Notice)
-                  </div>
-                  <p className="leading-relaxed">
-                    শেয়ার্ড হোস্টিং বা প্রোডাকশন সার্ভারে কখনোই ভিজিটরদের প্রদত্ত কাঁচা PHP বা Python কোড{' '}
-                    <code>eval()</code> বা <code>shell_exec()</code> দিয়ে রান করবেন না। সর্বদা
-                    স্যান্ডবক্সড ব্রাউজার রানটাইম ব্যবহার করুন।
-                  </p>
+                  <div className="font-extrabold text-amber-300">⚠️ Security  (Defensive Security Notice)</div>
+                  <p className="leading-relaxed">PHP  Python {' '}<code>eval()</code>Cyber Defense Hub<code>shell_exec()</code>। 
+                        ।</p>
                 </div>
               </div>
             </div>
@@ -1258,7 +1147,7 @@ export const NativeMasterSpecHub: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-sm font-extrabold text-white">
-                    Hackers শিক্ষক (Official Editorial Team)
+                    HackersShikkhok (Official Editorial Team)
                   </div>
                   <div className="text-xs text-slate-400">
                     Cybersecurity & WordPress Architecture · https://hackersshikkhok.com
@@ -1278,15 +1167,14 @@ export const NativeMasterSpecHub: React.FC = () => {
                   👍 Helpful ({readerLiked ? 149 : 148})
                 </button>
                 <button
-                  onClick={() => setReaderSaved(!readerSaved)}
+                  onClick={() =>setReaderSaved(!readerSaved)}
                   className={`rounded-lg px-3 py-1.5 text-xs font-bold transition ${
                     readerSaved
                       ? 'bg-purple-500 text-white'
                       : 'border border-slate-700 bg-slate-900 text-slate-300'
                   }`}
                 >
-                  🔖 {readerSaved ? 'বুকমার্ক করা হয়েছে' : 'বুকমার্ক করুন'}
-                </button>
+                  🔖 {readerSaved ? '  ' : ' '}</button>
               </div>
             </div>
           </div>

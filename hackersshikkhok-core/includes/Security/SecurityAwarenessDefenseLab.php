@@ -65,13 +65,13 @@ class SecurityAwarenessDefenseLab {
         check_ajax_referer( 'hs_security_lab_nonce', 'nonce' );
         $user_id = get_current_user_id();
         if ( ! $user_id ) {
-            wp_send_json_error( [ 'message' => 'দয়া করে প্রথমে লগইন করুন।' ] );
+            wp_send_json_error( [ 'message' => 'Please login to access this lab.' ] );
         }
 
         $wallet = \HackersShikkhok\Core\LMS\Wallet_Economy::get_wallet( $user_id );
         $price = 100.00;
         if ( floatval( $wallet['balance_bdt'] ) < $price ) {
-            wp_send_json_error( [ 'message' => 'অপর্যাপ্ত ব্যালেন্স। ওয়ালেটে ১০০ টাকা টপ-আপ করুন।' ] );
+            wp_send_json_error( [ 'message' => 'Insufficient balance. Please top up 100 BDT to your wallet.' ] );
         }
 
         \HackersShikkhok\Core\LMS\Wallet_Economy::debit( $user_id, $price, 0, 'Security Awareness Lab Unlock (30 Days)' );
@@ -79,7 +79,7 @@ class SecurityAwarenessDefenseLab {
         update_user_meta( $user_id, 'hs_security_lab_expiry', $new_expiry );
 
         wp_send_json_success( [
-            'message' => 'ল্যাব সফলভাবে আনলক হয়েছে! ৩০ দিন পর্যন্ত অ্যাক্সেস বহাল থাকবে।',
+            'message' => 'Lab successfully unlocked! Access granted for 30 days.',
             'expiry'  => date_i18n( 'd M Y, h:i A', $new_expiry ),
         ] );
     }
@@ -93,7 +93,7 @@ class SecurityAwarenessDefenseLab {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cybersecurity Awareness & Defense Lab — Hackers শিক্ষক</title>
+            <title>Cybersecurity Awareness & Defense Lab — HackersShikkhok</title>
             <link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_uri() ); ?>">
             <style>
                 body { background: #070b14; color: #f8fafc; font-family: monospace; padding: 20px; }
@@ -106,26 +106,26 @@ class SecurityAwarenessDefenseLab {
             <div class="lab-box">
                 <h1 style="color:#00f5d4; margin-top:0;">🛡️ Cyber Defense Defense &amp; Security Awareness Lab</h1>
                 <p style="color:#94a3b8;">
-                    ডিফেন্সিভ সাইবার সিকিউরিটি সচেতনতা: ডোমেন স্পুফিং সনাক্তকরণ, SPF/DKIM/DMARC কনফিগারেশন এবং সোশ্যাল ইঞ্জিনিয়ারিং প্রতিরক্ষা শেখার প্রিমিয়াম ল্যাব।
+                       :   , SPF/DKIM/DMARC        ।
                 </p>
 
                 <?php if ( ! $is_unlocked ) : ?>
                     <div style="text-align:center; padding:40px 20px; background:#050811; border-radius:10px; margin-top:20px;">
                         <span style="font-size:40px;">🔒</span>
-                        <h2 style="color:#f8fafc; margin:15px 0 10px 0;">ল্যাবটি লক করা রয়েছে</h2>
+                        <h2 style="color:#f8fafc; margin:15px 0 10px 0;">Defense Lab Locked</h2>
                         <p style="color:#94a3b8; max-width:500px; margin:0 auto 20px auto;">
-                            এই ডিফেন্সিভ ল্যাবটিতে প্রবেশ করতে ১০০ টাকা দিয়ে ১ মাসের জন্য সাবস্ক্রিপশন আনলক করতে হবে।
+                                          ।
                         </p>
                         <button onclick="unlockLab()" style="background:#00f5d4; color:#050811; font-weight:bold; border:none; padding:12px 28px; border-radius:8px; cursor:pointer; font-size:14px;">
-                            🔓 ১০০ টাকায় ১ মাসের জন্য আনলক করুন
+                            🔓 Unlock 1-Month Access for 100 BDT
                         </button>
                     </div>
                 <?php else : ?>
                     <div style="background:#050811; padding:25px; border-radius:10px; margin-top:20px;">
-                        <span class="unlocked-badge">✓ প্রিমিয়াম ডিফেন্স ল্যাব অ্যাক্টিভ</span>
-                        <h3 style="color:#f8fafc; margin-top:20px;">মডিউল ১: ইনকামিং ইমেইল হেডার ও DMARC পলিসি অ্যানালাইসিস</h3>
+                        <span class="unlocked-badge">✓ Premium Defense Lab Active</span>
+                        <h3 style="color:#f8fafc; margin-top:20px;"> :     DMARC  </h3>
                         <p style="color:#94a3b8;">
-                            ইমেইল প্রোটোকল নিরাপত্তা বিশ্লেষণ এবং ডিটেকশন কৌশল অনুশীলন করুন।
+                            Practice email protocol security analysis and detection techniques.
                         </p>
                     </div>
                 <?php endif; ?>
@@ -142,7 +142,7 @@ class SecurityAwarenessDefenseLab {
                 })
                 .then(r => r.json())
                 .then(data => {
-                    alert(data.data ? data.data.message : 'ত্রুটি ঘটেছে');
+                    alert(data.data ? data.data.message : 'An error occurred');
                     if (data.success) location.reload();
                 });
             }

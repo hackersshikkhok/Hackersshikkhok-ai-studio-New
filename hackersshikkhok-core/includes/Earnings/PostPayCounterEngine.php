@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
-     * Hackers শিক্ষক PostPay Counter (PPC) & Earning Engine
+     * HackersShikkhok PostPay Counter (PPC) & Earning Engine
      * Pro-grade monetization, view/visit/comment/share/publish rewards, ledger tracking, and automated payout calculator.
      */
 final class PostPayCounterEngine {

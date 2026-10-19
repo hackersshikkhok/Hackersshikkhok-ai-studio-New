@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Global Technical SEO & Schema Verification Engine
+ * HackersShikkhok — Global Technical SEO & Schema Verification Engine
  *
  * Implements strict Google Rich Result compliant Structured Data:
  * - Free SoftwareApplication & WebApplication Schema with aggregateRating, screenshot, offers
@@ -86,7 +86,7 @@ final class GlobalTechnicalSeoEngine {
         $schemas[] = array(
             '@context'      => 'https://schema.org',
             '@type'         => 'Organization',
-            'name'          => 'Hackers শিক্ষক',
+            'name'          => 'HackersShikkhok',
             'alternateName' => 'HackersShikkhok Cybersecurity Academy & Dev Lab',
             'url'           => $site_url,
             'logo'          => home_url( '/wp-content/plugins/hackersshikkhok-core/assets/images/icon-256x256.png' ),
@@ -106,7 +106,7 @@ final class GlobalTechnicalSeoEngine {
         $schemas[] = array(
             '@context'        => 'https://schema.org',
             '@type'           => 'WebSite',
-            'name'            => 'Hackers শিক্ষক',
+            'name'            => 'HackersShikkhok',
             'url'             => $site_url,
             'potentialAction' => array(
                 '@type'       => 'SearchAction',
@@ -130,7 +130,7 @@ final class GlobalTechnicalSeoEngine {
             $tool_title = is_singular() ? get_the_title() : 'Free Online Developer & Cyber Security Tools Lab';
             $tool_desc  = is_singular() ? wp_strip_all_tags( get_the_excerpt() ) : '100% Free browser-based developer and cybersecurity utility tools with client-side zero-leak privacy.';
             if ( empty( $tool_desc ) ) {
-                $tool_desc = 'Free interactive online cybersecurity and development tool with client-side execution by Hackers শিক্ষক.';
+                $tool_desc = 'Free interactive online cybersecurity and development tool with client-side execution by HackersShikkhok.';
             }
 
             $svg_banner = home_url( '/wp-json/hackersshikkhok/v1/tools/banner/' . sanitize_key( $tool_slug ) );
@@ -170,7 +170,7 @@ final class GlobalTechnicalSeoEngine {
                 ),
                 'author'               => array(
                     '@type' => 'Organization',
-                    'name'  => 'Hackers শিক্ষক',
+                    'name'  => 'HackersShikkhok',
                     'url'   => $site_url,
                 ),
             );
@@ -214,7 +214,7 @@ final class GlobalTechnicalSeoEngine {
             $course_name = get_the_title( $course_id );
             $course_desc = wp_strip_all_tags( get_the_excerpt( $course_id ) );
             if ( empty( $course_desc ) ) {
-                $course_desc = 'Hands-on practical ethical hacking and cybersecurity course with interactive CTF labs and digital certificate by Hackers শিক্ষক.';
+                $course_desc = 'Hands-on practical ethical hacking and cybersecurity course with interactive CTF labs and digital certificate by HackersShikkhok.';
             }
 
             $schemas[] = array(
@@ -224,10 +224,10 @@ final class GlobalTechnicalSeoEngine {
                 'description'                  => $course_desc,
                 'provider'                     => array(
                     '@type'  => 'Organization',
-                    'name'   => 'Hackers শিক্ষক Cyber Academy',
+                    'name'   => 'HackersShikkhok Cyber Academy',
                     'sameAs' => $site_url,
                 ),
-                'educationalCredentialAwarded' => 'Hackers শিক্ষক Certified Ethical Hacker & Security Engineer Certificate',
+                'educationalCredentialAwarded' => 'HackersShikkhok Certified Ethical Hacker & Security Engineer Certificate',
                 'educationalLevel'             => 'Beginner to Advanced Professional',
                 'inLanguage'                   => array( 'bn', 'en' ),
                 'hasCourseInstance'            => array(
@@ -257,18 +257,18 @@ final class GlobalTechnicalSeoEngine {
                 'mainEntity' => array(
                     array(
                         '@type'          => 'Question',
-                        'name'           => 'এই কোর্সে কি কোনো ফি বা হিডেন চার্জ আছে?',
+                        'name'           => '        ?',
                         'acceptedAnswer' => array(
                             '@type' => 'Answer',
-                            'text'  => 'না, Hackers শিক্ষক একাডেমির সকল কোর্স ১০০% ফ্রি। শিক্ষার্থীরা ল্যাব প্র্যাকটিস ও সিটিএফ চ্যালেঞ্জের মাধ্যমে সম্পূর্ণ বিনামূল্যে জ্ঞান অর্জন করতে পারেন।',
+                            'text'  => ', HackersShikkhok    % ।             ।',
                         ),
                     ),
                     array(
                         '@type'          => 'Question',
-                        'name'           => 'কোর্স শেষ করলে কি সার্টিফিকেট পাওয়া যাবে?',
+                        'name'           => '      ?',
                         'acceptedAnswer' => array(
                             '@type' => 'Answer',
-                            'text'  => 'হ্যাঁ, কোর্সের প্রতিটি ল্যাব এবং সিটিএফ ফ্ল্যাগ সফলভাবে সাবমিট করলে ভেরিফায়েবল ডিজিটাল সার্টিফিকেট এবং ক্রিপ্টোগ্রাফিক কিউআর কোড ভেরিফিকেশন প্রদান করা হয়।',
+                            'text'  => ',                    ।',
                         ),
                     ),
                 ),
@@ -356,11 +356,11 @@ final class GlobalTechnicalSeoEngine {
         }
 
         $current_lang = TranslationLedger::get_current_lang();
-        $site_name    = 'Hackers শিক্ষক — Cybersecurity Academy & Free Dev Tools';
+        $site_name    = 'HackersShikkhok — Cybersecurity Academy & Free Dev Tools';
         $site_icon    = home_url( '/wp-content/plugins/hackersshikkhok-core/assets/images/icon-256x256.png' );
         $current_url  = home_url( add_query_arg( array(), $GLOBALS['wp']->request ?? '' ) );
 
-        $meta_desc = 'Hackers শিক্ষক (HackersShikkhok.com) — Free Interactive Cybersecurity Academy, Ethical Hacking CTF Labs, and 520+ Online Client-Side Developer Tools.';
+        $meta_desc = 'HackersShikkhok (HackersShikkhok.com) — Free Interactive Cybersecurity Academy, Ethical Hacking CTF Labs, and 520+ Online Client-Side Developer Tools.';
         $og_title  = wp_get_document_title();
         $og_type   = 'website';
         $og_image  = $site_icon;
@@ -372,21 +372,21 @@ final class GlobalTechnicalSeoEngine {
             $og_image  = home_url( '/wp-json/hackersshikkhok/v1/tools/banner/' . sanitize_key( $tool_slug ) );
 
             if ( 'bn' === $current_lang ) {
-                $meta_desc = esc_attr( $tool_name ) . ' — সম্পূর্ণ বিনামূল্যে অনলাইন টুল। ১০০% ক্লায়েন্ট-সাইড ব্রাউজার এক্সিকিউশন ও জিরো সার্ভার লগ প্রাইভেসি। Hackers শিক্ষক ফ্রি টুলস ল্যাব।';
+                $meta_desc = esc_attr( $tool_name ) . ' —    । % -       । HackersShikkhok   ।';
             } else {
                 $meta_desc = esc_attr( $tool_name ) . ' — 100% Free Online Developer Tool. Client-side browser execution with zero server logs, high performance & privacy protection.';
             }
         } elseif ( is_singular( 'code' ) ) {
             $code_name = get_the_title();
             $og_type   = 'article';
-            $meta_desc = esc_attr( $code_name ) . ' — Free Open Source Code Snippet, Script & Security Module by Hackers শিক্ষক.';
+            $meta_desc = esc_attr( $code_name ) . ' — Free Open Source Code Snippet, Script & Security Module by HackersShikkhok.';
         } elseif ( is_singular( 'hs_course' ) ) {
             $course_name = get_the_title();
             $og_type     = 'article';
-            $meta_desc   = esc_attr( $course_name ) . ' — Free Practical Cyber Security Course with Hands-on Labs & CTF Challenges. Join Hackers শিক্ষক Academy.';
+            $meta_desc   = esc_attr( $course_name ) . ' — Free Practical Cyber Security Course with Hands-on Labs & CTF Challenges. Join HackersShikkhok Academy.';
         } elseif ( is_front_page() || is_home() ) {
             if ( 'bn' === $current_lang ) {
-                $meta_desc = 'Hackers শিক্ষক (HackersShikkhok.com) — বাংলাদেশের শীর্ষস্থানীয় সাইবার সিকিউরিটি একাডেমি, ফ্রি কোড লাইব্রেরি এবং ৫২০+ ক্লায়েন্ট-সাইড ডেভেলপার ও নেটওয়ার্ক টুলসের সমন্বিত হাব।';
+                $meta_desc = 'HackersShikkhok (HackersShikkhok.com) — English    ,     + -      ।';
             } else {
                 $meta_desc = 'Hackers Shikkhok (HackersShikkhok.com) — Premier Cybersecurity Academy, CTF Challenges, Free Open Source Code, and 520+ Online Developer Utility Tools.';
             }
@@ -423,18 +423,18 @@ final class GlobalTechnicalSeoEngine {
 
         if ( is_singular( 'tools' ) ) {
             $base = $title_parts['title'] ?? '';
-            $suffix = ( 'bn' === $lang ) ? ' — ফ্রি অনলাইন টুল (Free Online Tool)' : ' — Free Online Tool (100% Client-Side Privacy)';
+            $suffix = ( 'bn' === $lang ) ? ' —    (Free Online Tool)' : ' — Free Online Tool (100% Client-Side Privacy)';
             $title_parts['title'] = $base . $suffix;
         } elseif ( is_singular( 'code' ) ) {
             $base = $title_parts['title'] ?? '';
-            $suffix = ( 'bn' === $lang ) ? ' — ফ্রি কোড স্নিপেট ও স্ক্রিপ্ট' : ' — Free Open Source Code & Snippet';
+            $suffix = ( 'bn' === $lang ) ? ' —     ' : ' — Free Open Source Code & Snippet';
             $title_parts['title'] = $base . $suffix;
         } elseif ( is_singular( 'hs_course' ) ) {
             $base = $title_parts['title'] ?? '';
-            $suffix = ( 'bn' === $lang ) ? ' — ফ্রি সাইবার একাডেমি কোর্স' : ' — Free Cybersecurity Academy Course';
+            $suffix = ( 'bn' === $lang ) ? ' —    ' : ' — Free Cybersecurity Academy Course';
             $title_parts['title'] = $base . $suffix;
         } elseif ( is_page( 'cyber-command' ) ) {
-            $title_parts['title'] = 'Enterprise Cyber Command & Security Audit SaaS Portal — Hackers শিক্ষক';
+            $title_parts['title'] = 'Enterprise Cyber Command & Security Audit SaaS Portal — HackersShikkhok';
         }
 
         return $title_parts;

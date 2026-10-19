@@ -1,6 +1,6 @@
 <?php
 /**
- * Author Archive Template - Hackers শিক্ষক
+ * Author Archive Template - HackersShikkhok
  */
 
 declare(strict_types=1);
@@ -14,7 +14,7 @@ get_header();
             <?php echo esc_html( mb_substr( get_the_author(), 0, 1 ) ); ?>
         </div>
         <div>
-            <span class="hs-card-badge">অথর প্রোফাইল</span>
+            <span class="hs-card-badge"> </span>
             <h1 style="color:#ffffff;font-size:1.75rem;font-weight:800;margin:6px 0 4px;">
                 <?php the_author(); ?>
             </h1>
@@ -37,15 +37,15 @@ get_header();
             <?php
             the_posts_pagination( array(
                 'mid_size'  => 2,
-                'prev_text' => __( '&larr; পূর্ববর্তী', 'hackersshikkhok-theme' ),
-                'next_text' => __( 'পরবর্তী &rarr;', 'hackersshikkhok-theme' ),
+                'prev_text' => __( '&larr; ', 'hackersshikkhok-theme' ),
+                'next_text' => __( ' &rarr;', 'hackersshikkhok-theme' ),
             ) );
             ?>
         </div>
     <?php else : ?>
         <div class="hs-cyber-card" style="text-align:center;padding:48px 24px;">
-            <p style="color:var(--hs-text-muted);">এই লেখকের কোনো পোস্ট পাওয়া যায়নি।</p>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hs-btn-primary">হোমপেজে ফিরে যান</a>
+            <p style="color:var(--hs-text-muted);">     ।</p>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hs-btn-primary">  </a>
         </div>
     <?php endif; ?>
 </main>

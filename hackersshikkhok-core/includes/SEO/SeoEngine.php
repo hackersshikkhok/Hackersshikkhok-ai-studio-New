@@ -28,7 +28,7 @@ final class SeoEngine {
             'dateModified'  => get_the_modified_date( 'c', $post_id ),
             'publisher'     => array(
                 '@type' => 'Organization',
-                'name'  => 'Hackers শিক্ষক',
+                'name'  => 'HackersShikkhok',
                 'url'   => 'https://hackersshikkhok.com',
             ),
         );

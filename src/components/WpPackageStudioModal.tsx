@@ -117,9 +117,7 @@ export const WpPackageStudio: React.FC<WpPackageStudioProps> = ({
               <h2 className="text-base md:text-lg font-bold text-white">
                 WordPress Theme + Core Plugin + Docs Live Auto-Rezip Studio
               </h2>
-              <p className="text-xs text-slate-400">
-                যেকোনো PHP/CSS/JS ফাইল আপডেট বা নতুন ফাইল যুক্ত করলেই ডাউনলোড বাটনে সাথে সাথে নতুন `.zip` তৈরি হবে
-              </p>
+              <p className="text-xs text-slate-400">PHP/CSS/JS        Download     `.zip`</p>
             </div>
           </div>
 
@@ -200,8 +198,7 @@ export const WpPackageStudio: React.FC<WpPackageStudioProps> = ({
               onClick={() => setShowNewFileForm((s) => !s)}
               className="px-3 py-1.5 rounded-lg bg-[#050811] hover:bg-slate-900 text-[#00f5d4] border border-[#00f5d4]/40 text-xs font-semibold flex items-center gap-1.5 cursor-pointer"
             >
-              <Plus className="w-3.5 h-3.5" /> নতুন ফাইল যুক্ত করুন (+ Add File)
-            </button>
+              <Plus className="w-3.5 h-3.5" />(+ Add File)</button>
           </div>
         </div>
 
@@ -220,11 +217,10 @@ export const WpPackageStudio: React.FC<WpPackageStudioProps> = ({
             <input
               type="text"
               value={newFileName}
-              onChange={(e) => setNewFileName(e.target.value)}
-              placeholder="includes/Custom/MyNewFeature.php বা assets/css/custom.css"
+              onChange={(e) =>setNewFileName(e.target.value)}
+              placeholder="includes/Custom/MyNewFeature.php  assets/css/custom.css"
               className="flex-1 min-w-[240px] px-3 py-1.5 bg-[#0b1120] border border-slate-700 rounded-lg text-xs font-mono text-white focus:outline-none focus:border-[#00f5d4]"
-            />
-            <button
+            /><button
               type="submit"
               className="px-4 py-1.5 rounded-lg bg-[#00f5d4] text-[#050811] font-bold text-xs cursor-pointer"
             >

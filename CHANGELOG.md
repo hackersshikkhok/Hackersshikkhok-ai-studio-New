@@ -1,4 +1,4 @@
-# Changelog — Hackers শিক্ষক Ecosystem
+# Changelog — HackersShikkhok Ecosystem
 
 ## [v4.0.0] - 2026-10-02
 ### Added

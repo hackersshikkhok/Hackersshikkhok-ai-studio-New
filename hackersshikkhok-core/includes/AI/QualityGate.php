@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Deterministic AI Quality Gate & Linguistic/Technical Content Analyzer
  * Zero-Randomness. Evaluates structural integrity, word count, code blocks, cybersecurity keywords, and safety.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class QualityGate {
 

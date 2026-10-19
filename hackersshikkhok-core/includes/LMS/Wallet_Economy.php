@@ -60,14 +60,87 @@ final class Wallet_Economy {
     }
 
     /**
-     * Get user wallet row with table fallback
+     * Resolve the active wallet table with auto-healing and silent failover
+     */
+    private static function resolve_wallet_table(): string {
+        global $wpdb;
+        if ( ! $wpdb ) {
+            return 'wp_user_wallet';
+        }
+        $suppress = $wpdb->suppress_errors( true );
+
+        $candidates = array(
+            $wpdb->prefix . 'hs_user_wallet',
+            $wpdb->prefix . 'user_wallet',
+            $wpdb->prefix . 'cyber_user_wallet',
+        );
+
+        foreach ( $candidates as $candidate ) {
+            $found = $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $candidate ) );
+            if ( $found === $candidate ) {
+                $wpdb->suppress_errors( $suppress );
+                return $candidate;
+            }
+        }
+
+        // Auto-heal table if not present
+        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+        $charset_collate = $wpdb->get_charset_collate();
+        $target_table = $wpdb->prefix . 'hs_user_wallet';
+        $alias_table  = $wpdb->prefix . 'cyber_user_wallet';
+
+        $sql = "CREATE TABLE {$target_table} (
+            id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            user_id BIGINT UNSIGNED NOT NULL,
+            balance_bdt DECIMAL(12,2) NOT NULL DEFAULT 50.00,
+            xp_points INT UNSIGNED NOT NULL DEFAULT 200,
+            level INT UNSIGNED NOT NULL DEFAULT 1,
+            rank_title VARCHAR(64) NOT NULL DEFAULT 'Cyber Cadet',
+            power_level VARCHAR(32) NOT NULL DEFAULT 'low',
+            pending_payout DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+            updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            PRIMARY KEY  (id),
+            UNIQUE KEY uq_wallet_user (user_id)
+        ) $charset_collate;
+        CREATE TABLE {$alias_table} (
+            id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            user_id BIGINT UNSIGNED NOT NULL,
+            balance_bdt DECIMAL(12,2) NOT NULL DEFAULT 50.00,
+            xp_points INT UNSIGNED NOT NULL DEFAULT 200,
+            level INT UNSIGNED NOT NULL DEFAULT 1,
+            rank_title VARCHAR(64) NOT NULL DEFAULT 'Cyber Cadet',
+            power_level VARCHAR(32) NOT NULL DEFAULT 'low',
+            pending_payout DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+            updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            PRIMARY KEY  (id),
+            UNIQUE KEY uq_cwallet_user (user_id)
+        ) $charset_collate;";
+
+        dbDelta( $sql );
+        $wpdb->suppress_errors( $suppress );
+        return $target_table;
+    }
+
+    /**
+     * Get user wallet row with robust error suppression and guest fallback
      */
     public static function get_wallet( int $user_id ): array {
-        global $wpdb;
-        $wallet_table = $wpdb->prefix . 'user_wallet';
-        if ( $wpdb->get_var( "SHOW TABLES LIKE '{$wallet_table}'" ) !== $wallet_table ) {
-            $wallet_table = $wpdb->prefix . 'cyber_user_wallet';
+        if ( $user_id <= 0 ) {
+            return array(
+                'id'             => 0,
+                'user_id'        => 0,
+                'balance_bdt'    => 50.00,
+                'xp_points'      => 200,
+                'level'          => 1,
+                'rank_title'     => 'Guest Security Auditor',
+                'power_level'    => 'low',
+                'pending_payout' => 0.00,
+            );
         }
+
+        global $wpdb;
+        $suppress = $wpdb->suppress_errors( true );
+        $wallet_table = self::resolve_wallet_table();
 
         $row = $wpdb->get_row(
             $wpdb->prepare( "SELECT * FROM {$wallet_table} WHERE user_id = %d LIMIT 1", $user_id ),
@@ -86,9 +159,10 @@ final class Wallet_Economy {
             );
             $wpdb->insert( $wallet_table, $initial_data );
             $row = $initial_data;
-            $row['id'] = $wpdb->insert_id;
+            $row['id'] = (int) $wpdb->insert_id;
         }
 
+        $wpdb->suppress_errors( $suppress );
         return $row;
     }
 
@@ -96,11 +170,12 @@ final class Wallet_Economy {
      * Credit funds and XP
      */
     public static function credit( int $user_id, float $amount_bdt, int $xp_points, string $reason = '' ): bool {
-        global $wpdb;
-        $wallet_table = $wpdb->prefix . 'user_wallet';
-        if ( $wpdb->get_var( "SHOW TABLES LIKE '{$wallet_table}'" ) !== $wallet_table ) {
-            $wallet_table = $wpdb->prefix . 'cyber_user_wallet';
+        if ( $user_id <= 0 ) {
+            return false;
         }
+        global $wpdb;
+        $suppress = $wpdb->suppress_errors( true );
+        $wallet_table = self::resolve_wallet_table();
 
         self::get_wallet( $user_id ); // ensure row exists
 
@@ -116,6 +191,7 @@ final class Wallet_Economy {
         ) );
 
         self::recalculate_rank( $user_id );
+        $wpdb->suppress_errors( $suppress );
         return (bool) $updated;
     }
 
@@ -123,6 +199,9 @@ final class Wallet_Economy {
      * Debit balance
      */
     public static function debit( int $user_id, float $amount_bdt, int $xp_points = 0, string $reason = '' ): bool {
+        if ( $user_id <= 0 ) {
+            return false;
+        }
         global $wpdb;
         $wallet = self::get_wallet( $user_id );
 
@@ -130,10 +209,8 @@ final class Wallet_Economy {
             return false;
         }
 
-        $wallet_table = $wpdb->prefix . 'user_wallet';
-        if ( $wpdb->get_var( "SHOW TABLES LIKE '{$wallet_table}'" ) !== $wallet_table ) {
-            $wallet_table = $wpdb->prefix . 'cyber_user_wallet';
-        }
+        $suppress = $wpdb->suppress_errors( true );
+        $wallet_table = self::resolve_wallet_table();
 
         $updated = $wpdb->query( $wpdb->prepare(
             "UPDATE {$wallet_table} 
@@ -146,6 +223,7 @@ final class Wallet_Economy {
             $user_id
         ) );
 
+        $wpdb->suppress_errors( $suppress );
         return (bool) $updated;
     }
 
@@ -153,11 +231,12 @@ final class Wallet_Economy {
      * Recalculate rank based on XP
      */
     public static function recalculate_rank( int $user_id ): void {
-        global $wpdb;
-        $wallet_table = $wpdb->prefix . 'user_wallet';
-        if ( $wpdb->get_var( "SHOW TABLES LIKE '{$wallet_table}'" ) !== $wallet_table ) {
-            $wallet_table = $wpdb->prefix . 'cyber_user_wallet';
+        if ( $user_id <= 0 ) {
+            return;
         }
+        global $wpdb;
+        $suppress = $wpdb->suppress_errors( true );
+        $wallet_table = self::resolve_wallet_table();
 
         $xp = (int) $wpdb->get_var( $wpdb->prepare( "SELECT xp_points FROM {$wallet_table} WHERE user_id = %d", $user_id ) );
 
@@ -173,18 +252,18 @@ final class Wallet_Economy {
         } elseif ( $xp >= 1000 ) {
             $rank = 'Cyber Operative';
             $level = 3;
-        } elseif ( $xp >= 400 ) {
-            $rank = 'Security Apprentice';
+        } elseif ( $xp >= 500 ) {
+            $rank = 'Junior Defender';
             $level = 2;
         }
 
-        $wpdb->update(
-            $wallet_table,
-            array( 'rank_title' => $rank, 'level' => $level ),
-            array( 'user_id' => $user_id ),
-            array( '%s', '%d' ),
-            array( '%d' )
-        );
+        $wpdb->query( $wpdb->prepare(
+            "UPDATE {$wallet_table} SET rank_title = %s, level = %d WHERE user_id = %d",
+            $rank,
+            $level,
+            $user_id
+        ) );
+        $wpdb->suppress_errors( $suppress );
     }
 
     /**
@@ -228,7 +307,7 @@ final class Wallet_Economy {
         if ( ! $success ) {
             return new WP_REST_Response( array(
                 'success' => false,
-                'message' => 'অপর্যাপ্ত ব্যালেন্স! বিকাশ বা নগদে ওয়ালেট টপ-আপ করুন।',
+                'message' => 'Insufficient balance! Please top up your wallet.',
             ), 400 );
         }
 
@@ -241,7 +320,7 @@ final class Wallet_Economy {
         $updated = self::get_wallet( $user_id );
         return new WP_REST_Response( array(
             'success'         => true,
-            'message'         => 'সফলভাবে ট্রানজাকশন সম্পন্ন হয়েছে!',
+            'message'         => 'Transaction successfully completed!',
             'new_balance_bdt' => floatval( $updated['balance_bdt'] ),
             'xp_points'       => intval( $updated['xp_points'] ),
         ), 200 );

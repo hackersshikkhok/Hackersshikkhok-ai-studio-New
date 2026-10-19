@@ -1,6 +1,6 @@
 <?php
 /**
- * Diagnostic Inspector & Error Log CPanel Engine for Hackers শিক্ষক Core.
+ * Diagnostic Inspector & Error Log CPanel Engine for HackersShikkhok Core.
  * Automatically catches and logs all system errors, plugin/theme exceptions, and warnings,
  * and displays them in WordPress Admin -> Tools -> HackersShikkhok Debug Logs.
  * 
@@ -149,15 +149,15 @@ final class DiagnosticInspector {
         ?>
         <div class="wrap" style="color:#e2e8f0;font-family:system-ui,-apple-system,sans-serif;">
             <div style="background:#0b1120;padding:24px;border-radius:12px;border:1px solid rgba(0,245,212,0.3);margin-bottom:24px;">
-                <h1 style="color:#fff;margin:0 0 8px;font-size:24px;">🛡️ Hackers শিক্ষক Debug &amp; Error Log Inspector (CPanel)</h1>
+                <h1 style="color:#fff;margin:0 0 8px;font-size:24px;">🛡️ HackersShikkhok Debug &amp; Error Log Inspector (CPanel)</h1>
                 <p style="color:#94a3b8;margin:0;font-size:14px;">
-                    এখানে সমস্ত প্লাগইন এরর, থিম एक्সেপশন এবং সিস্টেম ফেইলওভার রিয়েল-টাইমে সংরক্ষিত হয়। কোনো ক্রিটিক্যাল এরর ঘটলে আপনি এখানে বিস্তারিত দেখতে পাবেন।
+                       ,  एक्    -  ।         ।
                 </p>
             </div>
 
             <?php if ( isset( $_GET['cleared'] ) ) : ?>
                 <div class="notice notice-success is-dismissible" style="background:#065f46;color:#fff;padding:12px;border-radius:6px;margin-bottom:20px;">
-                    <p style="margin:0;">✅ সমস্ত ডিবাগ লগ সফলভাবে মুছে ফেলা হয়েছে।</p>
+                    <p style="margin:0;">✅       ।</p>
                 </div>
             <?php endif; ?>
 
@@ -187,8 +187,8 @@ final class DiagnosticInspector {
                 <form method="post" style="margin:0;">
                     <?php wp_nonce_field( 'hs_debug_nonce', 'hs_debug_nonce_field' ); ?>
                     <input type="hidden" name="hs_debug_action" value="clear_logs" />
-                    <button type="submit" class="button button-primary" style="background:#f43f5e;border-color:#e11d48;color:#fff;" onclick="return confirm('সব লগ মুছে ফেলতে চান?');">
-                        🗑️ সমস্ত লগ ডিলিট করুন
+                    <button type="submit" class="button button-primary" style="background:#f43f5e;border-color:#e11d48;color:#fff;" onclick="return confirm('    ?');">
+                        🗑️    
                     </button>
                 </form>
             </div>
@@ -196,19 +196,19 @@ final class DiagnosticInspector {
             <!-- Recent Log Entries Table -->
             <div style="background:#0b1120;border:1px solid #1e293b;border-radius:12px;overflow:hidden;margin-bottom:24px;">
                 <div style="padding:16px;background:#0f172a;border-bottom:1px solid #1e293b;">
-                    <strong style="color:#fff;font-size:16px;">📋 সংরক্ষিত ডিবাগ এন্ট্রি তালিকা (Recent Database Log Events)</strong>
+                    <strong style="color:#fff;font-size:16px;">📋     (Recent Database Log Events)</strong>
                 </div>
                 <?php if ( empty( $logs ) ) : ?>
                     <div style="padding:32px;text-align:center;color:#64748b;">
-                        🎉 কোনো এরর বা সতর্কবার্তা নেই। সাইট সম্পূর্ণ সুস্থ ও নিখুঁতভাবে চলছে!
+                        🎉     ।      !
                     </div>
                 <?php else : ?>
                     <table class="wp-list-table widefat fixed striped" style="background:#0b1120;color:#e2e8f0;border:none;">
                         <thead>
                             <tr style="background:#050811;color:#00f5d4;">
-                                <th style="width:160px;padding:12px;">সময় (Time)</th>
-                                <th style="width:100px;padding:12px;">লেভেল (Level)</th>
-                                <th style="padding:12px;">বার্তা ও বিবরণ (Message &amp; Meta)</th>
+                                <th style="width:160px;padding:12px;"> (Time)</th>
+                                <th style="width:100px;padding:12px;"> (Level)</th>
+                                <th style="padding:12px;">   (Message &amp; Meta)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -224,7 +224,7 @@ final class DiagnosticInspector {
                                         <?php echo esc_html( $log['message'] ?? '' ); ?>
                                         <?php if ( ! empty( $log['meta'] ) ) : ?>
                                             <details style="margin-top:6px;color:#94a3b8;cursor:pointer;">
-                                                <summary>বিস্তারিত ট্রেস (Stack Trace &amp; Meta)</summary>
+                                                <summary>  (Stack Trace &amp; Meta)</summary>
                                                 <pre style="background:#020617;color:#a78bfa;padding:8px;border-radius:4px;margin-top:4px;overflow-x:auto;"><?php echo esc_html( print_r( $log['meta'], true ) ); ?></pre>
                                             </details>
                                         <?php endif; ?>
@@ -238,7 +238,7 @@ final class DiagnosticInspector {
 
             <!-- Raw Log File Box -->
             <div style="background:#0b1120;border:1px solid #1e293b;border-radius:12px;padding:20px;">
-                <h3 style="color:#fff;margin-top:0;">📄 ফাইল ভিত্তিক র Raw লগ (`hackersshikkhok-debug.log`)</h3>
+                <h3 style="color:#fff;margin-top:0;">📄    Raw  (`hackersshikkhok-debug.log`)</h3>
                 <textarea readonly style="width:100%;height:220px;background:#050811;color:#00f5d4;border:1px solid #1e293b;border-radius:8px;font-family:monospace;font-size:12px;padding:12px;"><?php echo esc_textarea( $log_content ); ?></textarea>
             </div>
         </div>

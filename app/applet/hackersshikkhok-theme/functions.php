@@ -1,7 +1,7 @@
 <?php
 /**
- * Hackers শিক্ষক Theme presentation bootstrap (v4.0.0).
- * Developed by Hackers শিক্ষক (https://hackersshikkhok.com)
+ * HackersShikkhok Theme presentation bootstrap (v4.0.0).
+ * Developed by HackersShikkhok (https://hackersshikkhok.com)
  *
  * Strict architectural rule:
  * Zero business logic is placed in the theme. All CPTs, DB tables, and tools reside in hackersshikkhok-core.
@@ -129,7 +129,7 @@ add_action( 'wp_enqueue_scripts', static function (): void {
         'nonce'     => wp_create_nonce( 'wp_rest' ),
         'homeUrl'   => esc_url_raw( home_url( '/' ) ),
         'themeUrl'  => esc_url_raw( get_template_directory_uri() ),
-        'brandName' => 'Hackers শিক্ষক',
+        'brandName' => 'HackersShikkhok',
     ) );
 } );
 
@@ -141,14 +141,14 @@ add_action( 'admin_notices', static function (): void {
     $screenshot_url = esc_url( get_template_directory_uri() . '/screenshot.png' );
     ?>
     <div class="notice notice-info is-dismissible" style="background:#0b1120;color:#e2e8f0;border-left:4px solid #00f5d4;padding:16px;display:flex;align-items:center;gap:18px;">
-        <img src="<?php echo $screenshot_url; ?>" alt="Hackers শিক্ষক Theme Preview" style="width:110px;height:80px;object-fit:cover;border-radius:10px;border:1px solid #00f5d4;" />
+        <img src="<?php echo $screenshot_url; ?>" alt="HackersShikkhok Theme Preview" style="width:110px;height:80px;object-fit:cover;border-radius:10px;border:1px solid #00f5d4;" />
         <div>
-            <strong style="color:#00f5d4;font-size:15px;">🛡️ Hackers শিক্ষক 2040 Cyber &amp; Coding Hub Theme (v4.0.0) — Developed by Hackers শিক্ষক</strong>
-            <p style="margin:6px 0;color:#cbd5e1;font-size:13px;">২৮টি প্ল্যাটফর্ম সেন্টার, ইউনিভার্সাল সোশ্যাল সিস্টেম, ক্রিয়েটর স্টুডিও, ডিভাইস ল্যাব, গেমস সেন্টার এবং ৫২০+ টুলসের প্রিমিয়াম সাইবার-নিয়ন থিম সক্রিয় হয়েছে।</p>
+            <strong style="color:#00f5d4;font-size:15px;">🛡️ HackersShikkhok 2040 Cyber &amp; Coding Hub Theme (v4.0.0) — Developed by HackersShikkhok</strong>
+            <p style="margin:6px 0;color:#cbd5e1;font-size:13px;">  ,   ,  ,  ,    +   -   ।</p>
             <div style="display:flex;gap:14px;align-items:center;margin-top:6px;">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" style="color:#050811;background:#00f5d4;font-weight:700;font-size:12px;padding:4px 10px;border-radius:6px;text-decoration:none;">🌐 লাইভ সাইট দেখুন</a>
-                <a href="<?php echo esc_url( admin_url( 'admin.php?page=hs-diagnostics' ) ); ?>" style="color:#38bdf8;font-weight:700;font-size:12px;text-decoration:none;">🩺 সিস্টেম ডায়াগনস্টিক ও এরর লগ</a>
-                <a href="https://hackersshikkhok.com" target="_blank" rel="noopener noreferrer" style="color:#94a3b8;font-size:12px;text-decoration:none;">অফিসিয়াল ওয়েবসাইট: hackersshikkhok.com</a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" style="color:#050811;background:#00f5d4;font-weight:700;font-size:12px;padding:4px 10px;border-radius:6px;text-decoration:none;">🌐   </a>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=hs-diagnostics' ) ); ?>" style="color:#38bdf8;font-weight:700;font-size:12px;text-decoration:none;">🩺     </a>
+                <a href="https://hackersshikkhok.com" target="_blank" rel="noopener noreferrer" style="color:#94a3b8;font-size:12px;text-decoration:none;"> : hackersshikkhok.com</a>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-# Developer Documentation — Hackers শিক্ষক Architecture
+# Developer Documentation — HackersShikkhok Architecture
 
 ## Plugin-Theme Architecture Boundary
 - **Core Plugin (`hackersshikkhok-core`):** Authoritative source of truth for business logic, database tables, REST API controllers, capability enforcement, and server-side computations.

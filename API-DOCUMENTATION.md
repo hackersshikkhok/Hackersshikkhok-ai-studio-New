@@ -1,5 +1,5 @@
 # REST API Documentation (`hackersshikkhok/v1`)
-**Developed by Hackers শিক্ষক (https://hackersshikkhok.com)**
+**Developed by HackersShikkhok (https://hackersshikkhok.com)**
 
 ## Endpoints
 - `GET /wp-json/hackersshikkhok/v1/health` — System diagnostics (Requires `manage_options` capability).

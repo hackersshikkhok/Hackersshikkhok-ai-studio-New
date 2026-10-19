@@ -56,7 +56,7 @@ final class CTF_Engine {
                 return array(
                     'allowed'   => false,
                     'cooldown'  => $remaining,
-                    'message'   => "⚠️ অতিরিক্ত ভুল চেষ্টার কারণে এক্সেস লক রয়েছে। দয়া করে {$remaining} সেকেন্ড অপেক্ষা করুন।",
+                    'message'   => "⚠️       ।   {$remaining}   ।",
                 );
             }
         }
@@ -82,7 +82,7 @@ final class CTF_Engine {
             return array(
                 'allowed'   => false,
                 'cooldown'  => $cooldown_secs,
-                'message'   => "⛔ ব্রুট-ফোর্স প্রটেকশন ট্রিগারড! {$cooldown_secs} সেকেন্ডের কুলডাউন পেনাল্টি প্রযোজ্য হয়েছে।",
+                'message'   => "⛔ -  ! {$cooldown_secs}     ।",
             );
         }
 
@@ -141,7 +141,7 @@ final class CTF_Engine {
         if ( ! $flag_row ) {
             return array(
                 'success' => false,
-                'message' => '❌ ইনভ্যালিড চ্যালেঞ্জ আইডি। ফ্ল্যাগ রেকর্ড খুঁজে পাওয়া যায়নি।',
+                'message' => '❌ Invalid challenge ID. Flag record not found.',
             );
         }
 
@@ -183,7 +183,7 @@ final class CTF_Engine {
             return array(
                 'success'    => false,
                 'is_correct' => false,
-                'message'    => '❌ ভুল ফ্ল্যাগ! আপনার এনালিসিস পুনরায় চেক করুন অথবা "hint" কমান্ড ব্যবহার করুন।',
+                'message'    => '❌  !       "hint"   ।',
             );
         }
 
@@ -195,7 +195,7 @@ final class CTF_Engine {
                 'success'        => true,
                 'is_correct'     => true,
                 'already_solved' => true,
-                'message'        => '🎉 ফ্ল্যাগ সঠিক! আপনি ইতোমধ্যে এই চ্যালেঞ্জটির রিওয়ার্ড ক্লেইম করেছেন।',
+                'message'        => '🎉  !       ।',
                 'xp_awarded'     => 0,
                 'bdt_awarded'    => 0.00,
             );
@@ -234,7 +234,7 @@ final class CTF_Engine {
             'success'        => true,
             'is_correct'     => true,
             'already_solved' => false,
-            'message'        => sprintf( '🎯 চমৎকার! ফ্ল্যাগ গৃহীত হয়েছে। আপনি +%d XP এবং ৳%.2f BDT ওয়ালেটে অর্জন করেছেন!', $xp_reward, $bdt_reward ),
+            'message'        => sprintf( '🎯 !   ।  +%d XP  %.2f BDT   !', $xp_reward, $bdt_reward ),
             'xp_awarded'     => $xp_reward,
             'bdt_awarded'    => $bdt_reward,
             'challenge'      => $flag_row['challenge_title'],
@@ -407,7 +407,7 @@ final class CTF_Engine {
                 if ( empty( $flag_input ) ) {
                     return array(
                         'status' => 'error',
-                        'output' => "❌ ব্যবহার: submit-flag <HS{YOUR_FLAG_TOKEN}>\nউদাহরণ: submit-flag HS{PRePARED_STaTEMENTS_PrOTECT_ALL_2026}",
+                        'output' => "❌ : submit-flag <HS{YOUR_FLAG_TOKEN}>\n: submit-flag HS{PRePARED_STaTEMENTS_PrOTECT_ALL_2026}",
                     );
                 }
 
@@ -454,7 +454,7 @@ final class CTF_Engine {
                                 "  • User ID:       #{$uid}\n" .
                                 "  • Rank:          {$rnk} [Tier {$lvl}]\n" .
                                 "  • XP Points:     {$xp} XP\n" .
-                                "  • Wallet BDT:    ৳{$bdt}\n" .
+                                "  • Wallet BDT:    {$bdt}\n" .
                                 "  • Terminal Host: sandbox.hackersshikkhok.local\n" .
                                 "  • Security Clear: Defensive Academy Certified",
                 );
@@ -462,8 +462,8 @@ final class CTF_Engine {
             case 'hint':
                 return array(
                     'status' => 'info',
-                    'output' => "💡 টিউটোরিয়াল ও ল্যাব হিন্ট:\n" .
-                                "লেসনের ডায়াগ্রামের রেড অ্যারো (Step 1 -> Step 2) লক্ষ্য করুন। সোর্স কোডে prepared statements ব্যবহারের ফলে ইনজেকশন ব্লক হচ্ছে। 'exploit sqli' কমান্ড চালিয়ে সিমুলেশন দেখুন!",
+                    'output' => "💡    :\n" .
+                                "    (Step 1 -> Step 2)  ।   prepared statements     । 'exploit sqli'    !",
                 );
 
             case 'ls':

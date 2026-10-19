@@ -1,7 +1,7 @@
 <?php
 /**
- * Single Post Template - Hackers শিক্ষক
- * Theme: Hackers শিক্ষক 2040 Cyber & Coding Hub Theme
+ * Single Post Template - HackersShikkhok
+ * Theme: HackersShikkhok 2040 Cyber & Coding Hub Theme
  */
 
 declare(strict_types=1);
@@ -15,9 +15,9 @@ get_header();
             
             <!-- Breadcrumb Navigation -->
             <div style="font-size:12px;color:var(--hs-text-muted);margin-bottom:18px;display:flex;align-items:center;gap:6px;">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:var(--hs-text-muted);">হোম</a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:var(--hs-text-muted);"></a>
                 <span>&rsaquo;</span>
-                <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" style="color:var(--hs-text-muted);">ব্লগ</a>
+                <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" style="color:var(--hs-text-muted);"></a>
                 <span>&rsaquo;</span>
                 <span style="color:var(--hs-primary);"><?php the_title(); ?></span>
             </div>
@@ -36,11 +36,11 @@ get_header();
                 </h1>
 
                 <div class="hs-article-meta">
-                    <span>👤 লেখক: <strong style="color:#f8fafc;"><?php echo esc_html( get_the_author() ); ?></strong></span>
+                    <span>👤 : <strong style="color:#f8fafc;"><?php echo esc_html( get_the_author() ); ?></strong></span>
                     <span>•</span>
-                    <span>📅 তারিখ: <?php echo esc_html( get_the_date( 'd F Y' ) ); ?></span>
+                    <span>📅 : <?php echo esc_html( get_the_date( 'd F Y' ) ); ?></span>
                     <span>•</span>
-                    <span>⏱️ রিডিং টাইম: <?php echo esc_html( max( 1, (int) round( str_word_count( wp_strip_all_tags( get_the_content() ) ) / 200 ) ) ); ?> মিনিট</span>
+                    <span>⏱️  : <?php echo esc_html( max( 1, (int) round( str_word_count( wp_strip_all_tags( get_the_content() ) ) / 200 ) ) ); ?> </span>
                 </div>
             </header>
 
@@ -69,7 +69,7 @@ get_header();
             if ( ! empty( $tags ) ) :
             ?>
                 <div style="margin-top:32px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
-                    <span style="font-size:12px;color:var(--hs-text-muted);">🏷️ ট্যাগসমূহ:</span>
+                    <span style="font-size:12px;color:var(--hs-text-muted);">🏷️ :</span>
                     <?php foreach ( $tags as $tag ) : ?>
                         <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" style="font-size:12px;background:rgba(255,255,255,0.05);color:#cbd5e1;padding:3px 10px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);">
                             #<?php echo esc_html( $tag->name ); ?>
@@ -84,9 +84,9 @@ get_header();
                     <?php echo esc_html( mb_substr( get_the_author(), 0, 1 ) ); ?>
                 </div>
                 <div>
-                    <div style="color:#00f5d4;font-weight:700;font-size:14px;">লেখক: <?php echo esc_html( get_the_author() ); ?></div>
+                    <div style="color:#00f5d4;font-weight:700;font-size:14px;">: <?php echo esc_html( get_the_author() ); ?></div>
                     <div style="color:#94a3b8;font-size:12px;margin-top:4px;">
-                        Hackers শিক্ষক সাইবার সিকিউরিটি ও ডেভেলপার রিসোর্স সেন্টারের নিয়মিত কন্ট্রিবিউটর।
+                        HackersShikkhok        ।
                     </div>
                 </div>
             </div>

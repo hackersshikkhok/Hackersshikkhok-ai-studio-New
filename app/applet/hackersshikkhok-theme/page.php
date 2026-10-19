@@ -1,7 +1,7 @@
 <?php
 /**
- * Generic Page Template - Hackers শিক্ষক
- * Theme: Hackers শিক্ষক 2040 Cyber & Coding Hub Theme
+ * Generic Page Template - HackersShikkhok
+ * Theme: HackersShikkhok 2040 Cyber & Coding Hub Theme
  */
 
 declare(strict_types=1);

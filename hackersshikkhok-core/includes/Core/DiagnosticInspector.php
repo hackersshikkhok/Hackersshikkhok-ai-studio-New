@@ -13,7 +13,7 @@ use WP_REST_Response;
 /**
  * Diagnostic Inspector & Error Logger for HackersShikkhok Core
  * Captures, monitors, and exposes subsystem boot errors, database integrity, and health diagnostics.
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class DiagnosticInspector {
 
@@ -144,7 +144,7 @@ final class DiagnosticInspector {
         ?>
         <div class="notice notice-warning is-dismissible" style="border-left-color: #f59e0b; background: #0b1120; color: #f8fafc;">
             <p>
-                <strong style="color: #f59e0b;">🛡️ Hackers শিক্ষক Diagnostic Notice:</strong>
+                <strong style="color: #f59e0b;">🛡️ HackersShikkhok Diagnostic Notice:</strong>
                 Subsystem <code><?php echo esc_html( $latest['component'] ); ?></code> logged an event:
                 <em><?php echo esc_html( $latest['message'] ); ?></em> (<?php echo esc_html( $latest['datetime'] ); ?>).
             </p>

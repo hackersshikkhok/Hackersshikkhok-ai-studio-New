@@ -13,7 +13,7 @@ use HackersShikkhok\Core\Users\UserEcosystem;
 
 /**
  * Cyber Academy LMS Engine — Authoritative Progress, HMAC Certificates, Object-Level Authorization & Sandboxed Labs
- * Brand: Hackers শিক্ষক (https://hackersshikkhok.com)
+ * Brand: HackersShikkhok (https://hackersshikkhok.com)
  */
 final class CyberAcademyLmsEngine {
 
@@ -166,7 +166,7 @@ final class CyberAcademyLmsEngine {
             'issued_at'              => $cert['issued_at'],
             'status'                 => 'valid',
             'signature_verified'     => true,
-            'issuer'                 => 'Hackers শিক্ষক Cybersecurity Academy (HackersShikkhok.com)',
+            'issuer'                 => 'HackersShikkhok Cybersecurity Academy (HackersShikkhok.com)',
         ), 200 );
     }
 

@@ -63,10 +63,10 @@ const SEED_FINDINGS: SecurityFinding[] = [
     cvss: 6.5,
     category: 'security_headers',
     titleEn: 'Strict-Transport-Security (HSTS) Missing',
-    titleBn: 'HTTP Strict Transport Security (HSTS) হেডার অনুপস্থিত',
-    descBn: 'ব্রাউজারকে কেবল এনক্রিপ্টেড HTTPS ব্যবহারে বাধ্য করার হেডার পাওয়া যায়নি। এটি SSL-স্ট্রিপিং অ্যাটাক প্রতিরোধ করে।',
-    impactBn: 'পাবলিক ওয়াইফাই বা লোকাল নেটওয়ার্কে আক্রমণকারীরা সংযোগকে প্লেইনটেক্সট HTTP-তে নামিয়ে এনে প্যাকেট স্নিফ করতে পারে।',
-    remediationBn: 'Nginx, Apache বা Cloudflare রেসপন্স হেডারে Strict-Transport-Security হেডারটি যুক্ত করুন।',
+    titleBn: 'HTTP Strict Transport Security (HSTS)',
+    descBn: 'HTTPS      ।  SSL-   ।',
+    impactBn: 'HTTP-      ।',
+    remediationBn: 'Nginx, Apache  Cloudflare   Strict-Transport-Security   ।',
     codeSnippetNginx: 'add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;',
     codeSnippetApache: '<IfModule mod_headers.c>\n  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"\n</IfModule>',
     codeSnippetPhp: 'header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");',
@@ -81,10 +81,10 @@ const SEED_FINDINGS: SecurityFinding[] = [
     cvss: 7.2,
     category: 'security_headers',
     titleEn: 'Content-Security-Policy (CSP) Missing',
-    titleBn: 'Content Security Policy (CSP) হেডার অনুপস্থিত (XSS ঝুঁকি)',
-    descBn: 'CSP হেডার ছাড়া ব্রাউজার অচেনা তৃতীয় পক্ষের ক্ষতিকর স্ক্রিপ্ট লোড হওয়া থামাতে পারে না।',
-    impactBn: 'ক্লায়েন্ট-সাইড cross-site scripting (XSS) আক্রমণ এবং চেকআউট ফর্মে ডাটা চুরি রোধ করা কঠিন হয়ে পড়ে।',
-    remediationBn: 'সার্ভার কনফিগারেশনে script-src এবং default-src সীমাবদ্ধ করে কঠোর CSP যুক্ত করুন।',
+    titleBn: 'Content Security Policy (CSP)   (XSS )',
+    descBn: 'CSP             ।',
+    impactBn: '- cross-site scripting (XSS)           ।',
+    remediationBn: '  script-src  default-src    CSP  ।',
     codeSnippetNginx: 'add_header Content-Security-Policy "default-src \'self\'; script-src \'self\' https://cdn.jsdelivr.net; object-src \'none\';" always;',
     codeSnippetApache: '<IfModule mod_headers.c>\n  Header always set Content-Security-Policy "default-src \'self\'; script-src \'self\' https://cdn.jsdelivr.net; object-src \'none\';"\n</IfModule>',
     codeSnippetPhp: 'header("Content-Security-Policy: default-src \'self\'; script-src \'self\' https://cdn.jsdelivr.net; object-src \'none\';");',
@@ -99,10 +99,10 @@ const SEED_FINDINGS: SecurityFinding[] = [
     cvss: 6.1,
     category: 'dns_email',
     titleEn: 'Weak DMARC Email Anti-Spoofing Policy',
-    titleBn: 'DMARC এন্টি-স্পুফিং পলিসি নিষ্ক্রিয় বা p=none সেট করা',
-    descBn: 'ডোমেইনে কঠোর DMARC পলিসি না থাকায় আক্রমণকারীরা এই ডোমেইনের পরিচয় ব্যবহার করে জাল ইমেইল পাঠাতে পারে।',
-    impactBn: 'ব্র্যান্ডের বিশ্বাসযোগ্যতা নষ্ট ও এক্সিকিউটিভ ফিশিং প্রতারণার ঝুঁকি।',
-    remediationBn: 'ডোমেইন ডিএনএসে DMARC রেকর্ড p=reject সহ সক্রিয় করুন।',
+    titleBn: 'DMARC -    p=none  ',
+    descBn: '  DMARC             ।',
+    impactBn: '    Execute   ।',
+    remediationBn: '  DMARC  p=reject   ।',
     codeSnippetNginx: '# DNS TXT Record for _dmarc.yourdomain.com:\nv=DMARC1; p=reject; sp=reject; pct=100; rua=mailto:dmarc@yourdomain.com;',
     codeSnippetApache: '# Managed via DNS TXT Record:\n_dmarc IN TXT "v=DMARC1; p=reject; sp=reject; pct=100;"',
     codeSnippetPhp: '// Ensure outgoing SMTP envelopes strictly match SPF/DKIM align headers.',
@@ -117,10 +117,10 @@ const SEED_FINDINGS: SecurityFinding[] = [
     cvss: 3.8,
     category: 'cve_vulnerability',
     titleEn: 'REST API Author Enumeration Exposed',
-    titleBn: 'REST API ইউজারনেম এনুমারেশন প্রকাশ্যে উন্মুক্ত',
-    descBn: '/wp-json/wp/v2/users এন্ডপয়েন্ট দিয়ে সাইটের অ্যাডমিনদের ইউজারনেম তালিকা দেখা যাচ্ছে।',
-    impactBn: 'হ্যাকাররা সঠিক ইউজারনেম পেয়ে গেলে নির্দিষ্ট টার্গেটেড পাসওয়ার্ড ব্রুট-ফোর্স চালাতে পারে।',
-    remediationBn: 'লগইন ছাড়া ব্যবহারকারীদের জন্য /wp-json/wp/v2/users এন্ডপয়েন্ট অ্যাক্সেস ব্লক করুন।',
+    titleBn: 'REST API    ',
+    descBn: '/wp-json/wp/v2/users Points       ।',
+    impactBn: '        -  ।',
+    remediationBn: 'Login    /wp-json/wp/v2/users Points   ।',
     codeSnippetNginx: 'location ~ ^/wp-json/wp/v2/users {\n  if ($http_cookie !~* "wordpress_logged_in") {\n    return 403;\n  }\n}',
     codeSnippetApache: 'RewriteCond %{REQUEST_URI} ^/wp-json/wp/v2/users\nRewriteCond %{HTTP_COOKIE} !wordpress_logged_in\nRewriteRule .* - [F,L]',
     codeSnippetPhp: "add_filter( 'rest_endpoints', function( $endpoints ) {\n  if ( ! is_user_logged_in() && isset( $endpoints['/wp/v2/users'] ) ) {\n    unset( $endpoints['/wp/v2/users'] );\n  }\n  return $endpoints;\n});",
@@ -140,7 +140,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
   const [findings, setFindings] = useState<SecurityFinding[]>(SEED_FINDINGS);
   const [filterSev, setFilterSev] = useState<string>('all');
   const [terminalLogs, setTerminalLogs] = useState<string[]>([
-    '[INIT] Hackers শিক্ষক Cyber Command Engine v2.0 Active.',
+    '[INIT] HackersShikkhok Cyber Command Engine v2.0 Active.',
     '[READY] Listening for Target Dispatch on /cyber-command/ gateway.',
     '[DAEMON] Micro-batch probe scheduler synchronized with C2 socket.'
   ]);
@@ -154,7 +154,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
     {
       id: 'target-1',
       url: 'https://hackersshikkhok.com',
-      org: 'Hackers শিক্ষক Core Portal',
+      org: 'HackersShikkhok Core Portal',
       verified: true,
       health: 88,
       lastAudit: 'Today (Live)',
@@ -163,7 +163,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
     {
       id: 'target-2',
       url: 'https://api.hackersshikkhok.com',
-      org: 'Hackers শিক্ষক Microservice Gateway',
+      org: 'HackersShikkhok Microservice Gateway',
       verified: true,
       health: 94,
       lastAudit: 'Yesterday',
@@ -277,7 +277,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
     setNewAssetUrl('');
     setNewAssetOrg('');
     addLog(`[SCOPE] New authorized asset registered: ${newTarget.url}`);
-    alert(`টার্গেট "${newTarget.url}" সফলভাবে আপনার স্কোপে যুক্ত হয়েছে!`);
+    alert(` "${newTarget.url}" Success    !`);
   };
 
   const handleTestWebhook = () => {
@@ -293,26 +293,26 @@ export const CyberCommandCenterPortal: React.FC = () => {
     e.preventDefault();
     setRoeSigned(true);
     addLog(`[ROE] Legal bilateral authorization signed by ${roeSigner} (${roeOrg}).`);
-    alert(`অভিনন্দন! Rules of Engagement ও লিগ্যাল এম-এনডিএ চুক্তি সফলভাবে স্বাক্ষরিত হয়েছে। চুক্তি আইডি: HS-ROE-${Math.random().toString(36).substring(2, 8).toUpperCase()}`);
+    alert(`! Rules of Engagement   -  Success  ।  : HS-ROE-${Math.random().toString(36).substring(2, 8).toUpperCase()}`);
   };
 
   const handleUpgradePlan = (plan: 'starter' | 'business' | 'enterprise', cost: number) => {
-    if (walletBalance < cost) {
-      alert(`আপনার ওয়ালেটে পর্যাপ্ত ব্যালেন্স নেই (প্রয়োজন ৳${cost}, বর্তমান ৳${walletBalance})। অনুগ্রহ করে ওয়ালেট রিচার্জ করুন।`);
+    if (walletBalance< cost) {
+      alert(` Wallet  Balance  ( BDT ${cost},  BDT ${walletBalance})।   Wallet  ।`);
       return;
     }
-    if (confirm(`আপনি কি ৳${cost} BDT দিয়ে ${plan.toUpperCase()} সিকিউরিটি প্ল্যান সক্রিয় করতে চান?`)) {
-      setWalletBalance(prev => prev - cost);
+    if (confirm(`  BDT ${cost} BDT  ${plan.toUpperCase()} Security    ?`)) {
+      setWalletBalance(prev =>prev - cost);
       setActivePlan(plan);
-      addLog(`[BILLING] Upgraded to ${plan.toUpperCase()} Plan. ৳${cost} deducted from wallet.`);
-      alert(`অভিনন্দন! আপনার ${plan.toUpperCase()} সিকিউরিটি প্ল্যান সফলভাবে সক্রিয় হয়েছে।`);
+      addLog(`[BILLING] Upgraded to ${plan.toUpperCase()} Plan. BDT ${cost} deducted from wallet.`);
+      alert(`!  ${plan.toUpperCase()} Security  Success  ।`);
     }
   };
 
   const toggleFindingStatus = (id: number) => {
     setFindings(prev => prev.map(f => {
       if (f.id === id) {
-        const nextStatus = f.status === 'detected' ? 'in_review' : f.status === 'in_review' ? 'remediated' : 'detected';
+        const nextStatus = f.status ==='detected' ? 'in_review' : f.status === 'in_review' ? 'remediated' : 'detected';
         addLog(`[LIFECYCLE] Finding #${f.id} status changed to "${nextStatus.toUpperCase()}".`);
         return { ...f, status: nextStatus };
       }
@@ -340,8 +340,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
     setTimeout(() => setCopiedCode(false), 2000);
   };
 
-  return (
-    <div className="bg-[#030712] text-slate-100 rounded-2xl border border-[#00f5d4]/30 overflow-hidden shadow-2xl font-mono">
+  return (<div className="bg-[#030712] text-slate-100 rounded-2xl border border-[#00f5d4]/30 overflow-hidden shadow-2xl font-mono">
       {/* Tactical HUD Header */}
       <div className="bg-[#070d1a] px-6 py-4 border-b border-[#00f5d4]/20 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
@@ -349,7 +348,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
           <div>
             <h1 className="text-base font-extrabold tracking-wider text-white flex items-center gap-2">
               <ShieldAlert className="w-5 h-5 text-[#00f5d4]" />
-              HACKERS শিক্ষক // B2B CYBER COMMAND &amp; SECURITY PORTAL
+              HackersShikkhok // B2B CYBER COMMAND &amp; SECURITY PORTAL
             </h1>
             <p className="text-[11px] text-slate-400">
               14-Module Enterprise Cyber Defense Suite · Vulnerability Lifecycle · Commercial SaaS
@@ -363,7 +362,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
           </div>
           <div>
             <span className="text-slate-500 block text-[10px]">WALLET BALANCE</span>
-            <span className="text-[#10b981] font-bold">৳{walletBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })} BDT</span>
+            <span className="text-[#10b981] font-bold">BDT {walletBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })} BDT</span>
           </div>
           <div>
             <span className="text-slate-500 block text-[10px]">CURRENT TARGET</span>
@@ -509,9 +508,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                     {healthScore}<span className="text-xs text-slate-500 font-normal">/100</span>
                   </div>
                   <div className="text-xs text-[#10b981] font-bold mt-1">GRADE: A- (HARDENED)</div>
-                  <p className="text-[11px] text-slate-400 mt-2">
-                    প্যাসিভ স্ক্যানিং ও হেডার কনফিগারেশন নিরীক্ষা সম্পন্ন। ৩টি মাঝারি ঝুঁকি পাওয়া গেছে।
-                  </p>
+                  <p className="text-[11px] text-slate-400 mt-2">।     ।</p>
                 </div>
 
                 <div className="p-5 rounded-xl bg-[#070d1a] border border-slate-800 space-y-2">
@@ -563,9 +560,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                       <ShieldCheck className="w-4 h-4 text-[#00f5d4]" />
                       Dynamic Vector Threat Surface &amp; Blast Radius Topology
                     </h3>
-                    <p className="text-xs text-slate-400">
-                      ক্লাউড ইনফ্রাস্ট্রাকচার, অ্যাপ্লিকেশন গেটওয়ে এবং আইডেন্টিটি সারফেসের রেড-টিম ভেক্টর ম্যাপিং।
-                    </p>
+                    <p className="text-xs text-slate-400">,      -  ।</p>
                   </div>
                   <span className="px-2.5 py-1 rounded bg-[#00f5d4]/10 border border-[#00f5d4]/30 text-[#00f5d4] text-[10px] font-bold">
                     SVG BLAST RADIUS
@@ -639,9 +634,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
                     <Globe className="w-4 h-4 text-[#00f5d4]" /> Register Corporate Asset to Authorized Scope
                   </h3>
-                  <p className="text-xs text-slate-400">
-                    অননুমোদিত স্ক্যানিং প্রতিরোধে ডোমেন বা অ্যাপের মালিকানা যাচাইকরণ (DNS TXT / HTML Meta Tag)।
-                  </p>
+                  <p className="text-xs text-slate-400">(DNS TXT / HTML Meta Tag)।</p>
                 </div>
 
                 <form onSubmit={handleAddAsset} className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -731,9 +724,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                     <Zap className="w-4 h-4 text-yellow-400" />
                     Automated Zero-Impact Passive Web Auditor
                   </h3>
-                  <p className="text-xs text-slate-400">
-                    নন-ইনট্রুসিভ সেফ ওয়েব রিকনেসান্স: SSL/TLS হ্যান্ডশেক, হেডার্স, এক্সপোজড সেনসিটিভ ফাইল ও ডিএনএস স্পুফিং।
-                  </p>
+                  <p className="text-xs text-slate-400">-   : SSL/TLS , ,      ।</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <input
@@ -788,9 +779,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
                     <Layers className="w-4 h-4 text-rose-400" /> Vulnerability Lifecycle &amp; Findings Ledger
                   </h3>
-                  <p className="text-xs text-slate-400">
-                    শনাক্তকৃত দুর্বলতা, CVSS v3.1 রিস্ক স্কোরিং, প্রমাণ এবং স্ট্যাটাস ট্র্যাকিং।
-                  </p>
+                  <p className="text-xs text-slate-400">, CVSS v3.1  ,    ।</p>
                 </div>
                 {/* Filter Pills */}
                 <div className="flex gap-1.5 text-[11px]">
@@ -840,7 +829,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                     </div>
                     <p className="text-xs text-slate-300">{f.descBn}</p>
                     <div className="text-[11px] text-slate-400 bg-[#070d1a] p-2 rounded border border-slate-800/80">
-                      <strong>ইমপ্যাক্ট:</strong> {f.impactBn}
+                      <strong>:</strong> {f.impactBn}
                     </div>
                   </div>
                 ))}
@@ -855,9 +844,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <Code2 className="w-4 h-4 text-emerald-400" /> AI Code Remediation &amp; Patch Generator
                 </h3>
-                <p className="text-xs text-slate-400">
-                  শনাক্ত দুর্বলতার জন্য Nginx, Apache (.htaccess), Cloudflare WAF ও PHP এর কপি-পেস্ট উপযোগী কোড প্যাচ।
-                </p>
+                <p className="text-xs text-slate-400">Nginx, Apache (.htaccess), Cloudflare WAF  PHP  -   ।</p>
               </div>
 
               <div className="flex flex-wrap gap-2 items-center justify-between">
@@ -909,26 +896,20 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <DollarSign className="w-4 h-4 text-amber-400" /> Executive Business Impact &amp; Financial Exposure
                 </h3>
-                <p className="text-xs text-slate-400">
-                  নন-টেকনিক্যাল সিইও, সিটিও ও ম্যানেজমেন্টের জন্য আর্থিক ঝুঁকি ও ব্র্যান্ড লস অ্যানালাইসিস।
-                </p>
+                <p className="text-xs text-slate-400">- ,          ।</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-5 rounded-xl bg-[#030712] border border-red-950/60 space-y-2">
                   <div className="text-[10px] text-slate-400 font-bold uppercase">ESTIMATED FINANCIAL BREACH LIABILITY</div>
-                  <div className="text-3xl font-black text-[#ff3366]">৳৫,৫০,০০০ - ৳২০,০০,০০০</div>
-                  <p className="text-xs text-slate-300">
-                    ডাটাবেস লিক বা সেশন হাইজ্যাকিংয়ের ক্ষেত্রে গ্রাহকের ক্ষতিপূরণ ও সাইবার অ্যাক্ট রেগুলেটরি পেনাল্টি ঝুঁকি।
-                  </p>
+                  <div className="text-3xl font-black text-[#ff3366]">BDT ,, - BDT ,,</div>
+                  <p className="text-xs text-slate-300">Cyber    ।</p>
                 </div>
 
                 <div className="p-5 rounded-xl bg-[#030712] border border-amber-950/60 space-y-2">
                   <div className="text-[10px] text-slate-400 font-bold uppercase">BRAND &amp; CUSTOMER TRUST RISK</div>
                   <div className="text-3xl font-black text-amber-400">HIGH VULNERABILITY</div>
-                  <p className="text-xs text-slate-300">
-                    ইমেইল স্পুফিং ও আন-এনক্রিপ্টেড ট্রাফিকের কারণে স্প্যাম ফিল্টারিং ও গ্রাহক প্রতারণার সম্ভাবনা।
-                  </p>
+                  <p className="text-xs text-slate-300">-        ।</p>
                 </div>
               </div>
             </div>
@@ -941,9 +922,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 <FileText className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-white">Executive Cyber Audit PDF Report Ready</h3>
-              <p className="text-xs text-slate-400 max-w-md mx-auto">
-                অফিসিয়াল Hackers শিক্ষক ডিজিটাল সিল, সিভেই চার্ট, এভিডেন্স প্রুফ ও রেমিডিয়েশন সামারিসহ পূর্ণাঙ্গ বোর্ড-রেডি পিডিএফ।
-              </p>
+              <p className="text-xs text-slate-400 max-w-md mx-auto">HackersShikkhok  ,  ,       - ।</p>
               <button
                 onClick={() => window.print()}
                 className="px-6 py-2.5 rounded-lg bg-[#00f5d4] text-[#030712] font-black text-xs hover:bg-[#5efce8] transition flex items-center gap-2 mx-auto cursor-pointer"
@@ -960,9 +939,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <Clock className="w-4 h-4 text-cyan-400" /> Continuous Security Monitoring (CSM)
                 </h3>
-                <p className="text-xs text-slate-400">
-                  সার্বক্ষণিক অটোমেটেড অডিট: নতুন CVE বা কনফিগারেশন ড্রাফট হলে তাৎক্ষণিক নোটিফিকেশন।
-                </p>
+                <p className="text-xs text-slate-400">Audit:  CVE      ।</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -984,11 +961,10 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 </div>
               </div>
               <button
-                onClick={() => alert('স্বয়ংক্রিয় মনিটরিং সিডিউল সফলভাবে আপডেট করা হয়েছে।')}
+                onClick={() =>alert('   Success   ।')}
                 className="px-4 py-2 rounded-lg bg-[#00f5d4] text-[#030712] font-bold text-xs hover:bg-[#5efce8] transition cursor-pointer"
               >
-                Save Monitoring Schedule
-              </button>
+                Save Monitoring Schedule</button>
             </div>
           )}
 
@@ -999,15 +975,11 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <ShieldAlert className="w-4 h-4 text-red-500" /> Custom Red Team Penetration Testing Scoping
                 </h3>
-                <p className="text-xs text-slate-400">
-                  ম্যানুয়াল পেন্টেস্টিং, বিজনেস লজিক ফ্ল অডিট ও এক্সিকিউটিভ সল্যুশন ওয়ার্কশপ।
-                </p>
+                <p className="text-xs text-slate-400">,    Audit  Execute  ।</p>
               </div>
 
               {rtSubmitted ? (
-                <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs">
-                  ✓ আপনার রেড টিম প্রস্তাবনা সফলভাবে জমা হয়েছে! আমাদের সিকিউরিটি লিড ১২ ঘণ্টার মধ্যে যোগাযোগ করবেন।
-                </div>
+                <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs">✓     Success  !  Security      ।</div>
               ) : (
                 <form
                   onSubmit={(e) => { e.preventDefault(); setRtSubmitted(true); addLog(`[REDTEAM] Engagement scope submitted for ${rtCompany}`); }}
@@ -1066,9 +1038,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-teal-400" /> Global Security Compliance Matrix
                 </h3>
-                <p className="text-xs text-slate-400">
-                  ওওয়াস্প টপ ১০, আইএসও ২৭০০১ এবং বাংলাদেশ সাইবার নিরাপত্তা আইন ২০২৩ এর সাথে কমপ্লায়েন্স ট্র্যাকিং।
-                </p>
+                <p className="text-xs text-slate-400">,    English Cyber       ।</p>
               </div>
 
               <div className="space-y-3 text-xs">
@@ -1106,9 +1076,7 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <Bell className="w-4 h-4 text-indigo-400" /> Security Webhooks &amp; Instant Incident Dispatcher
                 </h3>
-                <p className="text-xs text-slate-400">
-                  ক্রিটিক্যাল দুর্বলতা ধরা পড়ার সাথে সাথে স্ল্যাক (Slack), ডিসকর্ড বা কাস্টম সিআই/সিডি পাইপলাইনে অটোমেটেড অ্যালার্ট।
-                </p>
+                <p className="text-xs text-slate-400">(Slack),    /   ।</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1154,12 +1122,12 @@ export const CyberCommandCenterPortal: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="p-5 rounded-xl bg-[#070d1a] border border-slate-800 text-center space-y-3">
                 <div className="text-xs text-slate-400 font-bold">STARTER</div>
-                <div className="text-2xl font-black text-white">৳১,৫০০<span className="text-xs text-slate-500">/মাস</span></div>
+                <div className="text-2xl font-black text-white">BDT ,<span className="text-xs text-slate-500">/</span></div>
                 <ul className="text-xs text-slate-400 space-y-1.5 text-left">
-                  <li>• ৩টি ডোমেন বা অ্যাপ স্কোপ</li>
-                  <li>• সাপ্তাহিক অটো-অডিট</li>
-                  <li>• SSL &amp; হেডার বিশ্লেষণ</li>
-                  <li>• পিডিএফ রিপোর্ট ডাউনলোড</li>
+                  <li>•</li>
+                  <li>•  -Audit</li>
+                  <li>• SSL &amp;</li>
+                  <li>•  Report Download</li>
                 </ul>
                 <button
                   onClick={() => handleUpgradePlan('starter', 1500)}
@@ -1174,13 +1142,13 @@ export const CyberCommandCenterPortal: React.FC = () => {
               <div className="p-5 rounded-xl bg-[#070d1a] border border-[#00f5d4] text-center space-y-3 relative shadow-lg shadow-[#00f5d4]/10">
                 <span className="px-2 py-0.5 rounded bg-[#00f5d4] text-[#030712] text-[10px] font-bold uppercase">POPULAR</span>
                 <div className="text-xs text-[#00f5d4] font-bold">BUSINESS</div>
-                <div className="text-2xl font-black text-white">৳৪,৫০০<span className="text-xs text-slate-500">/মাস</span></div>
+                <div className="text-2xl font-black text-white">BDT ,<span className="text-xs text-slate-500">/</span></div>
                 <ul className="text-xs text-slate-400 space-y-1.5 text-left">
-                  <li>• ১০টি ডোমেন ও এপিআই স্কোপ</li>
-                  <li>• দৈনিক কন্টিনিউয়াস স্ক্যান</li>
-                  <li>• CVE ও সেনসিটিভ ফাইল লিক চেক</li>
-                  <li>• AI কোড প্যাচিং গাইড</li>
-                  <li>• ১টি কোয়ার্টারলি রেড টিম অডিট</li>
+                  <li>•</li>
+                  <li>•</li>
+                  <li>• CVE</li>
+                  <li>• AI</li>
+                  <li>•     Audit</li>
                 </ul>
                 <button
                   onClick={() => handleUpgradePlan('business', 4500)}
@@ -1194,13 +1162,13 @@ export const CyberCommandCenterPortal: React.FC = () => {
 
               <div className="p-5 rounded-xl bg-[#070d1a] border border-slate-800 text-center space-y-3">
                 <div className="text-xs text-slate-400 font-bold">ENTERPRISE</div>
-                <div className="text-2xl font-black text-white">৳১৫,০০০<span className="text-xs text-slate-500">/মাস</span></div>
+                <div className="text-2xl font-black text-white">BDT ,<span className="text-xs text-slate-500">/</span></div>
                 <ul className="text-xs text-slate-400 space-y-1.5 text-left">
-                  <li>• আনলিমিটেড টার্গেট স্কোপ</li>
-                  <li>• ২৪/৭ কন্টিনিউয়াস মনিটরিং</li>
-                  <li>• ডেডিকেটেড ম্যানুয়াল পেন্টেস্টিং</li>
-                  <li>• SLA গ্যারান্টি ও ওয়ার্কশপ</li>
-                  <li>• সরাসরি CISO কনসালটেশন</li>
+                  <li>•</li>
+                  <li>• /</li>
+                  <li>•</li>
+                  <li>• SLA</li>
+                  <li>•  CISO</li>
                 </ul>
                 <button
                   onClick={() => handleUpgradePlan('enterprise', 15000)}
@@ -1257,25 +1225,20 @@ export const CyberCommandCenterPortal: React.FC = () => {
                 <h3 className="text-sm font-bold text-white flex items-center gap-2">
                   <Scale className="w-4 h-4 text-amber-300" /> Rules of Engagement (RoE) &amp; Legal Authorization Charter
                 </h3>
-                <p className="text-xs text-slate-400">
-                  ইথিক্যাল হ্যাকিং, আইনগত দ্বিপাক্ষিক অনুমোদন ও ৯৯.৯% জিরো-ডিসরাপশন এসএলএ চুক্তি।
-                </p>
+                <p className="text-xs text-slate-400">,     .% -  ।</p>
               </div>
 
               <div className="p-4 rounded-xl bg-[#030712] border border-slate-800 space-y-2 text-xs text-slate-300">
                 <h4 className="font-bold text-white">100% Responsible &amp; Lawful Security Testing Standard</h4>
-                <p className="leading-relaxed">
-                  Hackers শিক্ষক শুধুমাত্র অনুমোদিত ক্লায়েন্ট সম্পদের ওপর পরীক্ষা পরিচালনা করে। 
-                  আমরা কোনো আন-অথরাইজড নেটওয়ার্কে ডস (DDoS) বা ধ্বংসাত্মক শোষণ চালাই না। সকল মূল্যায়ন 
-                  <strong> বাংলাদেশ সাইবার নিরাপত্তা আইন ২০২৩ </strong> এবং আন্তর্জাতিক <strong>OWASP WSTG v4.2</strong> স্ট্যান্ডার্ড মেনে পরিচালিত হয়।
-                </p>
+                <p className="leading-relaxed">HackersShikkhok        । 
+                    -   (DDoS)     ।<strong>English Cyber</strong>Cyber Defense Hub<strong>OWASP WSTG v4.2</strong>।</p>
               </div>
 
               {roeSigned ? (
                 <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs space-y-2">
-                  <div className="font-bold">✓ দ্বিপাক্ষিক RoE ও নন-ডিসক্লোজার চুক্তি (M-NDA) সক্রিয় রয়েছে!</div>
-                  <div>স্বাক্ষরকারী: {roeSigner} ({roeTitle}) · প্রতিষ্ঠান: {roeOrg}</div>
-                  <div className="text-[11px] text-slate-400 font-mono">লাইসেন্স ও সার্টিফিকেট কোড: HS-ROE-VERIFIED-2026</div>
+                  <div className="font-bold">✓  RoE  -  (M-NDA)  !</div>
+                  <div>: {roeSigner} ({roeTitle}) · : {roeOrg}</div>
+                  <div className="text-[11px] text-slate-400 font-mono">Certificate : HS-ROE-VERIFIED-2026</div>
                 </div>
               ) : (
                 <form onSubmit={handleSignRoe} className="space-y-3 text-xs">

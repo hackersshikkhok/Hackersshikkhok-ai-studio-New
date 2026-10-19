@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Asynchronous Scan Scheduler & Queue Orchestrator
+ * HackersShikkhok — Asynchronous Scan Scheduler & Queue Orchestrator
  *
  * Micro-batching continuous audit worker. Safe for cPanel & shared hosting limits.
  *
@@ -52,10 +52,10 @@ final class ScanSchedulerQueue {
         $to_email = $user ? $user->user_email : get_option( 'admin_email' );
 
         $subject = "🚨 [URGENT ALERT] Critical Vulnerability Detected on {$target['target_url']}";
-        $message = "Hackers শিক্ষক Continuous Security Monitor has detected {$audit_result['counts']['critical']} critical vulnerability on your target: {$target['target_url']}.\n\n"
+        $message = "HackersShikkhok Continuous Security Monitor has detected {$audit_result['counts']['critical']} critical vulnerability on your target: {$target['target_url']}.\n\n"
                  . "Current Security Health Grade: {$audit_result['health_score']}/100\n"
                  . "Please review and apply instant code patches at: " . home_url( '/cyber-command/' ) . "\n\n"
-                 . "— Hackers শিক্ষক Cyber Defense Center";
+                 . "— HackersShikkhok Cyber Defense Center";
 
         @wp_mail( $to_email, $subject, $message );
     }

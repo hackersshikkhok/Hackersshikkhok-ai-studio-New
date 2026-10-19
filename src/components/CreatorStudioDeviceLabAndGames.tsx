@@ -31,7 +31,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
   // =========================================================================
   const [activeEditorType, setActiveEditorType] = useState<string>('Thumbnail & Banner Maker');
   const [presetRatio, setPresetRatio] = useState<'16:9' | '9:16' | '1:1' | '4:5'>('16:9');
-  const [canvasTitle, setCanvasTitle] = useState('Hackers শিক্ষক — Cyber Security & Coding');
+  const [canvasTitle, setCanvasTitle] = useState('HackersShikkhok — Cyber Security & Coding');
   const [canvasSubtitle, setCanvasSubtitle] = useState('OWASP Top 10 · WordPress 8.2 · Live Lab');
   const [canvasBadge, setCanvasBadge] = useState('OFFICIAL TUTORIAL');
   const [canvasWatermark, setCanvasWatermark] = useState('HackersShikkhok.com');
@@ -73,7 +73,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
       updated: 'Just now'
     };
     setMyProjects((prev) => [newProj, ...prev]);
-    onEarnPoints(10, 'ক্রিয়েটর স্টুডিওতে নতুন প্রজেক্ট সেভ করার জন্য +10 Points অর্জিত হয়েছে!');
+    onEarnPoints(10, ' Studio      +10 Points  !');
   };
 
   const handleDuplicateProject = (proj: { id: string; name: string; category: string; ratio: string; status: string; updated: string }) => {
@@ -84,12 +84,12 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
       updated: 'Just now'
     };
     setMyProjects((prev) => [dup, ...prev]);
-    onNotify(`প্রজেক্ট ডুপ্লিকেট করা হয়েছে: ${dup.name}`);
+    onNotify(`   : ${dup.name}`);
   };
 
   const handleDeleteProject = (id: string) => {
     setMyProjects((prev) => prev.filter((p) => p.id !== id));
-    onNotify('প্রজেক্ট মুছে ফেলা হয়েছে।');
+    onNotify('   ।');
   };
 
   const handleExportCreatorCanvasPng = () => {
@@ -124,7 +124,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
 
     ctx.fillStyle = accentHex;
     ctx.font = 'bold 22px monospace';
-    ctx.fillText(`Watermark: ${canvasWatermark} · Hackers শিক্ষক`, 64, canvas.height - 64);
+    ctx.fillText(`Watermark: ${canvasWatermark} · HackersShikkhok`, 64, canvas.height - 64);
 
     canvas.toBlob((blob) => {
       if (!blob) return;
@@ -135,7 +135,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
       a.click();
       URL.revokeObjectURL(url);
     });
-    onNotify('ক্রিয়েটর ক্যানভাস PNG আকারে এক্সপোর্ট সম্পন্ন হয়েছে!');
+    onNotify('  PNG    !');
   };
 
   // =========================================================================
@@ -162,7 +162,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
       name: string;
       value: string;
       status: 'Supported' | 'Permission Required' | 'Browser Restricted' | 'Not Available';
-    }> = [
+    }>= [
       {
         id: 'cam-front-rear',
         category: 'Hardware & Media',
@@ -348,9 +348,9 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
       gain.connect(ctx.destination);
       osc.start();
       osc.stop(ctx.currentTime + 0.45);
-      onNotify('🔊 স্পিকার টেস্ট: 440Hz Sine Tone সফলভাবে বাজানো হয়েছে!');
+      onNotify('🔊  : 440Hz Sine Tone Success  !');
     } catch {
-      onNotify('স্পিকার টেস্টের জন্য ব্রাউজার অডিও পারমিশন প্রয়োজন।');
+      onNotify('      ।');
     }
   };
 
@@ -359,22 +359,22 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
   // =========================================================================
   const cyberScenarios = [
     {
-      q: '১. একটি ইমেইলে লিংক এসেছে: https://paypa1-security-verify.com/login — এটি কি নিরাপদ নাকি ফিশিং?',
-      options: ['Phishing / Unsafe URL (সন্দেহজনক ডোমেইন)', 'Safe Official URL'],
+      q: '.    : https://paypa1-security-verify.com/login —     ?',
+      options: ['Phishing / Unsafe URL ( )', 'Safe Official URL'],
       correct: 0,
-      explanation: 'সঠিক! "paypa1" এ ল-এর বদলে ১ ব্যবহার করা হয়েছে (Typosquatting Phishing)।'
+      explanation: '! "paypa1"  -      (Typosquatting Phishing)।'
     },
     {
-      q: '২. ওয়ার্ডপ্রেসে SQL Injection প্রতিরোধের জন্য নিচের কোন মেথডটি বাধ্যতামূলক?',
+      q: '.  SQL Injection      ?',
       options: ['$wpdb->prepare()', 'Direct $_GET concatenation'],
       correct: 0,
-      explanation: 'সঠিক! সবসময় $wpdb->prepare() দিয়ে প্যারামিটারাইজড কোয়েরি চালাতে হবে।'
+      explanation: '!  $wpdb->prepare()     ।'
     },
     {
-      q: '৩. ইউজারের ব্রাউজারে স্যান্ডবক্সড কোড প্রিভিউ চালানোর সময় কোনটি কুকি চুরি রোধ করে?',
+      q: '.            ?',
       options: ['iframe sandbox="allow-scripts" (without allow-same-origin)', 'eval() on parent window'],
       correct: 0,
-      explanation: 'সঠিক! allow-same-origin ছাড়া স্যান্ডবক্সড iframe প্যারেন্ট পেজের কুকি বা DOM অ্যাক্সেস করতে পারে না।'
+      explanation: '! allow-same-origin   iframe     DOM    ।'
     }
   ];
   const [currentGameIdx, setCurrentGameIdx] = useState(0);
@@ -386,9 +386,9 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
     if (selectedIdx === current.correct) {
       setGameScore((s) => s + 20);
       setGameFeedback(`✅ ${current.explanation} (+15 Points & XP Added!)`);
-      onEarnPoints(15, 'সাইবার গেম চ্যালেঞ্জ জয়ের জন্য +15 Points ও XP অর্জিত হয়েছে!');
+      onEarnPoints(15, 'Cyber  Challenge   +15 Points  XP  !');
     } else {
-      setGameFeedback('❌ ভুল উত্তর! আবার লক্ষ্য করুন: ডোমেইন ও সিকিউরিটি হেডার যাচাই করা জরুরি।');
+      setGameFeedback('❌  !   :   Security    ।');
     }
   };
 
@@ -396,8 +396,8 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
   // 4. UNIVERSAL CALENDAR & REMINDER STATE (Gregorian + Bangla + Hijri)
   // =========================================================================
   const [reminders, setReminders] = useState([
-    { id: 'rem-1', title: 'OWASP Live Defensive CTF Workshop', date: '2026-10-05', calendarNote: '২০ আশ্বিন ১৪৩৩ বঙ্গাব্দ · ২৩ রবিউস সানি ১৪৪৮ হিজরি' },
-    { id: 'rem-2', title: 'WordPress 8.2 Plugin Security Audit Release', date: '2026-10-12', calendarNote: '২৭ আশ্বিন ১৪৩৩ বঙ্গাব্দ · ১ জমাদিউল আউয়াল ১৪৪৮ হিজরি' }
+    { id: 'rem-1', title: 'OWASP Live Defensive CTF Workshop', date: '2026-10-05', calendarNote: '    ·     ' },
+    { id: 'rem-2', title: 'WordPress 8.2 Plugin Security Audit Release', date: '2026-10-12', calendarNote: '    ·     ' }
   ]);
   const [newRemTitle, setNewRemTitle] = useState('');
   const [newRemDate, setNewRemDate] = useState('2026-10-15');
@@ -411,24 +411,21 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
         id: `rem-${Date.now()}`,
         title: newRemTitle.trim(),
         date: newRemDate,
-        calendarNote: 'বাংলা ও হিজরি তারিখ সিঙ্কড · ইন-অ্যাপ রিমাইন্ডার সক্রিয়'
+        calendarNote: 'English     · -  '
       }
     ]);
     setNewRemTitle('');
-    onNotify('নতুন ক্যালেন্ডার রিমাইন্ডার সংরক্ষিত হয়েছে!');
+    onNotify('    !');
   };
 
-  return (
-    <section className="bg-[#0b1120] border border-[#00f5d4]/30 rounded-2xl p-5 md:p-6 space-y-6">
+  return (<section className="bg-[#0b1120] border border-[#00f5d4]/30 rounded-2xl p-5 md:p-6 space-y-6">
       {/* Header & 4-Pillar Switcher */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-800">
         <div>
           <div className="text-xs font-mono text-[#00f5d4] tracking-wider uppercase">
             MULTI-MEDIA CREATOR STUDIO · 24-MODULE DEVICE LAB · CYBER GAMES · BD/HIJRI CALENDAR
           </div>
-          <h2 className="text-xl md:text-2xl font-bold text-white mt-1">
-            ক্রিয়েটর স্টুডিও (Video/Audio/Image/GIF/QR), ২৪-মডিউল ডিভাইস ল্যাব ও গেমস সেন্টার
-          </h2>
+          <h2 className="text-xl md:text-2xl font-bold text-white mt-1">Studio (Video/Audio/Image/GIF/QR), -Module  Lab   Center</h2>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
@@ -440,8 +437,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
                 : 'bg-[#050811] text-slate-300 border border-slate-800'
             }`}
           >
-            <Palette className="w-3.5 h-3.5" /> ক্রিয়েটর স্টুডিও (৭টি এডিটর)
-          </button>
+            <Palette className="w-3.5 h-3.5" />Studio ( )</button>
           <button
             onClick={() => setActiveHubTab('device-lab')}
             className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer ${
@@ -450,8 +446,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
                 : 'bg-[#050811] text-slate-300 border border-slate-800'
             }`}
           >
-            <Cpu className="w-3.5 h-3.5" /> ২৪-মডিউল ডিভাইস ল্যাব
-          </button>
+            <Cpu className="w-3.5 h-3.5" />-Module  Lab</button>
           <button
             onClick={() => setActiveHubTab('games-center')}
             className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer ${
@@ -460,18 +455,16 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
                 : 'bg-[#050811] text-slate-300 border border-slate-800'
             }`}
           >
-            <Gamepad2 className="w-3.5 h-3.5" /> গেমস ও সাইবার কুইজ
-          </button>
+            <Gamepad2 className="w-3.5 h-3.5" />Cyber</button>
           <button
-            onClick={() => setActiveHubTab('calendar-reminders')}
+            onClick={() =>setActiveHubTab('calendar-reminders')}
             className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer ${
               activeHubTab === 'calendar-reminders'
                 ? 'bg-[#00f5d4] text-[#050811]'
                 : 'bg-[#050811] text-slate-300 border border-slate-800'
             }`}
           >
-            📅 বাংলা/হিজরি ক্যালেন্ডার ও রিমাইন্ডার
-          </button>
+            📅 English/</button>
         </div>
       </div>
 
@@ -483,7 +476,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
           {/* Left Controls */}
           <div className="lg:col-span-5 bg-[#050811] border border-slate-800 rounded-xl p-4 space-y-4 text-xs">
             <div>
-              <label className="block text-slate-400 mb-1 font-semibold">১. এডিটর নির্বাচন করুন (7 Creator Suites):</label>
+              <label className="block text-slate-400 mb-1 font-semibold">.    (7 Creator Suites):</label>
               <div className="grid grid-cols-1 gap-1.5">
                 {editorCategories.map((cat) => (
                   <button
@@ -595,7 +588,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
             )}
 
             <div>
-              <label className="block text-slate-400 mb-1 font-semibold">২. সোশ্যাল ও ভিডিও রেশিও প্রিসেট:</label>
+              <label className="block text-slate-400 mb-1 font-semibold">.     :</label>
               <div className="grid grid-cols-4 gap-2">
                 {(['16:9', '9:16', '1:1', '4:5'] as const).map((r) => (
                   <button
@@ -615,7 +608,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
 
             <div className="space-y-2.5">
               <div>
-                <label className="block text-slate-400 mb-1">টাইটেল লেয়ার (Headline Layer):</label>
+                <label className="block text-slate-400 mb-1">(Headline Layer):</label>
                 <input
                   type="text"
                   value={canvasTitle}
@@ -624,7 +617,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
                 />
               </div>
               <div>
-                <label className="block text-slate-400 mb-1">সাবটাইটেল ও ট্যাগলাইন:</label>
+                <label className="block text-slate-400 mb-1">:</label>
                 <input
                   type="text"
                   value={canvasSubtitle}
@@ -634,7 +627,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="block text-slate-400 mb-1">ব্যাজ টেক্সট:</label>
+                  <label className="block text-slate-400 mb-1">:</label>
                   <input
                     type="text"
                     value={canvasBadge}
@@ -643,7 +636,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
                   />
                 </div>
                 <div>
-                  <label className="block text-slate-400 mb-1">ওয়াটারমার্ক:</label>
+                  <label className="block text-slate-400 mb-1">:</label>
                   <input
                     type="text"
                     value={canvasWatermark}
@@ -715,7 +708,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
 
               <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 border-t border-slate-800/80 pt-3">
                 <span>Watermark: {canvasWatermark}</span>
-                <span className="text-[#00f5d4]">Official Brand: Hackers শিক্ষক</span>
+                <span className="text-[#00f5d4]">Official Brand: HackersShikkhok</span>
               </div>
             </div>
 
@@ -776,9 +769,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
           <div className="p-4 rounded-xl bg-[#050811] border border-[#00f5d4]/30 flex flex-wrap items-center justify-between gap-3">
             <div className="text-xs">
               <strong className="text-[#00f5d4] block">Interactive Hardware &amp; Screen Diagnostic Bench:</strong>
-              <span className="text-slate-300">
-                স্পিকার টোন, ডেড-পিক্সেল স্ক্রিন টেস্ট, মাল্টি-টাচ এবং ভাইব্রেশন সরাসরি পরীক্ষা করুন:
-              </span>
+              <span className="text-slate-300">, -  , -     :</span>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               <button
@@ -794,18 +785,17 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
                 <Maximize2 className="w-3.5 h-3.5" /> Dead Pixel Color Test
               </button>
               <button
-                onClick={() => {
+                onClick={() =>{
                   if (navigator.vibrate) {
                     navigator.vibrate([100, 50, 100]);
-                    onNotify('ভাইব্রেশন মোটর পালস পাঠানো হয়েছে!');
+                    onNotify('    !');
                   } else {
-                    onNotify('এই ব্রাউজার/ডিভাইসে Vibration API সীমাবদ্ধ (Browser Restricted)।');
+                    onNotify(' / Vibration API  (Browser Restricted)।');
                   }
                 }}
                 className="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-xs cursor-pointer"
               >
-                📳 Test Vibration
-              </button>
+                📳 Test Vibration</button>
             </div>
           </div>
 
@@ -845,8 +835,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
             className="p-3 rounded-xl bg-[#050811] border border-slate-800 text-xs flex items-center justify-between"
           >
             <span className="text-slate-300">
-              🖐️ <strong>Multi-Touch Surface Pad:</strong> এখানে টাচ বা ক্লিক করে একসাথে কয়টি টাচ পয়েন্ট কাজ করছে তা দেখুন
-            </span>
+              🖐️ <strong>Multi-Touch Surface Pad:</strong>Points    View</span>
             <span className="font-mono text-[#00f5d4] font-bold">
               Active Touch Points: {touchPointsCount} (Hardware Max: {typeof navigator !== 'undefined' ? navigator.maxTouchPoints || 0 : 0})
             </span>
@@ -887,9 +876,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
               <span className="text-xs font-mono text-[#00f5d4]">
                 CYBER PHISHING SPOTTER &amp; SECURE CODING CHALLENGE
               </span>
-              <h3 className="text-lg font-bold text-white mt-0.5">
-                ইথিক্যাল হ্যাকিং ও সিকিউর কোডিং গেম (Points + XP Rewards)
-              </h3>
+              <h3 className="text-lg font-bold text-white mt-0.5">(Points + XP Rewards)</h3>
             </div>
             <div className="px-3.5 py-1.5 rounded-xl bg-[#0b1120] border border-[#00f5d4]/40 font-mono text-xs text-[#00f5d4]">
               Current Game Score: <strong>{gameScore} XP</strong>
@@ -924,8 +911,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
               }}
               className="px-4 py-2 rounded-lg bg-[#00f5d4] text-[#050811] font-bold text-xs flex items-center gap-1.5 cursor-pointer"
             >
-              <Play className="w-3.5 h-3.5 fill-current" /> পরবর্তী চ্যালেঞ্জ (Next Scenario)
-            </button>
+              <Play className="w-3.5 h-3.5 fill-current" />Challenge (Next Scenario)</button>
           </div>
         </div>
       )}
@@ -941,27 +927,26 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
             </div>
             <div className="p-3 rounded-lg bg-[#0b1120] border border-slate-800 space-y-1">
               <div className="text-slate-400">Gregorian Date:</div>
-              <div className="text-sm font-bold text-white">১ অক্টোবর ২০২৬ (October 1, 2026)</div>
+              <div className="text-sm font-bold text-white">(October 1, 2026)</div>
             </div>
             <div className="p-3 rounded-lg bg-[#0b1120] border border-slate-800 space-y-1">
-              <div className="text-slate-400">বাংলা বর্ষপঞ্জি (Bangla Calendar):</div>
-              <div className="text-sm font-bold text-[#00f5d4]">১৬ আশ্বিন ১৪৩৩ বঙ্গাব্দ (শরৎকাল)</div>
+              <div className="text-slate-400">English  (Bangla Calendar):</div>
+              <div className="text-sm font-bold text-[#00f5d4]">()</div>
             </div>
             <div className="p-3 rounded-lg bg-[#0b1120] border border-slate-800 space-y-1">
-              <div className="text-slate-400">হিজরি ক্যালেন্ডার (Hijri Calendar):</div>
-              <div className="text-sm font-bold text-emerald-300">১৯ রবিউস সানি ১৪৪৮ হিজরি</div>
+              <div className="text-slate-400">(Hijri Calendar):</div>
+              <div className="text-sm font-bold text-emerald-300">Cyber Defense Hub</div>
             </div>
 
             <form onSubmit={handleAddReminder} className="pt-2 space-y-2 border-t border-slate-800">
-              <div className="font-bold text-white">নতুন লার্নিং বা ইভেন্ট রিমাইন্ডার যোগ করুন:</div>
+              <div className="font-bold text-white">:</div>
               <input
                 type="text"
                 value={newRemTitle}
-                onChange={(e) => setNewRemTitle(e.target.value)}
-                placeholder="রিমাইন্ডার শিরোনাম..."
+                onChange={(e) =>setNewRemTitle(e.target.value)}
+                placeholder=" ..."
                 className="w-full px-3 py-2 rounded-lg bg-[#0b1120] border border-slate-800 text-white"
-              />
-              <input
+              /><input
                 type="date"
                 value={newRemDate}
                 onChange={(e) => setNewRemDate(e.target.value)}
@@ -970,9 +955,7 @@ export const CreatorStudioDeviceLabAndGames: React.FC<CreatorStudioDeviceLabAndG
               <button
                 type="submit"
                 className="w-full py-2 rounded-lg bg-[#00f5d4] text-[#050811] font-extrabold cursor-pointer"
-              >
-                + রিমাইন্ডার সেভ করুন
-              </button>
+              >+</button>
             </form>
           </div>
 

@@ -77,6 +77,7 @@ final class Plugin {
     public function boot(): void {
         // Diagnostic Inspector & Error Logger must always boot first
         DiagnosticInspector::register();
+        self::safe_boot( "Database", array( Database::class, "register" ) );
 
         self::safe_boot( "SecurityManager", array( SecurityManager::class, "register" ) );
         self::safe_boot( "SecurityAwarenessDefenseLab", array( SecurityAwarenessDefenseLab::class, "register" ) );

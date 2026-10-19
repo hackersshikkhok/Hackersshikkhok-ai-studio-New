@@ -1,6 +1,6 @@
 <?php
 /**
- * Hackers শিক্ষক — Executive PDF Audit Report Generator
+ * HackersShikkhok — Executive PDF Audit Report Generator
  *
  * Generates print-ready, enterprise-grade executive security audit reports.
  *
@@ -65,7 +65,7 @@ final class PdfReportGenerator {
         <body>
             <div class="report-header">
                 <div>
-                    <h1 class="report-title">🛡️ Hackers শিক্ষক — Executive Security Audit</h1>
+                    <h1 class="report-title">🛡️ HackersShikkhok — Executive Security Audit</h1>
                     <div class="report-sub">Enterprise Target: <strong><?php echo esc_html( $target_url ); ?></strong> | Scan UUID: <?php echo esc_html( $scan['scan_uuid'] ); ?></div>
                     <div class="report-sub">Assessment Date: <?php echo esc_html( $scan['completed_at'] ?? gmdate( 'Y-m-d H:i:s' ) ); ?> UTC</div>
                 </div>
@@ -75,24 +75,24 @@ final class PdfReportGenerator {
                 </div>
             </div>
 
-            <h2>১. সারসংক্ষেপ ও এক্সিকিউটিভ সামারি (Executive Summary)</h2>
+            <h2>.     (Executive Summary)</h2>
             <p>
-                এই মূল্যায়নটি <strong>Hackers শিক্ষক</strong> অটোমেটেড সাইবার ডিফেন্স ইঞ্জিনের মাধ্যমে নন-ইনট্রুসিভ (প্যাসিভ) মেথডে সম্পন্ন হয়েছে। 
-                পরীক্ষায় মোট <strong><?php echo count( $findings ); ?>টি</strong> সিকিউরিটি ফাইন্ডিংস চিহ্নিত হয়েছে, যার মধ্যে 
-                <strong><?php echo esc_html( (string) $scan['findings_critical'] ); ?>টি</strong> ক্রিটিক্যাল এবং 
-                <strong><?php echo esc_html( (string) $scan['findings_high'] ); ?>টি</strong> হাই-রিস্ক ইস্যু রয়েছে।
+                  <strong>HackersShikkhok</strong>      - ()   । 
+                  <strong><?php echo count( $findings ); ?></strong>    ,   
+                <strong><?php echo esc_html( (string) $scan['findings_critical'] ); ?></strong>   
+                <strong><?php echo esc_html( (string) $scan['findings_high'] ); ?></strong> -  ।
             </p>
 
-            <h2>২. দুর্বলতা ও সিকিউরিটি ফাইন্ডিংস তালিকা (Detailed Findings)</h2>
+            <h2>.      (Detailed Findings)</h2>
             <?php foreach ( $findings as $idx => $f ) : ?>
                 <div class="finding-card">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                         <strong style="font-size: 15px; color: #0f172a;">#<?php echo (int) ( $idx + 1 ); ?>. <?php echo esc_html( $f['title_bn'] ); ?></strong>
                         <span class="badge badge-<?php echo esc_attr( $f['severity'] ); ?>"><?php echo esc_html( strtoupper( $f['severity'] ) ); ?> · CVSS <?php echo esc_html( (string) $f['cvss_score'] ); ?></span>
                     </div>
-                    <p style="margin: 4px 0; color: #334155;"><strong>বিবরণ:</strong> <?php echo esc_html( $f['description_bn'] ); ?></p>
-                    <p style="margin: 4px 0; color: #b91c1c;"><strong>সম্ভাব্য ক্ষতি (Impact):</strong> <?php echo esc_html( $f['impact_bn'] ); ?></p>
-                    <p style="margin: 4px 0; color: #15803d;"><strong>সমাধান নির্দেশিকা (Remediation):</strong> <?php echo esc_html( $f['remediation_bn'] ); ?></p>
+                    <p style="margin: 4px 0; color: #334155;"><strong>:</strong> <?php echo esc_html( $f['description_bn'] ); ?></p>
+                    <p style="margin: 4px 0; color: #b91c1c;"><strong>  (Impact):</strong> <?php echo esc_html( $f['impact_bn'] ); ?></p>
+                    <p style="margin: 4px 0; color: #15803d;"><strong>  (Remediation):</strong> <?php echo esc_html( $f['remediation_bn'] ); ?></p>
                     <?php if ( ! empty( $f['code_snippet'] ) ) : ?>
                         <div class="code-box"><?php echo esc_html( $f['code_snippet'] ); ?></div>
                     <?php endif; ?>
@@ -100,7 +100,7 @@ final class PdfReportGenerator {
             <?php endforeach; ?>
 
             <div class="footer">
-                Hackers শিক্ষক — অফিসিয়াল সিকিউরিটি প্লাটফর্ম · https://hackersshikkhok.com · রিপোর্ট ভেরিফিকেশন হ্যাশ: <?php echo esc_html( hash( 'sha256', (string) $scan['id'] . 'hs_report_salt' ) ); ?>
+                HackersShikkhok —    · https://hackersshikkhok.com ·   : <?php echo esc_html( hash( 'sha256', (string) $scan['id'] . 'hs_report_salt' ) ); ?>
             </div>
             <script>
                 // Auto trigger print dialog when opened in browser
